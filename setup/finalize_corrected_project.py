@@ -72,9 +72,9 @@ Open the dashboard locally in a browser; it needs no server or external service.
 
 ## Sharing with collaborators
 
-The private repository is at https://github.com/Parssayousefi/TMS_GWT.
-The owner can invite colleagues through **Settings → Collaborators → Add people**.
-Each colleague must accept the invitation before opening the private repository.
+The public repository is at https://github.com/Parssayousefi/TMS_GWT.
+Anyone with the link can view or download it without an invitation.
+For write access, the owner can invite colleagues through **Settings → Collaborators → Add people**.
 See [GitHub's invitation instructions](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/repository-access-and-collaboration/inviting-collaborators-to-a-personal-repository).
 
 For a results-only review, send `dashboard/index.html`; the interactive dashboard
@@ -153,10 +153,9 @@ citations. No reference mask was redefined from treatment results.
 - Dashboard: `dashboard/index.html`
 - Executed notebook: `output/jupyter-notebook/TMS_Corrected_Analyses.ipynb`
 
-Scientific tables replace the historical Aachen results. Remaining manuscript
-administration: Zain's affiliation, author contributions, funding, conflicts and
-a public archival code/data identifier. Private GitHub storage does not itself
-satisfy a public data-availability statement.
+Scientific tables replace the historical Aachen results. Author information and
+author-specific declarations are omitted from the current draft at the user's
+request. The public code repository is https://github.com/Parssayousefi/TMS_GWT.
 '''
 (ROOT/'docs/TMS_CORRECTED_ANALYSES_20261126.md').write_text(report,encoding='utf-8')
 (MAN.parent/'CURRENT.txt').write_text('corrected_20261126\n',encoding='utf-8')

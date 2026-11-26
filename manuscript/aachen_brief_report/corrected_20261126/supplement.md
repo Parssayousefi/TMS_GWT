@@ -2,8 +2,6 @@
 
 Information dynamics following prefrontal theta burst stimulation
 
-Zain Salamor and Parsa Yousefi contributed equally. Correspondence: Parsa Yousefi, parsa.yousefi@unifr.ch.
-
 ## Additional methods
 
 ### Acquisition and processing details

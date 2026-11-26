@@ -31,6 +31,6 @@
   "control_workspace": "Added unchanged user-supplied figure with measured partial overlap and Luppi/Yousefi citations.",
   "gwt_expectations": "Added four public-literature-motivated tests; none survived.",
   "hrf": "Replaced historical nonsignificant associations with corrected width/latency associations, explicitly diagnostic.",
-  "retained": "Author order, equal first authorship, corresponding author, acquisition protocol and intended metric definitions.",
-  "remaining_author_fields": "Zain affiliation, funding, conflicts, CRediT and public code/data DOI remain to be confirmed."
+  "retained": "Acquisition protocol, intended metric definitions and scientific results.",
+  "author_information": "Omitted from the current draft at the user request; declarations will be completed later."
 }

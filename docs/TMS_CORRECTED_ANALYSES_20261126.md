@@ -43,7 +43,6 @@ citations. No reference mask was redefined from treatment results.
 - Dashboard: `dashboard/index.html`
 - Executed notebook: `output/jupyter-notebook/TMS_Corrected_Analyses.ipynb`
 
-Scientific tables replace the historical Aachen results. Remaining manuscript
-administration: Zain's affiliation, author contributions, funding, conflicts and
-a public archival code/data identifier. Private GitHub storage does not itself
-satisfy a public data-availability statement.
+Scientific tables replace the historical Aachen results. Author information and
+author-specific declarations are omitted from the current draft at the user's
+request. The public code repository is https://github.com/Parssayousefi/TMS_GWT.

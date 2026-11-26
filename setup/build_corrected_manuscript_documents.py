@@ -51,6 +51,8 @@ def build(source,name):
     section.left_margin=section.right_margin=Inches(.75)
     section.top_margin=section.bottom_margin=Inches(.7)
     doc.core_properties.title='Information dynamics following prefrontal theta burst stimulation'
+    doc.core_properties.author=''
+    doc.core_properties.last_modified_by=''
     figures={'FIGURE1':'Figure_1_participant_changes.png','FIGURE2':'Figure_2_gwt_expectations.png',
         'SUPPLEMENT_FIGURE1':'Figure_S1_control_workspace_comparison.png','SUPPLEMENT_FIGURE2':'Figure_S2_leave_one_out.png','SUPPLEMENT_FIGURE3':'Figure_S3_hrf_width_associations.png'}
     used=list(dict.fromkeys(re.findall(r'@([a-z]+\d+)',source)))

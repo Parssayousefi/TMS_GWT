@@ -83,7 +83,10 @@ def main():
     original=(OLD/'manuscript_source.md').read_text(encoding='utf-8')
     front=original.split('## Abstract')[0]
     front=front.replace('Whole brain and workspace information dynamics following prefrontal theta burst stimulation','Information dynamics following prefrontal theta burst stimulation')
+    front=front.split('\n\n',1)[0]+'\n\nArticle type:'+front.split('Article type:',1)[1]
     tail=original.split('## Data availability')[1].split('## Figures and tables')[0]
+    tail=re.sub(r'## Author contributions\n.*?(?=## Acknowledgments\n)','',tail,flags=re.S)
+    tail=tail.replace('[TODO: Insert the persistent public repository URL or DOI for the analysis code and submission materials before submission.]','Analysis code and submission materials are available at https://github.com/Parssayousefi/TMS_GWT.')
     pcts=lambda x:f'{100*x:.3f}'
     manuscript=front+f'''## Abstract
 
@@ -194,8 +197,6 @@ Changes and marginal 95% confidence intervals are in percentile points. Correcti
     supplement='''# Supplementary material
 
 Information dynamics following prefrontal theta burst stimulation
-
-Zain Salamor and Parsa Yousefi contributed equally. Correspondence: Parsa Yousefi, parsa.yousefi@unifr.ch.
 
 ## Additional methods'''+methods+'''### Anatomical and signal quality control
 
@@ -315,8 +316,8 @@ References use the numbering of the main manuscript.
         'control_workspace':'Added unchanged user-supplied figure with measured partial overlap and Luppi/Yousefi citations.',
         'gwt_expectations':'Added four public-literature-motivated tests; none survived.',
         'hrf':'Replaced historical nonsignificant associations with corrected width/latency associations, explicitly diagnostic.',
-        'retained':'Author order, equal first authorship, corresponding author, acquisition protocol and intended metric definitions.',
-        'remaining_author_fields':'Zain affiliation, funding, conflicts, CRediT and public code/data DOI remain to be confirmed.'}
+        'retained':'Acquisition protocol, intended metric definitions and scientific results.',
+        'author_information':'Omitted from the current draft at the user request; declarations will be completed later.'}
     (OUT/'revision_claim_audit.json').write_text(json.dumps(claim_changes,indent=2,default=str),encoding='utf-8')
     (OUT/'source_sha256.json').write_text(json.dumps({str(p.relative_to(ROOT)):tms.sha256(p) for p in [Path(__file__),QC/'control_workspace_comparison.png',RUN/'raw_aachen_all40.csv',RUN/'normalized_aachen_all40.csv',RUN/'gwt_expectations_raw.csv',RUN/'gwt_expectations_normalized.csv',RUN/'sensitivities/hrf_phi_associations.csv',*list(OUT.glob('*source.md'))]},indent=2),encoding='utf-8')
     with zipfile.ZipFile(OUT/'TMS_Corrected_Supplementary_Data.zip','w',zipfile.ZIP_DEFLATED) as z:

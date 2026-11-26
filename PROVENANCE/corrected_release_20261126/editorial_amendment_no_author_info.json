@@ -1,0 +1,21 @@
+{
+  "completed_utc": "2026-11-26T12:12:51.993799+00:00",
+  "base_commit": "d24ea785604cef0a6d24136c302c29341978e328",
+  "change": "Remove current-draft author information and add public code URL",
+  "scientific_body_and_supplement_methods_unchanged": true,
+  "current_sources": {
+    "manuscript/aachen_brief_report/corrected_20261126/manuscript_source.md": {
+      "before": "b8d71b230ccd36779550937845f701884033082703b5638ea65e00b5f8350ac9",
+      "after": "36b879c3a42ea45b35337b971bcbf88d1e1bdc97b8e6bf6b007ec81365a175c7"
+    },
+    "manuscript/aachen_brief_report/corrected_20261126/supplement_source.md": {
+      "before": "b0ff022e4fc9fe4fcb3bd900dca48a20a30269086aa5674c04cc35925f2683a9",
+      "after": "d3c5c3ab5d70e5fbea8996a102a37ec973e5265eab39538e0410ecdc0dc4b0c3"
+    }
+  },
+  "docx": {
+    "Aachen_Brief_Research_Report_Corrected.docx": "af93caef32036914ab89561069ff09ccf0de0b11bfbdb2dd856d379a9c3720d9",
+    "Supplementary_Material_Corrected.docx": "4540cfb1f7b2f449125feae244311be77130a77f89a2d201dfa2a3de6661e9c4"
+  },
+  "prior_numerical_review_remains_applicable": true
+}

@@ -1,17 +1,5 @@
 # Information dynamics following prefrontal theta burst stimulation
 
-Zain Salamor†, Parsa Yousefi¹†*, Hector Taylor², Abigail Calder¹, Gregor Hasler¹
-
-¹ Molecular Psychiatry Laboratory, Faculty of Science and Medicine, University of Fribourg, Villars-sur-Glâne, Switzerland
-
-² Department of Adult Psychiatry and Psychotherapy, University Hospital of Psychiatry Zurich, University of Zurich, Zurich, Switzerland
-
-[TODO: Add Zain Salamor’s institutional affiliation and corresponding superscript.]
-
-† These authors contributed equally to this work and share first authorship.
-
-*Correspondence: Parsa Yousefi, parsa.yousefi@unifr.ch
-
 Article type: Brief Research Report
 
 Running title: Information dynamics after prefrontal iTBS
@@ -84,23 +72,11 @@ The supported contribution is a reproducible assessment of information architect
 
 ## Data availability
 
-The Aachen imaging dataset is publicly available under CC0 at OpenNeuro, version 1.0.1, doi:10.18112/openneuro.ds001832.v1.0.1. Participant-level scalar outputs, complete endpoint tables and numerical sensitivity results accompany this report as Supplementary Data. Supplementary SUDMEX analyses use OpenNeuro ds003037, version 1.0.1, doi:10.18112/openneuro.ds003037.v1.0.1. No private psychedelic participant data or effect maps were included in the present analysis. [TODO: Insert the persistent public repository URL or DOI for the analysis code and submission materials before submission.]
+The Aachen imaging dataset is publicly available under CC0 at OpenNeuro, version 1.0.1, doi:10.18112/openneuro.ds001832.v1.0.1. Participant-level scalar outputs, complete endpoint tables and numerical sensitivity results accompany this report as Supplementary Data. Supplementary SUDMEX analyses use OpenNeuro ds003037, version 1.0.1, doi:10.18112/openneuro.ds003037.v1.0.1. No private psychedelic participant data or effect maps were included in the present analysis. Analysis code and submission materials are available at https://github.com/Parssayousefi/TMS_GWT.
 
 ## Ethics statement
 
 The original acquisition study received approval from the ethics committee of the Faculty of Medicine, RWTH Aachen University, Germany, protocol 003/15, and all participants provided written informed consent, as reported by Alkhasli and colleagues [@alkhasli2019]. The present study is a secondary analysis of publicly released, deidentified data and involved no new recruitment or participant contact.
-
-## Author contributions
-
-Zain Salamor and Parsa Yousefi share first authorship. Gregor Hasler served as principal investigator and supervisor. [TODO: Confirm and complete the CRediT contributions for all authors; obtain each author’s approval of the manuscript and author order.]
-
-## Funding
-
-[TODO: Insert the funding statement for this secondary analysis, including grant numbers where applicable.]
-
-## Conflict of interest
-
-[TODO: Obtain and insert declarations from all five authors.]
 
 ## Acknowledgments
 

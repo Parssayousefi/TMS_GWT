@@ -63,9 +63,9 @@ Open the dashboard locally in a browser; it needs no server or external service.
 
 ## Sharing with collaborators
 
-The private repository is at https://github.com/Parssayousefi/TMS_GWT.
-The owner can invite colleagues through **Settings → Collaborators → Add people**.
-Each colleague must accept the invitation before opening the private repository.
+The public repository is at https://github.com/Parssayousefi/TMS_GWT.
+Anyone with the link can view or download it without an invitation.
+For write access, the owner can invite colleagues through **Settings → Collaborators → Add people**.
 See [GitHub's invitation instructions](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/repository-access-and-collaboration/inviting-collaborators-to-a-personal-repository).
 
 For a results-only review, send `dashboard/index.html`; the interactive dashboard
