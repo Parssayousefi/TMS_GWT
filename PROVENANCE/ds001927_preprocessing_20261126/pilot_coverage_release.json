@@ -1,0 +1,32 @@
+{
+  "created_utc": "2026-11-26T17:10:04.659714+00:00",
+  "cohorts_reviewed": [
+    "sub-s001",
+    "sub-s022"
+  ],
+  "cohort_fmriprep_release": true,
+  "pilot_denoising_for_signal_qc_allowed": true,
+  "analysis_release": false,
+  "interpretation": "No evidence of the Aachen repeat-extraction failure in these pilots. Weak inferior signal is visible in the unprocessed data and persists after processing; acquisition-related dropout is the leading interpretation, not demonstrated causal proof of a specific artifact mechanism.",
+  "source_image_support": "All 220 parcel/run cases below half mask overlap retain >95% geometric acquired-FOV support; median raw relative signal in those cases is 0.189974. Complete raw and processed 4D payloads are finite; finite noise/variance alone is not regional validity.",
+  "transform_reproduction": "Saved transform chain reproduces all twelve standard-space references exactly (max voxel error 0). This checks transform application, not registration ground truth.",
+  "release_scope": "Same fMRIPrep configuration may process remaining subjects. Each future subject still needs anatomical review; no group or PID outcome release. Common coverage set and denoised time-series QC remain required.",
+  "reviewed_file_sha256": {
+    "output/ds001927_coverage_trace_20261126/coverage_trace_summary.json": "97afca9584bb38e50100d53bfde5f67666a1857741293126d0217cd70ab633ef",
+    "output/ds001927_coverage_trace_20261126/raw_payload_audit.json": "8055a735c6155e4192155be99a428dc290c7e4b3151d29336b2b616f0a517a2d",
+    "output/ds001927_coverage_trace_20261126/run_coverage_trace.csv": "ae01214c9b0500c299940d74754042edb5dc0be6c77a08f0363f37f70ac3ed0e",
+    "output/ds001927_coverage_trace_20261126/parcel_coverage_trace.csv": "65a936b838c27265cd5f36f96bb5ca452f3a4397d09bb4bd99e45bbaf9c3f897",
+    "output/ds001927_pilot_qc_20261126/derivative_qc.json": "f6358a2e2cde5ef084f6cdb1a5cceaddb85a93fd660283e753e378a0f5cac778",
+    "output/ds001927_pilot_qc_s022_20261126/derivative_qc.json": "1e4531ee9f6796d013125a0f08b68971dce987b79caae6846996b3ec23bfb75d",
+    "output/ds001927_pilot_review_20261126/sub-s001/native_extraction_and_segmentation.png": "e7fdedbd7181528b3f120743355e924df87de24db05c1d3ffc69e2b821c7f914",
+    "output/ds001927_pilot_review_20261126/sub-s001/standard_alignment.png": "774b29d48380273e6feb6eaf81be1f7203d179ec6cf30eb1616ba80bdf04a11a",
+    "output/ds001927_pilot_review_20261126/sub-s001/six_run_bold_alignment_and_coverage.png": "a4418126d323ed05ec5d6fbc9c7a7117fc26aeeadfe2f6425f0a91fb19803a09",
+    "output/ds001927_pilot_review_20261126/sub-s001/review_summary.json": "bcaf30e13914c06a04e284af8871c756cf5aeae0ea66f74064471bb8aae83c3d",
+    "output/ds001927_coverage_trace_20261126/sub-s001_raw_to_preprocessed_coverage.png": "aa59561119ea9aed0809d20e3460b2f969a59bc0e1aef942a952db4572bc2628",
+    "output/ds001927_pilot_review_20261126/sub-s022/native_extraction_and_segmentation.png": "b867a3b682d767a567004f56b3d4f7496b448a74a12453adeb05018f2ce24275",
+    "output/ds001927_pilot_review_20261126/sub-s022/standard_alignment.png": "52d6221b13b0337e298b5d6f3adccb658f7672c6b3d49c29dd38f2818a953b12",
+    "output/ds001927_pilot_review_20261126/sub-s022/six_run_bold_alignment_and_coverage.png": "02abb28541ee293e45b9410f5a08e988e2f83b593c2a2829f7d8eeb8ad52bfdd",
+    "output/ds001927_pilot_review_20261126/sub-s022/review_summary.json": "4f9a9c18fcc422b7a6a9b169c67331ec2af69073838f2401b5e23f2ab850962a",
+    "output/ds001927_coverage_trace_20261126/sub-s022_raw_to_preprocessed_coverage.png": "0f5827069cd54506b68a8f2391e69e1f0e1d6a4b48ac67e4087d44df21cf8780"
+  }
+}

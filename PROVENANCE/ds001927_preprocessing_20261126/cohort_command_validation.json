@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "subjects": 21,
+  "pilot_scientific_flags_unchanged": true,
+  "raw_mount_read_only": true,
+  "pilot_and_invalid_subjects_refused": true,
+  "runtime_receipts_preflight_passed_separately": true,
+  "runner_sha256": "d4fc6ce31c6a380636ba45929cd82b2d715b4ab651ddb216de2df81ae45ab33b"
+}

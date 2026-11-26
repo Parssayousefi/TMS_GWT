@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-11-26T17:07:29.762852+00:00",
+  "status": "copied_and_all_hashes_verified",
+  "source": "D:\\projects\\TMS_GWT\\data\\ds001927\\derivatives\\fmriprep_23_2_1",
+  "derivatives": "E:\\data\\TMS_GWT\\ds001927_20261126\\derivatives\\fmriprep_23_2_1",
+  "storage_root": "E:\\data\\TMS_GWT\\ds001927_20261126",
+  "work": "E:\\data\\TMS_GWT\\ds001927_20261126\\work",
+  "file_count": 651,
+  "bytes": 19548323011,
+  "source_deleted": false,
+  "input_image_bytes_changed": false,
+  "manifest_sha256": "73b7410d4e2fb817b766e66b938d363a0ba299c2d8db3cb13435675e2b7be0ce",
+  "script_sha256": "e03b29cdf9f4ce67b17c6322b3cc6883c505a2686927de0a55774b7ca8a1cc98"
+}

@@ -36,6 +36,7 @@ def show(ax, data, axis, index, title, contours=()):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--subject", default="s001", choices=[f"s{i:03d}" for i in range(1, 24)])
+    ap.add_argument("--derivatives", type=Path, default=DERIV)
     args = ap.parse_args()
     sub = "sub-" + args.subject
     out = ROOT / "output/ds001927_pilot_review_20261126" / sub
@@ -46,7 +47,7 @@ def main():
     labels = np.asarray(atlas.dataobj).astype(int)
     counts = np.bincount(labels.ravel(), minlength=455)[1:455]
     assert len(counts) == 454 and np.all(counts > 0)
-    anat = DERIV / sub / "anat"
+    anat = args.derivatives / sub / "anat"
     source_paths = []
 
     def read(path, standard=True):
@@ -100,7 +101,7 @@ def main():
     rows = []
     for row, (ses, task) in enumerate((s, t) for s in ["ctr", "fro", "occ"] for t in ["restpre", "restpost"]):
         stem = f"{sub}_ses-{ses}_task-{task}"
-        func = DERIV / sub / f"ses-{ses}" / "func"
+        func = args.derivatives / sub / f"ses-{ses}" / "func"
         mask = read(func / f"{stem}_space-{SPACE}_desc-brain_mask.nii.gz") > 0
         ref = read(func / f"{stem}_space-{SPACE}_boldref.nii.gz")
         inmask = np.bincount(labels[mask], minlength=455)[1:455]
@@ -122,7 +123,8 @@ def main():
     summary["zero_reference_parcel_runs"] = int((df.nonzero_reference_coverage == 0).sum())
     summary["parcel_runs_below_half_mask_coverage"] = int((df.mask_coverage < .5).sum())
     summary["mask_coverage_minimum"] = float(df.mask_coverage.min())
-    summary["input_sha256"] = {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in source_paths}
+    summary["input_sha256"] = {(p.relative_to(ROOT).as_posix() if p.is_relative_to(ROOT) else str(p)):
+                               hashlib.sha256(p.read_bytes()).hexdigest() for p in source_paths}
     (out / "review_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     print(json.dumps({k: v for k, v in summary.items() if k != "input_sha256"}, indent=2))
 

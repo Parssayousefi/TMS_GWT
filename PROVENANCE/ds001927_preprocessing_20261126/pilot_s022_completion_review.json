@@ -1,0 +1,15 @@
+{
+  "subject": "sub-s022",
+  "reviewed_utc": "2026-11-26T17:10:04.659714+00:00",
+  "fmriprep_exit_code": 0,
+  "fmriprep_finished_utc": "2026-11-26T16:03:35.372475902Z",
+  "native_extraction_visual_review": "No gross cortical clipping on reviewed sagittal/coronal/axial sections; usable FRO/OCC T1s produce an anatomically plausible common reference.",
+  "standard_alignment_visual_review": "Five axial levels show plausible T1/template alignment and GM segmentation.",
+  "functional_alignment_visual_review": "All six references reviewed; gross alignment plausible; inferior frontal/temporal signal loss is already visible in raw BOLD.",
+  "six_run_motion_qc": "Five primary passes; CTR pre fails max-axis translation (3.1134874 mm > 3 mm). Both CTR runs fail the stricter mean-FD rule.",
+  "frontal_control_primary_eligible": false,
+  "preprocessing_pilot_pass": true,
+  "full_cohort_release": false,
+  "analysis_release": false,
+  "note": "Failure of the control baseline removes this participant from the main FRO-versus-CTR contrast. Other valid sessions remain separately available. No automatic motion salvage."
+}

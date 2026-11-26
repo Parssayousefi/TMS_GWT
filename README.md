@@ -1,8 +1,11 @@
 # TMS_GWT
 
-Information decomposition and workspace analyses of two open resting-state fMRI
-datasets following prefrontal TMS. The manuscript cites the earlier psychedelic
-paper; its private participant data and effect maps are not included.
+Information decomposition and workspace analyses of open resting-state fMRI
+datasets following TMS. The current new-cohort question is whether prefrontal
+stimulation changes integration or storage differently from an active control
+site, tested within participants in ds001927. Aachen and SUDMEX provide existing
+exploratory context. The earlier psychedelic paper is cited; its private
+participant data and effect maps are not included.
 
 ## Current results 26 November 2026
 
@@ -18,8 +21,16 @@ additional FD covariate; SUDMEX retains baseline-outcome adjustment.
 See the [QC reanalysis report](docs/TMS_FD_REANALYSIS_20261126.md) for the full
 thresholds, sample counts, correction families and normalization release status.
 Fresh QC-clean normalization is complete and does not support the raw Aachen
-decrease (maxT5 p=.524; stricter QC p=.472). The first six-run ds001927 pilot
-finished and passed motion/alignment review; the second pilot is running.
+decrease (maxT5 p=.524; stricter QC p=.472).
+
+Both six-run ds001927 pilots have finished and received anatomical review.
+The direct raw-to-processed audit finds inferior signal loss already present
+in the acquired BOLD, without evidence of the Aachen extraction error in these
+pilots. Eleven of twelve scans pass the declared motion gate. A sequential
+fMRIPrep queue is processing the remaining 21 participants on E:; s002 started
+on 26 November. There are no new-dataset PID outcomes yet. See the
+[coverage investigation](docs/DS001927_COVERAGE_REVIEW_20261126.md) and
+[dated frontal-versus-control analysis plan](docs/DS001927_SITE_COMPARISON_PLAN_20261126.md).
 
 ### Earlier results before full FD enforcement
 

@@ -158,6 +158,10 @@ across these two datasets. Nonsignificant outcomes do not establish stability.
 The new ds001927 cohort remains an independent opportunity to test a site-
 controlled contrast; its preprocessing does not supply evidence for the current
 finding until its QC and outcome analysis are complete.
+The user has selected this route; its
+[dated frontal-versus-control plan](DS001927_SITE_COMPARISON_PLAN_20261126.md)
+and [pilot coverage review](DS001927_COVERAGE_REVIEW_20261126.md) now document
+the new direction. Existing-cohort results above have not been changed.
 
 ## Reproducibility
 

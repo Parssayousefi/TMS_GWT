@@ -5,6 +5,12 @@
 > The newer raw Aachen outside-workspace synergy finding is a candidate
 > within-cohort result; the shared two-dataset treatment story remains unsupported.
 
+The user has now selected the ds001927 frontal-versus-active-control question.
+The [dated analysis plan](DS001927_SITE_COMPARISON_PLAN_20261126.md) fixes its
+two primary endpoints and secondary families before new PID outcomes. Both
+pilots have been reviewed and the remaining cohort is being preprocessed;
+see the [coverage investigation](DS001927_COVERAGE_REVIEW_20261126.md).
+
 Reviewed 26 November 2026 against the corrected Aachen release and the current
 SUDMEX aggregate results. This is a working editorial assessment, not a new
 analysis or a submission manuscript. The intended format remains a short

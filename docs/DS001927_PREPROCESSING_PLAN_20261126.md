@@ -126,12 +126,14 @@ cannot safely represent this two-factor design; pooling all `restpre` scans
 would count each person three times. Subject-level inference requires a
 dataset-specific contrast adapter.
 
-The proposed primary contrast is within-person
+The selected primary contrast is within-person
 `(FRO_post − FRO_pre) − (CTR_post − CTR_pre)`, for mean pairwise ΦR and explicitly
 defined six-mode storage, with two-sided family-wise correction across those
-two endpoints. OCC and other modes need declared secondary families. CTR is
-an active stimulation site, not sham. These definitions should be frozen
-before inference; they do not guarantee a positive result.
+two endpoints. CTR is an active stimulation site, not sham. The user adopted
+this question, and the [dated site-comparison plan](DS001927_SITE_COMPARISON_PLAN_20261126.md)
+now fixes the endpoint definitions, coverage set, secondary families and
+sensitivities before any ds001927 PID outcomes. It does not guarantee a positive
+result and is not an external preregistration.
 
 One native sample means 1.25 s here and 2 s in Aachen/SUDMEX. Keep lag units
 explicit and cohort estimates separate; never pool raw magnitudes as if the
@@ -157,9 +159,15 @@ dropout remains: 121 parcel/run combinations have less than 50% functional-mask
 coverage, including two with zero mask overlap. Nonzero reference support is
 present in all parcels, which alone does not certify useful temporal signal.
 The completion review is `pilot_s001_completion_review.json` in the provenance
-directory. The sub-s022 pilot is now running with its damaged control-session
-T1 excluded from reference construction. Full-cohort and outcome-analysis
-release remain pending. MATLAB initially returned a
+directory. The sub-s022 pilot finished at 16:03 UTC with its damaged control-
+session T1 excluded. Its anatomy and all six functional references were visually
+reviewed; its CTR-pre scan fails the 3-mm translation limit, leaving five
+primary motion passes and excluding this participant from the main site
+contrast. The [direct coverage audit](DS001927_COVERAGE_REVIEW_20261126.md)
+shows weak inferior signal already present in the raw BOLD. All 220 low-mask-
+coverage parcel/run cases remain >95% inside the acquired volume, which argues
+against an anatomical extraction cause. Outcome analysis remains gated on
+common coverage and denoised-signal validation. MATLAB initially returned a
 licence-server error; after VPN reconnection it started successfully and its
 MATLAB, Signal Processing and Wavelet availability checks returned true.
 
@@ -171,3 +179,11 @@ denoising, deconvolution or PID analysis has been launched for this dataset.
 Group-level outcome models will not include an additional continuous FD
 covariate. Motion remains handled by the explicit scan-QC gate and the existing
 denoising regressors.
+
+After the two-pilot review, the same fMRIPrep configuration was released for the
+remaining 21 participants. A one-person-at-a-time queue started s002 at 17:10 UTC.
+The larger-volume tree `E:/data/TMS_GWT/ds001927_20261126/` holds its work and
+derivatives; all 651 pilot derivative files were checksum-verified after copying
+there, and the original D: copies remain. Each new participant still requires
+anatomical review before downstream release. The queue automatically checks
+completion and motion and generates review material, without running PID.

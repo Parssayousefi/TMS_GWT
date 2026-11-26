@@ -7,6 +7,15 @@ the stricter sensitivity uses 12 and 30. Current group models omit additional
 continuous FD covariates while retaining motion QC, denoising and SUDMEX baseline
 outcome adjustment. Fresh clean-reference normalization is complete; the report provides its verified results.
 
+**New-cohort direction:** the user selected a within-person frontal-versus-active-
+control comparison in ds001927, with ΦR and information storage as two primary
+endpoints. The [dated analysis plan](DS001927_SITE_COMPARISON_PLAN_20261126.md)
+was recorded before new PID outcomes. Both preprocessing pilots are complete;
+the [raw-to-processed coverage review](DS001927_COVERAGE_REVIEW_20261126.md)
+supports acquisition signal dropout rather than another Aachen extraction
+failure. The remaining 21 participants are in a sequential fMRIPrep queue on E:.
+No ds001927 PID outcomes or new publication result are yet available.
+
 ## Historical status before full FD enforcement
 
 The manuscript remains in development. The goal is one information-decomposition

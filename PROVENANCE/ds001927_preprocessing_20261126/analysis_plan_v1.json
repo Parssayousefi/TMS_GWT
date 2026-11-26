@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-11-26T17:10:04.659714+00:00",
+  "plan_path": "docs/DS001927_SITE_COMPARISON_PLAN_20261126.md",
+  "plan_sha256": "58815bdcc6ba4fdbe28b9aa8be25c89287f0d38e6ab4b1af32a7c66529da9d5f",
+  "user_selected_question": "Does prefrontal stimulation change information processing differently from an active control site?",
+  "contrast": "(FRO_post-FRO_pre)-(CTR_post-CTR_pre)",
+  "primary_endpoints": [
+    "phi_r",
+    "six_mode_storage"
+  ],
+  "correction": "two-sided participant joint-sign-flip maximum-|t| across two primary endpoints",
+  "pid_results_exist_at_decision": false,
+  "denoising_started_at_decision": false,
+  "prior_cohorts_results_known": true,
+  "pilot_anatomy_motion_coverage_known": true,
+  "external_preregistration": false,
+  "group_fd_covariate": false
+}

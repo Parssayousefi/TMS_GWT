@@ -1,0 +1,9 @@
+{
+  "created_utc": "2026-11-26T17:13:10.096648+00:00",
+  "file": "reruns/ds001927_20261126/pipeline/configs/datasets/ds001927.yaml",
+  "change": "Derivative storage paths only; copied pilot images identical; production computations untouched",
+  "old_source": "D:/projects/TMS_GWT/data/ds001927/derivatives/fmriprep_23_2_1",
+  "new_source": "E:/data/TMS_GWT/ds001927_20261126/derivatives/fmriprep_23_2_1",
+  "before_sha256": "270668e75e5401536c98f3bd90c9d36b98d8ac0265101ab4bd2adba0f8ccd56f",
+  "after_sha256": "80fd8eaa86e4bf741468da4b9f4545ba92c01e93d800b9d3e41ca6cfbbda7941"
+}

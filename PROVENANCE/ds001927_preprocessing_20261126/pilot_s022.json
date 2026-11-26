@@ -63,8 +63,10 @@
   "expected_volumes_per_run": 600,
   "tr_seconds": 1.25,
   "input_decisions": "Defaced, skull-on T1: extract once. Unbiased shared anatomical reference from usable T1s. Exclude only sub-s022 ses-ctr damaged T1. All six BOLD runs retained for QC. No supplied SliceTiming, PE direction or fieldmaps; no invented timing or distortion fields.",
-  "status": "running; six-run completion and anatomical release pending",
+  "status": "fmriprep_complete_reviewed; one motion failure; no PID release",
   "no_downstream_analysis_started": true,
   "container_id": "37ac07065f692b373949ca86678969c51d1221b9fdc2ea511eb65b37d098f0de",
-  "image_id": "sha256:9189837e68b0a0c912fad8f0948d74e6280a2d0617b234c8dee738127a035233"
+  "image_id": "sha256:9189837e68b0a0c912fad8f0948d74e6280a2d0617b234c8dee738127a035233",
+  "finished_utc": "2026-11-26T16:03:35.372475902Z",
+  "exit_code": 0
 }
