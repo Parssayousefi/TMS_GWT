@@ -1,11 +1,16 @@
+param(
+    [string]$DocumentFolder = 'D:\projects\TMS_GWT\manuscript\aachen_brief_report\corrected_20261126',
+    [string]$MainName = 'Aachen_Brief_Research_Report_Corrected.docx',
+    [string]$SupplementName = 'Supplementary_Material_Corrected.docx'
+)
 $ErrorActionPreference = 'Stop'
-$taskRoot = [IO.Path]::GetFullPath('D:\projects\TMS_GWT\manuscript\aachen_brief_report\corrected_20261126')
+$taskRoot = [IO.Path]::GetFullPath($DocumentFolder)
 $taskWord = New-Object -ComObject Word.Application
 $taskWord.Visible = $false
 $taskWord.DisplayAlerts = 0
 $taskWord.AutomationSecurity = 3
 try {
-    foreach ($taskItem in @(@('Aachen_Brief_Research_Report_Corrected.docx','main'), @('Supplementary_Material_Corrected.docx','supplement'))) {
+    foreach ($taskItem in @(@($MainName,'main'), @($SupplementName,'supplement'))) {
         $taskInput = Join-Path $taskRoot $taskItem[0]
         $taskFolder = Join-Path $taskRoot ('qa\' + $taskItem[1])
         [void](New-Item -ItemType Directory -Path $taskFolder -Force)

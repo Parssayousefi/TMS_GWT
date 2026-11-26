@@ -19,3 +19,5 @@ The main view shows every reported row by default. Optional adjusted-p filtering
 The corrected target-flow release passed independent numerical checks and agreement with saved corrected production-MATLAB summaries. A fresh 24-case direct MATLAB atom check was unavailable because of license-server error 96; this limit remains explicit.
 
 `template.html` and `DESIGN.md` are editable presentation sources. `index.html`, `data.json`, summary CSV copies and provenance are generated from them and the allowlisted source tables. Git publication is handled separately; this builder does not stage, commit, or push files.
+
+The source inventory includes fifteen HRF associations per dataset/representation, direct spatial contrasts, baseline/arm sensitivities and 825 omission fits. These are retained records, not the selected publication narrative. The overview now displays the independently verified DAN gateway comparison with explicit four-outcome correction. Neither haemodynamic associations nor reinterpretation of nonsignificant changes as stability will be used as the shared treatment story.

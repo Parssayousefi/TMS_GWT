@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "source_sha256": {
+    "setup\\audit_dan_gateway_result.py": "7d7684dbce8ad9edd9a4c09b974af6e4608775607fbc7cda5c7119ccf14ae3c8",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\raw_scan_metrics.csv": "c658a80f07d4203eea27cae8c0d8e03f028bca61faa904730d040159475e3423",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\raw_paired_changes.csv": "c562e142abe7a5864fd85da63efec284fb31dcf2119873c0b92b6d86eda14983",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\raw_aachen_participant_changes.csv": "af109c53a729899ecb184bd76e0d2ef52503a71e8e717d7371a2d3248739f421",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\gwt_expectations_raw.csv": "a0fb37a6d2f6ebd85766d52fe0edeafe32c7dca10163ac795919a16029d19597",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\normalized_scan_metrics.csv": "52998492053ff51059aea00e1b7e4c794792328e7747a86b18a8970f34bab9c8",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\normalized_paired_changes.csv": "331c0c7b671f11c34590e879f87075d6adcd939c3525f0df7cbd5051b1abb051",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\normalized_aachen_participant_changes.csv": "2b44b40357fffc739c803df6f95fe499f7efdb9a0a5d2167809abb75343d4503",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\gwt_expectations_normalized.csv": "76073984a8399e8cdea55ad42d6502d88b64210fecaf6423cc15f39d122754e7"
+  },
+  "n_aachen": 15,
+  "aachen_scans": 60,
+  "n_sudmex": 40,
+  "sign_patterns": 32768,
+  "verified": [
+    "Counts and changes reconstructed from scan-level tables",
+    "All eight Aachen rows match the published intervals and p-values",
+    "SUDMEX HC3 results match via statsmodels",
+    "Inputs unchanged"
+  ],
+  "interpretation": "Normalized Aachen DAN reduction is nominal under a t test only; exact unadjusted sign-flip p=.056640625, Holm4 p=.152730, maxT4 p=.162109. SUDMEX does not reproduce a reduction."
+}

@@ -1,0 +1,21 @@
+{
+  "analysis_directory": "D:\\projects\\TMS_GWT\\output\\cross_dataset_spatial_hrf\\20261126T121731_876575Z",
+  "title": "Haemodynamic covariation of information integration across two prefrontal stimulation datasets",
+  "author_information_included": false,
+  "abstract_words": 163,
+  "body_words": 1235,
+  "sha256": {
+    "setup\\prepare_cross_dataset_report.py": "6ffe28287e14e52d5aeedc764a93acdc2b97e1f4d468d60f95eaabea2f263ebb",
+    "output\\cross_dataset_spatial_hrf\\20261126T121731_876575Z\\aachen_itbs_hrf_participant_changes.csv": "8d66a6e5a17dd9ddaef7a10b34ff14ae63e214c15dfe7ea2bdc10488847fdf9b",
+    "output\\cross_dataset_spatial_hrf\\20261126T121731_876575Z\\hrf_association_results.csv": "92a6288b5fec6416607c9ec58fc5bb6c2ab7ee2a2f1e2b999f2fb5f5d600ba66",
+    "output\\cross_dataset_spatial_hrf\\20261126T121731_876575Z\\hrf_cross_dataset_conjunction.csv": "31ff3f5c3252dd43a572ca434065ed6edbc06fbefcce6548e9a8c00adaaf53da",
+    "output\\cross_dataset_spatial_hrf\\20261126T121731_876575Z\\hrf_influence_summary.csv": "072083d39da095aef73772ef15e325dbcdca9ad8dffd5d67f6fbef6eb34f2ff9",
+    "output\\cross_dataset_spatial_hrf\\20261126T121731_876575Z\\hrf_leave_one_out.csv": "9ecd1d17fd365de7fdfdc2bac03650611bf880a3594ade726d3214649f23ba6e",
+    "output\\cross_dataset_spatial_hrf\\20261126T121731_876575Z\\hrf_observations.csv": "510199fbff8eed2d67e9a97de7be9a9ba27a0cae416e131ab7fa303698594912",
+    "output\\cross_dataset_spatial_hrf\\20261126T121731_876575Z\\hrf_scans.csv": "2e39be190ceacdd6589d6c4960f3977563259cc409b60df1c447add414f84e78",
+    "output\\cross_dataset_spatial_hrf\\20261126T121731_876575Z\\spatial_results.csv": "6a584276b5e0d436788c76384f3808ed58d781569b39521e05c15c24445ffe20",
+    "output\\cross_dataset_spatial_hrf\\20261126T121731_876575Z\\sudmex_tms_hrf_participant_changes.csv": "87f565973f3b7bb1af9ab41ca46dc850333ceae42e27de6a537ba9c68ffc0472",
+    "manuscript\\tms_cross_dataset_report\\20261126\\manuscript_source.md": "7d56d18d8cf89f62b253405c442237190b11e97d9291fd73c86203eea0b33418",
+    "manuscript\\tms_cross_dataset_report\\20261126\\supplement_source.md": "138f6c5fe25f86fb416e00f53ecac8c68600046502657f0025d1ce88db973de4"
+  }
+}

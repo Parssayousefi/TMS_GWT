@@ -1,10 +1,13 @@
 from pathlib import Path
 import json
 import hashlib
+import argparse
 from pdf2image import convert_from_path
 from pypdf import PdfReader
 ROOT=Path(__file__).resolve().parents[1]
-BASE=ROOT/'manuscript/aachen_brief_report/corrected_20261126/qa'
+parser=argparse.ArgumentParser()
+parser.add_argument('--folder',type=Path,default=ROOT/'manuscript/aachen_brief_report/corrected_20261126')
+BASE=parser.parse_args().folder/'qa'
 POPPLER=Path(r'C:\Program Files\WindowsApps\OpenAI.CodexPrimaryRuntime.v26-1123-915-0_26.1123.915.0_x64__3k8sg7r9htsxt\dependencies\native\poppler\Library\bin')
 receipt={'renderer':'Native Word PDF export plus bundled Poppler; packaged render_docx failed because bundled LibreOffice is unavailable on Windows.'}
 for kind in ['main','supplement']:

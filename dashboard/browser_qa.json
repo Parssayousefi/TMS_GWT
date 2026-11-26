@@ -1,28 +1,7 @@
 {
-  "created_utc": "2026-11-26T12:01:37.767545+00:00",
+  "created_utc": "2026-11-26T12:52:56.082655+00:00",
   "passed": true,
-  "index_sha256": "7d412d30a8f7805b843b049e64868595e7184036f24cb453c1e02313b5fd5575",
-  "builder_sha256": "b08dcac7dd55e1488e4ea9f5bdde498fa1754ac5b830e4c00f50dcc15d81c4a1",
-  "template_sha256": "93f98f6ccfa5985f2739b635837d9b0012c71805f03d2c7d4072f3f893615cfa",
-  "data_sha256": "8c2eef0b45e23a7f81fe7a7be91ed2330a4fe4abbe9e016873dc6e3e49943cbc",
-  "provenance_sha256": "56a6ee95d0468171a16bba01e0bc8a08be903a213492923777dbdcd7090ac6f4",
-  "build_receipt_sha256": "34ff45bc63ffab59f1fa5962edbb4b62d040947dfdbbda2a017cad93d9a862a9",
-  "counts": {
-    "reported_rows": 2375,
-    "diagnostic_rows": 503,
-    "source_tables": 47,
-    "roles": {
-      "Planned comparison": 196,
-      "Randomized acute comparison": 260,
-      "Sensitivity": 439,
-      "Influence diagnostic": 989,
-      "Descriptive longitudinal": 290,
-      "Association": 127,
-      "Method diagnostic": 44,
-      "Target comparison": 30
-    }
-  },
-  "browser": "Playwright Chromium; localhost static server",
+  "browser": "Playwright Chromium localhost",
   "viewports": [
     {
       "width": 1440,
@@ -33,130 +12,37 @@
       "height": 844
     }
   ],
-  "checks": [
-    {
-      "name": "default_all_rows_and_threshold_off",
-      "passed": true
-    },
-    {
-      "name": "combined_analysis_dataset_scale_filters",
-      "passed": true
-    },
-    {
-      "name": "search_and_empty_state",
-      "passed": true
-    },
-    {
-      "name": "numeric_sort_both_directions",
-      "passed": true
-    },
-    {
-      "name": "scope_vs_widest_family_labels",
-      "passed": true
-    },
-    {
-      "name": "null_not_zero",
-      "passed": true
-    },
-    {
-      "name": "anonymous_omission_labels",
-      "passed": true
-    },
-    {
-      "name": "dialog_original_precision_and_escape",
-      "passed": true
-    },
-    {
-      "name": "pagination",
-      "passed": true
-    },
-    {
-      "name": "embedded_QC_image_loaded",
-      "passed": true
-    },
-    {
-      "name": "all_8_diagnostic_collections",
-      "passed": true
-    },
-    {
-      "name": "all_9_HRF_associations_and_3_Holm9_results",
-      "passed": true
-    },
-    {
-      "name": "all_30_corrected_target_tests_and_10_primary",
-      "passed": true
-    },
-    {
-      "name": "no_primary_target_familywise_rejections",
-      "passed": true
-    },
-    {
-      "name": "3_target_motion_and_1_intensity_result",
-      "passed": true
-    },
-    {
-      "name": "only_80_SUD_target_rows_no_historical_Aachen",
-      "passed": true
-    },
-    {
-      "name": "normalized_interval_plot",
-      "passed": true
-    },
-    {
-      "name": "Monte_Carlo_p_label_distinct_from_exact",
-      "passed": true
-    },
-    {
-      "name": "CSV_download_9_rank_rows_exact_values",
-      "passed": true
-    },
-    {
-      "name": "desktop_and_mobile_visual_review",
-      "passed": true
-    },
-    {
-      "name": "mobile_all_panels_no_body_overflow",
-      "passed": true
-    },
-    {
-      "name": "no_browser_console_errors",
-      "passed": true
-    },
-    {
-      "name": "no_external_network_requests",
-      "passed": true
-    },
-    {
-      "name": "all_source_export_and_receipt_hashes_match",
-      "passed": true
-    },
-    {
-      "name": "control_image_byte_identical",
-      "passed": true
-    },
-    {
-      "name": "current_Holm9_overview_and_original_six_table_preserved",
-      "passed": true
-    },
-    {
-      "name": "HRF9_link_opens_all_153_association_rank_omission_rows",
-      "passed": true
+  "counts": {
+    "reported_rows": 3570,
+    "diagnostic_rows": 533,
+    "source_tables": 52,
+    "roles": {
+      "Planned comparison": 196,
+      "Randomized acute comparison": 260,
+      "Sensitivity": 509,
+      "Influence diagnostic": 1814,
+      "Descriptive longitudinal": 290,
+      "Association": 427,
+      "Method diagnostic": 44,
+      "Target comparison": 30
     }
-  ],
-  "screenshots": {
-    "qa_desktop.png": "3a9e5910f3a41eb8571d8db63af8088ee947d6528708d31a0a58f4368135f889",
-    "qa_desktop_results.png": "64a13c6a47c0fd161a841ac9ca5cedf23ea0c44faac3ea5f13a50f89c382f40f",
-    "qa_mobile.png": "7543bb330e23f85048f848ed654d7ea88b08b42608cf0386cd02b6e234283b2b",
-    "qa_mobile_results.png": "fc48398870b95ca5bac94436284b716f53104916a97273e1574967e77d0fec30"
   },
-  "rank_sensitivity_source_sha256": "fc812cde80cbc495a64f49621339339876a2eaf116518678dd4384d62f21c9ad",
-  "notes": [
-    "Responsive interval plot changed to stacked rows on mobile after initial visual QA.",
-    "No dependencies installed, no remote services or trackers.",
-    "Playwright file URLs were blocked; browser verification used a loopback-only HTTP server. The HTML embeds all data/CSS/JS/image and performs no fetch. CSV and provenance downloads require the neighboring dashboard files.",
-    "Missing p-values remain null; no new pooled correction is computed.",
-    "Source records are aggregate summaries. Omitted participant identifiers were anonymized. No patient-level clinical rows or raw imaging included.",
-    "After browser QA, owned text outputs were normalized to LF and obsolete numbered exports removed; presentation source text verified unchanged. All source and export hashes rechecked. QA download test CSV removed and excluded from build outputs.",
-    "Final focused Playwright check: overview uses full Holm9 family, outside peak .046324 and width .000477; original six retained in inventory. Desktop/mobile overview screenshots refreshed; zero console errors and no mobile overflow."
-  ]
+  "checks": [
+    "Raw and normalized DAN chart values match source rows for both cohorts",
+    "Unadjusted versus Holm4 values visibly distinguished",
+    "Four-row normalized Aachen GWT filter returns exact sign-flip and maxT4 values",
+    "Default adjusted-p threshold is off",
+    "All 52 sources and 3570 rows present, including 1195 new cross-dataset rows",
+    "No desktop/mobile document overflow",
+    "Desktop/mobile screenshots visually inspected",
+    "No browser console errors"
+  ],
+  "source_sha256": {
+    "dashboard\\index.html": "bb48072c8e18fbb911bea5777c8c3419f92b0434568e8c28d11a2b78666a5b45",
+    "dashboard\\template.html": "cfe307fd8d5b18d020a0a9b736a7befd5dbccafbdb10351aa568efabe01c57a8",
+    "dashboard\\data.json": "7e503f58135fa22288103ba1cec53075ecba175f46b9d7500c8658e04d9a199b",
+    "dashboard\\provenance.json": "78cf31459cdd9fb802cecf22d6be9640530eeda84c865aed5be068e4638910e5",
+    "dashboard\\build_receipt.json": "d5e55627f6f9963b7461ed5fc2f632e4c80724dfd23629c9c9860af3e2edaecc",
+    "setup\\build_tms_dashboard.py": "a9d80280c43e459b0655e10f1b2002dd213f126fdc3099e88441c018e2f859a8"
+  }
 }

@@ -1,0 +1,25 @@
+{
+  "status": "archived framing; not current submission",
+  "visual_qa": "Main nine pages reviewed in prior pass, final pages 3 and 6 rechecked after minus/tick correction; all six supplementary pages reviewed. No clipping or overlapping figure labels.",
+  "docx_sha256": {
+    "TMS_Cross_Dataset_Brief_Report.docx": "d945aadab3d3c123e6346d13280d14b77712b900d326496960cc7e3c69d59a72",
+    "TMS_Cross_Dataset_Supplement.docx": "19811897cd118468e58e3f2842467f0761507141ff18bfa076c68587728d185b"
+  },
+  "page_sha256": {
+    "qa\\main\\page-1.png": "d62f40470b6e9e2bde98df1b5f7b9d75593e23ecbc2f629dd5bc10ce40334890",
+    "qa\\main\\page-2.png": "394ed1851215892c1fedc1800fed810785a0f18f74bb5b1fff8bfc84eb7ce96b",
+    "qa\\main\\page-3.png": "7cbe035589add7c475070ffdbcecd50540807c87a8d50d93b09ea4b76ae45137",
+    "qa\\main\\page-4.png": "604c999e069733edcf3ad6beb0da688b348d75d18f40acf1b8ff10e656e47719",
+    "qa\\main\\page-5.png": "937a11031c9d8a4f436a87de021c92a087fbf46ab8bebb3212911558138e21c4",
+    "qa\\main\\page-6.png": "c0339c7035115acf38c31449dcd0c5b004ae5f72c53a9cc28d1c7428bcf314ef",
+    "qa\\main\\page-7.png": "ff01059e5944fba2116d279cbc6b1a23b6e3a3a64e39a4bc2bc4e9627139666b",
+    "qa\\main\\page-8.png": "48333e789116eec3bf03f7d82bd5b2c6ba3d93072139faaf7fee1f9ec4f30c6e",
+    "qa\\main\\page-9.png": "3c6f8bd3aac62901b5f2ff32e53aa0b8d738cd276da07b7bd7df5166444b5c93",
+    "qa\\supplement\\page-1.png": "6630055cad10f4a45b3788869740663c0c35615f85649961d071518b5cac6849",
+    "qa\\supplement\\page-2.png": "390750a648755771b51d7440b3a9788758559181cb72bf76229e162bff22a9d9",
+    "qa\\supplement\\page-3.png": "799306f9111566ecb5f2319aad3cad8ad0a831ce901ab702157468a694aec2fb",
+    "qa\\supplement\\page-4.png": "641e6aae1d59c92fa46a15feb382ebc1f323986d087232715d8ce3093eccec3d",
+    "qa\\supplement\\page-5.png": "ab2050fbd8346f77168cb7b02d3977b6343d3ab7e156092a2960a66f8281743c",
+    "qa\\supplement\\page-6.png": "6a92c68a6f54889463015cda8d48dcfc0fe53de37037073ef08d053f45ef18a3"
+  }
+}

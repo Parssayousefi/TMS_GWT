@@ -84,3 +84,4 @@ PROVENANCE/MANIFEST.tsv
 manuscript/aachen_brief_report/*.docx
 manuscript/aachen_brief_report/figures/
 !manuscript/aachen_brief_report/corrected_20261126/TMS_Corrected_Supplementary_Data.zip
+!manuscript/tms_cross_dataset_report/20261126/TMS_Cross_Dataset_Supplementary_Data.zip

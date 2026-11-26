@@ -1,7 +1,7 @@
 {
   "status": "passed",
-  "staged_files": 382,
-  "total_bytes": 12519491,
+  "staged_files": 422,
+  "total_bytes": 16541013,
   "raw_imaging_and_credentials_excluded": true,
   "small_frozen_group_reference_files": [
     "pipeline/results/group_analysis/hcp/rest/hcp_rest_synergy_redundancy_gradient.npy",

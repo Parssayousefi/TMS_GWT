@@ -20,6 +20,7 @@ CORE = ROOT / "output/corrected_tms_analysis/20261126T112054_284547Z"
 AA = ROOT / "output/corrected_aachen_target_flow/20261126T113156_656159Z"
 SUD = ROOT / "output/targeted_information_flow/20261125T193623_492441Z"
 QC = ROOT / "output/control_workspace_qc/combined_20261125T234309_541220Z"
+CROSS = ROOT / "output/cross_dataset_spatial_hrf/20261126T121731_876575Z"
 
 
 def sha(path):
@@ -118,6 +119,15 @@ def main():
     for name, label in [("motion_model_diagnostics.csv", "Aachen target · model leverage"), ("leave_one_out_summary.csv", "Aachen target · omission summary")]:
         add(AA, name, label, "Target diagnostics", "QC", note="Descriptive model diagnostics; no new exclusion or test selection.", diagnostic=True)
 
+    for name, label, role, note in [
+        ('spatial_results.csv', 'Both datasets · direct outside-minus-inside changes', 'Sensitivity', 'Five information contrasts per model and representation. Aachen exact maxT5; SUDMEX baseline-plus-motion active-minus-sham Holm5. No corrected spatial treatment contrast. All models retained.'),
+        ('hrf_association_results.csv', 'Both datasets · complete fifteen-association families', 'Association', 'Fifteen HRF associations per dataset, branch and model. Motion adjustment in both cohorts; arm also included in SUDMEX. Baseline sensitivities, rank checks and arm interactions retained. Same-signal covariation does not establish physiological causality.'),
+        ('hrf_cross_dataset_conjunction.csv', 'Both datasets · same-direction conjunctions', 'Association', 'Maximum of the two cohort p values, set to one for opposite signs; Holm across all fifteen endpoints in each representation. No pooled estimate. Original per-cohort estimates are in the details.'),
+        ('hrf_leave_one_out.csv', 'Both datasets · all raw omission fits', 'Influence diagnostic', 'All 825 raw refits. Holm15 is repeated within each participant omission; omissions are dependent sensitivity checks, not replications.'),
+    ]:
+        add(CROSS, name, label, 'Cross-dataset spatial and HRF', role, 'Mixed', 'mixed', note)
+    add(CROSS, 'hrf_influence_summary.csv', 'Both datasets · omission stability', 'Cross-dataset diagnostics', 'QC', 'Mixed', 'raw', 'Direction and corrected support across every omission, without excluding influential participants.', diagnostic=True)
+
     sources, rows, diagnostics, original_hashes = [], [], [], {}
     for index, spec in enumerate(specs):
         p = spec["root"] / spec["name"]
@@ -159,8 +169,8 @@ def main():
             if branch == "mixed":
                 branch = "raw"
             scale = "normalized" if branch == "normalized" else "raw"
-            endpoint = raw.get("metric") or raw.get("neural_metric") or raw.get("outcome") or (f"{raw['scope']}__phi / HRF {raw['parameter']}" if raw.get("parameter") else "Not supplied")
-            detail = " · ".join(str(raw[k]) for k in ("scope", "comparison", "contrast", "clinical_metric", "hrf_parameter", "model", "check", "variant", "definition", "reference_seed", "omitted_subject", "omitted") if raw.get(k) is not None)
+            endpoint = raw.get("metric") or raw.get("neural_metric") or raw.get("outcome") or raw.get('measure') or (f"{raw.get('outcome_scope',raw.get('scope'))}__phi / HRF {raw['parameter']}" if raw.get("parameter") else "Not supplied")
+            detail = " · ".join(str(raw[k]) for k in ("scope", "predictor_scope", "comparison", "contrast", "clinical_metric", "hrf_parameter", "model", "check", "variant", "definition", "reference_seed", "omitted_subject", "omitted") if raw.get(k) is not None)
             rows.append(dict(id=f"{ident}_{ix}", source=ident, dataset=dataset, scale=scale,
                              branch=branch, endpoint=endpoint, detail=detail, role=spec["role"],
                              group=spec["group"], original=raw))
@@ -190,6 +200,7 @@ def main():
                      ROOT / "output/aachen_alignment_review/corrected_cohort/cohort_release_receipt.json",
                      CORE / "haemodynamic_followup/analysis_specification.json", CORE / "haemodynamic_followup/verification.json",
                      QC / "README.md", QC / "qa.json", QC / "provenance.json"]
+    receipt_paths += [CROSS/'analysis_specification.json', CROSS/'verification.json']
     receipts = [dict(path=str(p), sha256=sha(p)) for p in receipt_paths]
     image_path = QC / "control_workspace_comparison.png"
     image_bytes = image_path.read_bytes()

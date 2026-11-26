@@ -1,0 +1,10 @@
+{
+  "question": "Do changes differ inside versus outside the fixed workspace across both TMS datasets, and how are they related to estimated haemodynamics?",
+  "status": "Exploratory follow-up. Aachen spatial and nine HRF associations were known; this is not preregistration.",
+  "spatial_family": "Five direct outside-minus-within contrasts per dataset, branch and model. Aachen exact maxT5 plus Holm5; SUDMEX baseline-and-motion ANCOVA active-minus-sham Holm5. Raw analysis and normalized sensitivity retained.",
+  "hrf_family": "Fifteen associations per dataset/branch/model: Phi at four scopes against matching HRF height, peak and width (12), plus outside-minus-within Phi against whole-brain HRF parameters (3). Holm15.",
+  "hrf_adjustment": "Motion change in both cohorts; treatment arm also in SUDMEX. Baseline Phi and HRF adjustment is a declared sensitivity. Treatment-arm interaction and stratified estimates retained, each with the same 15-member family.",
+  "replication": "Same-sign intersection-union p=max(two cohort p-values), Holm across all fifteen matching endpoints; no pooling of treatment estimands or subjects.",
+  "influence": "All 15 primary raw associations repeated for each participant omission; family correction repeated for every omission.",
+  "limits": "No sham in Aachen; shared HRF/deconvolution data can cause model coupling. Association is not mediation or independent vascular evidence. A significant compartment and a nonsignificant compartment do not establish a spatial difference."
+}

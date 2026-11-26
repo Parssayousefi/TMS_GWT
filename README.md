@@ -6,6 +6,18 @@ paper; its private participant data and effect maps are not included.
 
 ## Current results 26 November 2026
 
+**Working analysis release, not a finalized submission.** The publication goal
+is a PID treatment-effect story supported across both datasets. Haemodynamic
+associations and fingerprint/repeatability results are not the selected narrative.
+Nonsignificant changes are not interpreted as stability or equivalence.
+
+The latest DAN audit independently reconstructs the scan-level counts. The
+normalized Aachen reduction is −0.467 gateways (unadjusted t p=.0382;
+Holm4 p=.1527; exact sign-flip p=.0566; maxT4 p=.1621). The normalized SUDMEX
+baseline-and-motion-adjusted active–sham estimate is +0.400 gateways (p=.422).
+This is an exploratory Aachen signal, without a replicated reduction.
+See [the latest audit and analysis status](docs/TMS_CURRENT_ANALYSIS_STATUS_20261126.md).
+
 The corrected Aachen analysis is complete: 15 participants, 60 scans, all five
 information measures and 20 participation/role outcomes, four spatial scopes,
 fresh conditional-null normalization, and four GWT-related expectations.
@@ -23,12 +35,16 @@ or validation of the superseded global increase.
 
 - [Interactive analysis dashboard](dashboard/index.html) covers full results,
   correction families, clinical outcomes, targeted flow and diagnostics.
-- [Current manuscript](manuscript/aachen_brief_report/corrected_20261126/manuscript.md)
+- [Corrected Aachen working draft](manuscript/aachen_brief_report/corrected_20261126/manuscript.md)
   and [supplement](manuscript/aachen_brief_report/corrected_20261126/supplement.md).
 - [Manuscript DOCX](manuscript/aachen_brief_report/corrected_20261126/Aachen_Brief_Research_Report_Corrected.docx)
   and [supplement DOCX](manuscript/aachen_brief_report/corrected_20261126/Supplementary_Material_Corrected.docx).
 - [Supplementary tables and scalar outputs](manuscript/aachen_brief_report/corrected_20261126/TMS_Corrected_Supplementary_Data.zip).
 - [Corrected analysis report](docs/TMS_CORRECTED_ANALYSES_20261126.md).
+
+The two-dataset haemodynamic draft in `manuscript/tms_cross_dataset_report/20261126`
+is retained as an abandoned framing, not the current submission draft. Its
+underlying analyses remain available in the dashboard for a complete record.
 
 The requested control-workspace image is Supplementary Figure S1, with a
 section citing Luppi and Yousefi. Dice overlaps are .776/.741 for matched SUDMEX
