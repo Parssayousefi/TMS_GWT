@@ -18,6 +18,17 @@ baseline-and-motion-adjusted active–sham estimate is +0.400 gateways (p=.422).
 This is an exploratory Aachen signal, without a replicated reduction.
 See [the latest audit and analysis status](docs/TMS_CURRENT_ANALYSIS_STATUS_20261126.md).
 
+The deeper PID follow-up is also complete: six processing modes in seven fixed
+pair groups, raw and separately normalized, plus regional change patterns tested
+against templates from the other cohort. No shared treatment effect was
+established. The smallest unadjusted SUDMEX baseline-and-motion p-value among the
+42 mode outcomes is .347 raw and .350 normalized; all cross-dataset Holm6 and
+Holm42 values are 1. All results and diagnostic checks are in the dashboard.
+[The additional-data review](docs/TMS_ADDITIONAL_DATASETS_20261126.md) identifies
+ds001927 as a downloadable 23-person, three-site TMS fMRI cohort. Metadata and
+file headers were verified. Its full pinned release is now downloading to
+`data/ds001927/`, with per-file checksum verification; it has not been analysed.
+
 The corrected Aachen analysis is complete: 15 participants, 60 scans, all five
 information measures and 20 participation/role outcomes, four spatial scopes,
 fresh conditional-null normalization, and four GWT-related expectations.

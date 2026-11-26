@@ -1,0 +1,54 @@
+{
+  "status": "Exploratory normalization sensitivity; specifications fixed before normalized treatment results",
+  "created_utc": "2026-11-26T13:16:08.598519+00:00",
+  "modes": {
+    "storage": [
+      "rtr",
+      "xtx",
+      "yty",
+      "sts"
+    ],
+    "transfer": [
+      "xty",
+      "ytx"
+    ],
+    "copy": [
+      "xtr",
+      "ytr"
+    ],
+    "erasure": [
+      "rtx",
+      "rty"
+    ],
+    "joint_to_individual": [
+      "str",
+      "stx",
+      "sty"
+    ],
+    "individual_to_joint": [
+      "rts",
+      "xts",
+      "yts"
+    ]
+  },
+  "scopes": [
+    "whole_brain",
+    "within_workspace",
+    "outside_workspace",
+    "workspace_boundary",
+    "FPN_striatum",
+    "FPN_DAN",
+    "FPN_DMN"
+  ],
+  "normalization": "Mode sum in nats then its own conditional CDF at each pair's TDMI, then mean across pairs. Never sum percentile atoms.",
+  "pools": {
+    "aachen_itbs": "output\\corrected_tms_analysis\\20261126T112054_284547Z\\normalization",
+    "sudmex_tms": "output\\tms_numit\\20261125T155252_384543Z"
+  },
+  "nulls": "32768 common valid draws per .005-nat TDMI grid point and per seed; two seeds; baseline-only cohort-specific VAR pools",
+  "numerics": "Common rejection on finite values and TDMI error <=1e-6; values with absolute magnitude <=1e-12 nats canonicalized to zero to handle MMI ties",
+  "calibration": "Independent scipy Lyapunov/root draws and LAPACK atom inversion; 128 population/finite-record replicates at three TDMI levels and two scan lengths per cohort; interpolation check tolerance .002",
+  "inference": "Same matched Aachen person averages and SUDMEX baseline+motion HC3 active-sham models as raw six-mode analysis. Holm6 per scope, Holm42 across scopes; Aachen exact maxT6/maxT42; replication conjunction Holm6/Holm42.",
+  "seed_sensitivity": "Both numerical seeds reported separately, not independent replications. Raw and normalized branches remain visible.",
+  "limits": "Conditional percentiles are not nats and the normalized modes are not an additive decomposition. Normalization does not establish a shared intervention effect or neural causation."
+}

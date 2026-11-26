@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "scans": 140,
+  "mode_node_means_match_validated_previous_extraction": true,
+  "hc3_matches_independent_sandwich": true,
+  "sources_unchanged": true,
+  "leave_one_out_rows": 330,
+  "primary_conjunction_holm6_passes": 0
+}

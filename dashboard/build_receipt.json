@@ -1,19 +1,21 @@
 {
-  "built_utc": "2026-11-26T12:51:13.468091+00:00",
+  "built_utc": "2026-11-26T13:22:46.101096+00:00",
   "passed": true,
   "counts": {
-    "reported_rows": 3570,
-    "diagnostic_rows": 533,
-    "source_tables": 52,
+    "reported_rows": 4620,
+    "diagnostic_rows": 1625,
+    "source_tables": 63,
     "roles": {
       "Planned comparison": 196,
       "Randomized acute comparison": 260,
       "Sensitivity": 509,
-      "Influence diagnostic": 1814,
+      "Influence diagnostic": 2144,
       "Descriptive longitudinal": 290,
       "Association": 427,
       "Method diagnostic": 44,
-      "Target comparison": 30
+      "Target comparison": 30,
+      "Exploratory treatment comparison": 540,
+      "Cross-dataset conjunction": 180
     }
   },
   "source_hashes_unchanged": true,
@@ -23,11 +25,11 @@
   "missing_values_serialized_as_null": true,
   "browser_qa": "See browser_qa.json; build receipt alone does not claim browser QA.",
   "outputs": {
-    "data.json": "7e503f58135fa22288103ba1cec53075ecba175f46b9d7500c8658e04d9a199b",
+    "data.json": "ce69059399c48e1d28ca73d71a6891f92f6f203b88ee5f876ed0106f1373a2cc",
     "DESIGN.md": "b8d172c20eed3bf65f0bdf3f34206dca62c59468ec3a36118ea89da5fdc558b4",
-    "index.html": "bb48072c8e18fbb911bea5777c8c3419f92b0434568e8c28d11a2b78666a5b45",
-    "provenance.json": "78cf31459cdd9fb802cecf22d6be9640530eeda84c865aed5be068e4638910e5",
-    "README.md": "35d6ccf519a07438ad3845d4001c5e118a5d3b1e396456473f2db7d3c478b529",
+    "index.html": "3fd20c1db3fb4c6a958b75303ac805b473df407b3b4e87b55eda0f886d3870c3",
+    "provenance.json": "f50a1b80a32eab56cd606efeaac1a2f492ea76a4cc04fff520cbf0a58debe77d",
+    "README.md": "ed46f1f326d37db22d0682f47ed673cb3f0ae963a9ac9e0aa828eaf36f6eed8d",
     "tables\\s00_raw_aachen_all40.csv": "26139287c48f37669f911dc4b704cf9e7a2a1e5426b554b8e146bd85f7317c18",
     "tables\\s01_raw_aachen_main30.csv": "555036d4d215b4653f4f2df8cd6ae11379fef4c574bb5116a0981b49fa812141",
     "tables\\s02_raw_aachen_information20.csv": "327f1c19ae580e8673c261e337707d28fc9892186731b834692a80d4c2e4d96e",
@@ -80,7 +82,18 @@
     "tables\\s49_hrf_cross_dataset_conjunction.csv": "f69f21d5ffc5b4f7fa9f9bc1b448ea47cabab60752113dedbcad432ed0fbd330",
     "tables\\s50_hrf_leave_one_out.csv": "b277e3032589e2b274724d01fb53b461764236a405a27948ce840a8fd8e678f9",
     "tables\\s51_hrf_influence_summary.csv": "2607fa9113ba4ad63f9cf4150ac6c8d30017190c8503f0006c6363c604f3f083",
-    "template.html": "cfe307fd8d5b18d020a0a9b736a7befd5dbccafbdb10351aa568efabe01c57a8"
+    "tables\\s52_mode_treatment_results.csv": "9d8f0469a943c8f4872b0391ff62c9f9d6cb44ace420c7c67a1ffe6a08974c31",
+    "tables\\s53_cross_dataset_conjunction.csv": "8a293b631e7ddb7e06be646b5fcf741f901b164444e1b62d084bff1abfe85f95",
+    "tables\\s54_mode_treatment_results_all_seeds.csv": "bbfd4e6c8c06e9dc5494bb54096e7016596d175897e530da0e393035850acf0b",
+    "tables\\s55_cross_dataset_conjunction_all_seeds.csv": "4050d26ab6a5e3ad511ac8ae277eef5b813829cc4e427f4d5967896569b3b9f0",
+    "tables\\s56_external_template_tests.csv": "9ad34bac95d91f505c5d76403e527c5978aeee0806b01fa18da1e53646374695",
+    "tables\\s57_cross_dataset_conjunction.csv": "6619da1ecf2d38ca632a782a7a7613d5df99b9772225833794a3201ed34c79b5",
+    "tables\\s58_leave_one_out.csv": "499737466aa42e3590638ad51462bed46b48ce13ead1b0725cb89b69374c0c59",
+    "tables\\s59_pattern_correlations.csv": "1097a33c813fb5da4d4af98cb77ce227e58efcb319ebbf651803217d9fd6a1e8",
+    "tables\\s60_interpolation_validation.csv": "5479d3361b8fe238b38677f70ec219283894d5bab42fa588b7c067fe8be455fc",
+    "tables\\s61_synthetic_calibration_summary.csv": "2f14ed8246c790ce29f7d39f0b50f1c579ff6291d0d1eef0de6c5a9088ff70de",
+    "tables\\s62_monte_carlo_stability.csv": "f8afc334567e33496311a7d6d1d0b639920f0861d2cf9d614dda136d70dbdde6",
+    "template.html": "d0e4cd40ca89207897133e2e733ad8b6ffa2342f9f3097b0ec48d0f1b02ef225"
   },
   "control_image_sha256": "2445849762ff8931802f355e2f0737d2c6212f88396b5ee3a8d47f6f68687245"
 }

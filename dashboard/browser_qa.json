@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-11-26T12:52:56.082655+00:00",
+  "created_utc": "2026-11-26T13:28:43.955335+00:00",
   "passed": true,
   "browser": "Playwright Chromium localhost",
   "viewports": [
@@ -13,36 +13,38 @@
     }
   ],
   "counts": {
-    "reported_rows": 3570,
-    "diagnostic_rows": 533,
-    "source_tables": 52,
+    "reported_rows": 4620,
+    "diagnostic_rows": 1625,
+    "source_tables": 63,
     "roles": {
       "Planned comparison": 196,
       "Randomized acute comparison": 260,
       "Sensitivity": 509,
-      "Influence diagnostic": 1814,
+      "Influence diagnostic": 2144,
       "Descriptive longitudinal": 290,
       "Association": 427,
       "Method diagnostic": 44,
-      "Target comparison": 30
+      "Target comparison": 30,
+      "Exploratory treatment comparison": 540,
+      "Cross-dataset conjunction": 180
     }
   },
   "checks": [
-    "Raw and normalized DAN chart values match source rows for both cohorts",
-    "Unadjusted versus Holm4 values visibly distinguished",
-    "Four-row normalized Aachen GWT filter returns exact sign-flip and maxT4 values",
+    "63 source tables and 4620 reported rows present, including all 1050 new PID treatment, conjunction and omission rows",
+    "PID sources reproduce raw and normalized SUDMEX minimum p-values from their source tables",
+    "Aachen processing-mode nominal p labelled exact sign-flip; scope correction maxT6; widest supplied family maxT42 or Holm42",
+    "Normalized SUDMEX mode filter returns all 252 rows (42 endpoints, two models, three numerical references)",
     "Default adjusted-p threshold is off",
-    "All 52 sources and 3570 rows present, including 1195 new cross-dataset rows",
     "No desktop/mobile document overflow",
     "Desktop/mobile screenshots visually inspected",
     "No browser console errors"
   ],
   "source_sha256": {
-    "dashboard\\index.html": "bb48072c8e18fbb911bea5777c8c3419f92b0434568e8c28d11a2b78666a5b45",
-    "dashboard\\template.html": "cfe307fd8d5b18d020a0a9b736a7befd5dbccafbdb10351aa568efabe01c57a8",
-    "dashboard\\data.json": "7e503f58135fa22288103ba1cec53075ecba175f46b9d7500c8658e04d9a199b",
-    "dashboard\\provenance.json": "78cf31459cdd9fb802cecf22d6be9640530eeda84c865aed5be068e4638910e5",
-    "dashboard\\build_receipt.json": "d5e55627f6f9963b7461ed5fc2f632e4c80724dfd23629c9c9860af3e2edaecc",
-    "setup\\build_tms_dashboard.py": "a9d80280c43e459b0655e10f1b2002dd213f126fdc3099e88441c018e2f859a8"
+    "dashboard\\index.html": "3fd20c1db3fb4c6a958b75303ac805b473df407b3b4e87b55eda0f886d3870c3",
+    "dashboard\\template.html": "d0e4cd40ca89207897133e2e733ad8b6ffa2342f9f3097b0ec48d0f1b02ef225",
+    "dashboard\\data.json": "ce69059399c48e1d28ca73d71a6891f92f6f203b88ee5f876ed0106f1373a2cc",
+    "dashboard\\provenance.json": "f50a1b80a32eab56cd606efeaac1a2f492ea76a4cc04fff520cbf0a58debe77d",
+    "dashboard\\build_receipt.json": "bdefcaffb4946c4247b0b98f247cd8f563652412311e733db345be42d0a7d2de",
+    "setup\\build_tms_dashboard.py": "345b52b0dd44f9d47df5859d96fb81d1a8d637a2c47cf4d1c2017a5c9ca5ae7b"
   }
 }

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "scans": 140,
+  "source_files_unchanged": 159,
+  "max_interpolation_error": 0.0007008824941001635,
+  "calibration": {
+    "max_independent_lyapunov_error": 0.0,
+    "max_analytic_cofactor_error_in_calibration": 1.0994833770539003e-05,
+    "calibration_covariances_with_cofactor_error_over_1e_6": 5,
+    "max_finite_record_mean_bias": 0.07914761115409819,
+    "max_population_mean_bias": 0.0511027954603569,
+    "uncovered_rows": 0,
+    "interpretation": "Diagnostic calibration under the specified VAR prior only; not validation that real filtered BOLD is a VAR(1) process."
+  },
+  "shared_holm6_results": 0,
+  "shared_holm42_results": 0,
+  "note": "Numerical verification under the specified null prior; not proof that BOLD follows a VAR(1) model."
+}

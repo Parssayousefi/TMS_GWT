@@ -1,0 +1,50 @@
+{
+  "created_utc": "2026-11-26T13:00:22.906563+00:00",
+  "status": "Exploratory follow-up; not preregistered. Specification saved before outcome extraction.",
+  "question": "Does prefrontal stimulation alter specific modes of predictive information processing consistently across cohorts?",
+  "modes": {
+    "storage": [
+      "rtr",
+      "xtx",
+      "yty",
+      "sts"
+    ],
+    "transfer": [
+      "xty",
+      "ytx"
+    ],
+    "copy": [
+      "xtr",
+      "ytr"
+    ],
+    "erasure": [
+      "rtx",
+      "rty"
+    ],
+    "joint_to_individual": [
+      "str",
+      "stx",
+      "sty"
+    ],
+    "individual_to_joint": [
+      "rts",
+      "xts",
+      "yts"
+    ]
+  },
+  "reference": "Mediano et al. PNAS 2025; doi:10.1073/pnas.2423297122",
+  "primary_scope": "Workspace-boundary pairs, motivated by the requested workspace versus outside question. All six modes form one family.",
+  "additional_scopes": [
+    "whole_brain",
+    "within_workspace",
+    "outside_workspace",
+    "FPN_striatum",
+    "FPN_DAN",
+    "FPN_DMN"
+  ],
+  "families": "All six modes per scope (Holm6; Aachen maxT6); all 42 outcomes (Holm42; Aachen maxT42). Conjunctions max(two two-sided p), p=1 if signs differ; Holm6 and Holm42. Baseline-only SUDMEX sensitivity retains identical families.",
+  "contrasts": "Aachen 15 independent people: average two complete visit changes. SUDMEX 22 active/18 sham: followup ~ arm + baseline + deltaFD, HC3/t.",
+  "normalization": "Raw nats. No division by total mutual information and no summation of conditional percentiles. Any future normalized-mode analysis requires its own matched null calibration.",
+  "prohibitions": "No HRF association models, no inference of stability from nonsignificance, no raw/normalized GWT rerouting or preprocessing change, no HCP/psychedelic recomputation.",
+  "validation": "Every pair's five saved production composites; sampled independent full 16-atom reconstruction with LAPACK determinants; source-swap invariance; six-mode sum equals TDMI; HC3 independent implementations; unchanged source hashes."
+}

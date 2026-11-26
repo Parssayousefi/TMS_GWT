@@ -1,0 +1,219 @@
+{
+  "checked_date": "2026-11-26",
+  "description": "Public metadata and header access only, not full-file integrity or MRI QC",
+  "datasets": [
+    {
+      "dataset": "ds001927",
+      "ref": "2.1.0",
+      "commit": "3239a60164f7a230e02b6a42eb36a13ff4f97f57",
+      "participant_rows": 23,
+      "participant_columns": [
+        "participant_id",
+        "sex",
+        "age"
+      ],
+      "rest_files": 138,
+      "rest_subjects": 23,
+      "rest_by_session": {
+        "ses-ctr": 46,
+        "ses-fro": 46,
+        "ses-occ": 46
+      },
+      "t1w_files": 69,
+      "sidecar_values": {
+        "RepetitionTime": [
+          "1.25"
+        ],
+        "EchoTime": [
+          "0.03"
+        ],
+        "TaskName": [
+          "Rest Post",
+          "Rest Pre"
+        ],
+        "ProtocolName": [
+          "None"
+        ],
+        "SeriesDescription": [
+          "None"
+        ]
+      },
+      "license": "CC0",
+      "sample_access": {
+        "url": "https://s3.amazonaws.com/openneuro.org/ds001927/sub-s001/ses-ctr/func/sub-s001_ses-ctr_task-restpost_bold.nii.gz",
+        "http_status": 206,
+        "content_range": "bytes 0-65535/164149966",
+        "bytes_read": 65536,
+        "sha256_partial": "0afa9be09a6ce85f66eb1c0196bd5d516faab65e70e867d31b4cdc07cdfe642f",
+        "dimensions": [
+          4,
+          64,
+          64,
+          40,
+          600,
+          1,
+          1,
+          1
+        ],
+        "pixdim": [
+          -1.0,
+          3.0,
+          3.0,
+          3.299999952316284,
+          1.25,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "header_only_not_full_integrity_check": true
+      },
+      "rest_plus_t1_bytes": 22968325811,
+      "full_recordings_downloaded": false
+    },
+    {
+      "dataset": "ds008893",
+      "ref": "main",
+      "commit": "6126be09093f4ea218bf8735bf16032302775315",
+      "participant_rows": 1,
+      "participant_columns": [
+        "participant_id",
+        "study"
+      ],
+      "rest_files": 24,
+      "rest_subjects": 1,
+      "rest_by_session": {
+        "ses-01": 6,
+        "ses-02": 6,
+        "ses-03": 6,
+        "ses-04": 6
+      },
+      "t1w_files": 0,
+      "sidecar_values": {
+        "RepetitionTime": [
+          "1"
+        ],
+        "EchoTime": [
+          "0.0134",
+          "0.03111",
+          "0.03112",
+          "0.04882",
+          "0.04884"
+        ],
+        "TaskName": [
+          "None"
+        ],
+        "ProtocolName": [
+          "func_task-rest_MB6_TE3_bold_dir-ap",
+          "func_task-rest_run-01_MB6_TE3_bold_dir-ap",
+          "func_task-rest_run-02_MB6_TE3_bold_dir-ap"
+        ],
+        "SeriesDescription": [
+          "func_task-rest_MB6_TE3_bold_dir-ap",
+          "func_task-rest_run-01_MB6_TE3_bold_dir-ap",
+          "func_task-rest_run-02_MB6_TE3_bold_dir-ap"
+        ]
+      },
+      "license": "CC0",
+      "sample_access": {
+        "url": "https://s3.amazonaws.com/openneuro.org/ds008893/sub-001/ses-01/sub-001_ses-01_task-rest_run-01_echo-1_bold.nii",
+        "http_status": 206,
+        "content_range": "bytes 0-65535/524880352",
+        "bytes_read": 65536,
+        "sha256_partial": "506b6b152f43b66c8d4030c90ee0d6c808263ba258d279b930a27f5dba8ad03d",
+        "dimensions": [
+          4,
+          90,
+          90,
+          72,
+          450,
+          1,
+          1,
+          1
+        ],
+        "pixdim": [
+          -1.0,
+          2.4000000953674316,
+          2.4000000953674316,
+          2.4000000953674316,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "header_only_not_full_integrity_check": true
+      },
+      "rest_plus_t1_bytes": 12597128448,
+      "full_recordings_downloaded": false
+    },
+    {
+      "dataset": "ds008064",
+      "ref": "main",
+      "commit": "d7b64e9a048559df210f9923d57a814ed9370379",
+      "participant_rows": 28,
+      "participant_columns": [
+        "participant_id",
+        "MADRS Pre",
+        "MADRS Post",
+        "Age",
+        "Sex at birth"
+      ],
+      "rest_files": 50,
+      "rest_subjects": 27,
+      "rest_by_session": {
+        "ses-1": 26,
+        "ses-2": 24
+      },
+      "t1w_files": 52,
+      "sidecar_values": {
+        "RepetitionTime": [
+          "3"
+        ],
+        "EchoTime": [
+          "0.0169"
+        ],
+        "TaskName": [
+          "rest"
+        ],
+        "ProtocolName": [
+          "NNU - SST",
+          "NNU - Umbrella - 2018.02",
+          "[XT-ID:17-M-0147] NNU -"
+        ],
+        "SeriesDescription": [
+          "Axial rsfMRI (Eyes Open)"
+        ]
+      },
+      "license": "CC0",
+      "sample_access": {
+        "url": "https://s3.amazonaws.com/openneuro.org/ds008064/sub-D01/ses-1/func/sub-D01_ses-1_task-rest_bold.nii.gz",
+        "http_status": 206,
+        "content_range": "bytes 0-65535/49614232",
+        "bytes_read": 65536,
+        "sha256_partial": "1abe210f9ef7ae77df2115a74ee7b03d3a8955908b01b9ee8f424d67fc0b7d91",
+        "dimensions": [
+          4,
+          64,
+          64,
+          48,
+          200,
+          1,
+          1,
+          1
+        ],
+        "pixdim": [
+          -1.0,
+          3.4375,
+          3.4375,
+          3.4000000953674316,
+          3.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "header_only_not_full_integrity_check": true
+      },
+      "rest_plus_t1_bytes": null,
+      "full_recordings_downloaded": false
+    }
+  ]
+}

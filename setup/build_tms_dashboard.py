@@ -21,6 +21,9 @@ AA = ROOT / "output/corrected_aachen_target_flow/20261126T113156_656159Z"
 SUD = ROOT / "output/targeted_information_flow/20261125T193623_492441Z"
 QC = ROOT / "output/control_workspace_qc/combined_20261125T234309_541220Z"
 CROSS = ROOT / "output/cross_dataset_spatial_hrf/20261126T121731_876575Z"
+PID_RAW = ROOT / "output/pid_processing_modes/20261126T130022_906563Z"
+PID_NORMALIZED = ROOT / "output/pid_modes_normalized/20261126T131608_596458Z"
+PID_PATTERNS = ROOT / "output/pid_change_patterns/20261126T130710_947110Z"
 
 
 def sha(path):
@@ -128,6 +131,25 @@ def main():
         add(CROSS, name, label, 'Cross-dataset spatial and HRF', role, 'Mixed', 'mixed', note)
     add(CROSS, 'hrf_influence_summary.csv', 'Both datasets · omission stability', 'Cross-dataset diagnostics', 'QC', 'Mixed', 'raw', 'Direction and corrected support across every omission, without excluding influential participants.', diagnostic=True)
 
+    for root, branch, suffix in [(PID_RAW, 'raw', ''), (PID_NORMALIZED, 'normalized', '_all_seeds')]:
+        add(root, f'mode_treatment_results{suffix}.csv', f'Six PID modes · both datasets · {branch}', 'PID processing modes', 'Exploratory treatment comparison', 'Mixed', branch,
+            'Six disjoint modes, seven fixed scopes. Aachen averages two paired visit changes per person (n15), exact sign flips/maxT6/maxT42. SUDMEX retains baseline-only and baseline+motion HC3 active-sham models (22/18). Holm6 within scope and Holm42 across all scopes. Normalized modes each use their own conditional CDF; numerical seeds are sensitivities, not replications.')
+        add(root, f'cross_dataset_conjunction{suffix}.csv', f'Six PID modes · shared effects · {branch}', 'PID processing modes', 'Cross-dataset conjunction', 'Mixed', branch,
+            'Maximum of both two-sided cohort p-values, or one if signs differ; Holm6 per scope and Holm42 across scopes. Original cohort effects and p-values remain in the details. Conjunction rows are not independent of their component tests.')
+    add(PID_PATTERNS, 'external_template_tests.csv', 'Regional PID change · external cohort templates', 'PID regional change', 'Exploratory treatment comparison', 'Mixed', 'raw',
+        'Test each cohort against a centered regional change template estimated only in the other cohort. Primary 454 regions and 400 cortical-node sensitivity; six modes, Holm6 per branch and Holm12 across branches. Correct participant-level contrasts; no parcel-wise p values.')
+    add(PID_PATTERNS, 'cross_dataset_conjunction.csv', 'Regional PID change · shared response', 'PID regional change', 'Cross-dataset conjunction', 'Mixed', 'raw',
+        'Both projected treatment effects must be positive to reproduce the external pattern; otherwise conjunction p=1. Holm6 per branch and Holm12 across branches. No inference of stability from a failed replication test.')
+    add(PID_PATTERNS, 'leave_one_out.csv', 'Regional PID change · all omission fits', 'PID regional change', 'Influence diagnostic', 'Mixed', 'raw',
+        'All 330 participant omission fits, with external templates held fixed. Holm6 within each omission; dependent diagnostic fits, not independent replications.')
+    add(PID_PATTERNS, 'pattern_correlations.csv', 'Regional PID change · descriptive map correlations', 'PID diagnostics', 'QC', 'Mixed', 'raw',
+        'Map correlations are descriptive only. They do not use parcels as independent observations.', diagnostic=True)
+    for name, label in [('interpolation_validation.csv', 'Mode normalization · CDF interpolation'),
+                        ('synthetic_calibration_summary.csv', 'Mode normalization · synthetic calibration'),
+                        ('monte_carlo_stability.csv', 'Mode normalization · numerical seed sensitivity')]:
+        add(PID_NORMALIZED, name, label, 'PID diagnostics', 'Calibration diagnostic', 'Mixed', 'normalized',
+            'Numerical and model diagnostics only. Conditional CDFs calibrated separately for the six composites; these diagnostics are not intervention tests.', diagnostic=True)
+
     sources, rows, diagnostics, original_hashes = [], [], [], {}
     for index, spec in enumerate(specs):
         p = spec["root"] / spec["name"]
@@ -169,8 +191,8 @@ def main():
             if branch == "mixed":
                 branch = "raw"
             scale = "normalized" if branch == "normalized" else "raw"
-            endpoint = raw.get("metric") or raw.get("neural_metric") or raw.get("outcome") or raw.get('measure') or (f"{raw.get('outcome_scope',raw.get('scope'))}__phi / HRF {raw['parameter']}" if raw.get("parameter") else "Not supplied")
-            detail = " · ".join(str(raw[k]) for k in ("scope", "predictor_scope", "comparison", "contrast", "clinical_metric", "hrf_parameter", "model", "check", "variant", "definition", "reference_seed", "omitted_subject", "omitted") if raw.get(k) is not None)
+            endpoint = raw.get("metric") or raw.get("neural_metric") or raw.get("outcome") or raw.get('measure') or raw.get('mode') or (f"{raw.get('outcome_scope',raw.get('scope'))}__phi / HRF {raw['parameter']}" if raw.get("parameter") else "Not supplied")
+            detail = " · ".join(str(raw[k]) for k in ("scope", "predictor_scope", "comparison", "contrast", "clinical_metric", "hrf_parameter", "model", "check", "variant", "definition", "reference_seed", "omitted_subject", "omitted", "omission") if raw.get(k) is not None)
             rows.append(dict(id=f"{ident}_{ix}", source=ident, dataset=dataset, scale=scale,
                              branch=branch, endpoint=endpoint, detail=detail, role=spec["role"],
                              group=spec["group"], original=raw))
@@ -201,6 +223,8 @@ def main():
                      CORE / "haemodynamic_followup/analysis_specification.json", CORE / "haemodynamic_followup/verification.json",
                      QC / "README.md", QC / "qa.json", QC / "provenance.json"]
     receipt_paths += [CROSS/'analysis_specification.json', CROSS/'verification.json']
+    receipt_paths += [root / name for root in [PID_RAW, PID_NORMALIZED, PID_PATTERNS]
+                      for name in ['analysis_specification.json', 'verification.json']]
     receipts = [dict(path=str(p), sha256=sha(p)) for p in receipt_paths]
     image_path = QC / "control_workspace_comparison.png"
     image_bytes = image_path.read_bytes()

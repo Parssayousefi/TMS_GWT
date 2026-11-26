@@ -1,0 +1,41 @@
+{
+  "created_utc": "2026-11-26T13:07:10.947110+00:00",
+  "status": "Exploratory analysis, not preregistered; specified before regional outcome extraction.",
+  "question": "Do two independent cohorts share regional redistribution of PhiID processing modes after stimulation?",
+  "modes": {
+    "storage": [
+      "rtr",
+      "xtx",
+      "yty",
+      "sts"
+    ],
+    "transfer": [
+      "xty",
+      "ytx"
+    ],
+    "copy": [
+      "xtr",
+      "ytr"
+    ],
+    "erasure": [
+      "rtx",
+      "rty"
+    ],
+    "joint_to_individual": [
+      "str",
+      "stx",
+      "sty"
+    ],
+    "individual_to_joint": [
+      "rts",
+      "xts",
+      "yts"
+    ]
+  },
+  "primary_features": "All 454 regions; each feature is the mean of the mode over its 453 incident pairs.",
+  "primary_templates": "Aachen mean of participant-averaged two-visit changes; SUDMEX baseline-plus-motion-adjusted active coefficient at each region. Center template spatially and scale absolute weights to sum to one.",
+  "validation": "Use only the OTHER dataset to construct each template. Project individual pre/post regional vectors onto that external template. Aachen paired sign flips; SUDMEX followup projected score ~ active + baseline projected score + deltaFD, HC3/t.",
+  "inference": "Two-sided cohort p values; replication requires BOTH projected effects positive. Conjunction p=max(two cohort p), or 1 if either is nonpositive. Holm6 for all six modes. Aachen also exact joint maxT6. No parcel-independence assumption.",
+  "sensitivities": "Cortical 400-node feature subset, still all-destination node means; Holm6 within branch and Holm12 across both branches. Baseline-only SUDMEX scalar model. Every omission in the full-region primary, external templates kept fixed.",
+  "limits": "Spatial redistribution, not global increase; no inference of stability or causal direction. No pooling of the uncontrolled Aachen contrast with the randomized contrast. External templates avoid within-cohort outcome selection but this follow-up is exploratory."
+}

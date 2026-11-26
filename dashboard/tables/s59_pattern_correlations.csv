@@ -1,0 +1,13 @@
+branch,mode,pearson_r,spearman_rho,inference
+all_regions,storage,-0.02027402254546995,-0.022866645272340048,Descriptive only; no parcel-wise p value.
+all_regions,transfer,-0.03619952055426614,-0.03479313812773567,Descriptive only; no parcel-wise p value.
+all_regions,copy,-0.03399675327607282,-0.03205987932189175,Descriptive only; no parcel-wise p value.
+all_regions,erasure,-0.0335589048509919,-0.031896247988671474,Descriptive only; no parcel-wise p value.
+all_regions,joint_to_individual,-0.006270248008496216,-0.0284640935981485,Descriptive only; no parcel-wise p value.
+all_regions,individual_to_joint,-0.007603409638265722,-0.023705832924842754,Descriptive only; no parcel-wise p value.
+cortical_nodes,storage,-0.019795452761245034,-0.01639828998931243,Descriptive only; no parcel-wise p value.
+cortical_nodes,transfer,-0.04799214852988645,-0.04379183619897624,Descriptive only; no parcel-wise p value.
+cortical_nodes,copy,-0.04580101766414964,-0.04139575872349202,Descriptive only; no parcel-wise p value.
+cortical_nodes,erasure,-0.04529840877359226,-0.04039937749610935,Descriptive only; no parcel-wise p value.
+cortical_nodes,joint_to_individual,-0.012756598701299204,-0.024024525153282204,Descriptive only; no parcel-wise p value.
+cortical_nodes,individual_to_joint,-0.014285564265046267,-0.020195563722273262,Descriptive only; no parcel-wise p value.
