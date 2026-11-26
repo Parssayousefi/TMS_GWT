@@ -118,5 +118,7 @@ within Aachen and SUDMEX.
 [The new dataset review](TMS_ADDITIONAL_DATASETS_20261126.md) recommends
 OpenNeuro ds001927 as the most practical additional resting-state fMRI cohort.
 Public metadata and sample imaging headers were downloaded and verified. The
-full version 2.1.0 release is now downloading to `data/ds001927/` under the
-user's instruction, with pinned content checksums. It has not been analysed.
+full version 2.1.0 release is downloaded in `data/ds001927/`: 433 files,
+22.97 GB, all content hashes verified, with 138 resting runs and 69 structural
+images. All 207 NIfTI headers were checked. It has not been preprocessed or
+analysed; motion, registration and signal coverage still need QC.

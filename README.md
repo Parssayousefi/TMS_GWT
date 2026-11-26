@@ -26,8 +26,10 @@ established. The smallest unadjusted SUDMEX baseline-and-motion p-value among th
 Holm42 values are 1. All results and diagnostic checks are in the dashboard.
 [The additional-data review](docs/TMS_ADDITIONAL_DATASETS_20261126.md) identifies
 ds001927 as a downloadable 23-person, three-site TMS fMRI cohort. Metadata and
-file headers were verified. Its full pinned release is now downloading to
-`data/ds001927/`, with per-file checksum verification; it has not been analysed.
+file headers were verified. The full pinned release is downloaded in
+`data/ds001927/`: 433 verified files, 22.97 GB, including 138 resting runs and
+69 structural images. Preprocessing and PID analysis have not started. See the
+[download receipt](PROVENANCE/additional_datasets_20261126/download_complete.json).
 
 The corrected Aachen analysis is complete: 15 participants, 60 scans, all five
 information measures and 20 participation/role outcomes, four spatial scopes,

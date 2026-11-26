@@ -1,0 +1,28 @@
+{
+  "state": "complete",
+  "dataset": "ds001927",
+  "version": "2.1.0",
+  "commit": "3239a60164f7a230e02b6a42eb36a13ff4f97f57",
+  "total_files": 433,
+  "verified_bytes": 22968601962,
+  "completed_utc": "2026-11-26T14:11:05.079333+00:00",
+  "nifti_headers_verified": 207,
+  "rest_runs": 138,
+  "t1w_images": 69,
+  "participants": 23,
+  "sessions_per_participant": 3,
+  "content_checks": "Pinned Git blobs and annex digests; SHA-256 recorded for every local file",
+  "quality_limit": "Header/content integrity checks only; no motion, registration or signal-coverage QC and no preprocessing",
+  "local_data_directory": "data/ds001927",
+  "imaging_committed_to_git": false,
+  "preprocessing_started": false,
+  "pid_analysis_started": false,
+  "source_sha256": {
+    "output\\ds001927_download_20261126\\status.json": "2da48edfe0786d7e9891cdf9c90a5853acaf31abc45bbab681bf2bc600ee1452",
+    "output\\ds001927_download_20261126\\download_manifest.json": "36896cb3fd5c4d7ea8c5c2505a8861d566da94b10122c4f3d1ca0c210536114b",
+    "output\\ds001927_download_20261126\\verified_files.json": "ceeabbbcb427eb111f32a4c4461b2671d4f9ffd009f08784a2f2dac4b1246d3c",
+    "output\\ds001927_download_20261126\\nifti_header_checks.json": "e78931f33883f8f4997ea13e723afb946ba0959b0e7ecea87f385c84967327d7",
+    "setup\\record_ds001927_download.py": "e1b001b2e1cddc4003cb8ddca824b43830dfd2622d2f787d563b91ff38a18f2d",
+    "setup\\download_ds001927.py": "a5c16aac8be76a0d90252fe57daf1b1517e9a9715668dc55c6b6ee0164d0901c"
+  }
+}

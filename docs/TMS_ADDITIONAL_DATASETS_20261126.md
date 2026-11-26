@@ -72,11 +72,14 @@ immediate obstacle.
 
 The initial audit downloaded only public metadata, inventories and 64-KiB file
 samples for ds001927, ds008893 and ds008064. Subsequently, the user requested
-the full ds001927 release. It is now downloading to `data/ds001927/` using
-`setup/download_ds001927.py`; the manifest is pinned to version 2.1.0 and
-verifies Git metadata hashes and annex content digests. Interrupted transfers
-are resumable. Current transfer status is recorded in
-`output/ds001927_download_20261126/status.json`.
+the full ds001927 release. **The download is complete** in `data/ds001927/`:
+433 files and 22,968,601,962 bytes including metadata and the deposited study
+code. Git metadata hashes and annex content digests all matched the pinned
+version 2.1.0 manifest; SHA-256 hashes were also recorded for every local file.
+All 207 NIfTI headers were checked, including 600 volumes at TR 1.25 s for each
+of the 138 resting runs. The study code was downloaded but not executed.
+The public aggregate receipt is
+`PROVENANCE/additional_datasets_20261126/download_complete.json`.
 
 No new participant data have been processed, no restricted access was obtained,
 and no authors were contacted. Header access alone does not verify full-file

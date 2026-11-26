@@ -172,7 +172,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--workers", type=int, default=8)
     args = parser.parse_args()
-    assert 1 <= args.workers <= 32
+    assert 1 <= args.workers <= 128
     OUT.mkdir(parents=True, exist_ok=True)
     TARGET.mkdir(parents=True, exist_ok=True)
     tree = json.loads((AUDIT / f"{DATASET}_tree.json").read_text())
