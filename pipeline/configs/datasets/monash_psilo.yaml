@@ -1,0 +1,124 @@
+# Monash PsiConnect Dataset Configuration (OpenNeuro ds006110)
+# Psilocybin (19 mg, acute) vs Baseline resting-state fMRI
+# Multi-echo data (4 echoes) - fMRIPrep optimally combines; downstream uses combined BOLD
+
+dataset_id: "monash_psilo"
+name: "Monash PsiConnect Study (ds006110)"
+
+# Data paths
+paths:
+  local:
+    bids_root: "D:/projects/TMS_GWT/data/monash_psilo"
+    fmriprep_dir: "D:/projects/TMS_GWT/data/monash_psilo/derivatives/fmriprep"
+  hpc:
+    bids_root: "/home/s3648540/data_pi-michielvanelkm/Parsa/GWT/data/monash_psilo"
+    fmriprep_dir: "/home/s3648540/data_pi-michielvanelkm/Parsa/GWT/data/monash_psilo/derivatives/fmriprep"
+  # Legacy
+  bids_root: "D:/projects/TMS_GWT/data/monash_psilo"
+  fmriprep_dir: "D:/projects/TMS_GWT/data/monash_psilo/derivatives/fmriprep"
+
+# BIDS structure
+bids_structure:
+  has_sessions: true  # sub-PCXXX/ses-{baseline|psilocybin}/func/...
+
+# Subject information
+# 65 enrolled; exclude the 3 without a psilocybin session:
+#   PC016, PC024 = withdrawn pre-psilocybin (baseline "not analysed" per data paper)
+#   PC232       = dosed but no post-dose imaging
+# -> analysis cohort = 62, matching Novelli et al. (Sci Data 2026)
+subjects:
+  auto_discover: true
+  include: []
+  exclude:
+    - "PC016"
+    - "PC024"
+    - "PC232"
+
+# Task/condition information
+# Condition is determined by session name (Pattern A, like Berlin/Missouri).
+# Sessions renamed from ses-01/ses-02 by rename_monash_sessions.py.
+tasks:
+  psilocybin:
+    bids_task_name: "rest"
+    description: "Acute psilocybin condition (19 mg, ~80 min post-dose)"
+    is_control: false
+
+  baseline:
+    bids_task_name: "rest"
+    description: "Baseline condition (no drug, ~1 week pre-dose)"
+    is_control: true
+
+# Run selection
+run_selection:
+  strategy: "first"  # 1 run per session
+
+# Multi-echo configuration (documentation; fMRIPrep handles combination natively)
+multi_echo:
+  n_echoes: 4  # TE = 12.60 / 29.23 / 45.86 / 62.49 ms
+  strategy: "optimal_combination"  # fMRIPrep T2*-weighted optimal combination (as Missouri)
+
+# File naming patterns (for fMRIPrep outputs)
+file_patterns:
+  bold: "sub-{subject}_ses-{session}_task-{task}_run-{run}_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz"
+  confounds: "sub-{subject}_ses-{session}_task-{task}_run-{run}_desc-confounds_timeseries.tsv"
+  mask: "sub-{subject}_ses-{session}_task-{task}_run-{run}_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz"
+
+# Quality control criteria (Luppi et al. methodology, uniform with other datasets)
+# NOTE: rest scans are only ~7.6 min, so the 8-min salvage window can never rescue
+# a TRUNCATE — borderline scans become EXCLUDE (kept uniform deliberately).
+qc:
+  motion_thresholds:
+    max_translation_mm: 3.0
+    max_rotation_deg: 3.15
+  min_salvage_duration_min: 8.0
+  auto_truncate: true
+  max_fd_mean: 0.5
+  max_fd_peak: 3.0
+  min_timepoints: 100
+  exclusions_file: "results/qc/monash_psilo/exclusions.csv"
+  # Second exclusion source (key name is historical from the Cambridge ART use;
+  # the mechanism is generic): manual, non-motion exclusions that survive
+  # regeneration of exclusions.csv. Currently: PC215 psilocybin (scan-length
+  # outlier, 194/504 volumes). Merged with worst-case collapse (EXCLUDE wins).
+  art_exclusions_file: "results/qc/monash_psilo/exclusions_manual.csv"
+
+# Dataset-specific preprocessing overrides
+# CRITICAL: Monash uses TR=0.91s, NOT the global default 2.0s
+preprocessing:
+  tr: 0.91  # 910 ms TR from BIDS JSON sidecars
+  volumes_to_remove: 5  # uniform first-N removal (Luppi method); 5 x 0.91 s = 4.55 s
+  volumes_to_remove_last: 0  # Match Luppi: remove first N only
+  bandpass_low: 0.008   # Hz - identical to Luppi
+  bandpass_high: 0.09   # Hz - identical to Luppi (Nyquist = 0.549 Hz, safe)
+  compcor_wm: 5
+  compcor_csf: 5
+  global_signal_regression: false
+
+# fMRIPrep extra arguments
+# BIDS filter restricts anatomical inputs (T1w/T2w) to ses-baseline for ALL subjects:
+# uniform baseline-only anat (the authors removed 8 motion-corrupted psilocybin-day
+# T1s from the release; without the filter 54/62 subjects would get a merged 2-T1
+# reference and 8 would not). BOLD/fmap unfiltered.
+fmriprep_extra_args: "--bids-filter-file /data/bids_filter.json"
+
+# Notes
+notes: |
+  Monash PsiConnect Study (OpenNeuro ds006110 v1.2.1)
+  - Novelli et al., Sci Data (2026), doi:10.1038/s41597-026-07312-1
+  - Open-label pre/post design, NO PLACEBO ARM: ses-baseline (no drug) vs
+    ses-psilocybin (acute 19 mg, fMRI ~80 min post-dose; 0.152-0.388 mg/kg)
+  - 65 enrolled / 62 analysed (see subjects.exclude)
+  - PC2xx IDs = 8-week meditation-training arm; PC0xx = no-meditation controls
+    (potential covariate; NOT encoded in participants.tsv)
+  - Multi-echo resting-state BOLD: 4 echoes, TR=0.91s, 504 volumes (~7.6 min),
+    eyes closed, MB=4, RL phase encoding, 3.2 mm iso
+  - sub-PC215 ses-psilocybin rest has only 194 volumes (~2.9 min, session cut
+    short; also no fmap) - passes min_timepoints but review at QC gate
+  - Authors' recommended rest exclusions (Supp Table 2): PC003, PC007
+    (psilocybin session) - cross-check against our motion QC
+  - No SDC anywhere (fmaps present but unused; uniform with all GWT datasets
+    and with the authors' own fMRIPrep 22.0.2 run)
+  - Anatomy: baseline-only via bids_filter.json (see fmriprep_extra_args)
+  - Sessions renamed from numeric (see rename_monash_sessions.py);
+    provenance in data/monash_psilo/PREPROCESSING_NOTES.md
+  - Source: OpenNeuro s3://openneuro.org/ds006110

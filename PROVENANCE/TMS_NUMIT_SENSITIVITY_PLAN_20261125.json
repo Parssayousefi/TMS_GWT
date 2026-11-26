@@ -1,0 +1,19 @@
+{
+  "status": "exploratory_method_extension_after_raw_results",
+  "purpose": "Evaluate whether TMS information-architecture effects remain when each measure is conditioned on pairwise TDMI, using a NuMIT-inspired PhiID extension",
+  "inputs": "The same 140 acute TMS scans, same 40 SUDMEX pairs and 15 Aachen participants with two intensities; deconvolved timeseries and completed production PhiID matrices",
+  "null": "Stationary 2D Gaussian VAR(1); empirical coefficient pool from eligible baseline scans within each dataset, pooled without treatment labels, shared across all visits/arms; Wishart(I2, df=2) residual covariance; spectral radius adjusted to match TDMI at lag 1 (2 seconds)",
+  "reference_pool": "1024 fixed random ROI pairs per baseline scan, seed 2026112503; same sampling as bounded feasibility pilot",
+  "scalable_evaluation": "Precompute conditional null CDFs on a TDMI grid with 0.005-nat spacing and two independent 32768-draw references. Interpolate CDF values, not atom values. Validate against direct evaluations at held-out real TDMI/atom pairs before analysing effects.",
+  "primary_normalized_estimate": "Average the two independent CDF estimates (equivalent to combining the conditional reference samples); retain each seed's output for Monte Carlo sensitivity",
+  "validation": [
+    "Original production parity already demonstrated across 140 scans; verify source hashes",
+    "Reject and replenish invalid/nonfinite null draws and TDMI matching errors greater than 1e-6 nats",
+    "Held-out grid-versus-direct CDF error at most 0.002; grid refinement is permitted only for numerical accuracy and must be documented",
+    "Finite-record synthetic calibration using independent scipy Lyapunov/root solutions and stationary VAR simulation at representative retained lengths; assess quantile bias and uniformity, without selecting parameters on treatment effects",
+    "Full-graph PC, role and gateway-count repeatability across two independent reference seeds; report numerical variability relative to participant variability"
+  ],
+  "statistics": "Keep all 25 original endpoints. SUDMEX followup ANCOVA adjusting corresponding normalized baseline, plus original change-score contrast and motion sensitivity. Aachen pooled change, both intensity changes and intensity contrast, with period/baseline/motion sensitivity. Save every result with within-block and whole-branch BH corrections. No significance-based choice of null, lag, workspace or participants.",
+  "interpretation": "Percentiles are new conditional-information estimands, not nats; additive PhiID identities do not hold between separately transformed percentiles. This is a new methodological sensitivity, not a direct reproduction of the published PID method or the original raw GWT endpoint.",
+  "implementation_scope": "New TMS-only analysis files and isolated output directory. Do not alter or execute old private-cohort drivers; never write to GWT or frozen HCP/drug outputs."
+}

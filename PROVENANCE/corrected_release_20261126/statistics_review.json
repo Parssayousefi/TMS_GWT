@@ -1,0 +1,70 @@
+{
+  "created_utc": "2026-11-26T11:34:08.503506+00:00",
+  "stage": "statistics",
+  "status": "passed",
+  "result": {
+    "raw": {
+      "scans": 193,
+      "pairs": 70,
+      "aachen_participants": 15,
+      "sudmex_active": 22,
+      "sudmex_sham": 18,
+      "paired_outcomes": 40,
+      "exact_sign_vectors": 32768,
+      "large_family_sizes": [
+        40,
+        30,
+        20
+      ],
+      "subfamilies": 9,
+      "whole_plus_workspace_family": 10,
+      "sudmex_acute_models": 90,
+      "sudmex_hc3_models": 60,
+      "sudmex_unchanged_acute_results": 90,
+      "unchanged_clinical_results": 56,
+      "clinical_n": {
+        "craving_ccq_general": 38,
+        "craving_ccq_now": 40,
+        "craving_vas": 40,
+        "impulsivity_bis_cognitive": 39,
+        "impulsivity_bis_motor": 39,
+        "impulsivity_bis_nonplanning": 39,
+        "impulsivity_bis_total": 39
+      },
+      "max_hc3_leverage_neural": 0.46735121684051695,
+      "max_hc3_leverage_clinical": 0.517139957908531
+    },
+    "normalized": {
+      "scans": 189,
+      "pairs": 70,
+      "aachen_participants": 15,
+      "sudmex_active": 22,
+      "sudmex_sham": 18,
+      "paired_outcomes": 40,
+      "exact_sign_vectors": 32768,
+      "large_family_sizes": [
+        40,
+        30,
+        20
+      ],
+      "subfamilies": 9,
+      "whole_plus_workspace_family": 10,
+      "sudmex_acute_models": 90,
+      "sudmex_hc3_models": 60,
+      "sudmex_unchanged_acute_results": 90,
+      "unchanged_clinical_results": 56,
+      "clinical_n": {
+        "craving_ccq_general": 38,
+        "craving_ccq_now": 40,
+        "craving_vas": 40,
+        "impulsivity_bis_cognitive": 39,
+        "impulsivity_bis_motor": 39,
+        "impulsivity_bis_nonplanning": 39,
+        "impulsivity_bis_total": 39
+      },
+      "max_hc3_leverage_neural": 0.6663578490428119,
+      "max_hc3_leverage_clinical": 0.44949019015249436
+    }
+  },
+  "review_script_sha256": "18a0c1cb1e002947c6492b4f8cf8ade6cf29cfd1094c2949104d6311b874bbf3"
+}

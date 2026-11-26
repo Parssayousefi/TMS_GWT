@@ -1,0 +1,12 @@
+{
+  "created_utc": "2026-11-26T11:41:43.066639+00:00",
+  "stage": "historical_sudmex",
+  "status": "passed",
+  "result": {
+    "original_25_outcome_motion_models": 25,
+    "original_clinical_associations": 35,
+    "clinical_standardization": "Historical 35-model table standardizes within outcome-complete cases; current 56-model table uses all 40 neural participants before clinical missingness. Both implementations reproduced separately.",
+    "multiplicity": "Historical q_family columns remain original BH families; they are not current 30/40-endpoint FWER or Holm4."
+  },
+  "review_script_sha256": "62e3ebb35d252aabf152f2bd866d7cbbe86a38426de516e7191613f2bdb2bfff"
+}

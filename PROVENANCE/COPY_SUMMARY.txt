@@ -1,0 +1,1 @@
+2026-11-05T10:52:43  files: 11652 (copied 11652, already present 0); bytes: 6.28 GB; path-rewritten files: 64; rewritten lines: 154

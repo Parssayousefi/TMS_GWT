@@ -1,0 +1,151 @@
+# Missouri Psilocybin Dataset Configuration (OpenNeuro ds006072)
+# Psilocybin vs Baseline resting-state fMRI
+# Multi-echo data (5 echoes) - fMRIPrep native optimal combination (as Monash);
+# only the combined desc-preproc_bold is used downstream.
+
+dataset_id: "missouri_psilo"
+name: "Missouri Psilocybin Study (ds006072)"
+
+# Data paths
+paths:
+  local:
+    bids_root: "D:/projects/TMS_GWT/data/missouri_psilo"
+    fmriprep_dir: "D:/projects/TMS_GWT/data/missouri_psilo/derivatives/fmriprep"
+  hpc:
+    bids_root: "/home/s3648540/data_pi-michielvanelkm/Parsa/GWT/data/missouri_psilo"
+    fmriprep_dir: "/home/s3648540/data_pi-michielvanelkm/Parsa/GWT/data/missouri_psilo/derivatives/fmriprep"
+
+# BIDS structure
+bids_structure:
+  has_sessions: true  # sub-PX/ses-Y/func/...
+
+# Subject information
+# 7 main subjects (P1-P7), excluding replication subjects (P1R, P3R, P4R, P5R)
+subjects:
+  auto_discover: false
+  include:
+    - "P1"
+    - "P2"
+    - "P3"
+    - "P4"
+    - "P5"
+    - "P6"
+    - "P7"
+  exclude:
+    - "P1R"
+    - "P3R"
+    - "P4R"
+    - "P5R"
+
+# Task/condition information
+# After BIDS session renaming (rename_missouri_sessions.py), sessions encode
+# the condition directly: ses-baseline, ses-psilocybin, ses-methylphenidate.
+# This matches Berlin Ketamine's Pattern A (session name = condition).
+tasks:
+  psilocybin:
+    bids_task_name: "BOLDREST1"
+    description: "Psilocybin condition"
+    is_control: false
+  methylphenidate:
+    bids_task_name: "BOLDREST1"
+    description: "Methylphenidate condition (active control)"
+    is_control: false
+  baseline:
+    bids_task_name: "BOLDREST1"
+    description: "Baseline condition (pre-drug)"
+    is_control: true
+
+# Original per-subject session-to-condition mapping (before renaming):
+#   P1: ses-5=baseline, ses-11=PSIL, ses-6=MTP
+#   P2: ses-9=baseline, ses-10=PSIL, ses-16=MTP
+#   P3: ses-7=baseline, ses-12=PSIL, ses-8=MTP
+#   P4: ses-5=baseline, ses-10=PSIL, ses-6=MTP
+#   P5: ses-5=baseline, ses-6=PSIL, ses-10=MTP
+#   P6: ses-4=baseline, ses-9=PSIL, ses-5=MTP
+#   P7: ses-6=baseline, ses-7=PSIL, ses-11=MTP
+
+# Run selection strategy
+run_selection:
+  strategy: "first"  # Take first available run per session
+
+# Multi-echo configuration
+# All 5 echoes are given to fMRIPrep, which performs T2*-weighted optimal
+# combination natively; only the combined desc-preproc_bold enters the
+# pipeline (verified on disk 2026-08-26: no echo- entities in derivatives,
+# me_output_echos=false in fmriprep.toml). Identical approach to Monash
+# (monash_psilo.yaml). The earlier "selected_echo: 2 / single_echo" entry
+# was legacy planning prose that never matched the actual fMRIPrep run.
+multi_echo:
+  n_echoes: 5
+  strategy: "optimal_combination"  # fMRIPrep native echo combination (as Monash)
+
+# File naming patterns (for fMRIPrep outputs)
+# Note: These may need adjustment after fMRIPrep processing depending on
+# how multi-echo outputs are structured
+file_patterns:
+  bold: "sub-{subject}_ses-{session}_task-{task}_run-{run}_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz"
+  confounds: "sub-{subject}_ses-{session}_task-{task}_run-{run}_desc-confounds_timeseries.tsv"
+  mask: "sub-{subject}_ses-{session}_task-{task}_run-{run}_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz"
+
+# Quality control criteria (Luppi et al. methodology)
+qc:
+  motion_thresholds:
+    max_translation_mm: 3.0
+    max_rotation_deg: 3.15
+  min_salvage_duration_min: 8.0
+  auto_truncate: true
+  max_fd_mean: 0.5
+  max_fd_peak: 3.0
+  min_timepoints: 100
+  exclusions_file: "results/qc/missouri_psilo/exclusions.csv"
+  # Manual/non-motion exclusions (survives regeneration of exclusions.csv;
+  # merged worst-case). Currently no manual excludes: sub-P6/ses-psilocybin
+  # (208/513 vols, 6.1 min) KEPT with documented caveat per user decision
+  # 2026-08-26 - see data/missouri_psilo/PREPROCESSING_NOTES.md.
+  art_exclusions_file: "results/qc/missouri_psilo/exclusions_manual.csv"
+  # Only assess sessions/subjects that enter the analysis pipeline
+  include_sessions: [baseline, psilocybin, methylphenidate]
+  exclude_subjects: [P1R, P3R, P4R, P5R]
+
+# Dataset-specific preprocessing overrides
+# CRITICAL: Missouri uses TR=1.761s, NOT the global default 2.0s
+preprocessing:
+  tr: 1.761  # 1761ms TR from BIDS JSON sidecars
+  volumes_to_remove: 5  # 5 volumes = 8.8s stabilization (Luppi 2023 method)
+  volumes_to_remove_last: 0  # Match Luppi: remove first N only, not last
+  bandpass_low: 0.008   # Hz - identical to Luppi
+  bandpass_high: 0.09   # Hz - identical to Luppi (Nyquist=0.284 Hz, safe)
+  compcor_wm: 5
+  compcor_csf: 5
+  global_signal_regression: false
+
+# fMRIPrep extra arguments
+# BIDS filter file restricts fMRIPrep to named sessions only (baseline, psilocybin,
+# methylphenidate), preventing discovery of numeric backup sessions (.backup/) that
+# contain corrupted multi-echo data (P3/ses-6 echo shape mismatch).
+fmriprep_extra_args: "--bids-filter-file /data/bids_filter.json"
+
+# Notes
+notes: |
+  Missouri Psilocybin Study (OpenNeuro ds006072)
+  - 7 main subjects (P1-P7), double-blind crossover design
+  - Each subject has multiple baseline sessions + 2 drug sessions (PSIL + MTP)
+  - Methylphenidate (MTP) serves as active control
+  - Multi-echo resting-state BOLD: 5 echoes (TE 14.2/38.9/63.7/88.4/113.1 ms),
+    TR=1.761s, MB=6, 72 slices, 2mm iso, 513 vols nominal (~15 min)
+  - fMRIPrep 23.2.1 native optimal echo combination; combined BOLD only
+    (run 2026-03-04..08 via singularity on HPC; same image version and settings
+    as the Docker runs of the other datasets; use_syn_sdc=false, no SDC -
+    0/62 fmap JSONs carry IntendedFor, uniform with all GWT datasets)
+  - BIDS task labels: BOLDREST1..BOLDREST6 (analysis uses BOLDREST1 run-1 only,
+    one rest scan per condition, uniform with the other cohorts)
+  - Acquisition heterogeneity (documented, no action): P1-P3 dir-AP vs P4-P7
+    dir-PA; P4-P7 protocol includes NORDIC denoising ("BOLD_REST1_NORDIC_ME5_2mm");
+    P4-P7 also stored part-phase (unused)
+  - sub-P6/ses-psilocybin BOLDREST1 is short (208/513 vols, 6.1 min): KEPT with
+    caveat (user decision 2026-08-26), flag for sensitivity analysis
+  - sub-P5 BOLDREST3/4 have missing echoes - does not affect BOLDREST1
+  - Sessions renamed from numeric to condition names (see rename_missouri_sessions.py)
+  - Between/After sessions excluded (only baseline + drug downloaded)
+  - Provenance details: data/missouri_psilo/PREPROCESSING_NOTES.md
+  - Source: OpenNeuro s3://openneuro.org/ds006072

@@ -1,0 +1,48 @@
+{
+  "completed_utc": "2026-11-26T11:57:02.739101+00:00",
+  "status": "passed",
+  "renderer": "Hidden Word PDF export and bundled Poppler (bundled LibreOffice unavailable)",
+  "main_pages": 10,
+  "supplement_pages": 11,
+  "all_pages_reviewed": true,
+  "checks": [
+    "All final pages visually reviewed; unchanged pages matched prior review",
+    "No clipping, overlapping text, broken tables or missing glyphs",
+    "Exact requested control-workspace image retained as landscape Supplementary Figure S1",
+    "Statistical claims separately checked against current corrected outputs"
+  ],
+  "files": {
+    "Aachen_Brief_Research_Report_Corrected.docx": "54f09caafb5ad00f4eaeb0410e2119f6979fe6315857095405f0c145416e08a1",
+    "Supplementary_Material_Corrected.docx": "33aa10d63688fd983f465f6974a15b20469f9fa201866c2caa9b8331cc744d0b"
+  },
+  "page_hashes": {
+    "qa\\main\\page-1.png": "615a66aefb2ad7e03beb4329f6c322bbc984693ba7ad63efd483d4ff3f300cab",
+    "qa\\main\\page-10.png": "b8eb06d264af760f283677092a61e2c72c9763dcfbbcf2f9f74c57418f7812d0",
+    "qa\\main\\page-2.png": "4e6e20ddfa411b758a4c58ca49002f938e978a171fd19348906061e895fdf2b3",
+    "qa\\main\\page-3.png": "e585f11292969515cbbb5e62d329b6c11bbe25fb3f8904b86b98a2043a02cccf",
+    "qa\\main\\page-4.png": "77a31e3fc1c18cefeb9452184abce34e2c07bae5b9775f204e988b4307bfca6a",
+    "qa\\main\\page-5.png": "a0db1948b265b1f61e97547aa3fc7e6d3a706fd2f970059c13f762912ce8089b",
+    "qa\\main\\page-6.png": "d5d89aca675076d1f439524b8733fc81d874c199d2c0435448e0381f0e372122",
+    "qa\\main\\page-7.png": "bf5b7796db29b469973b331e945f868b09c88d459c85da2a8560fd42cb9e6649",
+    "qa\\main\\page-8.png": "641a10dc0ed5209308d35e2b7950ad8fccd879e71e3aefa3bf6de624f1bd1735",
+    "qa\\main\\page-9.png": "6e8101e6ffe4da39174625bc88c5852bdd0d2ae0ee2dc4f3888e589adbb7cc63",
+    "qa\\supplement\\page-1.png": "358e63b815b65c0749221c690ea9a909cb1b5b7f284e5b5139065dfbf000c39c",
+    "qa\\supplement\\page-10.png": "b2ab617561b7069a2b575a7816a7835f0eadf32971677e1c569b82946f8f78b8",
+    "qa\\supplement\\page-11.png": "821b8b6ffda75e70cbf19b350cd691159c5ea7b3ee41676fbfc25cbc8594f763",
+    "qa\\supplement\\page-2.png": "a16691648eb05858d788c580b26b0eed6463766048893ef2c7daad0fa7a1d801",
+    "qa\\supplement\\page-3.png": "7ab79ec89ed5f49eb8ad120d4ee496988a4d0baf90207251c3ca61dc2a37ed7b",
+    "qa\\supplement\\page-4.png": "f94039eb890a0a2721d9b63786baa87c4e0d0092dde74b1eb3782b51270839dd",
+    "qa\\supplement\\page-5.png": "b3d11a1e246d452860b9b267086717e4d60b63faffd5c39a024d6b97555c7d3a",
+    "qa\\supplement\\page-6.png": "bc8defd014206d619131d70cfb96fe092a94a09caa87e6686327c47ffadb1c16",
+    "qa\\supplement\\page-7.png": "378ab6c34522ca328b90336e987cfc91d683273e3b61dee8628811f82be1c625",
+    "qa\\supplement\\page-8.png": "f5388d3d8c6d3fd7ddbece5939e751eb21511689482fa2c69fa8e3cc0f256edd",
+    "qa\\supplement\\page-9.png": "d69414034941cbb3137d3df72d87505967b14fa17d4c319c519fe73cbaa05b24"
+  },
+  "remaining_author_fields": [
+    "Zain affiliation",
+    "Author contributions",
+    "Funding",
+    "Conflicts of interest",
+    "Public archival code/data identifier"
+  ]
+}

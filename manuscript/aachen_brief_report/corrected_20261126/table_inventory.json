@@ -1,0 +1,57 @@
+[
+  [
+    "Table S1",
+    "Main information and role outcomes",
+    "raw_aachen_main30.csv; normalized_aachen_main30.csv; raw_aachen_all40.csv; normalized_aachen_all40.csv"
+  ],
+  [
+    "Table S2",
+    "Four GWT expectations",
+    "gwt_expectations_raw.csv; gwt_expectations_normalized.csv"
+  ],
+  [
+    "Table S3",
+    "Spatial information and direct interaction",
+    "raw_aachen_information20.csv; normalized_aachen_information20.csv; aachen_spatial_interactions.csv"
+  ],
+  [
+    "Table S4",
+    "Motion and intensity",
+    "aachen_all_spatial_motion.csv; aachen_intensity_results.csv; aachen_robustness.csv"
+  ],
+  [
+    "Table S5",
+    "Influence and reference seeds",
+    "aachen_leave_one_out.csv; normalization_seed_tests.csv"
+  ],
+  [
+    "Table S6",
+    "SUDMEX acute and longitudinal",
+    "raw_sudmex_acute.csv; normalized_sudmex_acute.csv; sudmex_all_post_all40_results.csv; sudmex_all_post_arm_results.csv"
+  ],
+  [
+    "Table S7",
+    "Clinical associations",
+    "clinical_neural_associations.csv"
+  ],
+  [
+    "Table S8",
+    "Signal representations networks visits and haemodynamics",
+    "sensitivities/*.csv"
+  ],
+  [
+    "Table S9",
+    "Null calibration and reference stability",
+    "normalization/*.csv"
+  ],
+  [
+    "Table S10",
+    "Corrected Aachen target centred flow",
+    "target_flow/*.csv"
+  ],
+  [
+    "Table S11",
+    "Whole brain haemodynamic association and influence follow-up",
+    "haemodynamic_followup/*.csv"
+  ]
+]

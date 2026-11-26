@@ -1,0 +1,462 @@
+{
+  "keys": [
+    "alkhasli2019",
+    "barrett2011",
+    "mediano2025",
+    "luppi2024",
+    "yousefi2026",
+    "wu2013",
+    "liardi2025",
+    "blackburne2026",
+    "winkler2014",
+    "holm1979",
+    "power2012",
+    "huang2005",
+    "esteban2019",
+    "whitfield2012",
+    "behzadi2007",
+    "schaefer2018",
+    "tian2020"
+  ],
+  "references": {
+    "alkhasli2019": {
+      "authors": [
+        "Alkhasli I",
+        "Sakreida K",
+        "Mottaghy FM",
+        "Binkofski F"
+      ],
+      "bibauthors": [
+        "Alkhasli, Isabel",
+        "Sakreida, Katrin",
+        "Mottaghy, Felix M.",
+        "Binkofski, Ferdinand"
+      ],
+      "title": "Modulation of Fronto-Striatal Functional Connectivity Using Transcranial Magnetic Stimulation",
+      "journal": "Frontiers in Human Neuroscience",
+      "year": 2019,
+      "volume": "13",
+      "pages": "190",
+      "doi": "10.3389/fnhum.2019.00190",
+      "url": "https://doi.org/10.3389/fnhum.2019.00190"
+    },
+    "barrett2011": {
+      "authors": [
+        "Barrett AB",
+        "Seth AK"
+      ],
+      "bibauthors": [
+        "Barrett, Adam B.",
+        "Seth, Anil K."
+      ],
+      "title": "Practical Measures of Integrated Information for Time-Series Data",
+      "journal": "PLoS Computational Biology",
+      "year": 2011,
+      "volume": "7",
+      "pages": "e1001052",
+      "doi": "10.1371/journal.pcbi.1001052",
+      "url": "https://doi.org/10.1371/journal.pcbi.1001052"
+    },
+    "mediano2025": {
+      "authors": [
+        "Mediano PAM",
+        "Rosas FE",
+        "Luppi AI",
+        "Carhart-Harris RL",
+        "Bor D",
+        "Seth AK",
+        "Barrett AB"
+      ],
+      "bibauthors": [
+        "Mediano, Pedro A. M.",
+        "Rosas, Fernando E.",
+        "Luppi, Andrea I.",
+        "Carhart-Harris, Robin L.",
+        "Bor, Daniel",
+        "Seth, Anil K.",
+        "Barrett, Adam B."
+      ],
+      "title": "Toward a unified taxonomy of information dynamics via Integrated Information Decomposition",
+      "journal": "Proceedings of the National Academy of Sciences",
+      "year": 2025,
+      "volume": "122",
+      "pages": "e2423297122",
+      "doi": "10.1073/pnas.2423297122",
+      "url": "https://doi.org/10.1073/pnas.2423297122"
+    },
+    "luppi2024": {
+      "authors": [
+        "Luppi AI",
+        "Mediano PA",
+        "Rosas FE",
+        "Allanson J",
+        "Pickard J",
+        "Carhart-Harris RL",
+        "Williams GB",
+        "Craig MM",
+        "Finoia P",
+        "Owen AM",
+        "Naci L",
+        "Menon DK",
+        "Bor D",
+        "Stamatakis EA"
+      ],
+      "bibauthors": [
+        "Luppi, Andrea I",
+        "Mediano, Pedro AM",
+        "Rosas, Fernando E",
+        "Allanson, Judith",
+        "Pickard, John",
+        "Carhart-Harris, Robin L",
+        "Williams, Guy B",
+        "Craig, Michael M",
+        "Finoia, Paola",
+        "Owen, Adrian M",
+        "Naci, Lorina",
+        "Menon, David K",
+        "Bor, Daniel",
+        "Stamatakis, Emmanuel A"
+      ],
+      "title": "A synergistic workspace for human consciousness revealed by Integrated Information Decomposition",
+      "journal": "eLife",
+      "year": 2024,
+      "volume": "12",
+      "pages": "RP88173",
+      "doi": "10.7554/elife.88173",
+      "url": "https://doi.org/10.7554/elife.88173"
+    },
+    "yousefi2026": {
+      "authors": [
+        "Yousefi P",
+        "Shinozuka K",
+        "Vizeli P",
+        "Holze F",
+        "Becker AM",
+        "Muller F",
+        "Liechti ME",
+        "Hasler G",
+        "Rodriguez CI",
+        "Luppi A",
+        "Mediano PAM"
+      ],
+      "bibauthors": [
+        "Yousefi, P.",
+        "Shinozuka, K.",
+        "Vizeli, P.",
+        "Holze, F.",
+        "Becker, A. M.",
+        "Muller, F.",
+        "Liechti, M. E.",
+        "Hasler, G.",
+        "Rodriguez, C. I.",
+        "Luppi, A.",
+        "Mediano, P. A. M."
+      ],
+      "title": "Psychedelics Restructure the Global Workspace of Consciousness",
+      "journal": "bioRxiv [Preprint]",
+      "year": 2026,
+      "volume": "",
+      "pages": "version 1",
+      "doi": "10.64898/2026.09.28.755172v1",
+      "url": "https://doi.org/10.64898/2026.09.28.755172v1"
+    },
+    "wu2013": {
+      "authors": [
+        "Wu GR",
+        "Liao W",
+        "Stramaglia S",
+        "Ding JR",
+        "Chen H",
+        "Marinazzo D"
+      ],
+      "bibauthors": [
+        "Wu, Guo-Rong",
+        "Liao, Wei",
+        "Stramaglia, Sebastiano",
+        "Ding, Ju-Rong",
+        "Chen, Huafu",
+        "Marinazzo, Daniele"
+      ],
+      "title": "A blind deconvolution approach to recover effective connectivity brain networks from resting state fMRI data",
+      "journal": "Medical Image Analysis",
+      "year": 2013,
+      "volume": "17",
+      "pages": "365-374",
+      "doi": "10.1016/j.media.2013.01.003",
+      "url": "https://doi.org/10.1016/j.media.2013.01.003"
+    },
+    "liardi2025": {
+      "authors": [
+        "Liardi A",
+        "Rosas FE",
+        "Carhart-Harris RL",
+        "Blackburne G",
+        "Bor D",
+        "Mediano PAM"
+      ],
+      "bibauthors": [
+        "Liardi, Alberto",
+        "Rosas, Fernando E.",
+        "Carhart-Harris, Robin L.",
+        "Blackburne, George",
+        "Bor, Daniel",
+        "Mediano, Pedro A. M."
+      ],
+      "title": "Null models for comparing information decomposition across complex systems",
+      "journal": "PLOS Computational Biology",
+      "year": 2025,
+      "volume": "21",
+      "pages": "e1013629",
+      "doi": "10.1371/journal.pcbi.1013629",
+      "url": "https://doi.org/10.1371/journal.pcbi.1013629"
+    },
+    "blackburne2026": {
+      "authors": [
+        "Blackburne G",
+        "Liardi A",
+        "Mallaroni P",
+        "McAlpine R",
+        "Carhart-Harris R",
+        "Timmermann C",
+        "Muthukumaraswamy SD",
+        "Skipper JI",
+        "Mediano PAM"
+      ],
+      "bibauthors": [
+        "Blackburne, G.",
+        "Liardi, A.",
+        "Mallaroni, P.",
+        "McAlpine, R.",
+        "Carhart-Harris, R.",
+        "Timmermann, C.",
+        "Muthukumaraswamy, S. D.",
+        "Skipper, J. I.",
+        "Mediano, P. A. M."
+      ],
+      "title": "Psychedelics restructure information in the human brain",
+      "journal": "bioRxiv [Preprint]",
+      "year": 2026,
+      "volume": "",
+      "pages": "version 2",
+      "doi": "10.64898/2026.10.01.755915v2",
+      "url": "https://doi.org/10.64898/2026.10.01.755915v2"
+    },
+    "winkler2014": {
+      "authors": [
+        "Winkler AM",
+        "Ridgway GR",
+        "Webster MA",
+        "Smith SM",
+        "Nichols TE"
+      ],
+      "bibauthors": [
+        "Winkler, Anderson M.",
+        "Ridgway, Gerard R.",
+        "Webster, Matthew A.",
+        "Smith, Stephen M.",
+        "Nichols, Thomas E."
+      ],
+      "title": "Permutation inference for the general linear model",
+      "journal": "NeuroImage",
+      "year": 2014,
+      "volume": "92",
+      "pages": "381-397",
+      "doi": "10.1016/j.neuroimage.2014.01.060",
+      "url": "https://doi.org/10.1016/j.neuroimage.2014.01.060"
+    },
+    "holm1979": {
+      "authors": [
+        "Holm S"
+      ],
+      "bibauthors": [
+        "Holm, Sture"
+      ],
+      "title": "A simple sequentially rejective multiple test procedure",
+      "journal": "Scandinavian Journal of Statistics",
+      "year": 1979,
+      "volume": "6",
+      "pages": "65–70",
+      "doi": "",
+      "url": "https://www.jstor.org/stable/4615733"
+    },
+    "power2012": {
+      "authors": [
+        "Power JD",
+        "Barnes KA",
+        "Snyder AZ",
+        "Schlaggar BL",
+        "Petersen SE"
+      ],
+      "bibauthors": [
+        "Power, Jonathan D.",
+        "Barnes, Kelly A.",
+        "Snyder, Abraham Z.",
+        "Schlaggar, Bradley L.",
+        "Petersen, Steven E."
+      ],
+      "title": "Spurious but systematic correlations in functional connectivity MRI networks arise from subject motion",
+      "journal": "NeuroImage",
+      "year": 2012,
+      "volume": "59",
+      "pages": "2142-2154",
+      "doi": "10.1016/j.neuroimage.2011.10.018",
+      "url": "https://doi.org/10.1016/j.neuroimage.2011.10.018"
+    },
+    "huang2005": {
+      "authors": [
+        "Huang YZ",
+        "Edwards MJ",
+        "Rounis E",
+        "Bhatia KP",
+        "Rothwell JC"
+      ],
+      "bibauthors": [
+        "Huang, Ying-Zu",
+        "Edwards, Mark J.",
+        "Rounis, Elisabeth",
+        "Bhatia, Kailash P.",
+        "Rothwell, John C."
+      ],
+      "title": "Theta Burst Stimulation of the Human Motor Cortex",
+      "journal": "Neuron",
+      "year": 2005,
+      "volume": "45",
+      "pages": "201-206",
+      "doi": "10.1016/j.neuron.2004.12.033",
+      "url": "https://doi.org/10.1016/j.neuron.2004.12.033"
+    },
+    "esteban2019": {
+      "authors": [
+        "Esteban O",
+        "Markiewicz CJ",
+        "Blair RW",
+        "Moodie CA",
+        "Isik AI",
+        "Erramuzpe A",
+        "Kent JD",
+        "Goncalves M",
+        "DuPre E",
+        "Snyder M",
+        "Oya H",
+        "Ghosh SS",
+        "Wright J",
+        "Durnez J",
+        "Poldrack RA",
+        "Gorgolewski KJ"
+      ],
+      "bibauthors": [
+        "Esteban, Oscar",
+        "Markiewicz, Christopher J.",
+        "Blair, Ross W.",
+        "Moodie, Craig A.",
+        "Isik, A. Ilkay",
+        "Erramuzpe, Asier",
+        "Kent, James D.",
+        "Goncalves, Mathias",
+        "DuPre, Elizabeth",
+        "Snyder, Madeleine",
+        "Oya, Hiroyuki",
+        "Ghosh, Satrajit S.",
+        "Wright, Jessey",
+        "Durnez, Joke",
+        "Poldrack, Russell A.",
+        "Gorgolewski, Krzysztof J."
+      ],
+      "title": "fMRIPrep: a robust preprocessing pipeline for functional MRI",
+      "journal": "Nature Methods",
+      "year": 2019,
+      "volume": "16",
+      "pages": "111-116",
+      "doi": "10.1038/s41592-018-0235-4",
+      "url": "https://doi.org/10.1038/s41592-018-0235-4"
+    },
+    "whitfield2012": {
+      "authors": [
+        "Whitfield-Gabrieli S",
+        "Nieto-Castanon A"
+      ],
+      "bibauthors": [
+        "Whitfield-Gabrieli, Susan",
+        "Nieto-Castanon, Alfonso"
+      ],
+      "title": "Conn: A Functional Connectivity Toolbox for Correlated and Anticorrelated Brain Networks",
+      "journal": "Brain Connectivity",
+      "year": 2012,
+      "volume": "2",
+      "pages": "125-141",
+      "doi": "10.1089/brain.2012.0073",
+      "url": "https://doi.org/10.1089/brain.2012.0073"
+    },
+    "behzadi2007": {
+      "authors": [
+        "Behzadi Y",
+        "Restom K",
+        "Liau J",
+        "Liu TT"
+      ],
+      "bibauthors": [
+        "Behzadi, Yashar",
+        "Restom, Khaled",
+        "Liau, Joy",
+        "Liu, Thomas T."
+      ],
+      "title": "A component based noise correction method (CompCor) for BOLD and perfusion based fMRI",
+      "journal": "NeuroImage",
+      "year": 2007,
+      "volume": "37",
+      "pages": "90-101",
+      "doi": "10.1016/j.neuroimage.2007.04.042",
+      "url": "https://doi.org/10.1016/j.neuroimage.2007.04.042"
+    },
+    "schaefer2018": {
+      "authors": [
+        "Schaefer A",
+        "Kong R",
+        "Gordon EM",
+        "Laumann TO",
+        "Zuo XN",
+        "Holmes AJ",
+        "Eickhoff SB",
+        "Yeo BTT"
+      ],
+      "bibauthors": [
+        "Schaefer, Alexander",
+        "Kong, Ru",
+        "Gordon, Evan M",
+        "Laumann, Timothy O",
+        "Zuo, Xi-Nian",
+        "Holmes, Avram J",
+        "Eickhoff, Simon B",
+        "Yeo, B T Thomas"
+      ],
+      "title": "Local-Global Parcellation of the Human Cerebral Cortex from Intrinsic Functional Connectivity MRI",
+      "journal": "Cerebral Cortex",
+      "year": 2018,
+      "volume": "28",
+      "pages": "3095-3114",
+      "doi": "10.1093/cercor/bhx179",
+      "url": "https://doi.org/10.1093/cercor/bhx179"
+    },
+    "tian2020": {
+      "authors": [
+        "Tian Y",
+        "Margulies DS",
+        "Breakspear M",
+        "Zalesky A"
+      ],
+      "bibauthors": [
+        "Tian, Ye",
+        "Margulies, Daniel S.",
+        "Breakspear, Michael",
+        "Zalesky, Andrew"
+      ],
+      "title": "Topographic organization of the human subcortex unveiled with functional connectivity gradients",
+      "journal": "Nature Neuroscience",
+      "year": 2020,
+      "volume": "23",
+      "pages": "1421-1432",
+      "doi": "10.1038/s41593-020-00711-6",
+      "url": "https://doi.org/10.1038/s41593-020-00711-6"
+    }
+  }
+}

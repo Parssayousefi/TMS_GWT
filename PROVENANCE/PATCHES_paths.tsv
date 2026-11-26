@@ -1,0 +1,155 @@
+file	line	before	after
+pipeline/scripts/analysis/archive/07_PartialNetworkDecomposition_GlobEff.m	23	%   >> cd('D:\projects\GWT\pipeline')	%   >> cd('D:\projects\TMS_GWT\pipeline')
+pipeline/scripts/analysis/archive/07_PartialNetworkDecomposition_GlobEff.m	31	project_dir = 'D:\projects\GWT\pipeline';	project_dir = 'D:\projects\TMS_GWT\pipeline';
+pipeline/scripts/analysis/step04_compute_phiid_matlab.m	24	%   >> cd('D:\projects\GWT\pipeline')	%   >> cd('D:\projects\TMS_GWT\pipeline')
+pipeline/scripts/analysis/step04_compute_phiid_matlab.m	35	project_dir = 'D:\projects\GWT\pipeline';	project_dir = 'D:\projects\TMS_GWT\pipeline';
+pipeline/scripts/archive/convert_hcp_to_bids.py	13	python convert_hcp_to_bids.py --source E:/data/HCP_100/extracted --output D:/projects/GWT/data/hcp	python convert_hcp_to_bids.py --source E:/data/HCP_100/extracted --output D:/projects/TMS_GWT/data/hcp
+pipeline/scripts/archive/convert_hcp_to_bids.py	14	python convert_hcp_to_bids.py --source E:/data/HCP_100/extracted --output D:/projects/GWT/data/hcp --dry-run	python convert_hcp_to_bids.py --source E:/data/HCP_100/extracted --output D:/projects/TMS_GWT/data/hcp --dry-run
+pipeline/scripts/archive/convert_hcp_to_bids.py	231	python convert_hcp_to_bids.py --source E:/data/HCP_100/extracted --output D:/projects/GWT/data/hcp	python convert_hcp_to_bids.py --source E:/data/HCP_100/extracted --output D:/projects/TMS_GWT/data/hcp
+pipeline/scripts/archive/convert_hcp_to_bids.py	234	python convert_hcp_to_bids.py --source E:/data/HCP_100/extracted --output D:/projects/GWT/data/hcp --dry-run	python convert_hcp_to_bids.py --source E:/data/HCP_100/extracted --output D:/projects/TMS_GWT/data/hcp --dry-run
+pipeline/scripts/archive/convert_hcp_to_bids.py	237	python convert_hcp_to_bids.py --source E:/data/HCP_100/extracted --output D:/projects/GWT/data/hcp --subjects 100307 100408	python convert_hcp_to_bids.py --source E:/data/HCP_100/extracted --output D:/projects/TMS_GWT/data/hcp --subjects 100307 100408
+pipeline/scripts/archive/test_against_luppi/_execute_p3_plan.py	16	NB_PATH = Path(r'D:/projects/GWT/pipeline/SAPHIRE_analysis_dashboard.ipynb')	NB_PATH = Path(r'D:/projects/TMS_GWT/pipeline/SAPHIRE_analysis_dashboard.ipynb')
+pipeline/scripts/archive/test_against_luppi/_insert_motion_audit_cell.py	4	NB_PATH = r'D:/projects/GWT/pipeline/SAPHIRE_analysis_dashboard.ipynb'	NB_PATH = r'D:/projects/TMS_GWT/pipeline/SAPHIRE_analysis_dashboard.ipynb'
+pipeline/scripts/archive/test_against_luppi/_write_p1_p4_cells.py	16	NB_PATH = Path(r'D:/projects/GWT/pipeline/SAPHIRE_analysis_dashboard.ipynb')	NB_PATH = Path(r'D:/projects/TMS_GWT/pipeline/SAPHIRE_analysis_dashboard.ipynb')
+pipeline/scripts/archive/test_against_luppi/_write_p1_sensitivity_cells.py	17	NB_PATH = Path(r'D:/projects/GWT/pipeline/SAPHIRE_analysis_dashboard.ipynb')	NB_PATH = Path(r'D:/projects/TMS_GWT/pipeline/SAPHIRE_analysis_dashboard.ipynb')
+pipeline/scripts/archive/test_against_luppi/_write_p4_revised_cells.py	30	NB_PATH = Path(r'D:/projects/GWT/pipeline/SAPHIRE_analysis_dashboard.ipynb')	NB_PATH = Path(r'D:/projects/TMS_GWT/pipeline/SAPHIRE_analysis_dashboard.ipynb')
+pipeline/scripts/archive/test_against_luppi/conn_denoise_hcp.m	22	%   - SPM12 at D:\projects\GWT\pipeline\tools\spm12\spm\	%   - SPM12 at D:\projects\TMS_GWT\pipeline\tools\spm12\spm\
+pipeline/scripts/archive/test_against_luppi/conn_denoise_hcp.m	26	%   >> cd('D:\projects\GWT\pipeline')	%   >> cd('D:\projects\TMS_GWT\pipeline')
+pipeline/scripts/archive/test_against_luppi/conn_denoise_hcp.m	37	project_dir = 'D:\projects\GWT\pipeline';	project_dir = 'D:\projects\TMS_GWT\pipeline';
+pipeline/scripts/archive/test_against_luppi/self_phiid_diagonal_probe.json	6	"""ts_file"": ""D:\\projects\\GWT\\pipeline\\results\\timeseries\\dataset-hcp_sub-100307_task-rest_run-1_timeseries_deconv.npy"","	"""ts_file"": ""D:\\projects\\TMS_GWT\\pipeline\\results\\timeseries\\dataset-hcp_sub-100307_task-rest_run-1_timeseries_deconv.npy"","
+pipeline/scripts/archive/test_against_luppi/step02_hrf_conn_test.m	13	project_dir = 'D:\projects\GWT\pipeline';	project_dir = 'D:\projects\TMS_GWT\pipeline';
+pipeline/scripts/archive/test_against_luppi/step04_phiid_conn_test.m	15	project_dir = 'D:\projects\GWT\pipeline';	project_dir = 'D:\projects\TMS_GWT\pipeline';
+pipeline/scripts/data_acquisition/convert_lam_to_bids.py	49	"SOURCE_DIR = Path(""D:/projects/GWT/data/basel_lam/LAM fMRI"")"	"SOURCE_DIR = Path(""D:/projects/TMS_GWT/data/basel_lam/LAM fMRI"")"
+pipeline/scripts/data_acquisition/convert_lam_to_bids.py	51	"OUTPUT_DIR = Path(""D:/projects/GWT/data/basel_lam_bids"")"	"OUTPUT_DIR = Path(""D:/projects/TMS_GWT/data/basel_lam_bids"")"
+pipeline/scripts/data_acquisition/convert_lpm_to_bids.py	52	"SOURCE_DIR = Path(""D:/projects/GWT/data/basel_lpm/LPM_fMRI"")"	"SOURCE_DIR = Path(""D:/projects/TMS_GWT/data/basel_lpm/LPM_fMRI"")"
+pipeline/scripts/data_acquisition/convert_lpm_to_bids.py	53	"OUTPUT_DIR = Path(""D:/projects/GWT/data/basel_lpm_bids"")"	"OUTPUT_DIR = Path(""D:/projects/TMS_GWT/data/basel_lpm_bids"")"
+pipeline/scripts/data_acquisition/download_cambridge_propofol.py	29	"LOCAL_ROOT = Path(""D:/projects/GWT/data/cambridge_propofol"")"	"LOCAL_ROOT = Path(""D:/projects/TMS_GWT/data/cambridge_propofol"")"
+pipeline/scripts/data_acquisition/download_hcp_icafix_pilot.py	72	"LOCAL_ROOT = Path(""D:/projects/gwt/data/hcp_icafix"")"	"LOCAL_ROOT = Path(""D:/projects/TMS_GWT/data/hcp_icafix"")"
+pipeline/scripts/data_acquisition/download_missouri_psilo.py	24	"LOCAL_ROOT = Path(""D:/projects/gwt/data/missouri_psilo"")"	"LOCAL_ROOT = Path(""D:/projects/TMS_GWT/data/missouri_psilo"")"
+pipeline/scripts/data_acquisition/rename_missouri_sessions.py	25	"DATA_ROOT = Path(""D:/projects/GWT/data/missouri_psilo"")"	"DATA_ROOT = Path(""D:/projects/TMS_GWT/data/missouri_psilo"")"
+pipeline/scripts/data_acquisition/rename_monash_sessions.py	29	"DATA_ROOT = Path(""D:/projects/GWT/data/monash_psilo"")"	"DATA_ROOT = Path(""D:/projects/TMS_GWT/data/monash_psilo"")"
+pipeline/scripts/data_acquisition/replace_lam_t1s.py	33	"BIDS_ROOT = Path(""D:/projects/GWT/data/basel_lam"")"	"BIDS_ROOT = Path(""D:/projects/TMS_GWT/data/basel_lam"")"
+pipeline/scripts/data_acquisition/replace_lpm_t1s.py	31	"BIDS_ROOT = Path(""D:/projects/GWT/data/basel_lpm_bids"")"	"BIDS_ROOT = Path(""D:/projects/TMS_GWT/data/basel_lpm_bids"")"
+pipeline/scripts/data_acquisition/restore_missouri_anat.py	24	"DATA_ROOT = Path(""D:/projects/GWT/data/missouri_psilo"")"	"DATA_ROOT = Path(""D:/projects/TMS_GWT/data/missouri_psilo"")"
+pipeline/scripts/preprocessing/step01b_conn_denoise.m	28	%   - SPM12 at D:\projects\GWT\pipeline\tools\spm12\spm\	%   - SPM12 at D:\projects\TMS_GWT\pipeline\tools\spm12\spm\
+pipeline/scripts/preprocessing/step01b_conn_denoise.m	32	%   >> cd('D:\projects\GWT\pipeline')	%   >> cd('D:\projects\TMS_GWT\pipeline')
+pipeline/scripts/preprocessing/step01b_conn_denoise.m	58	project_dir = 'D:\projects\GWT\pipeline';	project_dir = 'D:\projects\TMS_GWT\pipeline';
+pipeline/scripts/preprocessing/step01b_conn_denoise_cambridge_art.m	26	%   - SPM12 at D:\projects\GWT\pipeline\tools\spm12\spm\	%   - SPM12 at D:\projects\TMS_GWT\pipeline\tools\spm12\spm\
+pipeline/scripts/preprocessing/step01b_conn_denoise_cambridge_art.m	31	%   >> cd('D:\projects\GWT\pipeline')	%   >> cd('D:\projects\TMS_GWT\pipeline')
+pipeline/scripts/preprocessing/step01b_conn_denoise_cambridge_art.m	59	project_dir = 'D:\projects\GWT\pipeline';	project_dir = 'D:\projects\TMS_GWT\pipeline';
+pipeline/scripts/preprocessing/step02_hrf_deconvolution_matlab.m	31	project_dir = 'D:\projects\GWT\pipeline';	project_dir = 'D:\projects\TMS_GWT\pipeline';
+pipeline/scripts/utils/png_to_pdf_lossless.py	63	"F = Path(r""D:\projects\GWT\pipeline\manuscript\figures_final"")"	"F = Path(r""D:\projects\TMS_GWT\pipeline\manuscript\figures_final"")"
+pipeline/scripts/utils/verify_manuscript_docs.py	18	"P = Path(r""D:\projects\GWT\pipeline"")"	"P = Path(r""D:\projects\TMS_GWT\pipeline"")"
+pipeline/scripts/utils/verify_manuscript_numbers.py	7	"P = Path(r""D:\projects\GWT\pipeline"")"	"P = Path(r""D:\projects\TMS_GWT\pipeline"")"
+pipeline/configs/dataset_configs.yaml	101	"project_dir: ""D:/projects/GWT"""	"project_dir: ""D:/projects/TMS_GWT"""
+pipeline/configs/dataset_configs.yaml	102	"license_file: ""D:/projects/GWT/license.txt"""	"license_file: ""D:/projects/TMS_GWT/license.txt"""
+pipeline/configs/dataset_configs.yaml	103	"work_dir: ""D:/projects/GWT/tmp/fmriprep_work"""	"work_dir: ""D:/projects/TMS_GWT/tmp/fmriprep_work"""
+pipeline/configs/dataset_configs.yaml	104	"log_dir: ""D:/projects/GWT/pipeline/logs"""	"log_dir: ""D:/projects/TMS_GWT/pipeline/logs"""
+pipeline/configs/dataset_configs.yaml	105	"templateflow_dir: ""D:/projects/GWT/tmp/templateflow"""	"templateflow_dir: ""D:/projects/TMS_GWT/tmp/templateflow"""
+pipeline/configs/datasets/basel_lam.yaml	11	"bids_root: ""D:/projects/GWT/data/basel_lam"""	"bids_root: ""D:/projects/TMS_GWT/data/basel_lam"""
+pipeline/configs/datasets/basel_lam.yaml	12	"fmriprep_dir: ""D:/projects/GWT/data/basel_lam/derivatives/fmriprep"""	"fmriprep_dir: ""D:/projects/TMS_GWT/data/basel_lam/derivatives/fmriprep"""
+pipeline/configs/datasets/basel_lam.yaml	17	"bids_root: ""D:/projects/GWT/data/basel_lam"""	"bids_root: ""D:/projects/TMS_GWT/data/basel_lam"""
+pipeline/configs/datasets/basel_lam.yaml	18	"fmriprep_dir: ""D:/projects/GWT/data/basel_lam/derivatives/fmriprep"""	"fmriprep_dir: ""D:/projects/TMS_GWT/data/basel_lam/derivatives/fmriprep"""
+pipeline/configs/datasets/basel_lpm.yaml	11	"bids_root: ""D:/projects/GWT/data/basel_lpm"""	"bids_root: ""D:/projects/TMS_GWT/data/basel_lpm"""
+pipeline/configs/datasets/basel_lpm.yaml	12	"fmriprep_dir: ""D:/projects/GWT/data/basel_lpm/derivatives/fmriprep"""	"fmriprep_dir: ""D:/projects/TMS_GWT/data/basel_lpm/derivatives/fmriprep"""
+pipeline/configs/datasets/basel_lpm.yaml	17	"bids_root: ""D:/projects/GWT/data/basel_lpm"""	"bids_root: ""D:/projects/TMS_GWT/data/basel_lpm"""
+pipeline/configs/datasets/basel_lpm.yaml	18	"fmriprep_dir: ""D:/projects/GWT/data/basel_lpm/derivatives/fmriprep"""	"fmriprep_dir: ""D:/projects/TMS_GWT/data/basel_lpm/derivatives/fmriprep"""
+pipeline/configs/datasets/berlin_ketamine.yaml	12	"bids_root: ""D:/projects/GWT/data/berlin_ketamine"""	"bids_root: ""D:/projects/TMS_GWT/data/berlin_ketamine"""
+pipeline/configs/datasets/berlin_ketamine.yaml	13	"fmriprep_dir: ""D:/projects/GWT/data/berlin_ketamine/derivatives/fmriprep"""	"fmriprep_dir: ""D:/projects/TMS_GWT/data/berlin_ketamine/derivatives/fmriprep"""
+pipeline/configs/datasets/berlin_ketamine.yaml	19	"bids_root: ""D:/projects/GWT/data/berlin_ketamine"""	"bids_root: ""D:/projects/TMS_GWT/data/berlin_ketamine"""
+pipeline/configs/datasets/berlin_ketamine.yaml	20	"fmriprep_dir: ""D:/projects/GWT/data/berlin_ketamine/derivatives/fmriprep"""	"fmriprep_dir: ""D:/projects/TMS_GWT/data/berlin_ketamine/derivatives/fmriprep"""
+pipeline/configs/datasets/cambridge_propofol.yaml	12	"bids_root: ""D:/projects/GWT/data/cambridge_propofol"""	"bids_root: ""D:/projects/TMS_GWT/data/cambridge_propofol"""
+pipeline/configs/datasets/cambridge_propofol.yaml	13	"fmriprep_dir: ""D:/projects/GWT/data/cambridge_propofol/derivatives/fmriprep"""	"fmriprep_dir: ""D:/projects/TMS_GWT/data/cambridge_propofol/derivatives/fmriprep"""
+pipeline/configs/datasets/cambridge_propofol_uniform.yaml	14	"bids_root: ""D:/projects/GWT/data/cambridge_propofol"""	"bids_root: ""D:/projects/TMS_GWT/data/cambridge_propofol"""
+pipeline/configs/datasets/cambridge_propofol_uniform.yaml	15	"fmriprep_dir: ""D:/projects/GWT/data/cambridge_propofol/derivatives/fmriprep"""	"fmriprep_dir: ""D:/projects/TMS_GWT/data/cambridge_propofol/derivatives/fmriprep"""
+pipeline/configs/datasets/hcp.yaml	11	"bids_root: ""D:/projects/GWT/data/hcp"""	"bids_root: ""D:/projects/TMS_GWT/data/hcp"""
+pipeline/configs/datasets/hcp.yaml	12	"fmriprep_dir: ""D:/projects/GWT/data/hcp/derivatives/fmriprep"""	"fmriprep_dir: ""D:/projects/TMS_GWT/data/hcp/derivatives/fmriprep"""
+pipeline/configs/datasets/london_lsd.yaml	10	"bids_root: ""D:/projects/GWT/data/london_lsd"""	"bids_root: ""D:/projects/TMS_GWT/data/london_lsd"""
+pipeline/configs/datasets/london_lsd.yaml	11	"fmriprep_dir: ""D:/projects/GWT/data/london_lsd/derivatives/fmriprep"""	"fmriprep_dir: ""D:/projects/TMS_GWT/data/london_lsd/derivatives/fmriprep"""
+pipeline/configs/datasets/missouri_psilo.yaml	12	"bids_root: ""D:/projects/GWT/data/missouri_psilo"""	"bids_root: ""D:/projects/TMS_GWT/data/missouri_psilo"""
+pipeline/configs/datasets/missouri_psilo.yaml	13	"fmriprep_dir: ""D:/projects/GWT/data/missouri_psilo/derivatives/fmriprep"""	"fmriprep_dir: ""D:/projects/TMS_GWT/data/missouri_psilo/derivatives/fmriprep"""
+pipeline/configs/datasets/monash_psilo.yaml	11	"bids_root: ""D:/projects/GWT/data/monash_psilo"""	"bids_root: ""D:/projects/TMS_GWT/data/monash_psilo"""
+pipeline/configs/datasets/monash_psilo.yaml	12	"fmriprep_dir: ""D:/projects/GWT/data/monash_psilo/derivatives/fmriprep"""	"fmriprep_dir: ""D:/projects/TMS_GWT/data/monash_psilo/derivatives/fmriprep"""
+pipeline/configs/datasets/monash_psilo.yaml	17	"bids_root: ""D:/projects/GWT/data/monash_psilo"""	"bids_root: ""D:/projects/TMS_GWT/data/monash_psilo"""
+pipeline/configs/datasets/monash_psilo.yaml	18	"fmriprep_dir: ""D:/projects/GWT/data/monash_psilo/derivatives/fmriprep"""	"fmriprep_dir: ""D:/projects/TMS_GWT/data/monash_psilo/derivatives/fmriprep"""
+pipeline/configs/paths.yaml	6	"project_dir: ""D:/projects/GWT/pipeline"""	"project_dir: ""D:/projects/TMS_GWT/pipeline"""
+pipeline/configs/paths.yaml	10	"base_dir: ""D:/projects/GWT/pipeline/results"""	"base_dir: ""D:/projects/TMS_GWT/pipeline/results"""
+pipeline/configs/paths.yaml	11	"timeseries: ""D:/projects/GWT/pipeline/results/timeseries"""	"timeseries: ""D:/projects/TMS_GWT/pipeline/results/timeseries"""
+pipeline/configs/paths.yaml	12	"phiid_matrices: ""D:/projects/GWT/pipeline/results/phiid_matrices"""	"phiid_matrices: ""D:/projects/TMS_GWT/pipeline/results/phiid_matrices"""
+pipeline/configs/paths.yaml	13	"networks: ""D:/projects/GWT/pipeline/results/networks"""	"networks: ""D:/projects/TMS_GWT/pipeline/results/networks"""
+pipeline/configs/paths.yaml	14	"statistics: ""D:/projects/GWT/pipeline/results/statistics"""	"statistics: ""D:/projects/TMS_GWT/pipeline/results/statistics"""
+pipeline/configs/paths.yaml	15	"logs: ""D:/projects/GWT/pipeline/logs"""	"logs: ""D:/projects/TMS_GWT/pipeline/logs"""
+pipeline/configs/paths.yaml	19	"schaefer_400: ""D:/projects/GWT/pipeline/atlases/schaefer_400.nii.gz"""	"schaefer_400: ""D:/projects/TMS_GWT/pipeline/atlases/schaefer_400.nii.gz"""
+pipeline/configs/paths.yaml	20	"tian_54: ""D:/projects/GWT/pipeline/atlases/tian_54.nii.gz"""	"tian_54: ""D:/projects/TMS_GWT/pipeline/atlases/tian_54.nii.gz"""
+tier1_robustness/tier1/code/00_copy_inputs.py	9	PROJECT = ROOT.parent                                           # D:/projects/GWT	PROJECT = ROOT.parent                                           # D:/projects/TMS_GWT
+tier1_robustness/tier1/code/00_copy_inputs.py	48	"w = csv.writer(f); w.writerow([""group"", ""source (relative to D:/projects/GWT)"", ""copy (relative to this folder)"", ""bytes""]); w.writerows(rows)"	"w = csv.writer(f); w.writerow([""group"", ""source (relative to D:/projects/TMS_GWT)"", ""copy (relative to this folder)"", ""bytes""]); w.writerows(rows)"
+tier1_robustness/tier1/code/04_extract_tsnr.py	9	derivatives (default D:/projects/GWT/data, override with the environment variable GWT_BOLD_ROOT); only the regional	derivatives (default D:/projects/TMS_GWT/data, override with the environment variable GWT_BOLD_ROOT); only the regional
+numit-phiid/diag_lag_mechanism.py	2	# TEMPORARY script - lives in D:/projects/GWT/numit-phiid, delete when investigation closes.	# TEMPORARY script - lives in D:/projects/TMS_GWT/numit-phiid, delete when investigation closes.
+numit-phiid/diag_lag_mechanism.py	19	# Reads only; writes one CSV into D:/projects/GWT/numit-phiid.	# Reads only; writes one CSV into D:/projects/TMS_GWT/numit-phiid.
+numit-phiid/diag_lag_mechanism.py	29	"PIPE = r""D:\projects\GWT\pipeline"""	"PIPE = r""D:\projects\TMS_GWT\pipeline"""
+numit-phiid/diag_lag_mechanism.py	31	"OUT_CSV = r""D:\projects\GWT\numit-phiid\diag_lag_mechanism_results.csv"""	"OUT_CSV = r""D:\projects\TMS_GWT\numit-phiid\diag_lag_mechanism_results.csv"""
+numit-phiid/diag_phi_production.py	12	"PIPE = r""D:\projects\GWT\pipeline"""	"PIPE = r""D:\projects\TMS_GWT\pipeline"""
+numit-phiid/make_tau2_script.py	2	"src = r""D:\projects\GWT\pipeline\scripts\analysis\step04_compute_phiid_matlab.m"""	"src = r""D:\projects\TMS_GWT\pipeline\scripts\analysis\step04_compute_phiid_matlab.m"""
+numit-phiid/make_tau2_script.py	3	"dst = r""D:\projects\GWT\numit-phiid\step04_compute_phiid_matlab_tau2_monash.m"""	"dst = r""D:\projects\TMS_GWT\numit-phiid\step04_compute_phiid_matlab_tau2_monash.m"""
+numit-phiid/make_tau2_script.py	7	"""phiid_path  = 'D:/projects/GWT/numit-phiid/matlab_deps/MMI_PhiID';  % tmp copy (project read-only)""),"	"""phiid_path  = 'D:/projects/TMS_GWT/numit-phiid/matlab_deps/MMI_PhiID';  % tmp copy (project read-only)""),"
+numit-phiid/make_tau2_script.py	9	"""npy_path    = 'D:/projects/GWT/numit-phiid/matlab_deps/npy-matlab';  % tmp copy (project read-only)""),"	"""npy_path    = 'D:/projects/TMS_GWT/numit-phiid/matlab_deps/npy-matlab';  % tmp copy (project read-only)""),"
+numit-phiid/make_tau2_script.py	11	"""out_dir = 'D:/projects/GWT/numit-phiid/tau2/phiid_matrices_tau2';  % tmp only, never results/""),"	"""out_dir = 'D:/projects/TMS_GWT/numit-phiid/tau2/phiid_matrices_tau2';  % tmp only, never results/""),"
+numit-phiid/make_tau3_script.py	2	"src = r""D:\projects\GWT\pipeline\scripts\analysis\step04_compute_phiid_matlab.m"""	"src = r""D:\projects\TMS_GWT\pipeline\scripts\analysis\step04_compute_phiid_matlab.m"""
+numit-phiid/make_tau3_script.py	3	"dst = r""D:\projects\GWT\numit-phiid\step04_compute_phiid_matlab_tau3_monash.m"""	"dst = r""D:\projects\TMS_GWT\numit-phiid\step04_compute_phiid_matlab_tau3_monash.m"""
+numit-phiid/make_tau3_script.py	7	"""phiid_path  = 'D:/projects/GWT/numit-phiid/matlab_deps/MMI_PhiID';  % tmp copy (project read-only)""),"	"""phiid_path  = 'D:/projects/TMS_GWT/numit-phiid/matlab_deps/MMI_PhiID';  % tmp copy (project read-only)""),"
+numit-phiid/make_tau3_script.py	9	"""npy_path    = 'D:/projects/GWT/numit-phiid/matlab_deps/npy-matlab';  % tmp copy (project read-only)""),"	"""npy_path    = 'D:/projects/TMS_GWT/numit-phiid/matlab_deps/npy-matlab';  % tmp copy (project read-only)""),"
+numit-phiid/make_tau3_script.py	11	"""out_dir = 'D:/projects/GWT/numit-phiid/tau3/phiid_matrices_tau3';  % tmp only, never results/""),"	"""out_dir = 'D:/projects/TMS_GWT/numit-phiid/tau3/phiid_matrices_tau3';  % tmp only, never results/""),"
+numit-phiid/numit/analyze_numit.py	14	"OUT = r""D:\projects\GWT\numit-phiid\numit\results"""	"OUT = r""D:\projects\TMS_GWT\numit-phiid\numit\results"""
+numit-phiid/numit/analyze_numit.py	107	"df.to_csv(r""D:\projects\GWT\numit-phiid\numit\numit_arm_table.csv"", index=False)"	"df.to_csv(r""D:\projects\TMS_GWT\numit-phiid\numit\numit_arm_table.csv"", index=False)"
+numit-phiid/numit/network_pc.py	14	"PIPE = r""D:\projects\GWT\pipeline"""	"PIPE = r""D:\projects\TMS_GWT\pipeline"""
+numit-phiid/numit/network_pc.py	16	"RES = r""D:\projects\GWT\numit-phiid\numit\results"""	"RES = r""D:\projects\TMS_GWT\numit-phiid\numit\results"""
+numit-phiid/numit/network_pc.py	94	"df.to_csv(r""D:\projects\GWT\numit-phiid\numit\network_pc.csv"", index=False)"	"df.to_csv(r""D:\projects\TMS_GWT\numit-phiid\numit\network_pc.csv"", index=False)"
+numit-phiid/numit/numit_pc.py	15	"PIPE = r""D:\projects\GWT\pipeline"""	"PIPE = r""D:\projects\TMS_GWT\pipeline"""
+numit-phiid/numit/numit_pc.py	16	"RES = r""D:\projects\GWT\numit-phiid\numit\results"""	"RES = r""D:\projects\TMS_GWT\numit-phiid\numit\results"""
+numit-phiid/numit/numit_pc.py	108	"df.to_csv(r""D:\projects\GWT\numit-phiid\numit\numit_pc_table.csv"", index=False)"	"df.to_csv(r""D:\projects\TMS_GWT\numit-phiid\numit\numit_pc_table.csv"", index=False)"
+numit-phiid/numit/run_numit.py	26	"PIPE = r""D:\projects\GWT\pipeline"""	"PIPE = r""D:\projects\TMS_GWT\pipeline"""
+numit-phiid/numit/run_numit.py	28	"OUT = r""D:\projects\GWT\numit-phiid\numit\results"""	"OUT = r""D:\projects\TMS_GWT\numit-phiid\numit\results"""
+numit-phiid/numit/test_null.py	60	"TS = r""D:\projects\GWT\pipeline\results\timeseries"""	"TS = r""D:\projects\TMS_GWT\pipeline\results\timeseries"""
+numit-phiid/numit/validate_solver.py	18	"PIPE = r""D:\projects\GWT\pipeline"""	"PIPE = r""D:\projects\TMS_GWT\pipeline"""
+numit-phiid/numit/validation/v1_synthetic.py	28	"BASE = r""D:\projects\GWT\numit-phiid\numit"""	"BASE = r""D:\projects\TMS_GWT\numit-phiid\numit"""
+numit-phiid/numit/validation/v1_synthetic.py	39	"TS = r""D:\projects\GWT\pipeline\results\timeseries"""	"TS = r""D:\projects\TMS_GWT\pipeline\results\timeseries"""
+numit-phiid/numit/validation/v1_synthetic.py	40	"ws = pd.read_csv(r""D:\projects\GWT\pipeline\results\group_analysis\hcp\rest"""	"ws = pd.read_csv(r""D:\projects\TMS_GWT\pipeline\results\group_analysis\hcp\rest"""
+numit-phiid/numit/validation/v1b_rotation.py	6	"BASE = r""D:\projects\GWT\numit-phiid\numit"""	"BASE = r""D:\projects\TMS_GWT\numit-phiid\numit"""
+numit-phiid/numit/validation/v1b_rotation.py	10	"ws = pd.read_csv(r""D:\projects\GWT\pipeline\results\group_analysis\hcp\rest\hcp_rest_workspace_summary.csv"")"	"ws = pd.read_csv(r""D:\projects\TMS_GWT\pipeline\results\group_analysis\hcp\rest\hcp_rest_workspace_summary.csv"")"
+numit-phiid/numit/validation/v1b_rotation.py	12	"ts = np.load(r""D:\projects\GWT\pipeline\results\timeseries\dataset-basel_lpm_sub-001_ses-placebo_task-rest_run-1_timeseries_deconv.npy"")"	"ts = np.load(r""D:\projects\TMS_GWT\pipeline\results\timeseries\dataset-basel_lpm_sub-001_ses-placebo_task-rest_run-1_timeseries_deconv.npy"")"
+numit-phiid/numit/validation/v2_analyze.py	12	"OUT = r""D:\projects\GWT\numit-phiid\numit\validation\v2_results"""	"OUT = r""D:\projects\TMS_GWT\numit-phiid\numit\validation\v2_results"""
+numit-phiid/numit/validation/v2_null_sensitivity.py	22	"BASE = r""D:\projects\GWT\numit-phiid\numit"""	"BASE = r""D:\projects\TMS_GWT\numit-phiid\numit"""
+numit-phiid/numit/validation/v2_null_sensitivity.py	27	"TS = r""D:\projects\GWT\pipeline\results\timeseries"""	"TS = r""D:\projects\TMS_GWT\pipeline\results\timeseries"""
+numit-phiid/numit/validation/v2_null_sensitivity.py	34	"ws = pd.read_csv(r""D:\projects\GWT\pipeline\results\group_analysis\hcp\rest"""	"ws = pd.read_csv(r""D:\projects\TMS_GWT\pipeline\results\group_analysis\hcp\rest"""
+numit-phiid/numit/validation/v3_finite_sample.py	19	"BASE = r""D:\projects\GWT\numit-phiid\numit"""	"BASE = r""D:\projects\TMS_GWT\numit-phiid\numit"""
+numit-phiid/numit/validation/v3_finite_sample.py	29	"ws = pd.read_csv(r""D:\projects\GWT\pipeline\results\group_analysis\hcp\rest"""	"ws = pd.read_csv(r""D:\projects\TMS_GWT\pipeline\results\group_analysis\hcp\rest"""
+numit-phiid/numit/validation/v3_finite_sample.py	32	"ts = np.load(r""D:\projects\GWT\pipeline\results\timeseries"""	"ts = np.load(r""D:\projects\TMS_GWT\pipeline\results\timeseries"""
+numit-phiid/numit/validation/v3b_bias_vs_tdmi.py	5	"BASE = r""D:\projects\GWT\numit-phiid\numit"""	"BASE = r""D:\projects\TMS_GWT\numit-phiid\numit"""
+numit-phiid/numit/validation/v3b_bias_vs_tdmi.py	9	"ws = pd.read_csv(r""D:\projects\GWT\pipeline\results\group_analysis\hcp\rest\hcp_rest_workspace_summary.csv"")"	"ws = pd.read_csv(r""D:\projects\TMS_GWT\pipeline\results\group_analysis\hcp\rest\hcp_rest_workspace_summary.csv"")"
+numit-phiid/numit/validation/v3b_bias_vs_tdmi.py	11	"ts = np.load(r""D:\projects\GWT\pipeline\results\timeseries\dataset-basel_lpm_sub-001_ses-placebo_task-rest_run-1_timeseries_deconv.npy"")"	"ts = np.load(r""D:\projects\TMS_GWT\pipeline\results\timeseries\dataset-basel_lpm_sub-001_ses-placebo_task-rest_run-1_timeseries_deconv.npy"")"
+numit-phiid/numit/ws_selectivity.py	15	"RES = r""D:\projects\GWT\numit-phiid\numit\results"""	"RES = r""D:\projects\TMS_GWT\numit-phiid\numit\results"""
+numit-phiid/numit/ws_selectivity.py	16	"ws = pd.read_csv(r""D:\projects\GWT\pipeline\results\group_analysis\hcp\rest"""	"ws = pd.read_csv(r""D:\projects\TMS_GWT\pipeline\results\group_analysis\hcp\rest"""
+numit-phiid/numit/ws_selectivity.py	82	"df.to_csv(r""D:\projects\GWT\numit-phiid\numit\ws_selectivity.csv"", index=False)"	"df.to_csv(r""D:\projects\TMS_GWT\numit-phiid\numit\ws_selectivity.csv"", index=False)"
+numit-phiid/report/md2pdf.py	10	"SRC = r""D:\projects\GWT\numit-phiid\report\monash_synergy_report.md"""	"SRC = r""D:\projects\TMS_GWT\numit-phiid\report\monash_synergy_report.md"""
+numit-phiid/report/md2pdf.py	11	"HTML_OUT = r""D:\projects\GWT\numit-phiid\report\monash_synergy_report.html"""	"HTML_OUT = r""D:\projects\TMS_GWT\numit-phiid\report\monash_synergy_report.html"""
+numit-phiid/report/md2pdf.py	12	"PDF_OUT = r""D:\projects\GWT\numit-phiid\report\monash_synergy_report.pdf"""	"PDF_OUT = r""D:\projects\TMS_GWT\numit-phiid\report\monash_synergy_report.pdf"""
+numit-phiid/step04_compute_phiid_matlab_tau2_monash.m	24	%   >> cd('D:\projects\GWT\pipeline')	%   >> cd('D:\projects\TMS_GWT\pipeline')
+numit-phiid/step04_compute_phiid_matlab_tau2_monash.m	35	project_dir = 'D:\projects\GWT\pipeline';	project_dir = 'D:\projects\TMS_GWT\pipeline';
+numit-phiid/step04_compute_phiid_matlab_tau2_monash.m	36	phiid_path  = 'D:/projects/GWT/numit-phiid/matlab_deps/MMI_PhiID';  % tmp copy (project read-only)	phiid_path  = 'D:/projects/TMS_GWT/numit-phiid/matlab_deps/MMI_PhiID';  % tmp copy (project read-only)
+numit-phiid/step04_compute_phiid_matlab_tau2_monash.m	37	npy_path    = 'D:/projects/GWT/numit-phiid/matlab_deps/npy-matlab';  % tmp copy (project read-only)	npy_path    = 'D:/projects/TMS_GWT/numit-phiid/matlab_deps/npy-matlab';  % tmp copy (project read-only)
+numit-phiid/step04_compute_phiid_matlab_tau2_monash.m	43	out_dir = 'D:/projects/GWT/numit-phiid/tau2/phiid_matrices_tau2';  % tmp only, never results/	out_dir = 'D:/projects/TMS_GWT/numit-phiid/tau2/phiid_matrices_tau2';  % tmp only, never results/
+numit-phiid/step04_compute_phiid_matlab_tau3_monash.m	24	%   >> cd('D:\projects\GWT\pipeline')	%   >> cd('D:\projects\TMS_GWT\pipeline')
+numit-phiid/step04_compute_phiid_matlab_tau3_monash.m	35	project_dir = 'D:\projects\GWT\pipeline';	project_dir = 'D:\projects\TMS_GWT\pipeline';
+numit-phiid/step04_compute_phiid_matlab_tau3_monash.m	36	phiid_path  = 'D:/projects/GWT/numit-phiid/matlab_deps/MMI_PhiID';  % tmp copy (project read-only)	phiid_path  = 'D:/projects/TMS_GWT/numit-phiid/matlab_deps/MMI_PhiID';  % tmp copy (project read-only)
+numit-phiid/step04_compute_phiid_matlab_tau3_monash.m	37	npy_path    = 'D:/projects/GWT/numit-phiid/matlab_deps/npy-matlab';  % tmp copy (project read-only)	npy_path    = 'D:/projects/TMS_GWT/numit-phiid/matlab_deps/npy-matlab';  % tmp copy (project read-only)
+numit-phiid/step04_compute_phiid_matlab_tau3_monash.m	43	out_dir = 'D:/projects/GWT/numit-phiid/tau3/phiid_matrices_tau3';  % tmp only, never results/	out_dir = 'D:/projects/TMS_GWT/numit-phiid/tau3/phiid_matrices_tau3';  % tmp only, never results/
+numit-phiid/tau2/a_levels_python_preview.py	15	"sys.path.insert(0, r""D:\projects\GWT\numit-phiid\numit"")"	"sys.path.insert(0, r""D:\projects\TMS_GWT\numit-phiid\numit"")"
+numit-phiid/tau2/a_levels_python_preview.py	18	"PIPE = r""D:\projects\GWT\pipeline"""	"PIPE = r""D:\projects\TMS_GWT\pipeline"""
+numit-phiid/tau2/a_levels_python_preview.py	61	"df.to_csv(r""D:\projects\GWT\numit-phiid\tau2\a_levels_python_preview.csv"", index=False)"	"df.to_csv(r""D:\projects\TMS_GWT\numit-phiid\tau2\a_levels_python_preview.csv"", index=False)"
+numit-phiid/tau2/b_pc.py	19	"sys.path.insert(0, r""D:\projects\GWT\numit-phiid\numit"")"	"sys.path.insert(0, r""D:\projects\TMS_GWT\numit-phiid\numit"")"
+numit-phiid/tau2/b_pc.py	22	"PIPE = r""D:\projects\GWT\pipeline"""	"PIPE = r""D:\projects\TMS_GWT\pipeline"""
+numit-phiid/tau2/b_pc.py	24	"OUT = r""D:\projects\GWT\numit-phiid\tau2"""	"OUT = r""D:\projects\TMS_GWT\numit-phiid\tau2"""
+numit-phiid/tau2/matlab_check.py	16	"PIPE = r""D:\projects\GWT\pipeline"""	"PIPE = r""D:\projects\TMS_GWT\pipeline"""
+numit-phiid/tau2/matlab_check.py	17	"MATDIR = rf""D:\projects\GWT\numit-phiid\tau{LAG}\phiid_matrices_tau{LAG}"""	"MATDIR = rf""D:\projects\TMS_GWT\numit-phiid\tau{LAG}\phiid_matrices_tau{LAG}"""
+numit-phiid/tau2/matlab_check.py	18	"PYDIR = r""D:\projects\GWT\numit-phiid\tau2\py_matrices"""	"PYDIR = r""D:\projects\TMS_GWT\numit-phiid\tau2\py_matrices"""
+numit-phiid/tau2/matlab_check.py	72	"df.to_csv(rf""D:\projects\GWT\numit-phiid\tau{LAG}\matlab_levels_tau{LAG}.csv"","	"df.to_csv(rf""D:\projects\TMS_GWT\numit-phiid\tau{LAG}\matlab_levels_tau{LAG}.csv"","

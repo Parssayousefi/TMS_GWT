@@ -1,0 +1,110 @@
+# Aachen single-session iTBS Dataset Configuration (OpenNeuro ds001832, CC0)
+# iTBS (600 pulses) to the left DLPFC at 90% and 120% of resting motor threshold,
+# rest fMRI directly before and 7 min after stimulation; 16 healthy volunteers
+# Alkhasli et al. 2019, Front Hum Neurosci 13:190
+
+dataset_id: "aachen_itbs"
+name: "Aachen iTBS study (ds001832)"
+
+# Data paths
+paths:
+  local:
+    bids_root: "D:/projects/TMS_GWT/data/aachen_itbs"
+    fmriprep_dir: "D:/projects/TMS_GWT/data/aachen_itbs/derivatives/fmriprep"
+  # Legacy
+  bids_root: "D:/projects/TMS_GWT/data/aachen_itbs"
+  fmriprep_dir: "D:/projects/TMS_GWT/data/aachen_itbs/derivatives/fmriprep"
+
+# BIDS structure
+bids_structure:
+  has_sessions: true  # sub-XX/ses-{anat|pre90|post90|pre120|post120}/...
+
+# Subject information (15 of 16 analysed)
+# sub-02 excluded (decided 2026-11-08): its rest scans have 36 slices, every other
+# subject's have 34, and the dataset documents slice timing for 34 slices only, so
+# fMRIPrep's slice-timing correction failed on all four runs. See PREPROCESSING_NOTES.md.
+subjects:
+  auto_discover: true
+  include: []
+  exclude: ["02"]
+
+# Task/condition information
+# Condition is determined by session name (Pattern A). Sessions renamed from
+# ses-0..4 by setup/rename_aachen_sessions.py. Each visit has its own baseline,
+# so contrasts pair post90 with pre90 and post120 with pre120: pass --control_task
+# explicitly to 06_identify_gateways_broadcasters.py (get_control_task_name()
+# returns the first control listed, pre90).
+tasks:
+  pre90:
+    bids_task_name: "rest"
+    description: "Before iTBS at 90% rMT (sub-threshold visit)"
+    is_control: true
+
+  post90:
+    bids_task_name: "rest"
+    description: "7 min after iTBS at 90% rMT"
+    is_control: false
+
+  pre120:
+    bids_task_name: "rest"
+    description: "Before iTBS at 120% rMT (supra-threshold visit)"
+    is_control: true
+
+  post120:
+    bids_task_name: "rest"
+    description: "7 min after iTBS at 120% rMT"
+    is_control: false
+
+# Run selection
+run_selection:
+  strategy: "first"  # 1 run per session
+
+# File naming patterns (no run entity in this dataset)
+file_patterns:
+  bold: "sub-{subject}_ses-{session}_task-{task}_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz"
+  confounds: "sub-{subject}_ses-{session}_task-{task}_desc-confounds_timeseries.tsv"
+  mask: "sub-{subject}_ses-{session}_task-{task}_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz"
+
+# Quality control criteria (Luppi et al. methodology, uniform with other datasets)
+# Rest scans are 10 min (300 x 2.0 s), so the 8-min salvage window can rescue a TRUNCATE.
+qc:
+  motion_thresholds:
+    max_translation_mm: 3.0
+    max_rotation_deg: 3.15
+  min_salvage_duration_min: 8.0
+  auto_truncate: true
+  max_fd_mean: 0.5
+  max_fd_peak: 3.0
+  min_timepoints: 100
+  exclusions_file: "results/qc/aachen_itbs/exclusions.csv"
+  include_sessions: [pre90, post90, pre120, post120]
+
+# Dataset-specific preprocessing overrides
+preprocessing:
+  tr: 2.0  # 2000 ms TR from task-rest_bold.json (University Clinic Aachen, 3T)
+  volumes_to_remove: 5
+  volumes_to_remove_last: 0
+  bandpass_low: 0.008
+  bandpass_high: 0.09
+  compcor_wm: 5
+  compcor_csf: 5
+  global_signal_regression: false
+
+# Deposited T1 images are already skull-stripped. Forced repeat extraction
+# removed substantial cortex in the original run; see the 2026-11-25 audit.
+# Validate a clean isolated pilot before promoting regenerated derivatives.
+fmriprep_extra_args: "--skull-strip-t1w skip"
+
+# Notes
+notes: |
+  Aachen iTBS study (OpenNeuro ds001832 v1.0.1, CC0), University Clinic Aachen
+  - 16 healthy adults (15 analysed, sub-02 excluded: 36-slice scans with undocumented
+    slice timing); within-subject, two visits on separate days, order counterbalanced
+    (derivatives/README.txt, SessionOrder 1/2/3/4 = 90% visit first, 3/4/1/2 = 120% first)
+  - iTBS: 600 pulses, 20 trains of 10 bursts (50 Hz triplets), 2 s on / 8 s off,
+    3 min 20 s, left DLPFC, neuronavigated; no sham by design
+  - Rest fMRI: 10 min, TR 2.0 s, 300 volumes, 64 x 64 x 34, 3 x 3 x 3.75 mm;
+    pre scan directly before stimulation, post scan starting 7 min after
+  - BIDS 1.0.1 release without participants.tsv; age, sex, visit order and TMS output
+    are in derivatives/README.txt
+  - Provenance: data/aachen_itbs/PREPROCESSING_NOTES.md

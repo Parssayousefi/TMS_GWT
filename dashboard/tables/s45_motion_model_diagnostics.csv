@@ -1,0 +1,11 @@
+scope,metric,n,residual_df,design_rank,design_condition_number,maximum_leverage,FD_reference
+left,net_te,8,5,3,933.627556911134,0.7520111073460273,delta usable mean FD = 0; original uncentered FD model retained
+left,net_unique,8,5,3,56749.417169316635,0.8553307859180556,delta usable mean FD = 0; original uncentered FD model retained
+left,net_synergistic,8,5,3,935.7949958960922,0.7492225254180896,delta usable mean FD = 0; original uncentered FD model retained
+left,persistent_synergy,8,5,3,32.490390723455,0.73672354016343,delta usable mean FD = 0; original uncentered FD model retained
+left,persistent_redundancy,8,5,3,386.61724789965734,0.8955622734175279,delta usable mean FD = 0; original uncentered FD model retained
+left_minus_right,net_te,8,5,3,710.6591297546861,0.789478094106422,delta usable mean FD = 0; original uncentered FD model retained
+left_minus_right,net_unique,8,5,3,27819.356189793878,0.7990851056629361,delta usable mean FD = 0; original uncentered FD model retained
+left_minus_right,net_synergistic,8,5,3,696.4934408649056,0.7939963227888553,delta usable mean FD = 0; original uncentered FD model retained
+left_minus_right,persistent_synergy,8,5,3,30.18241479608503,0.7399690139931315,delta usable mean FD = 0; original uncentered FD model retained
+left_minus_right,persistent_redundancy,8,5,3,364.1443284508884,0.5769692674103082,delta usable mean FD = 0; original uncentered FD model retained

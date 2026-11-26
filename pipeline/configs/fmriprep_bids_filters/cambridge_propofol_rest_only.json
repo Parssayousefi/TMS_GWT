@@ -1,0 +1,7 @@
+{
+  "bold": {
+    "datatype": "func",
+    "suffix": "bold",
+    "task": ["restawake", "restlight", "restdeep", "restrecovery"]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "created_utc": "2026-11-26T11:50:08.827797+00:00",
+  "status": "passed",
+  "direct_HRF_files": 60,
+  "participants": 15,
+  "weighted_whole_brain_mean_equals_direct_454_region_mean": true,
+  "full_models": 9,
+  "new_whole_brain_models": 3,
+  "existing_models_unchanged": 6,
+  "independent_HC3_LOO_models": 135,
+  "rank_sensitivities": 9,
+  "max_numerical_error": 9.25370891025068e-14,
+  "rank_roundoff_note": "After the declared 12-decimal rounding used solely before ancillary rank correlations, direct 454-region reconstruction agrees with all nine saved Spearman results. This stabilizes floating near-ties; HC3 coefficients and 135 LOO fits are unchanged.",
+  "rank_reconstruction_differences": [],
+  "significant_Holm9": [
+    {
+      "scope": "whole_brain",
+      "parameter": "width_seconds",
+      "n": 15,
+      "estimate": -0.0045928091017981,
+      "ci_low": -0.0069284522434293,
+      "ci_high": -0.0022571659601669,
+      "p": 0.0010606941970996,
+      "se": 0.0010719797083221,
+      "status": "ok",
+      "p_holm9": 0.0084855535767969
+    },
+    {
+      "scope": "outside_workspace",
+      "parameter": "peak_seconds",
+      "n": 15,
+      "estimate": 0.0071328535926891,
+      "ci_low": 0.0023902513945857,
+      "ci_high": 0.0118754557907924,
+      "p": 0.0066177269904699,
+      "se": 0.0021766909637832,
+      "status": "ok",
+      "p_holm9": 0.0463240889332893
+    },
+    {
+      "scope": "outside_workspace",
+      "parameter": "width_seconds",
+      "n": 15,
+      "estimate": -0.0075481038169855,
+      "ci_low": -0.0102420483763337,
+      "ci_high": -0.0048541592576372,
+      "p": 5.297563623982352e-05,
+      "se": 0.0012364277108485,
+      "status": "ok",
+      "p_holm9": 0.0004767807261584
+    }
+  ],
+  "width_influence": [
+    {
+      "scope": "difference",
+      "estimate_min": -0.0033909920408625,
+      "estimate_max": -0.0020338155964198,
+      "p_min": 0.0179728606600572,
+      "p_max": 0.0484198115172135,
+      "p_holm9_max": 0.2905188691032813,
+      "n_corrected_omissions": 0
+    },
+    {
+      "scope": "outside_workspace",
+      "estimate_min": -0.0081219483517576,
+      "estimate_max": -0.0057778436442742,
+      "p_min": 2.4046894152779677e-06,
+      "p_max": 0.0069142859566455,
+      "p_holm9_max": 0.0622285736098099,
+      "n_corrected_omissions": 14
+    },
+    {
+      "scope": "whole_brain",
+      "estimate_min": -0.005129406062289,
+      "estimate_max": -0.0031990931065074,
+      "p_min": 3.2512956094769445e-06,
+      "p_max": 0.0376178534067406,
+      "p_holm9_max": 0.2369394860487621,
+      "n_corrected_omissions": 12
+    }
+  ],
+  "source_sha256": {
+    "output\\corrected_tms_analysis_review\\verify_global_hrf_followup.py": "a77702957490d462760de8a6109a347b867e2c05d00fca2928a73f3c8ee5ecc4",
+    "setup\\analyse_haemodynamic_relationships.py": "960c388cd939ef6d5e5b580a778a171fcbfda1033da501330bd1b7217addb1c2",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\haemodynamic_followup\\association_results.csv": "2e719486c93f643a58393a2127a01711660f1dd28c2de36827f133a58bbeba80",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\haemodynamic_followup\\influence_summary.csv": "80991933a4be7a641859a02ecc2a042093f59798a1cf29c3c4393502f90b329c",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\haemodynamic_followup\\leave_one_out.csv": "512a0b5affcd844f4f1c0896fd1ccd25b2347a4f934f2a6cad879c3f8cf4c4a8",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\haemodynamic_followup\\participant_associations.csv": "a01c06c5b9fea2f3a1809700b4d9a663748d3f8b62b91b015998058e28111a4c",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\haemodynamic_followup\\rank_sensitivity.csv": "fc812cde80cbc495a64f49621339339876a2eaf116518678dd4384d62f21c9ad",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\haemodynamic_followup\\verification.json": "222c932d1be939ac00411d8aff585d390da750ce1fbc34b8d7a738476845755a",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\haemodynamic_followup\\analysis_specification.json": "b049182a9379ed018aef49ad84e49e205365e5b1ebddc9b9c4287556771d6f84"
+  },
+  "interpretation": "Secondary association family expanded after the original six results were known; global intervention mean remains uncertain. Same-data signal/algorithm coupling prevents a causal or independent mechanistic claim. LOO fits are dependent and their predictor SD is recomputed."
+}

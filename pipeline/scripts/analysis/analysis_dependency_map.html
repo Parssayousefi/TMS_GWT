@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GWT Analysis Dependency Map</title>
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --panel: #fffdf8;
+      --ink: #1f2933;
+      --muted: #5c6770;
+      --line: #cad2db;
+      --data: #d6e8ff;
+      --core: #ffe2c2;
+      --compare: #d7f3e3;
+      --report: #fbe2dd;
+      --doc: #efe7ff;
+      --accent: #0a4d68;
+      --accent-2: #bb3e03;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Bahnschrift", "Trebuchet MS", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 8%, #ffffff 0, #f4f1ea 38%),
+        radial-gradient(circle at 92% 10%, #fff5e8 0, transparent 32%),
+        var(--bg);
+      line-height: 1.35;
+    }
+
+    .page {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 28px 22px 40px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-family: "Cambria", "Georgia", serif;
+      letter-spacing: 0.4px;
+      font-size: 2rem;
+      color: #0f1720;
+    }
+
+    .subtitle {
+      margin: 0 0 16px;
+      color: var(--muted);
+      max-width: 1000px;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: #26313a;
+      font-size: 0.92rem;
+    }
+
+    .swatch {
+      width: 13px;
+      height: 13px;
+      border-radius: 3px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+    }
+
+    .flow-shell {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel);
+      overflow: auto;
+      box-shadow: 0 10px 26px rgba(27, 41, 51, 0.08);
+      margin-bottom: 20px;
+    }
+
+    .flow {
+      min-width: 1450px;
+      height: 960px;
+      position: relative;
+      background:
+        linear-gradient(to right, transparent 0 130px, #eff4f9 130px 132px, transparent 132px 540px, #eff4f9 540px 542px, transparent 542px 950px, #eff4f9 950px 952px, transparent 952px 1360px, #eff4f9 1360px 1362px, transparent 1362px),
+        repeating-linear-gradient(to bottom, #ffffff 0 59px, #fcfbf8 59px 118px);
+    }
+
+    .lane-label {
+      position: absolute;
+      top: 10px;
+      transform: translateX(-50%);
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #30404f;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+
+    .lane-1 { left: 130px; }
+    .lane-2 { left: 540px; }
+    .lane-3 { left: 950px; }
+    .lane-4 { left: 1360px; }
+
+    .node {
+      position: absolute;
+      width: 300px;
+      border: 1px solid #a9b5c0;
+      border-radius: 12px;
+      padding: 10px 12px;
+      box-shadow: 0 4px 12px rgba(17, 26, 33, 0.08);
+      background: #fff;
+    }
+
+    .node h3 {
+      margin: 0 0 6px;
+      font-size: 0.98rem;
+      color: #0d1822;
+    }
+
+    .node p {
+      margin: 0;
+      font-size: 0.84rem;
+      color: #2e3a45;
+    }
+
+    .node small {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.77rem;
+      color: #506071;
+    }
+
+    .data { background: var(--data); }
+    .core { background: var(--core); }
+    .compare { background: var(--compare); }
+    .report { background: var(--report); }
+    .doc { background: var(--doc); }
+
+    .map-table-shell {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel);
+      box-shadow: 0 10px 26px rgba(27, 41, 51, 0.06);
+      overflow: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1100px;
+      font-size: 0.86rem;
+    }
+
+    thead th {
+      text-align: left;
+      background: #f1f6fb;
+      color: #1e2c37;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    tbody td {
+      padding: 9px 12px;
+      border-bottom: 1px solid #e4eaf0;
+      vertical-align: top;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fcfdfd;
+    }
+
+    code {
+      background: #eef3f8;
+      border: 1px solid #d6dfe8;
+      border-radius: 4px;
+      padding: 1px 4px;
+      font-family: "Consolas", "Courier New", monospace;
+      font-size: 0.82rem;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid #d3dee8;
+      background: #f8fbff;
+      color: #2d3c4c;
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    .foot {
+      margin-top: 12px;
+      color: #607080;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 900px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+      .flow-shell {
+        border-radius: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>GWT Analysis Pipeline: Dependency Map</h1>
+    <p class="subtitle">
+      End-to-end map of scripts in <code>pipeline/scripts/analysis</code>. Arrows indicate data dependency. Dashed arrows indicate optional or soft dependencies.
+    </p>
+
+    <div class="legend">
+      <span class="legend-item"><span class="swatch" style="background: var(--data)"></span>Data source / external input</span>
+      <span class="legend-item"><span class="swatch" style="background: var(--core)"></span>Core processing</span>
+      <span class="legend-item"><span class="swatch" style="background: var(--compare)"></span>Comparative/statistical analysis</span>
+      <span class="legend-item"><span class="swatch" style="background: var(--report)"></span>Reporting/correlation</span>
+      <span class="legend-item"><span class="swatch" style="background: var(--doc)"></span>Documentation</span>
+      <span class="legend-item"><span class="pill">solid arrow</span>required dependency</span>
+      <span class="legend-item"><span class="pill">dashed arrow</span>optional dependency</span>
+    </div>
+
+    <div class="flow-shell">
+      <div class="flow">
+        <div class="lane-label lane-1">Inputs</div>
+        <div class="lane-label lane-2">Core pipeline</div>
+        <div class="lane-label lane-3">Comparative/statistical</div>
+        <div class="lane-label lane-4">Correlation/reporting</div>
+
+        <svg width="1450" height="960" viewBox="0 0 1450 960" xmlns="http://www.w3.org/2000/svg" style="position:absolute; inset:0; z-index:0;">
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+              <path d="M0,0 L10,4 L0,8 z" fill="#3f5367"/>
+            </marker>
+          </defs>
+
+          <g stroke="#3f5367" stroke-width="2.2" fill="none" marker-end="url(#arrow)">
+            <!-- Inputs to core -->
+            <path d="M318 120 L428 120" />
+            <path d="M318 380 C380 380, 360 150, 428 120" />
+
+            <!-- Core pipeline -->
+            <path d="M578 168 L578 208" />
+            <path d="M578 298 L578 338" />
+
+            <!-- Drug/control comparison branch -->
+            <path d="M728 120 L838 120" />
+            <path d="M728 380 C780 380, 780 120, 838 120" />
+            <path d="M1138 120 L1248 120" />
+            <path d="M1398 168 L1398 208" />
+            <path d="M1138 250 L1248 250" />
+
+            <!-- Paired stats / role-switch subjective branch -->
+            <path d="M728 120 C790 120, 790 250, 838 250" />
+            <path d="M1138 250 C1200 250, 1200 510, 1248 510" />
+            <path d="M318 250 C690 250, 760 510, 1248 510" />
+
+            <!-- NBS / regional effects branch -->
+            <path d="M728 120 C790 120, 790 380, 838 380" />
+            <path d="M1138 380 L1248 380" />
+          </g>
+
+          <g stroke="#6d7f90" stroke-width="2" fill="none" stroke-dasharray="7 6" marker-end="url(#arrow)">
+            <!-- Optional group-workspace usage in script 07 -->
+            <path d="M728 250 L838 250" />
+
+            <!-- Additional inputs consumed by downstream reporting scripts -->
+            <path d="M728 250 C980 250, 980 380, 1248 380" />
+            <path d="M728 380 C980 380, 980 640, 1248 640" />
+            <path d="M728 120 C980 120, 980 640, 1248 640" />
+            <path d="M318 250 C680 250, 760 640, 1248 640" />
+
+            <!-- Documentation references script 07 outputs -->
+            <path d="M1138 250 C1200 250, 1200 770, 1248 770" />
+          </g>
+        </svg>
+
+        <div class="node data" style="left:18px; top:78px; z-index:1;">
+          <h3>Deconvolved time series</h3>
+          <p><code>results/timeseries/*_timeseries_deconv.npy</code></p>
+          <small>Primary source for PhiID matrix computation.</small>
+        </div>
+
+        <div class="node data" style="left:18px; top:208px; z-index:1;">
+          <h3>Subjective questionnaires</h3>
+          <p><code>data/{dataset}/{dataset}_subjective.csv</code></p>
+          <small>11ASC dimensions used in both correlation analyses.</small>
+        </div>
+
+        <div class="node data" style="left:18px; top:338px; z-index:1;">
+          <h3>Dataset configuration</h3>
+          <p><code>configs/datasets/{dataset}.yaml</code></p>
+          <small>Defines tasks, control condition, subject list.</small>
+        </div>
+
+        <div class="node core" style="left:428px; top:78px; z-index:1;">
+          <h3>04_compute_phiid_revised.py</h3>
+          <p>Computes <code>redundancy/synergy/phi/phi_r</code> matrices for each scan.</p>
+          <small>Output: <code>results/phiid_matrices</code></small>
+        </div>
+
+        <div class="node core" style="left:428px; top:208px; z-index:1;">
+          <h3>05_group_average_workspace.py</h3>
+          <p>Builds group-average matrices; identifies workspace mask.</p>
+          <small>Output: <code>results/group_analysis/{dataset}/{task}</code></small>
+        </div>
+
+        <div class="node core" style="left:428px; top:338px; z-index:1;">
+          <h3>06_identify_gateways_broadcasters.py</h3>
+          <p>Classifies workspace ROIs into gateway vs broadcaster.</p>
+          <small>Output includes <code>*_gateway_broadcaster_summary.csv</code></small>
+        </div>
+
+        <div class="node compare" style="left:838px; top:78px; z-index:1;">
+          <h3>06b_compare_conditions_gateways.py</h3>
+          <p>Compares drug vs control roles using 06 control outputs.</p>
+          <small>Output: <code>comparison_{drug}_vs_{control}</code></small>
+        </div>
+
+        <div class="node compare" style="left:838px; top:208px; z-index:1;">
+          <h3>07_paired_statistical_testing.py</h3>
+          <p>Paired ROI/network tests, correction, role-switch metrics.</p>
+          <small>Output: <code>paired_stats_{drug}_vs_{control}</code></small>
+        </div>
+
+        <div class="node compare" style="left:838px; top:338px; z-index:1;">
+          <h3>07b_network_based_statistics.py</h3>
+          <p>NBS permutation analysis on <code>phi_r</code> edge changes.</p>
+          <small>Output: <code>nbs_{drug}_vs_{control}</code></small>
+        </div>
+
+        <div class="node report" style="left:1248px; top:78px; z-index:1;">
+          <h3>extract_role_switches.py</h3>
+          <p>Extracts gateway&lt;-&gt;broadcaster switch ROIs from 06b outputs.</p>
+          <small>Output: <code>role_switches_{drug}_vs_{control}</code></small>
+        </div>
+
+        <div class="node report" style="left:1248px; top:208px; z-index:1;">
+          <h3>extract_significant_role_switches.py</h3>
+          <p>Keeps only switches supported by corrected stats from 07.</p>
+          <small>Output: <code>significant_role_switches_{drug}_vs_{control}</code></small>
+        </div>
+
+        <div class="node report" style="left:1248px; top:338px; z-index:1;">
+          <h3>08_analyze_regional_changes.py</h3>
+          <p>Combines NBS outputs with workspace/gateway context.</p>
+          <small>Output: <code>regional_effects_{drug}_vs_{control}</code></small>
+        </div>
+
+        <div class="node report" style="left:1248px; top:468px; z-index:1;">
+          <h3>08_correlate_role_switches_subjective.py</h3>
+          <p>Correlates 07 role-switch metrics with 11ASC scores.</p>
+          <small>Output: <code>results/figures/{dataset}/role_switch_subjective_correlations</code></small>
+        </div>
+
+        <div class="node report" style="left:1248px; top:598px; z-index:1;">
+          <h3>correlate_phir_subjective_effects.py</h3>
+          <p>Correlates phi_r change in gateway/broadcaster/non-workspace ROIs with 11ASC.</p>
+          <small>Output: <code>results/figures/{dataset}/phi_r_subjective_correlations</code></small>
+        </div>
+
+        <div class="node doc" style="left:1248px; top:728px; z-index:1;">
+          <h3>RUN_PAIRED_STATISTICS.md</h3>
+          <p>Execution + interpretation guide for script 07 outputs.</p>
+          <small>No data output (documentation only).</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-table-shell">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 24%;">Script</th>
+            <th style="width: 28%;">Reads from</th>
+            <th style="width: 28%;">Writes to</th>
+            <th style="width: 20%;">Downstream consumers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>04_compute_phiid_revised.py</code></td>
+            <td>Deconvolved timeseries <code>results/timeseries</code></td>
+            <td><code>results/phiid_matrices/*_{redundancy,synergy,phi,phi_r}.npy</code></td>
+            <td><span class="pill">05</span> <span class="pill">06b</span> <span class="pill">07</span> <span class="pill">07b</span> <span class="pill">correlate_phir</span></td>
+          </tr>
+          <tr>
+            <td><code>05_group_average_workspace.py</code></td>
+            <td><code>results/phiid_matrices</code></td>
+            <td><code>results/group_analysis/{dataset}/{task}/...workspace_mask.npy</code><br><code>...workspace_summary.csv</code></td>
+            <td><span class="pill">06</span> <span class="pill">07 (optional)</span> <span class="pill">08_analyze</span></td>
+          </tr>
+          <tr>
+            <td><code>06_identify_gateways_broadcasters.py</code></td>
+            <td><code>05</code> outputs (+ RSN mapping)</td>
+            <td><code>*_gateway_mask.npy</code><br><code>*_broadcaster_mask.npy</code><br><code>*_gateway_broadcaster_summary.csv</code></td>
+            <td><span class="pill">06b</span> <span class="pill">08_analyze</span> <span class="pill">correlate_phir</span></td>
+          </tr>
+          <tr>
+            <td><code>06b_compare_conditions_gateways.py</code></td>
+            <td><code>06</code> control outputs + drug matrices from <code>phiid_matrices</code></td>
+            <td><code>results/group_analysis/{dataset}/comparison_{drug}_vs_{control}</code></td>
+            <td><span class="pill">extract_role_switches</span></td>
+          </tr>
+          <tr>
+            <td><code>07_paired_statistical_testing.py</code></td>
+            <td><code>results/phiid_matrices</code> (+ optional group workspace mask from <code>05</code>)</td>
+            <td><code>results/group_analysis/{dataset}/paired_stats_{drug}_vs_{control}</code></td>
+            <td><span class="pill">extract_significant</span> <span class="pill">08_correlate_role_switches</span></td>
+          </tr>
+          <tr>
+            <td><code>07b_network_based_statistics.py</code></td>
+            <td><code>results/phiid_matrices/*_phi_r.npy</code></td>
+            <td><code>results/group_analysis/{dataset}/nbs_{drug}_vs_{control}</code></td>
+            <td><span class="pill">08_analyze</span></td>
+          </tr>
+          <tr>
+            <td><code>08_analyze_regional_changes.py</code></td>
+            <td><code>07b</code> NBS masks + <code>05/06</code> summary CSVs</td>
+            <td><code>results/group_analysis/{dataset}/regional_effects_{drug}_vs_{control}</code></td>
+            <td><span class="pill">terminal</span></td>
+          </tr>
+          <tr>
+            <td><code>08_correlate_role_switches_subjective.py</code></td>
+            <td><code>07</code> role-switch metrics + subjective CSV</td>
+            <td><code>results/figures/{dataset}/role_switch_subjective_correlations</code></td>
+            <td><span class="pill">terminal</span></td>
+          </tr>
+          <tr>
+            <td><code>correlate_phir_subjective_effects.py</code></td>
+            <td><code>04</code> phi_r + <code>06</code> classification summary + subjective CSV</td>
+            <td><code>results/figures/{dataset}/phi_r_subjective_correlations</code></td>
+            <td><span class="pill">terminal</span></td>
+          </tr>
+          <tr>
+            <td><code>extract_role_switches.py</code></td>
+            <td><code>06b</code> comparison masks + metadata</td>
+            <td><code>results/group_analysis/{dataset}/role_switches_{drug}_vs_{control}</code></td>
+            <td><span class="pill">extract_significant</span></td>
+          </tr>
+          <tr>
+            <td><code>extract_significant_role_switches.py</code></td>
+            <td><code>extract_role_switches</code> CSV + <code>07</code> PC stats</td>
+            <td><code>results/group_analysis/{dataset}/significant_role_switches_{drug}_vs_{control}</code></td>
+            <td><span class="pill">terminal</span></td>
+          </tr>
+          <tr>
+            <td><code>RUN_PAIRED_STATISTICS.md</code></td>
+            <td>None (documentation)</td>
+            <td>None</td>
+            <td><span class="pill">human reference for 07</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="foot">
+      Tip: open this file directly in a browser: <code>pipeline/scripts/analysis/analysis_dependency_map.html</code>
+    </p>
+  </div>
+</body>
+</html>

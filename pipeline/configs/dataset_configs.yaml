@@ -1,0 +1,121 @@
+# Dataset Configuration Registry
+# This file lists all available datasets and their key parameters
+# Each dataset has its own detailed config in configs/datasets/
+
+datasets:
+  london_lsd:
+    name: "London LSD Study"
+    config_file: "configs/datasets/london_lsd.yaml"
+    description: "Original LSD vs Placebo resting-state fMRI study"
+
+  basel_mmm:
+    name: "Basel MMM Study"
+    config_file: "configs/datasets/basel_mmm.yaml"
+    description: "Multi-drug study: MDMA, MPH, moda, placebo"
+
+  basel_lam:
+    name: "Basel LAM Study"
+    config_file: "configs/datasets/basel_lam.yaml"
+    description: "Multi-drug study: LSD, amph, MDMA, placebo (28 subjects)"
+
+  basel_lpm:
+    name: "Basel LPM Study"
+    config_file: "configs/datasets/basel_lpm.yaml"
+    description: "Multi-drug study: LSD, psilocybin, mescaline, placebo (33 subjects)"
+
+  berlin_ketamine:
+    name: "Berlin Ketamine Study"
+    config_file: "configs/datasets/berlin_ketamine.yaml"
+    description: "Ketamine vs Placebo study (17 participants)"
+
+  hcp:
+    name: "Human Connectome Project - 100 Unrelated"
+    config_file: "configs/datasets/hcp.yaml"
+    description: "Healthy control baseline for synergistic workspace definition (Luppi et al.)"
+
+  missouri_psilo:
+    name: "Missouri Psilocybin Study (ds006072)"
+    config_file: "configs/datasets/missouri_psilo.yaml"
+    description: "Psilocybin vs baseline resting-state (7 subjects, multi-echo, TR=1.761s)"
+
+  cambridge_propofol:
+    name: "Cambridge Propofol Anaesthesia Study (ds003171)"
+    config_file: "configs/datasets/cambridge_propofol.yaml"
+    description: "Propofol anaesthesia at 4 sedation levels (17 subjects, Luppi et al. 2024)"
+
+  cambridge_propofol_uniform:
+    name: "Cambridge Propofol (uniform no-ART rerun)"
+    config_file: "configs/datasets/cambridge_propofol_uniform.yaml"
+    description: "Uniform-pipeline rerun of ds003171 (no ART; publication primary, see docs/PLAN_cambridge_uniform_rerun.md)"
+
+  monash_psilo:
+    name: "Monash PsiConnect Study (ds006110)"
+    config_file: "configs/datasets/monash_psilo.yaml"
+    description: "Psilocybin (19mg) vs baseline resting-state (62 subjects, multi-echo, TR=0.91s)"
+
+  # --- TMS datasets (added 2026-11-05 in TMS_GWT; see PROVENANCE/POST_COPY_EDITS.tsv)
+  sudmex_tms:
+    name: "SUDMEX_TMS rTMS trial (ds003037)"
+    config_file: "configs/datasets/sudmex_tms.yaml"
+    description: "5-Hz left-DLPFC rTMS vs sham in cocaine use disorder (44 subjects: 24 active, 20 sham; TR=2.0s)"
+
+  aachen_itbs:
+    name: "Aachen iTBS study (ds001832)"
+    config_file: "configs/datasets/aachen_itbs.yaml"
+    description: "Single-session left-DLPFC iTBS at 90% and 120% rMT, pre/post rest (16 healthy subjects; TR=2.0s)"
+
+# Default dataset (used if --dataset not specified)
+default_dataset: "london_lsd"
+
+# Global preprocessing parameters (applied to all datasets unless overridden)
+global_preprocessing:
+  volumes_to_remove: 5  # Remove first N volumes (Luppi: steady-state magnetization)
+  volumes_to_remove_last: 0  # Luppi 2024 removes first N only; per-dataset override if needed
+  tr: 2.0  # Repetition time in seconds
+  bandpass_low: 0.008  # Hz
+  bandpass_high: 0.09  # Hz
+  compcor_wm: 5  # White matter components
+  compcor_csf: 5  # CSF components
+  global_signal_regression: false  # As per Luppi et al. 2024
+
+# Global analysis parameters
+global_analysis:
+  atlas: "schaefer400_tian54"  # 400 cortical + 54 subcortical = 454 ROIs
+  tau: 1  # Time delay for TDMI in TRs
+  phiid_method: "gaussian"  # Gaussian MMI-PID
+  redundancy_measure: "MMI"  # Minimum Mutual Information
+
+# fMRIPrep configuration (consistent across all datasets)
+fmriprep:
+  version: "23.2.1"
+  output_spaces: "MNI152NLin2009cAsym:res-2"
+  skip_bids_validation: true
+  stop_on_first_crash: true
+  # Resource presets
+  resource_presets:
+    low:
+      nprocs: 4
+      mem_mb: 16384  # 16 GB
+    medium:
+      nprocs: 8
+      mem_mb: 32768  # 32 GB
+    high:
+      nprocs: 16
+      mem_mb: 65536  # 64 GB
+    max:
+      nprocs: 22      # Match .wslconfig processors (leave 2 for system)
+      mem_mb: 184320  # 180 GB (match .wslconfig)
+
+# Global paths (local Windows)
+global_paths:
+  local:
+    project_dir: "D:/projects/TMS_GWT"
+    license_file: "D:/projects/TMS_GWT/license.txt"
+    work_dir: "D:/projects/TMS_GWT/tmp/fmriprep_work"
+    log_dir: "D:/projects/TMS_GWT/pipeline/logs"
+    templateflow_dir: "D:/projects/TMS_GWT/tmp/templateflow"
+  hpc:
+    project_dir: "/home/s3648540/data_pi-michielvanelkm/Parsa/GWT"
+    license_file: "/home/s3648540/data_pi-michielvanelkm/Parsa/GWT/license.txt"
+    work_dir: "/scratch/s3648540/fmriprep_work"
+    log_dir: "/home/s3648540/data_pi-michielvanelkm/Parsa/GWT/logs"

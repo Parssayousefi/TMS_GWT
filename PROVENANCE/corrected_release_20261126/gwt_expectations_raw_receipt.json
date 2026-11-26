@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-11-26T11:44:13.463901+00:00",
+  "metrics": [
+    "gateways_FPN",
+    "gateways_DAN",
+    "mean_redundancy_pc",
+    "mean_synergy_pc"
+  ],
+  "branch": "raw",
+  "output_rows": 8,
+  "aachen_participants": 15,
+  "sudmex_participants": 40,
+  "sign_flip_vectors": 32768,
+  "input_sha256": {
+    "D:\\projects\\TMS_GWT\\output\\corrected_tms_analysis\\20261126T112054_284547Z\\raw_paired_changes.csv": "c562e142abe7a5864fd85da63efec284fb31dcf2119873c0b92b6d86eda14983",
+    "D:\\projects\\TMS_GWT\\output\\corrected_tms_analysis_review\\gwt_expectation_inventory.md": "084310a052fd6e30c8f9ca865dcd869587af1ca4ddf6ac1548a9f3cb395107b5",
+    "D:\\projects\\TMS_GWT\\setup\\test_corrected_gwt_expectations.py": "699ae871c10fe3a33117cab9950ee41b40e491070a1a3ec4288789ade57e398f"
+  },
+  "inference": "Holm4 of two-sided t p-values per dataset; Aachen also exact joint sign-flip maxT4. CIs are marginal. Sign-flip inference assumes independent participants and joint sign symmetry. HC3 uses a small-sample t approximation; motion-adjusted SUDMEX is a sensitivity estimand.",
+  "scope": "Expectation family defined before corrected effect review; not a preregistration. No treatment source metrics or core analysis files changed."
+}

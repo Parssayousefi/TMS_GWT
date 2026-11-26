@@ -1,0 +1,92 @@
+
+# Basel LPM Dataset Configuration
+# LSD, Psilocybin, Mescaline, Placebo — 33 subjects
+
+dataset_id: "basel_lpm"
+name: "Basel LPM Study"
+
+# Data paths
+paths:
+  local:
+    bids_root: "D:/projects/TMS_GWT/data/basel_lpm"
+    fmriprep_dir: "D:/projects/TMS_GWT/data/basel_lpm/derivatives/fmriprep"
+  hpc:
+    bids_root: "/home/s3648540/data_pi-michielvanelkm/ascdb/basel_LPM"
+    fmriprep_dir: "/home/s3648540/data_pi-michielvanelkm/ascdb/basel_LPM/derivatives/fmriprep"
+  # Legacy
+  bids_root: "D:/projects/TMS_GWT/data/basel_lpm"
+  fmriprep_dir: "D:/projects/TMS_GWT/data/basel_lpm/derivatives/fmriprep"
+
+# BIDS structure
+bids_structure:
+  has_sessions: true  # sub-XXX/ses-{cond}/func/...
+
+# Subject information
+subjects:
+  auto_discover: true
+  include: []
+  exclude: []
+
+# Task/condition information
+# Condition is determined by session name
+tasks:
+  lsd:
+    bids_task_name: "rest"
+    description: "LSD condition"
+    is_control: false
+
+  psilocybin:
+    bids_task_name: "rest"
+    description: "Psilocybin condition"
+    is_control: false
+
+  mescaline:
+    bids_task_name: "rest"
+    description: "Mescaline condition"
+    is_control: false
+
+  placebo:
+    bids_task_name: "rest"
+    description: "Placebo condition"
+    is_control: true
+
+# Run selection
+run_selection:
+  strategy: "first"  # Most sessions have 1 run; LPM_001/LSD has 2 (use first)
+
+# File naming patterns
+file_patterns:
+  bold: "sub-{subject}_ses-{session}_task-{task}_run-{run}_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz"
+  confounds: "sub-{subject}_ses-{session}_task-{task}_run-{run}_desc-confounds_timeseries.tsv"
+  mask: "sub-{subject}_ses-{session}_task-{task}_run-{run}_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz"
+
+# QC criteria (Luppi et al. methodology)
+qc:
+  motion_thresholds:
+    max_translation_mm: 3.0
+    max_rotation_deg: 3.15
+  min_salvage_duration_min: 8.0
+  auto_truncate: true
+  max_fd_mean: 0.5
+  max_fd_peak: 3.0
+  min_timepoints: 100
+  exclusions_file: "results/qc/basel_lpm/exclusions.csv"
+
+# Dataset-specific preprocessing overrides
+preprocessing:
+  tr: 1.8  # 1800ms TR (same protocol as LAM)
+  volumes_to_remove_last: 0  # Match Luppi: remove first N only, not last
+
+# Notes
+notes: |
+  Basel LPM study (Borgwardt/Preller/Vollenweider group)
+  - 33 subjects (001-034, skip 023)
+  - 4 conditions: LSD, Psilocybin, Mescaline, Placebo
+  - EPI: 300 volumes, 35 slices, 3.5mm iso, TR=1.8s, TE=28ms
+  - B0 fieldmaps: magnitude + phasediff
+  - T1 images: Original MPRAGE (replaced skull-stripped versions via replace_lpm_t1s.py)
+  - Raw data format: DICOM (converted via dcm2niix)
+  - Subject 001/LSD has 2 EPI runs
+  - Some subjects missing conditions (009 no LSD, 011 no Psilocybin, etc.)
+  - Subject 020: LSD folder named "MRI_SCHÄDEL_*" (handled by conversion script)
+  - Subject 030: Mescaline folder misspelled as "Mecaline" (handled)

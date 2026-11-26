@@ -1,0 +1,11 @@
+{
+  "setup\\prepare_corrected_manuscript.py": "3d6f7bcd9e141bd71d9bcc8c4892cb5bc8907e6f6335584bf409b798b2c08e55",
+  "output\\control_workspace_qc\\combined_20261125T234309_541220Z\\control_workspace_comparison.png": "2445849762ff8931802f355e2f0737d2c6212f88396b5ee3a8d47f6f68687245",
+  "output\\corrected_tms_analysis\\20261126T112054_284547Z\\raw_aachen_all40.csv": "e1f2cf1cda41a76351a2a94f143dd13eb2367ce9fb8a3ad838886edcb5be36eb",
+  "output\\corrected_tms_analysis\\20261126T112054_284547Z\\normalized_aachen_all40.csv": "47986d0d390e64909b32adfdefba1e6d937967afea921f016890c3f2ce4eb874",
+  "output\\corrected_tms_analysis\\20261126T112054_284547Z\\gwt_expectations_raw.csv": "a0fb37a6d2f6ebd85766d52fe0edeafe32c7dca10163ac795919a16029d19597",
+  "output\\corrected_tms_analysis\\20261126T112054_284547Z\\gwt_expectations_normalized.csv": "76073984a8399e8cdea55ad42d6502d88b64210fecaf6423cc15f39d122754e7",
+  "output\\corrected_tms_analysis\\20261126T112054_284547Z\\sensitivities\\hrf_phi_associations.csv": "27f72256f294f3297be62426870a68f7c949162df21cce9338d7435dddf57b6e",
+  "manuscript\\aachen_brief_report\\corrected_20261126\\manuscript_source.md": "b8d71b230ccd36779550937845f701884033082703b5638ea65e00b5f8350ac9",
+  "manuscript\\aachen_brief_report\\corrected_20261126\\supplement_source.md": "b0ff022e4fc9fe4fcb3bd900dca48a20a30269086aa5674c04cc35925f2683a9"
+}

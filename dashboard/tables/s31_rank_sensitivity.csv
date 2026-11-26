@@ -1,0 +1,10 @@
+scope,parameter,rho,p,n,model,p_holm9
+whole_brain,height,-0.35,0.2009453508162933,15,unadjusted Spearman sensitivity; rank ties at 12 decimals,0.4018907016325866
+whole_brain,peak_seconds,0.620196851761465,0.013640957562118201,15,unadjusted Spearman sensitivity; rank ties at 12 decimals,0.05728770770039444
+whole_brain,width_seconds,-0.6952639058651582,0.004007371478435612,15,unadjusted Spearman sensitivity; rank ties at 12 decimals,0.02566247529160967
+outside_workspace,height,-0.4107142857142856,0.12832864601574887,15,unadjusted Spearman sensitivity; rank ties at 12 decimals,0.38498593804724657
+outside_workspace,peak_seconds,0.7274355004810266,0.0021156198767024598,15,unadjusted Spearman sensitivity; rank ties at 12 decimals,0.016924959013619678
+outside_workspace,width_seconds,-0.8535714285714284,5.17314356670977e-05,15,unadjusted Spearman sensitivity; rank ties at 12 decimals,0.00046558292100387926
+difference,height,-0.6321428571428571,0.011457541540078888,15,unadjusted Spearman sensitivity; rank ties at 12 decimals,0.05728770770039444
+difference,peak_seconds,0.27499999999999997,0.3212111733193767,15,unadjusted Spearman sensitivity; rank ties at 12 decimals,0.4018907016325866
+difference,width_seconds,-0.7,0.0036660678988013817,15,unadjusted Spearman sensitivity; rank ties at 12 decimals,0.02566247529160967

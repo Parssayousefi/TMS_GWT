@@ -1,0 +1,3 @@
+path_in_TMS_GWT	date	reason	sha256_as_copied	sha256_now
+pipeline/configs/dataset_configs.yaml	2026-11-05	Registered the TMS datasets sudmex_tms and aachen_itbs (2 registry entries added)	265d0626e396f12323fad8d25b284454e383db170f862cb7e45b11f49849d2d7	fde3fcb2f71587eb42fb016ded87857cc7eb0520bb56c360667f8bcfa6ce917a
+pipeline/scripts/preprocessing/step02_hrf_deconvolution_matlab.m	2026-11-05	Added TR 2.0 s for sudmex_tms and aachen_itbs to the dataset_tr map, as done for each new GWT cohort	6fc9f10aa4233db64ccb70c2b7ca9f56d78b40228961b015a2afc64d92739dcd	deb9ad1394485279edfaa40098ee89833b3109cf7d8b7b238985169d1f4b9c4e

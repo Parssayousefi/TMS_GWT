@@ -1,0 +1,36 @@
+{
+  "global_phi": {
+    "historical": {
+      "estimate": 0.00179217,
+      "p_maxT5": 0.02393
+    },
+    "corrected": {
+      "family": "whole_brain",
+      "n": 15,
+      "estimate": 0.0013491622181517,
+      "ci_low": -0.0015254408481702,
+      "ci_high": 0.0042237652844737,
+      "t": 1.0066312108387212,
+      "df": 14,
+      "p": 0.3311943641456335,
+      "effect_size": 0.2457340940584856,
+      "effect_size_type": "Hedges_g_z",
+      "status": "ok",
+      "p_sign_flip": 0.35003662109375,
+      "p_maxT_family": 0.74407958984375,
+      "p_holm_family": 0.8962346863928059,
+      "p_holm_all": 1.0,
+      "p_maxT_all": 0.9984130859375,
+      "p_maxT_whole_and_workspace10": 0.82696533203125,
+      "p_holm_whole_and_workspace10": 1.0,
+      "p_maxT_workspace25": NaN,
+      "branch": "raw"
+    }
+  },
+  "outside_workspace_narrative": "Historical preferential-outside/increase narrative withdrawn; corrected direct contrast uncertain.",
+  "control_workspace": "Added unchanged user-supplied figure with measured partial overlap and Luppi/Yousefi citations.",
+  "gwt_expectations": "Added four public-literature-motivated tests; none survived.",
+  "hrf": "Replaced historical nonsignificant associations with corrected width/latency associations, explicitly diagnostic.",
+  "retained": "Author order, equal first authorship, corresponding author, acquisition protocol and intended metric definitions.",
+  "remaining_author_fields": "Zain affiliation, funding, conflicts, CRediT and public code/data DOI remain to be confirmed."
+}

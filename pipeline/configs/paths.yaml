@@ -1,0 +1,29 @@
+# Path configuration for GWT analysis pipeline
+# UPDATED: Dataset-agnostic configuration
+# Dataset-specific paths now defined in configs/datasets/*.yaml
+
+# Project base directory on cluster
+project_dir: "D:/projects/TMS_GWT/pipeline"
+
+# Output paths (dataset-agnostic, shared across all datasets)
+output:
+  base_dir: "D:/projects/TMS_GWT/pipeline/results"
+  timeseries: "D:/projects/TMS_GWT/pipeline/results/timeseries"
+  phiid_matrices: "D:/projects/TMS_GWT/pipeline/results/phiid_matrices"
+  networks: "D:/projects/TMS_GWT/pipeline/results/networks"
+  statistics: "D:/projects/TMS_GWT/pipeline/results/statistics"
+  logs: "D:/projects/TMS_GWT/pipeline/logs"
+
+# Atlas paths (shared across all datasets)
+atlases:
+  schaefer_400: "D:/projects/TMS_GWT/pipeline/atlases/schaefer_400.nii.gz"
+  tian_54: "D:/projects/TMS_GWT/pipeline/atlases/tian_54.nii.gz"
+
+# DEPRECATED: Dataset-specific configuration moved to configs/datasets/*.yaml
+# To add a new dataset:
+#   1. Create configs/datasets/<dataset_name>.yaml
+#   2. Add entry to configs/dataset_configs.yaml
+#   3. Run: ./slurm/submit_dataset.sh <dataset_name>
+
+# Note: Subject lists, tasks, and run selection are now defined per-dataset
+# See configs/datasets/london_lsd.yaml and configs/datasets/basel_mmm.yaml for examples

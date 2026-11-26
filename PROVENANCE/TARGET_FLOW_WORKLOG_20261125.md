@@ -1,0 +1,35 @@
+# Targeted information flow follow-up
+
+User requests still active: (1) shorten the Aachen manuscript, cite established methods, remove prominent wording about absent pre-deconvolution effects and retain the complete diagnostic in the supplement; (2) make the outside-minus-inside five-information-measure correction family explicit; (3) run a simple robust target-based information-flow analysis, with appropriately bounded causal interpretation.
+
+Manuscript condensation has been discussed but not yet implemented. Current manuscript sources and DOCX files remain the previously reviewed versions. No new target-based information outcomes have yet been read or tested at the time this plan was written.
+
+## Data and anatomical preparation
+
+- Cloud mode remains authorized. Production code and all HCP/psychedelic outputs remain read-only.
+- `setup/fetch_aachen_target_rois.py` downloaded 50 public FCl/FCr masks from OpenNeuro S3. Exact URLs, ETags and SHA256 hashes are recorded in `data/aachen_target_rois/download_manifest.json`.
+- Masks cover 9 original subjects, including excluded sub-02, hence 8 usable Aachen participants. The deposited masks are resliced into original functional voxel grids but have SPM-recentered affine origins. Their linear grids were checked (maximum corner displacement <0.5 mm), raw functional headers restored in memory, and existing fMRIPrep transforms applied.
+- `setup/map_aachen_target_rois.py` maps available baseline masks (sessions 1 and/or 3), or the first available mask if no baseline exists (sub-11, post90), into the current 454-region atlas. Selection is anatomical, without information outcomes. Transform order/direction reproduces saved standardized BOLD references with correlations 0.994–0.996. Full mapping QC and fixed regional weights are in `output/aachen_target_anatomy/`.
+- All 8 left target masks pass >10% cortical-atlas coverage. Right masks for sub-04 and sub-07 do not; 6 subjects have both usable sides. Keep these exclusions visible, do not silently relax coverage after seeing results.
+- SimpleITK 2.5.7 was installed only in `tmp/target_roi_deps`; prepend this directory for imports. Docker is not running and was not started.
+- `setup/fetch_sudmex_target_rois.py` downloaded the localization XLSX and mask ZIP from Zenodo 10409461, verified published MD5 hashes. The ZIP contains whole-brain masks, not stimulation masks, and must not be treated as targeting masks.
+- Localization workbook: 27 people total, 25 overlap acute MRI sample; only 19 have T0 coordinates (12 active/7 sham). Other coordinates were measured at T1/T2/T4. The dictionary explicitly calls these MNI coordinates.
+- SUDMEX primary acute MRI sample remains 40 (22 active/18 sham), t0 versus t1 only. The common target is defined from all 21 published T0 localizations: mean MNI (-33.142857,43.714286,37.142857), with a 10-mm sphere and mirrored right comparator. This definition uses baseline anatomy only, including published T0 coordinates outside the imaging sample. The individual-baseline sensitivity has 19 usable participants. Dataset documentation reports a change from 5.5-cm targeting to Beam F3. No individual electric-field maps exist in this preparation.
+- Visual QA of all eight Aachen participants (two sagittal panels each) found substantial extracortical mask portions despite successful numerical transform checks. Transform verification establishes the fMRIPrep transform chain, not the provenance of the deposited masks relative to the original mean functional image. Retain any Aachen analysis as provisional; do not claim exact tissue localization or use it to establish a mechanism. SUDMEX common-target atlas overlap is 77.6% left and 86.2% right.
+
+## Bounded analysis plan
+
+Use unchanged haemodynamically deconvolved regional time series and the existing Gaussian MMI PhiID helper (`numit-phiid/numit/phiid_gauss.py`, read-only). Its ordering is [Xpast,Ypast,Xfuture,Yfuture]. X is always target/control node and Y a remote destination. Use the same remote destination pool for left and right summaries, excluding either seed set. Average across destinations, then weight seed nodes by anatomical overlap. Never treat edges or visits as independent participants.
+
+Transfer entropy X→Y = xtr + xty + str + sty; Y→X = ytr + ytx + str + stx. The main five measures are net TE, its net unique-source contribution [(xtr+xty)-(ytr+ytx)], its net synergistic contribution (sty-stx), persistent synergy (sts), and persistent redundancy (rtr). The net-TE sum identity must be checked. The individual pure-transfer and duplication atoms may be retained descriptively without searching separate p values.
+
+- Aachen: participant-average of two paired visit changes. Left target n=8; left-minus-right change n=6. Five-measure exact maxT within each question, plus Holm over the ten reported hypothesis tests as a wider sensitivity. Anatomical mask availability limits generalization to the full 15-person sample.
+- SUDMEX: fixed baseline-coordinate DLPFC neighbourhood described above, mirrored contralateral comparator. Baseline-adjusted active-versus-sham post-treatment contrast for left target and left-minus-right: five measures × two questions = ten tests. Use common treatment-label permutations preserving 22/18 counts, HC3-studentized statistics and maxT across all ten; retain the five-test subsets too. Label permutations assume exchangeability within complete cases; the full original randomization scheme and missingness are not recreated. Do not use later open-label scans for causal inference.
+- Sensitivities: lag 2 TR versus primary 1 TR; equal-length paired recordings; baseline plus measured motion; leave-one-participant-out influence. In SUDMEX, baseline-coordinate subset (n=19) provides an anatomical-localization sensitivity. No new NuMIT reference for novel directed quantities is implied by the old five-measure normalization tables.
+- Numerical verification: compare reconstructed original five summaries against saved production matrices, TE against independent conditional mutual information/regression, synthetic unidirectional VAR and source-label exchange, and selected original MATLAB PhiIDFull four-vector outputs if feasible. Independently verify permutation correction.
+
+## Causal interpretation
+
+PhiID on observed lagged fMRI distributions quantifies predictive dependence. Randomized active-versus-sham assignment supports a causal treatment contrast subject to complete-case and measurement limitations; it does not by itself identify direct axonal causal edges or remove latent common inputs. Aachen lacks sham. Contralateral cortex can itself respond to TMS and is a spatial comparator, not an untreated randomized control. The target analysis is parcel-level, not a voxelwise or electric-field analysis.
+
+Primary methodological sources inspected: Mediano et al. 2025 PNAS doi:10.1073/pnas.2423297122 (especially TE decomposition and observational versus interventional causality); Alkhasli et al. 2019 doi:10.3389/fnhum.2019.00190; SUDMEX data descriptor doi:10.1038/s41597-024-03242-y and Zenodo doi:10.5281/zenodo.10409461.

@@ -1,0 +1,1444 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-25T22:42:36.633382+00:00",
+  "passed": true,
+  "scope": "Full corrected Aachen anatomical QA and deposited-mask mapping",
+  "derivative_root": "D:\\projects\\TMS_GWT\\data\\aachen_itbs\\derivatives\\fmriprep_skullstrip_skip_20261125",
+  "subjects": [
+    "01",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16"
+  ],
+  "required_sessions": [
+    "pre90",
+    "post90",
+    "pre120",
+    "post120"
+  ],
+  "participants_passed": 15,
+  "functional_runs_audited": 60,
+  "mapping_subjects": [
+    "01",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "11",
+    "13"
+  ],
+  "source_mask_definitions_unchanged": true,
+  "functional_outcomes_read": false,
+  "temporal_signal_quality_assessed": false,
+  "bounded_spatial_sample_checks": [
+    {
+      "subject": "10",
+      "sessions": [
+        "pre90",
+        "post90"
+      ],
+      "raw_and_processed_volume_numbers": [
+        1,
+        150
+      ],
+      "reference_enhancement_distinction_resolved": true
+    },
+    {
+      "subject": "14",
+      "sessions": [
+        "pre90",
+        "post90"
+      ],
+      "raw_and_processed_volume_numbers": [
+        1,
+        150
+      ],
+      "reference_enhancement_distinction_resolved": true
+    }
+  ],
+  "release_for": "Anatomically consistent downstream extraction and unchanged deposited-ROI mapping; functional signal quality and treatment effects require separate assessment.",
+  "quantitative_summary": {
+    "native_support_retained_original_range": [
+      0.4421781178840582,
+      0.5290690020124234
+    ],
+    "native_support_retained_corrected_range": [
+      0.9963089579578956,
+      0.9999700528532318
+    ],
+    "outer_8mm_support_retained_corrected_range": [
+      0.9903820670941303,
+      0.9999173878835562
+    ],
+    "bold_t1_mask_dice_corrected_range": [
+      0.881494282749439,
+      0.9556309206583964
+    ],
+    "bold_transform_reproduction_r_minimum": 0.9948130785814456,
+    "target_cortical_fraction_corrected_range": [
+      0.744807121661721,
+      1.0
+    ],
+    "eligible_target_sides_original": 14,
+    "eligible_target_sides_corrected": 16,
+    "zero_reference_parcel_sessions": 0,
+    "zero_brainmask_parcel_sessions": 0,
+    "minimum_parcel_reference_support_fraction": 0.102373887240356,
+    "minimum_parcel_brainmask_support_fraction": 0.0014836795252225
+  },
+  "evidence": [
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\anatomy_original_corrected_comparison.csv",
+      "sha256": "5e73b8b41c6387770fb1bc32312b2773f1501dd96b9c2f06154ea519b38df9a8",
+      "bytes": 1976
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\atlas_functional_coverage_summary.csv",
+      "sha256": "72adb11afbc35ab5c3a84b72e44169dff04501f7d5a077d7ae71cec493298b06",
+      "bytes": 2658
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\COHORT_FINDINGS.md",
+      "sha256": "a12bcc3e5bc34afebab66dfd5a933d36b9525facef751ed1433d0af7a9907f85",
+      "bytes": 3022
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\COHORT_QA.md",
+      "sha256": "9d133d8b2ff3e8d19527f1f2defb05cf898bdeba32af0911a4bb3893e150b00c",
+      "bytes": 5064
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\cohort_quantitative_summary.json",
+      "sha256": "ad8410fe2a07973c48b092dd19f17485370cfbceb082dc89b6590330e1aa1c34",
+      "bytes": 860
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\full_audit\\anatomical_support.csv",
+      "sha256": "a2784af67de0c1db908976a1e9a9065d437af18cb68d0a7b323da98d7e605a53",
+      "bytes": 3134
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\full_audit\\effective_skullstrip_settings.csv",
+      "sha256": "cb2d9f8fac3b22c357f1db60408f2b3b61841e67de5bf985751ce56c6ca9bea5",
+      "bytes": 2757
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\full_audit\\functional_anatomical_agreement.csv",
+      "sha256": "c06aca3d1df93a6302bd959679b4b08ad603ce9a857a414aa6fd7d7040a7143e",
+      "bytes": 5563
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\full_audit\\provenance.json",
+      "sha256": "255e1d0b21857a748ff5e1ebf2061f71c7598a0605c3bdbf079d76d9a24e164a",
+      "bytes": 28156
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\full_audit\\target_support.csv",
+      "sha256": "1793619c80d348af5d04296e7f0734ddebcff846c0e32024b184ccb9ef3fad8f",
+      "bytes": 3916
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\queue_final_snapshot.json",
+      "sha256": "2448443b2ba9fbeb4a92e2de67fb4c7fb32feb8a03b6fda8c0a3a55763868ca4",
+      "bytes": 9106
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\release_guard_check.json",
+      "sha256": "b8a603ec0e3b839b6799c7b659ed5d35102ef5ae1c1a95dda14be2b91e2ae6a8",
+      "bytes": 298
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\release_input_manifest.json",
+      "sha256": "187ed3551ab3474755577688dd52eebdb040543b9446cd89bad4799b4634b632",
+      "bytes": 122228
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-01\\anatomical_support.csv",
+      "sha256": "76cec7365e380406e4edb60d7a9616f8cae2410e15bf746dad0e42ec78d5539b",
+      "bytes": 548
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-01\\atlas_functional_coverage.csv",
+      "sha256": "2abe6a9131056b4a2e32766d2032cf81b96d950f45fb59871992bd19510c7eec",
+      "bytes": 83711
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-01\\atlas_functional_coverage_summary.json",
+      "sha256": "366caa34be23d55c622c7c3b3a2adacc68f15f5b055fc1d0d3ce5d552a4705cb",
+      "bytes": 483
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-01\\bilateral_target_planes_provenance.json",
+      "sha256": "133524116bc720d84b35ca677856e498f0d14899878d278be5337155622a2dc9",
+      "bytes": 3961
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-01\\effective_skullstrip_settings.csv",
+      "sha256": "7124db233a1d08a08e6ff30ede558905961440c582bef240e7d456421d9b7687",
+      "bytes": 377
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-01\\functional_anatomical_agreement.csv",
+      "sha256": "45087f110c4bec60676a1a8746ecfb73251d087a41399219d284a4e7240ce0a5",
+      "bytes": 528
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-01\\headers.json",
+      "sha256": "57eb0b655fa60d1fccd1ba0964d63f3350da0caa7b288ea27b1274e6f28d08b6",
+      "bytes": 5762
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-01\\metrics.json",
+      "sha256": "2eeadd5bac87df43e0c5523bcff0acd241a69b2cdc06aea0dffeabf34f35a2ee",
+      "bytes": 2232
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-01\\provenance.json",
+      "sha256": "125d91cf02160666095a84841b8963d5c02ddadca04dcd91f701bc835aa3d633",
+      "bytes": 3027
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-01\\queue_completion_evidence.json",
+      "sha256": "41e1f044bf77f897629c73e5328365c348356ee984074b0ef5cc5480368c6414",
+      "bytes": 631
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-01\\target_support.csv",
+      "sha256": "ec9dee680a5c0f12250f49d47f5afe06e8d06ff782dca33dd28fe845aafda1a3",
+      "bytes": 823
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-01\\visual_review.json",
+      "sha256": "00eb32fc1f47cad98c301feba319f46e0df477422be073a89a4ef42ee7dd4a4e",
+      "bytes": 3061
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-03\\anatomical_support.csv",
+      "sha256": "41b8d8044939521fa1da5aafe6e26619d69979aaecc153eb8d2751edc086de54",
+      "bytes": 554
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-03\\atlas_functional_coverage.csv",
+      "sha256": "c58ef22816a6ce41c1d885bd7381ac8a12b53ccfeb91d3b90e8035bfc413800e",
+      "bytes": 81596
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-03\\atlas_functional_coverage_summary.json",
+      "sha256": "700e57fac35e629d9de532f0e46c4fe0e7296fe6d6107e265a02f8b5c77f6645",
+      "bytes": 483
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-03\\bilateral_target_planes_provenance.json",
+      "sha256": "fbe1e093a31ed8bc4887f50ed605660ff27b1d7c14f1691469a229f36dfab015",
+      "bytes": 3961
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-03\\effective_skullstrip_settings.csv",
+      "sha256": "d3a09ca3011fb95fa5973aed62f74bea3ad4161d788c7268c17ed95ccc12cc9d",
+      "bytes": 207
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-03\\functional_anatomical_agreement.csv",
+      "sha256": "1a29abd3c1abf7f5b190b2600f45bb0e4133bb316573e20ecd15c82cb3396551",
+      "bytes": 524
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-03\\headers.json",
+      "sha256": "6dbdad739afa6b25b05130301dabff46e50fe3a23a5be1e5505c02ba8bd4ae3f",
+      "bytes": 5669
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-03\\metrics.json",
+      "sha256": "afa23e1643185bc267fcd48c4a23d140ab6d36adbd7633c5f0d01926bb532ef3",
+      "bytes": 2231
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-03\\provenance.json",
+      "sha256": "adc9d4f1444fac02b78e60976d3ddfda6321656b6ca3ba61de9bec9226bff3cb",
+      "bytes": 3027
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-03\\queue_completion_evidence.json",
+      "sha256": "e395d14be51287e030981184c0b4043911568da10ef3a31a5dee8daf5e7eca34",
+      "bytes": 631
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-03\\target_support.csv",
+      "sha256": "d77a03d5ac06db981257511b74e41d3bb8da52215dd472d162c2fe5cd26e7920",
+      "bytes": 902
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-03\\visual_review.json",
+      "sha256": "4fc9814bd8ea13b9850a2b1ed576fed8c8fe067a1b436389e1273b2c015a773d",
+      "bytes": 3143
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-04\\anatomical_support.csv",
+      "sha256": "e813cf973296584cab1f5fcd138cb36781f7f0ff9c419d17af31ef4f76f421b9",
+      "bytes": 555
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-04\\atlas_functional_coverage.csv",
+      "sha256": "d6a28e6ddfe9528af5be673f5d15c06869ce6c883baab247ffe3fb0476afda72",
+      "bytes": 97268
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-04\\atlas_functional_coverage_summary.json",
+      "sha256": "645d2b3cbfd17091f9bcde0f2b9da2e8863579cde0d91c0120860c6ff6a15fc2",
+      "bytes": 484
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-04\\bilateral_target_planes_provenance.json",
+      "sha256": "626880f851ca744f9205885692b13afd097d3ab95e8eeb144061dd84f9549f01",
+      "bytes": 3961
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-04\\effective_skullstrip_settings.csv",
+      "sha256": "7f68e83034057755303cf11a7b1e8abf98da86f2f00087a428169f654aab2d66",
+      "bytes": 207
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-04\\functional_anatomical_agreement.csv",
+      "sha256": "fb4482f2bb28db7918f1c688621eb9f190a1dc6bfabc58d8bde445ce42267b88",
+      "bytes": 526
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-04\\headers.json",
+      "sha256": "271ce11f75686b93659778c1008f40d87dd7c2301809e0c8a6baffd17b70bda0",
+      "bytes": 5113
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-04\\metrics.json",
+      "sha256": "6f8af5f449502648bc19396575825bbe14c8696a8b1f81f00bb0dafb71d86bda",
+      "bytes": 2231
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-04\\provenance.json",
+      "sha256": "703208167286add37cba35a3213a1194e252115c4846cb1078a1a5a8b8489423",
+      "bytes": 3027
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-04\\queue_completion_evidence.json",
+      "sha256": "38f4210bcb907875455743e3904d0150bae04e0e9814a56ccf8bd4c76ebf59c0",
+      "bytes": 631
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-04\\target_support.csv",
+      "sha256": "1a94ea73e108bb03d09fd34a4f37129361c5b2a824134cef02c4a7bb183c81a9",
+      "bytes": 1009
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-04\\visual_review.json",
+      "sha256": "53635cad932ca9d7a7ed9c79f1e82300cf12d3a1c1aabdf22f169a189462a646",
+      "bytes": 3147
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-05\\anatomical_support.csv",
+      "sha256": "b084eaeee5922334e14eae1ca5f06257becfcbac449c682c33a6165a201133ff",
+      "bytes": 554
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-05\\atlas_functional_coverage.csv",
+      "sha256": "286322304f9c476d6bcc319f59188d55ed04decba876b5fe9226671c219657a3",
+      "bytes": 87489
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-05\\atlas_functional_coverage_summary.json",
+      "sha256": "41e6cf35edc0fa759fbe4ac6bec8f37307fd910e457f932fa86e686094d62eb4",
+      "bytes": 483
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-05\\bilateral_target_planes_provenance.json",
+      "sha256": "242e52d090ed06494e47f80eb1072eb9b663afd315fd95d022ffb1eabc2b219d",
+      "bytes": 3967
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-05\\effective_skullstrip_settings.csv",
+      "sha256": "5bc81b0ce09fd9ce9dc2ef965c45b8140b17fdd2659e8fea87a71c5a26a3fee9",
+      "bytes": 207
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-05\\functional_anatomical_agreement.csv",
+      "sha256": "66f2b76f3be7f9fc26835a4700452ccd2dd09d830e52eb32473492a1bba7cc75",
+      "bytes": 524
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-05\\headers.json",
+      "sha256": "0358015790fa5a3540a791ac7885bbbb0f593bef997c9590b217d20b9f53e6c9",
+      "bytes": 5103
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-05\\metrics.json",
+      "sha256": "8e3fbefc8d17e8ee3c3d8c28765de53160e98322456e78c7244f44f37c1855e9",
+      "bytes": 2230
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-05\\provenance.json",
+      "sha256": "9ca0688e95a64bfa02363b1ed43a1016da8433c5a4faa704d3433595e72a306b",
+      "bytes": 3033
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-05\\queue_completion_evidence.json",
+      "sha256": "79d6e449e651c836fbb8fdc63317225b148a6c49dbfeb6b8da60cfb3eba34f59",
+      "bytes": 631
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-05\\target_support.csv",
+      "sha256": "aaf4a4fc3d9700eb6fb4b2f4f31359a447ca05b4c304006e32e8b908c05c7556",
+      "bytes": 971
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-05\\visual_review.json",
+      "sha256": "5b33bb3ca43f573e0b735ec2a12f2057518be9daca8f0786036f446f885b9823",
+      "bytes": 3144
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-06\\anatomical_support.csv",
+      "sha256": "e32105cad3203275666336762eff0f5e62f986fa0cbdc34f31cb84c79e8aefd5",
+      "bytes": 552
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-06\\atlas_functional_coverage.csv",
+      "sha256": "f6052510c2d6c2b1cc573a0a06e6f0f7301787ffdd5a8d5210a9abed4f542dca",
+      "bytes": 86934
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-06\\atlas_functional_coverage_summary.json",
+      "sha256": "bda4e0ed49c700e4240e896f7a32664d70420cc97ddfa5d7832355863d31f5b9",
+      "bytes": 484
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-06\\bilateral_target_planes_provenance.json",
+      "sha256": "afc003b78e950978f101f06585d9dbcf8a3d7a4c3eb001d5d0dbda5f3e1167b1",
+      "bytes": 2525
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-06\\effective_skullstrip_settings.csv",
+      "sha256": "67f588dd9e8233a31cbf72ef5496a89c9a7a6dd03984ed06acf45b2830335ad8",
+      "bytes": 207
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-06\\functional_anatomical_agreement.csv",
+      "sha256": "72da6a10172863ec39b6e02b794c38e7e9c2185a99bd3a27bf4f997011f8ef25",
+      "bytes": 527
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-06\\headers.json",
+      "sha256": "9ff6518d36a7cd90eb6b5d79f613fcf8a0bff7d80d2f4a19810383e4cbc1dfb4",
+      "bytes": 5680
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-06\\metrics.json",
+      "sha256": "7639cf9bc540a5a32d815c10106b9a986eab1259071cfbc46b1889ff521e766d",
+      "bytes": 2228
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-06\\provenance.json",
+      "sha256": "88f3539e745bd37cdd404e1172577d3f38456f90162c01efd73dc9721b62648f",
+      "bytes": 2763
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-06\\queue_completion_evidence.json",
+      "sha256": "e8eb588fb03d3b66a1e935156eba03680d4d2d380b113cd58cc5d6093c96356b",
+      "bytes": 631
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-06\\target_support.csv",
+      "sha256": "ae0a1c6e759f9ba00e5837b316408204f13bbc89b879f12e834b863b74a81fc1",
+      "bytes": 665
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-06\\visual_review.json",
+      "sha256": "1bd66e146dcd7234300ef6a64c1cbd1036ff24ed567688c1dc064984d515d99e",
+      "bytes": 2562
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-07\\anatomical_support.csv",
+      "sha256": "724bd6325eebc51b5c537034c16cd02a07277c2acba5828137913149c74f772e",
+      "bytes": 554
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-07\\atlas_functional_coverage.csv",
+      "sha256": "b0a486b3c8eb46c133539a4512e589d8d79567638e1b67bd4ae316b18103ebe6",
+      "bytes": 89590
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-07\\atlas_functional_coverage_summary.json",
+      "sha256": "4fac362db18d848c7b6262465ccb6ff70adf4d7830d2d23eee456a854a42b206",
+      "bytes": 482
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-07\\bilateral_target_planes_provenance.json",
+      "sha256": "7ce0548e587cec1586438fb819eecef431f8c043b9215c0349e8d27e6b345c83",
+      "bytes": 2532
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-07\\effective_skullstrip_settings.csv",
+      "sha256": "2ba5bd46f9c88662b402889bf3df906ad16a0b3fdc982a59f1bf9d8da0a99a5e",
+      "bytes": 207
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-07\\functional_anatomical_agreement.csv",
+      "sha256": "c09f85a856bd4c16ad55712a1a3ce1cb80e358a2287e6e1798f539110763447a",
+      "bytes": 527
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-07\\headers.json",
+      "sha256": "8a7cc5faa1d2994bcb0f7b11db667170a476235ec993508c720a18b6bacb5633",
+      "bytes": 5087
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-07\\metrics.json",
+      "sha256": "3764a95da260525f2cc777c1650194aa517b19c826d67024bbbdd92b7e14c495",
+      "bytes": 2231
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-07\\provenance.json",
+      "sha256": "e9ddba352c2ccfb99f1efcf970725935fb4068614d7898289ffc89d322cde17a",
+      "bytes": 2763
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-07\\queue_completion_evidence.json",
+      "sha256": "36c673943787e45679ab72cfea93c7097cc135a69461b68d39ec5bcca31a8bbf",
+      "bytes": 631
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-07\\target_support.csv",
+      "sha256": "601201fe43421572a74ef52c1cfa459add8142377d1460feacc01170229bb2ca",
+      "bytes": 728
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-07\\visual_review.json",
+      "sha256": "919ac0aa39abc6e621b706912e9f7001302773717ac953f10ad45d613bfa2143",
+      "bytes": 2396
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-08\\anatomical_support.csv",
+      "sha256": "c8e8ce38ab6ebc8ec7b97de3c8cd5f266d5e86c0929dbfb24f8f1bd4d0a3aded",
+      "bytes": 556
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-08\\atlas_functional_coverage.csv",
+      "sha256": "1d3d3c7f0f019f28a7fbe88b243a040e2d2b59b1e7feffcd53c2ae682f19177e",
+      "bytes": 88980
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-08\\atlas_functional_coverage_summary.json",
+      "sha256": "41b88784d2335d3b314f8cb61b156f1f2abfc47d4b2a92ed269145ed2e3b429a",
+      "bytes": 484
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-08\\effective_skullstrip_settings.csv",
+      "sha256": "8accfc104d62b3f1cfe51d232f75b13d26dbf7a40051fe7140ef5b67c6b16477",
+      "bytes": 207
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-08\\functional_anatomical_agreement.csv",
+      "sha256": "389ffe4d1ca90a45e21de4c744b0a0f95b673bbabc4a3ce4dba14ebbc7554cbf",
+      "bytes": 528
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-08\\headers.json",
+      "sha256": "a366c6291c30bed006d2052ee8765373c781819e7aaa9da5f388ee02dfa26b88",
+      "bytes": 5747
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-08\\metrics.json",
+      "sha256": "1cbf6e2ae012b4a7f8aba9e415609723854655410d14d9a5f59ecb266bd78f3f",
+      "bytes": 2231
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-08\\provenance.json",
+      "sha256": "d78e77e6fa2f863db72b10602388fe52fddb27fe0d6b7a3f00e917c889a4f7c9",
+      "bytes": 2487
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-08\\queue_completion_evidence.json",
+      "sha256": "7c4cac326101c2ec925d7977dd27504b4dab985bde4c740b427bac679e0fce4e",
+      "bytes": 631
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-08\\target_support.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "bytes": 2
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-08\\visual_review.json",
+      "sha256": "e892277c9ab165b31809578111f35b5e4efe756aad0ef3d29e6f292e4e9d5f81",
+      "bytes": 1897
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-09\\anatomical_support.csv",
+      "sha256": "dcbe54b162de1da470d093cdb2c60c9b777fb3dfce3be2ba3a8b3b6c8fb07671",
+      "bytes": 537
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-09\\atlas_functional_coverage.csv",
+      "sha256": "4550f2a114a866fdc93d8923924469939b748c8431fbca701dcabf3a64a8233b",
+      "bytes": 91183
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-09\\atlas_functional_coverage_summary.json",
+      "sha256": "bef5fd4109a311599d8e0dfc912410134e7cd2efc5cd67609a74f471541c24a1",
+      "bytes": 484
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-09\\effective_skullstrip_settings.csv",
+      "sha256": "caef161db1c5d858b79ce8d0abe01bf2037dd783c38044465cfeff40928b8536",
+      "bytes": 207
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-09\\functional_anatomical_agreement.csv",
+      "sha256": "10668891bc504e5e7126b2746449fbc6e0beeb2377bc59dcb1f1a389a8c0e9ab",
+      "bytes": 526
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-09\\headers.json",
+      "sha256": "0fd7421d6bab157d7df5be5c85d3fb952f1e6da90ffb6d1e3f49f8cba51107c8",
+      "bytes": 4617
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-09\\metrics.json",
+      "sha256": "88e33d1933864b0ca2d1204544e82a217307aedbb809f136229ec0f28c4f7c01",
+      "bytes": 2230
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-09\\provenance.json",
+      "sha256": "d02f25e3e2ff5c8cf437a83892fabaf3aa492a3252f125b053954107b72438cb",
+      "bytes": 2487
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-09\\queue_completion_evidence.json",
+      "sha256": "15ea612ddb7b206da6b58edae559d6854ede1c0d741e5cdbc08792af7cb52047",
+      "bytes": 630
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-09\\target_support.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "bytes": 2
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-09\\visual_review.json",
+      "sha256": "c67493a1d2783a33f3d56bb5dbe9879d8bc43fa78ff5eef737dabed5af7ecd43",
+      "bytes": 1848
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\anatomical_support.csv",
+      "sha256": "754ea81d5d3b1823c65509b086861ddaa0dd769364943900ce664109d0e0e7d0",
+      "bytes": 555
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\atlas_functional_coverage.csv",
+      "sha256": "f50726d58ac5faefb180f3b5d0a98f80419ec304c96cd1ac36625de03433bba9",
+      "bytes": 93071
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\atlas_functional_coverage_summary.json",
+      "sha256": "5b81db3546fa8566f640d1fcbe9c514791fd4ed723e55be56eae15b45e9218ce",
+      "bytes": 484
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\effective_skullstrip_settings.csv",
+      "sha256": "5b907763eb1429c10ea0e6cb6083f36af912df97285dd2313d175cc09417157d",
+      "bytes": 207
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\functional_anatomical_agreement.csv",
+      "sha256": "afcdc22d98cd0d58b2bbf65391efbd82f75cd5e1bc96d0687dcbb0f3b2105b29",
+      "bytes": 528
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\headers.json",
+      "sha256": "a7c264836333289abf7a6acbdc20580d6a394e652269ca8ce7162ab49297ddd1",
+      "bytes": 5746
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\metrics.json",
+      "sha256": "065b4fc296abeeaeecfd8ad9d44682a206d9370e514ec4e57d3bda6824be4372",
+      "bytes": 2232
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\provenance.json",
+      "sha256": "49f7acf3c1dc74f35e8f206f8752489af8f50e6faf31151582bc27046a5ae46e",
+      "bytes": 2487
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\queue_completion_evidence.json",
+      "sha256": "04e5f38ce3ec28efe57120b1282a2887136ae8d09613b2d2090bfa6d36c95e55",
+      "bytes": 631
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\reference_intensity\\enhancement_metadata.json",
+      "sha256": "1b67d3824e2603bb4595c7b1158b3f564ca59b05c36465b6cca06cae75b38361",
+      "bytes": 6385
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\reference_intensity\\provenance.json",
+      "sha256": "e49dcd543981fc6a2e6b730dc2afa85723688199598ae18cc5bc08ca86049997",
+      "bytes": 4606
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\reference_intensity\\reference_agreement.csv",
+      "sha256": "117426f26de072933d83d68a855b1ef0999973d9234a61aaf19fca4f2f71706e",
+      "bytes": 291
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\reference_intensity\\regional_intensity_ratios.csv",
+      "sha256": "dcdea97ee7cc2974fa3c18d57a3e2c41aec41cfc32bc7eef0bd372cd9ade21ce",
+      "bytes": 1179
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\reference_intensity\\RESOLUTION.md",
+      "sha256": "547f1df588d70167b3e4b9664cfb4bf85742bec4f67c121b2990f65df5090c4a",
+      "bytes": 3323
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\reference_intensity\\resolution_receipt.json",
+      "sha256": "6e487980f55e819656fcbe156136504c611042b1e6108feca3b44f06a2890598",
+      "bytes": 4225
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\reference_intensity\\sampled_bold_provenance.json",
+      "sha256": "8b5116abf21bc2b1c198d46791158cd8442de9e2b8c54f5ffbd4fd98921c410c",
+      "bytes": 6555
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\reference_intensity\\sampled_bold_reference_agreement.csv",
+      "sha256": "30e1d9c68bd382bfe70c1778958880b80664f29a9fb6ecf61ad9ee7fb114d08f",
+      "bytes": 1190
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\reference_intensity\\sub-10_post90_raw_reference_comparison.png",
+      "sha256": "afbb9976a9ac0ada9b8e87262b57900bdfe90c1b76e342e0ccc9419ef7be3ae7",
+      "bytes": 258517
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\reference_intensity\\sub-10_post90_sampled_processed_bold.png",
+      "sha256": "bcdbc7e741b975ded23e7eda6561ecfa6684f0f2d190b8480d89d017a3c031e7",
+      "bytes": 402407
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\reference_intensity\\sub-10_pre90_raw_reference_comparison.png",
+      "sha256": "e21fa14ccac6c06c55bcb5ddb1bbf67322465b531a0b015d94daa1953c29f093",
+      "bytes": 257017
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\reference_intensity\\sub-10_pre90_sampled_processed_bold.png",
+      "sha256": "ac86a5540cfd17a3a0404f2b5f96df4f42364c87dc2c169de7cd8d857f60d66a",
+      "bytes": 406005
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\reference_intensity\\temporary_flag_review.json",
+      "sha256": "2fc76544426be452cc31b5c0ce70cc75eca73fc9ff1bff3644ff85ea72cb95eb",
+      "bytes": 2074
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\target_support.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "bytes": 2
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-10\\visual_review.json",
+      "sha256": "d7415ab7332a7e80a9ce6475b179cd32bb99af095015898e8837c72dc43a8473",
+      "bytes": 3881
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-11\\anatomical_support.csv",
+      "sha256": "c9056a347092cfa2c48d4517c3345aae11e34ce61cc32da9ea18d7ce0c895cf0",
+      "bytes": 552
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-11\\atlas_functional_coverage.csv",
+      "sha256": "c07ab8c402819b92bca2f5c565102a7cbc07a7763ee2c68e860ce4de1ab39bb6",
+      "bytes": 85822
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-11\\atlas_functional_coverage_summary.json",
+      "sha256": "08324bbfefccf9532fd50c02ea044ad037d1f485734e5cf5a7b838fca95b8afb",
+      "bytes": 483
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-11\\bilateral_target_planes_provenance.json",
+      "sha256": "2ddb7e4f8b372ba969878169a34d195bdc356a2becc507e08a7bf330a8c14826",
+      "bytes": 2532
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-11\\effective_skullstrip_settings.csv",
+      "sha256": "64a667dd9cf5ad4fbd0f965259629a9124a11e0e7df93811d7873124b08f306c",
+      "bytes": 207
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-11\\functional_anatomical_agreement.csv",
+      "sha256": "3eb8478c12d0900704c37267e38bba1654cc16486ead5c29564fe55a18757d62",
+      "bytes": 526
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-11\\headers.json",
+      "sha256": "3a342a8bd60ec19e583e107ba2ef408b26e9b2931f982372843080aadee2b048",
+      "bytes": 5767
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-11\\metrics.json",
+      "sha256": "1e9b4904fe2526b7e586c26a5ea8f9baa1829106a4715b47021662abd3474c7c",
+      "bytes": 2230
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-11\\provenance.json",
+      "sha256": "661f2a24667dc8f2777d6af140ddf513cb6847b53cf40f35e0d86959ba7eb552",
+      "bytes": 2763
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-11\\queue_completion_evidence.json",
+      "sha256": "ddac1d84ff106b2b8292a6e3aaf36c1bad2c9ddbcd80c2c8d21540503f901308",
+      "bytes": 631
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-11\\target_support.csv",
+      "sha256": "f2a96f36c876fbc9663c51dc896dad1e0f982a356882d8ea153c108f5511f202",
+      "bytes": 559
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-11\\visual_review.json",
+      "sha256": "6ce0fb57de31f4039f3df49b9b8eb559149d2b253551ae1b203bcf772d97dbfc",
+      "bytes": 2539
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-12\\anatomical_support.csv",
+      "sha256": "62a74ef688215b21a1657c82b40605a14aced97cb8349a97e9abf8b0cc0973ab",
+      "bytes": 555
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-12\\atlas_functional_coverage.csv",
+      "sha256": "8fc6d226d99dcb9fe2fad2422bb603daf6ee32fbd74174fafe7eb0fe522891bc",
+      "bytes": 92349
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-12\\atlas_functional_coverage_summary.json",
+      "sha256": "19c2cfd4287de3d28d8fada90433646cdf3951e8a11ec7006ef41c6baf382a00",
+      "bytes": 484
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-12\\effective_skullstrip_settings.csv",
+      "sha256": "13cc7b72a2b8938122d5a7c8e9d132146be3d92750875fed34b97a2d726a32cf",
+      "bytes": 207
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-12\\functional_anatomical_agreement.csv",
+      "sha256": "c9a2e3604a241e7b7b0ea41b75d76223d39204db9019969ed273122dbc1b69a0",
+      "bytes": 525
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-12\\headers.json",
+      "sha256": "5521dcbf54b13f63b10b2e13cfaa04f65cfdf0de9a8dccf93114a742c92ab5e9",
+      "bytes": 5739
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-12\\metrics.json",
+      "sha256": "73c61103256a6f7e166b2ac265b2503b5cf0918578866662502f7e1e60c831a6",
+      "bytes": 2231
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-12\\provenance.json",
+      "sha256": "1b8ccf58db81e7dbf264a91a7c2a940f190a93b4e282d355c8f8ec9151ff1034",
+      "bytes": 2487
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-12\\queue_completion_evidence.json",
+      "sha256": "aacacc47c5f5857d874d5f00bdfe220cb0481e2585fe9f5b0db35eca4fc50a90",
+      "bytes": 631
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-12\\target_support.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "bytes": 2
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-12\\visual_review.json",
+      "sha256": "a6e2f789964b03f82a3275aa8ec052238839980611e753ce34d632e7a9c4776d",
+      "bytes": 1915
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-13\\anatomical_support.csv",
+      "sha256": "10290a9d324fce5f3e037d2456816a53fb896dece9d388a9268b88dc133c3bfd",
+      "bytes": 552
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-13\\atlas_functional_coverage.csv",
+      "sha256": "23441b22da772335115bddc7ddb1b9e90fd29672659fabc208be4b8d7229e09a",
+      "bytes": 89808
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-13\\atlas_functional_coverage_summary.json",
+      "sha256": "7494697efbbac5320003c1e90f52c22b49f0c4265ffadd9391fc0709df153dda",
+      "bytes": 484
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-13\\bilateral_target_planes_provenance.json",
+      "sha256": "18c0c521b6741f2a054b747ab9aa76007dd4301804c1ad4b9eb75fa63eca5b97",
+      "bytes": 2519
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-13\\effective_skullstrip_settings.csv",
+      "sha256": "9edd5262a9e2be1c5dab5da8bc4c733b1e0b0a55ae5ab4663f187066f66a1e16",
+      "bytes": 207
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-13\\functional_anatomical_agreement.csv",
+      "sha256": "ae36812b21eba0a8e369a4a9cb8d37743c270e982dc852f82c9e44644476c5a4",
+      "bytes": 528
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-13\\headers.json",
+      "sha256": "7ddac11da1a8cd3785b81ddc38d10cedcf46a70e03812d0a1448252b3eec4324",
+      "bytes": 5787
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-13\\metrics.json",
+      "sha256": "efd8d6dff446406caa70fb6aeffb0cf0326eb322513fba0632316c43492adf31",
+      "bytes": 2230
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-13\\provenance.json",
+      "sha256": "826a64ab2681be717fa9bcea07171bc51d8bd213d5545852335057c08ae6cb54",
+      "bytes": 2757
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-13\\queue_completion_evidence.json",
+      "sha256": "8ce19011e89ab946339ca7f2e6bcdc6c18a401d6427b5a5eff2b47ece7454497",
+      "bytes": 631
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-13\\target_support.csv",
+      "sha256": "d5ed44a69466556d94c4e138ff152cb4a42bb9beaf2952f4696d06392773a1e0",
+      "bytes": 632
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-13\\visual_review.json",
+      "sha256": "c16eaa38415c9c2fd8f38817797743676542c58d8621b7efcc164f4eaf92a6a8",
+      "bytes": 2453
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\anatomical_support.csv",
+      "sha256": "f590ca42d9579ee892c7d7987ee9fd92de78335d5018c7887029014b6babea0e",
+      "bytes": 505
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\atlas_functional_coverage.csv",
+      "sha256": "b52d58174b5e5f21dfad547c54a00bf9a3bb6e950b8d124572a0ca84d4a21cc1",
+      "bytes": 92397
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\atlas_functional_coverage_summary.json",
+      "sha256": "385907d3db778648f62cfcca204ddd1c1fc49d1bd3170ca2c60d8b8dfbfc812d",
+      "bytes": 484
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\effective_skullstrip_settings.csv",
+      "sha256": "00c99232526a21f044f019c9852b1ade7b56b0c743d61e8f478b692854cae548",
+      "bytes": 207
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\functional_anatomical_agreement.csv",
+      "sha256": "fc0087074e2438703ef38e16efdbd235aa12e5e7b8fa2758ae2d20fe3df4eb38",
+      "bytes": 526
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\headers.json",
+      "sha256": "50904434dcb7da3a43d26c202a7558232753c23d02034e7856af62790c8fe0e2",
+      "bytes": 4310
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\metrics.json",
+      "sha256": "0d3919409b8e786d2a05e8728db1f3ffde667a489f8a2615db962454c500e41f",
+      "bytes": 2231
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\provenance.json",
+      "sha256": "be49ed476d4b0377086a77de5a348b8722f17cc27dc2fbf84ec651277e75402b",
+      "bytes": 2487
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\queue_completion_evidence.json",
+      "sha256": "201a3a32d82f19f6169458e695a7afa89571607fcc83169d332b694c4cdc9540",
+      "bytes": 631
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\reference_intensity\\enhancement_metadata.json",
+      "sha256": "d7db3a6755ccff71b259fac34919f1aba85000a83dbc1439d711fd66c9f2dd26",
+      "bytes": 6171
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\reference_intensity\\reference_agreement.csv",
+      "sha256": "f79274041451e32da85f6610a6c49909cad1176fe92e0165513912c45448e3b1",
+      "bytes": 287
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\reference_intensity\\reference_spotcheck_provenance.json",
+      "sha256": "7157a7c4aa5b819fee9abb2eeea1fd3e74fd08bc92e32fb7851ae785fd15d74c",
+      "bytes": 8665
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\reference_intensity\\RESOLUTION.md",
+      "sha256": "c5d5843862b2bdd0caa52b13ee9768f6a9ca7699afa6e7ea13b5b29cd86abd7b",
+      "bytes": 2773
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\reference_intensity\\resolution_receipt.json",
+      "sha256": "9dea10d7b26fe10bc6a1a7a99fc0bd5f668dac1f7f3ae0e0a3a8acef82dfdea7",
+      "bytes": 3701
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\reference_intensity\\sampled_bold_reference_agreement.csv",
+      "sha256": "b216276e2bc041714567fffbab90c2de99e343e3d956c5b95d68a6f7717d50e6",
+      "bytes": 956
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\reference_intensity\\sub-14_post90_raw_reference_comparison.png",
+      "sha256": "3a9890a150ab2aab90fe9249e39a16374e7c335334c306c8b6acb5aa3a7a5e55",
+      "bytes": 223157
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\reference_intensity\\sub-14_post90_sampled_processed_bold.png",
+      "sha256": "ba4972aa6837c56f3cfbd3f171df3c2daa5910c61ee17fb82779d83cb90051a1",
+      "bytes": 409781
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\reference_intensity\\sub-14_pre90_raw_reference_comparison.png",
+      "sha256": "3be65b97c22ee2322a8109cf73ae6f8f45afdc09af4adca272ba2719cbb7b3a9",
+      "bytes": 224237
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\reference_intensity\\sub-14_pre90_sampled_processed_bold.png",
+      "sha256": "b23f2216478703b5c2c9255bc33d819a582089decb057527aad7350a92e79c4b",
+      "bytes": 421329
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\reference_intensity\\temporary_hold_review.json",
+      "sha256": "2ae20cbf67b357931823c4f36c4dac55c388f5654a446bd129ac95c69c890da5",
+      "bytes": 1773
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\target_support.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "bytes": 2
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-14\\visual_review.json",
+      "sha256": "4a524f235763f0f7b1229c7a6ad42ead770094cbafa030ddc02ee77abf757289",
+      "bytes": 3677
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-15\\anatomical_support.csv",
+      "sha256": "cce59c23ef8cbceed69acbe410dc09221a6d1b8da4ca0fac8374fc59d086de05",
+      "bytes": 555
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-15\\atlas_functional_coverage.csv",
+      "sha256": "1d293b439607e24b27fb40c2da460454916b1005f26716229f2e1960225db3d7",
+      "bytes": 88853
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-15\\atlas_functional_coverage_summary.json",
+      "sha256": "a0c7a97205a5e0b54d69fe60830644a1ca9d051bc081afd6f3f37239ca33d862",
+      "bytes": 482
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-15\\effective_skullstrip_settings.csv",
+      "sha256": "1729f69ce98413c95b876c58dd25e5b11c8bdcaf4932c2589262a73049e5bd35",
+      "bytes": 207
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-15\\functional_anatomical_agreement.csv",
+      "sha256": "9e3c70391a1ea9df1b799e0b0c3b26a04296827436495891035cd6d81c887f64",
+      "bytes": 524
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-15\\headers.json",
+      "sha256": "6fbce0bf9fa52b48cb6ba3a462c81353ff71f5d45e192d433ea207b50aa73a14",
+      "bytes": 5107
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-15\\metrics.json",
+      "sha256": "79ba3fc50a153d957ed5b563d51bfdb82df710461cadca2b3007fe7d6fd351c5",
+      "bytes": 2231
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-15\\provenance.json",
+      "sha256": "f96ded6ab34dfa0d9399c0a308e5dcac922c7f20d5bfb38d2d5b252f7f84679d",
+      "bytes": 2487
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-15\\queue_completion_evidence.json",
+      "sha256": "91f0c2642fcbc49bbea85ae5fa5b19d2fc2ee41bed62c42f4944dc3e1c398294",
+      "bytes": 631
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-15\\target_support.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "bytes": 2
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-15\\visual_review.json",
+      "sha256": "e339a57b0baedb32fd993287d339d292e90b0e501cf5baa622b7e219815d1356",
+      "bytes": 1902
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-16\\anatomical_support.csv",
+      "sha256": "a87ad54cd93e36c1605e1e5b7b0c6a0fa53ebf9f8cf43ed3700cb5b016933a20",
+      "bytes": 556
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-16\\atlas_functional_coverage.csv",
+      "sha256": "b125c8a0afd208e0dcf111996ba3d58a0e4c2bf40af0f1a1a29bf924ad32fb53",
+      "bytes": 94632
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-16\\atlas_functional_coverage_summary.json",
+      "sha256": "cec9219f215f13ad1cffe79f55f4640c976786617a221738b46710356f0e487a",
+      "bytes": 485
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-16\\effective_skullstrip_settings.csv",
+      "sha256": "928b381ac1cbc841708668571240ffce56a6c957fb7193b34389eca1797972a3",
+      "bytes": 207
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-16\\functional_anatomical_agreement.csv",
+      "sha256": "2c18b8cf22a455821f370e77c159ca452aaeeb51edf8264013591daf4bffb8b8",
+      "bytes": 528
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-16\\headers.json",
+      "sha256": "c7e69ed0812a03cbf3cbf20b0ca2c028dc8174bf52cab8ba0596b9325850b474",
+      "bytes": 5089
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-16\\metrics.json",
+      "sha256": "9f99b4f5bc70faaf66fc19de4ae09bd668bac02734a193c9141140297c6532ca",
+      "bytes": 2231
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-16\\provenance.json",
+      "sha256": "d090bcd25a2ac56337dfd1da195b51594c1660edc21bc90ae06cea8d359d2941",
+      "bytes": 2487
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-16\\queue_completion_evidence.json",
+      "sha256": "2798a7bed24e505380eaa757cad35cd1b4ce79314afa80f0e0eeace3a9f77c72",
+      "bytes": 631
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-16\\target_support.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "bytes": 2
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\sub-16\\visual_review.json",
+      "sha256": "5ff5ece8478633d42b3c57f516d59e4aab1f7f7514f065f7c65775af3f5d2036",
+      "bytes": 1892
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\subject_status.csv",
+      "sha256": "f36df21bd99a50bfc140b20d0bd2dc0c99119955430be4444b9c026673cd128a",
+      "bytes": 1431
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_coverage_original_corrected_comparison.csv",
+      "sha256": "88438c828b3bcb3f20d8ceb9b7683beff3b3a99662b59e7129b7a66919e5819a",
+      "bytes": 1135
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\anatomy_provenance.json",
+      "sha256": "ba60235c946228c40e4edf27e3828fbf1f71fbb3afc8cd1f05e2c12116df33f4",
+      "bytes": 15646
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\mask_mapping_qc.csv",
+      "sha256": "81e8983afb173be76bf3c0f7a6aa69e711aa990c1e7847c6577cdce2f0762384",
+      "bytes": 4023
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\parcel_coverage.csv",
+      "sha256": "fe361e928bdb875fa1009afefe44673886fc086ccfc42f9c180acec7a0a0d466",
+      "bytes": 687
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-01_l_fixed_mask.nii.gz",
+      "sha256": "10de05f6bbd72586933ea706eabe537b953da62225cccedebe17c7fd1e437577",
+      "bytes": 19448
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-01_pre120_l_mapped.nii.gz",
+      "sha256": "8006a486a739dc1da367d7841dcf8b34c38aa3b931f8804878c608b5976381bb",
+      "bytes": 1301
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-01_pre120_r_mapped.nii.gz",
+      "sha256": "2db134acdf53fd4d03dad0abef848fc4c774c12e9d3ca01cf8b881ec72bf8dca",
+      "bytes": 1312
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-01_pre90_l_mapped.nii.gz",
+      "sha256": "8e96c143477092591e35b5416b47e8e3216591e606d4cd133c7a21ecdae53527",
+      "bytes": 1299
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-01_pre90_r_mapped.nii.gz",
+      "sha256": "8eecfa5fd4b3e0e0ce29e834d93ee8077b199afb941165c563e552deec91132d",
+      "bytes": 1326
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-01_r_fixed_mask.nii.gz",
+      "sha256": "66c6ff3ebef96d62430733a29f72d3a3e5a3ea4757ceab35f25c9a97c511958c",
+      "bytes": 19479
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-03_l_fixed_mask.nii.gz",
+      "sha256": "8e1793d120417296523fa7a36403630964aebaaa343ec32a2e32bddc3f26d8c7",
+      "bytes": 19644
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-03_pre120_l_mapped.nii.gz",
+      "sha256": "611aa561820eadafc9712c391d80298516df8da26ddc7dcd0a1ebd55b1870c67",
+      "bytes": 1346
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-03_pre120_r_mapped.nii.gz",
+      "sha256": "ccd03fbae4ab9eec400bc3c692c6b141381095eb443af6c03cdbf10f0dc94de6",
+      "bytes": 1340
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-03_pre90_l_mapped.nii.gz",
+      "sha256": "1a7cc7f2b1d7e71826ccb0f5111552e6a513d2f26590d2813666175ac139ad1a",
+      "bytes": 1329
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-03_pre90_r_mapped.nii.gz",
+      "sha256": "ccc6bef91bc79fd9bb4bccd4ee2cd3a00e1dbb426c6f86197ab6b0607ad93214",
+      "bytes": 1319
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-03_r_fixed_mask.nii.gz",
+      "sha256": "cdde5b7cc62bd8b2541d51bdbb027079274d700fa4a6ff4437dc5fe627ce58e8",
+      "bytes": 19505
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-04_l_fixed_mask.nii.gz",
+      "sha256": "2e01b7c73bd804f93290fd9b522d9843a8e168045308244a1e54491c6e6de2ff",
+      "bytes": 19415
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-04_pre120_l_mapped.nii.gz",
+      "sha256": "451f978cc3b29595c3397f5a93a2f03e5977e7679d29eb7011313583db09601a",
+      "bytes": 1322
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-04_pre120_r_mapped.nii.gz",
+      "sha256": "79c13c3214558061bf71aa856645f78ced9042903574b44be74df1aa2e70f8b9",
+      "bytes": 1305
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-04_pre90_l_mapped.nii.gz",
+      "sha256": "c7d5f949913c269c840a8e0ac0630ec217e96c344eeb71d52efe224692177bcd",
+      "bytes": 1317
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-04_pre90_r_mapped.nii.gz",
+      "sha256": "f01eab372763356e578708ce5ebf2d7309b2068c60e63412fd6dd8da0299ae6c",
+      "bytes": 1290
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-04_r_fixed_mask.nii.gz",
+      "sha256": "56bd76072c4054b8138af3a2b121025a48e92637986c10edd1f94ae199b15ae0",
+      "bytes": 19408
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-05_l_fixed_mask.nii.gz",
+      "sha256": "9b93a75766deefe79a59bad49579bd0911f5d252c2e2f2ccdbd393f31a35a81e",
+      "bytes": 19515
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-05_pre120_l_mapped.nii.gz",
+      "sha256": "fde8c6a6b6f09a03796438d14aa024d63c08d46cc304a5d7bd05b933d43f253d",
+      "bytes": 1317
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-05_pre120_r_mapped.nii.gz",
+      "sha256": "bec5a59757056de764adf9e3f2f728eb3ca76c088ae99a160f5883de629877b9",
+      "bytes": 1315
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-05_pre90_l_mapped.nii.gz",
+      "sha256": "dc832dcf5fd27275690936a0140cc88047c37dee8021a6e9d2f62611c78c5175",
+      "bytes": 1325
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-05_pre90_r_mapped.nii.gz",
+      "sha256": "e68315ff64fe19163d0a3b44ed55e8d72c8fe8cfef27f097fa60396b1aaff1a8",
+      "bytes": 1347
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-05_r_fixed_mask.nii.gz",
+      "sha256": "a88f467605afb0a52fcf318e7c4a41ef550c047f0db6cf9885f0e2882b9e7357",
+      "bytes": 19561
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-06_l_fixed_mask.nii.gz",
+      "sha256": "177a907856c5ad8c064bc68ddee8aecc987145ff6a68a414d7cb7202f21e63cb",
+      "bytes": 19289
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-06_pre90_l_mapped.nii.gz",
+      "sha256": "bdfbf5ad9b5ce2116938f2595207356ad764b483f79dd5059ab8891d901fd390",
+      "bytes": 1296
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-06_pre90_r_mapped.nii.gz",
+      "sha256": "00011adcf249660e5fbf25da876d958420df167957a8cbd7fbfa2093510c3d57",
+      "bytes": 1325
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-06_r_fixed_mask.nii.gz",
+      "sha256": "cc521ece3331e29c157139fba663c35fec1ca47faec3029a63e35706426bfec3",
+      "bytes": 19353
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-07_l_fixed_mask.nii.gz",
+      "sha256": "87b03e7413cc01cf2e86e9cb0e5d389aff09a50ab7cf7317cc98d2f20c79461f",
+      "bytes": 19504
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-07_pre120_l_mapped.nii.gz",
+      "sha256": "bc89d234da4827eb96cd229965a16d797264d5770b0913cec5824d07ee88d9b6",
+      "bytes": 1363
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-07_pre120_r_mapped.nii.gz",
+      "sha256": "56adea2ae2d5b27773ceaa7662c6fd6af3a5a1359eafb528bce916d3d9542981",
+      "bytes": 1338
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-07_r_fixed_mask.nii.gz",
+      "sha256": "f12cef94c2f704d4eb72bf1f4cfc29464979eb85119071f5f5988904ab0a8abc",
+      "bytes": 19415
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-11_l_fixed_mask.nii.gz",
+      "sha256": "c08036fe0aa9cb7667d96f671b6b7df2dd0e067dd92a2ad3fb9450ef77ba2546",
+      "bytes": 19473
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-11_post90_l_mapped.nii.gz",
+      "sha256": "6e205176a5564690a6f26a0c1109f52db16bae0a0e371b252b51e4145203f597",
+      "bytes": 1371
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-11_post90_r_mapped.nii.gz",
+      "sha256": "dc26cc7d3dc959f176ab4cdaa605fad97e8c9b92ae0aef85dcfb95c194db38fc",
+      "bytes": 1322
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-11_r_fixed_mask.nii.gz",
+      "sha256": "984f96a04cde3fa1327ae72dafb2cad7dbbb1386dbab70e146fa48320b6300b7",
+      "bytes": 19313
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-13_l_fixed_mask.nii.gz",
+      "sha256": "059ca77414df5ab44e2689429e06dc8270667dfe7f45d2520578226a75d4b112",
+      "bytes": 19287
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-13_pre90_l_mapped.nii.gz",
+      "sha256": "17b44811c7b5364818e24606263dee52df6590b9d1f585fd59d30c23c3407c42",
+      "bytes": 1288
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-13_pre90_r_mapped.nii.gz",
+      "sha256": "7755360c30568f9e6501b652b4ef354978d0125834754d7f247b7e8471992160",
+      "bytes": 1269
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\sub-13_r_fixed_mask.nii.gz",
+      "sha256": "000011c9182a13ebf8b60e95df8f92c7f8e0defbe8253be178200216eb4199f0",
+      "bytes": 19277
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\subject_region_weights.csv",
+      "sha256": "bd204ebcbb3e1897a4ed7b2f08cdd8c064118048081d022835d22b386970103f",
+      "bytes": 342072
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\output\\aachen_alignment_review\\corrected_cohort\\target_mapping\\transform_validation.csv",
+      "sha256": "467e06378dea679f80e1ee804de0fd38f7283a9855d95e3717000c9e14163fbe",
+      "bytes": 397
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\setup\\aachen_alignment_anatomical_review.py",
+      "sha256": "5532fdf0c68fa55f0e5b801996db5f9850eab9f71291449901006c636a46b43c",
+      "bytes": 17050
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\setup\\aachen_alignment_atlas_coverage.py",
+      "sha256": "589dadf6bd242151b66c0eac521ff097ca4fac4140bcaa2efdaee4838902108e",
+      "bytes": 3922
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\setup\\aachen_alignment_cohort_qa.py",
+      "sha256": "49d1f204d557f905d497562cfe61b9716eb639044c35791ef7807b2373223fbd",
+      "bytes": 34450
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\setup\\aachen_alignment_map_targets.py",
+      "sha256": "360a558c8a0473d6d6c02acdac59697d149f38d627933e4327fa46a1c65daf20",
+      "bytes": 11976
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\setup\\aachen_alignment_reference_intensity.py",
+      "sha256": "54c6ff2eac05fd84c192af2934876b8a607b67c6b6a56159449576e17b11a1d5",
+      "bytes": 6397
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\setup\\aachen_alignment_reference_spotcheck.py",
+      "sha256": "7c1d8014636fccb2a41e9903f1bc63ad1be0da912f442713c62cee86e15254d2",
+      "bytes": 10208
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\setup\\aachen_alignment_sampled_bold.py",
+      "sha256": "e57d09aa916e1a156c62caf26f61127b47357a1f3a0a66e7513c99dcb63fa759",
+      "bytes": 7368
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\setup\\aachen_alignment_target_planes.py",
+      "sha256": "98c6b0883cc5cd06ba680e2b1f2930ee3e4fb5d2467e2e61723808cd16d22e8f",
+      "bytes": 5984
+    },
+    {
+      "path": "D:\\projects\\TMS_GWT\\setup\\aachen_alignment_verify_release.py",
+      "sha256": "b3282207709c27a7b744b175ef9fca2a7b5f1fbfa00658dfde22f6f9b8d1fa1e",
+      "bytes": 6168
+    }
+  ],
+  "limitations": [
+    "Image support is not an independent gray-matter segmentation.",
+    "Source ROI identity is supported by study methods/README, not independently verified coil locations or electric fields.",
+    "Deposited native ROI voxels are unchanged; MNI centroids follow the corrected transforms without shifts toward nominal DLPFC coordinates.",
+    "Residual EPI distortion and mean-functional/reference motion remain.",
+    "Inferior field-of-view and uneven parcel coverage remain; reference support is not a temporal signal-quality test.",
+    "Sub-10 and sub-14 pre90 have changed reference-enhancement contrast. Saved dataflow and sampled actual BOLD volumes distinguish reference-only N4 enhancement from the 4D intensity input; full temporal quality remains separate.",
+    "Downstream time series and effects must use the corrected anatomical chain; old effects are not validated.",
+    "Sub-02 remains excluded for the separate documented slice-timing issue."
+  ],
+  "production_inputs_modified_by_review": false
+}

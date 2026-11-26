@@ -1,0 +1,2 @@
+# Preserve exact release bytes: the provenance records use SHA-256 file hashes.
+* -text

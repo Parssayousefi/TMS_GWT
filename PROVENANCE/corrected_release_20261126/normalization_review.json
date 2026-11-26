@@ -1,0 +1,38 @@
+{
+  "created_utc": "2026-11-26T11:37:29.112200+00:00",
+  "stage": "normalization",
+  "status": "passed",
+  "result": {
+    "corrected_scans": 60,
+    "corrected_matrices_normalized": 300,
+    "reference_seeds": 2,
+    "draws_per_target_per_seed": 32768,
+    "baseline_scans": 30,
+    "baseline_VAR_coefficients": 30720,
+    "baseline_pool_max_abs_error": 4.440892098500626e-16,
+    "pool_differs_from_superseded_Aachen": true,
+    "max_TDMI_cache_abs_error": 1.7008616737257398e-13,
+    "max_normalized_metric_abs_error": 2.220446049250313e-16,
+    "reused_SUDMEX_scans": 129,
+    "wrapper_SUDMEX_guarded_scans": 80,
+    "additional_historical_SUDMEX_hashes_checked": 941,
+    "input_hashes": {
+      "corrected_input_sha256": 360,
+      "sudmex_unchanged_input_sha256": 480,
+      "source_sha256": 4
+    },
+    "interpolation_max_error": 0.000760748349425,
+    "calibration": {
+      "max_independent_lyapunov_error": 0.0,
+      "max_analytic_cofactor_error_in_calibration": 1.97725972306273e-06,
+      "calibration_covariances_with_cofactor_error_over_1e_6": 2,
+      "max_finite_record_mean_bias": 0.06312914107550571,
+      "max_population_mean_bias": 0.05777866560849376,
+      "uncovered_rows": 0,
+      "interpretation": "Diagnostic calibration under the specified VAR prior only; not validation that real filtered BOLD is a VAR(1) process."
+    },
+    "network_profile_rows_checked": 120,
+    "scope_limit": "No null reference draws or treatment analyses rerun. Existing conditional CDFs reapplied to verify saved summaries."
+  },
+  "review_script_sha256": "2ecd78bea3683dfa7a7598e731a2176a787471dbc051c77e62cc94fef02fc30c"
+}

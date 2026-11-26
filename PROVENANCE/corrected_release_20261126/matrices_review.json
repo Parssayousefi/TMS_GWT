@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-11-26T11:33:49.561877+00:00",
+  "stage": "matrices",
+  "status": "passed",
+  "result": {
+    "raw_scans": 193,
+    "aachen_scans": 60,
+    "sudmex_scans": 133,
+    "matrices": 965,
+    "direct_metrics_per_scan": 46,
+    "max_metric_abs_error": 3.3306690738754696e-16,
+    "corrected_FD_scans": 60,
+    "raw_input_hashes": 1166,
+    "statistics_source_hashes": 7,
+    "aachen_routed_matrix_and_summary_paths": 360,
+    "edge_counts": {
+      "whole_brain": 102831,
+      "within_workspace": 27495,
+      "outside_workspace": 23871,
+      "between": 51465
+    },
+    "historical_sudmex_original_metrics": 3325
+  },
+  "review_script_sha256": "c3dea2ae0a4dc1fdf42fb7ec7007662ee2df146b44142687fd93af11747f4695"
+}

@@ -1,0 +1,2 @@
+HISTORICAL DRAFT SUPERSEDED
+Anatomical correction and statistical reanalysis are complete. The root-folder draft retains invalidated historical Aachen findings for traceability. Use corrected_20261126/ for the current manuscript and supplement. Do not submit historical files.

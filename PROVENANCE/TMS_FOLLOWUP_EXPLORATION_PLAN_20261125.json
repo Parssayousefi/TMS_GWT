@@ -1,0 +1,12 @@
+{
+  "status": "exploratory_followup_after_raw_primary_and_round1_results",
+  "purpose": "Assess delayed-active-treatment trajectories and robustness of the observed Aachen global-information signal without changing endpoints or participant QC",
+  "sudmex_contrasts": [
+    "Within-person t14 minus t1 among originally sham participants with both eligible scans, all 25 original metrics",
+    "Within-person (t14 minus t1) minus (t1 minus t0), requiring all three scans, all 25 original metrics"
+  ],
+  "sudmex_sensitivity": "HC3 intercept at zero corresponding motion change/difference, all 50 comparisons; report both adjusted and unadjusted, BH across all 100 tests and in union with earlier exploration. No causal claim: treatment timing is confounded with period, open-label expectations, and selective retention.",
+  "aachen_robustness": "Selected after observing the original global_phi/global_phi_r results. For each pooled-within-person outcome, exact sign-flip and Wilcoxon checks, leave-one-participant-out estimates, bootstrap intervals, and HC3 change intercept at zero FD change. These are dependent sensitivity analyses, not independent discoveries.",
+  "stop_rule": "Complete these bounded analyses and the separately planned normalization branch, then assess the manuscript using the full inventory. Do not expand metrics, exclusions, null models, lags or cohorts in response to p values.",
+  "inputs": "Existing TMS-only participant scan metrics, fixed prior QC, and original primary comparisons; no preprocessing rerun or private cohort analysis"
+}

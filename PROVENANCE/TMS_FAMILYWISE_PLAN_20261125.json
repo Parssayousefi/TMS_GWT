@@ -1,0 +1,20 @@
+{
+  "status": "post_hoc_revision_requested_by_user_after_initial_results",
+  "principle": "Control family-wise error at 0.05 within scientific outcome families; do not claim study-wide FWER across separate families. Preserve original p values, prior FDR columns and the complete search inventory.",
+  "original_families": {
+    "global_phiid": "All five original global measures: persistent synergy, persistent redundancy, total synergy, Phi and Phi_R. No splitting Phi from Phi_R.",
+    "workspace_pc": "Both mean workspace participation coefficients",
+    "primary": "FPN gateway count, the single endpoint named in the original TMS proposal before these analyses",
+    "other_network_gateways": "All seven other network gateway counts",
+    "network_broadcasters": "All eight network broadcaster counts",
+    "total_roles": "Total gateways and total broadcasters"
+  },
+  "datasets": "Separate studies and estimands: SUDMEX baseline-adjusted active-versus-sham follow-up; Aachen mean of both within-person intensity changes. No pooling of independent studies into a single causal effect.",
+  "aachen_method": "Exact two-sided single-step max-absolute-t over all 32768 joint participant sign flips, separately within each original family. Same sign for all endpoints of a participant. Assumes joint symmetry of paired errors under relevant null hypotheses. This is not randomization of active versus sham treatment.",
+  "holm_check": "Holm adjusted two-sided parametric p values within the same families for every table; valid under arbitrary endpoint dependence when individual p values are valid. Show Holm and max-T together, do not pick the smaller per endpoint.",
+  "secondary_contrasts": "For new Aachen discoveries, combine 90-change, 120-change and intensity-difference contrasts within each outcome family, rather than declaring each intensity a separate opportunity. Treat covariate-adjusted variants as sensitivity checks, not independent discoveries.",
+  "broader_screen_families": "All 24 network continuous measures form one family, all 14 subcortical measures one family, all 10 clinical moderators one family, all 9 multivariate tests one family; retain cross-contrast adjustment for Aachen secondary discoveries.",
+  "clinical_family": "All seven baseline-adjusted clinical outcomes, Holm; 35 original brain-clinical associations are a separate association family.",
+  "normalization": "Use the same endpoint families for an explicitly separate robustness branch. A normalized-only finding is a new estimand and cannot rescue or replicate an unsupported raw endpoint.",
+  "transparency": "The family-wise revision follows inspection of results and is exploratory, not preregistered or newly confirmatory. Family definitions follow the existing analysis structure, not observed p values. Keep all results, including failures under sensitivity analyses. No one-sided tests or participant exclusions are introduced."
+}

@@ -1,0 +1,10 @@
+{
+  "raw": "complete",
+  "normalized": "complete",
+  "target_flow": "complete; fresh MATLAB sentinel check unavailable; independent and production-output checks passed",
+  "manuscript": "updated; all 21 final pages visually reviewed; author declarations outstanding",
+  "haemodynamic_followup": "complete",
+  "notebook": "executed, zero errors",
+  "dashboard": "complete; browser, source hashes and exports verified",
+  "independent_review": "passed; no material discrepancies"
+}

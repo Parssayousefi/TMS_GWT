@@ -1,0 +1,13 @@
+arm,n,measure,prod_t,prod_p,vanilla_t,vanilla_p,armpool_t,armpool_p,df5_t,df5_p
+basel_lpm/psilocybin,31,synergy,5.46,0.0,2.31,0.028,2.2,0.036,5.43,0.0
+basel_lpm/psilocybin,31,redundancy,4.45,0.0,4.65,0.0,1.78,0.085,4.19,0.0
+basel_lpm/psilocybin,31,synergy_total,8.31,0.0,8.56,0.0,8.56,0.0,7.84,0.0
+basel_lpm/psilocybin,31,phi_r,3.8,0.001,4.7,0.0,5.57,0.0,3.69,0.001
+berlin_ketamine/ketamine,14,synergy,-0.99,0.341,-3.03,0.01,-3.37,0.005,0.1,0.922
+berlin_ketamine/ketamine,14,redundancy,4.57,0.001,2.25,0.042,2.08,0.058,3.48,0.004
+berlin_ketamine/ketamine,14,synergy_total,4.09,0.001,0.05,0.961,-0.44,0.668,3.25,0.006
+berlin_ketamine/ketamine,14,phi_r,3.13,0.008,3.31,0.006,3.6,0.003,2.59,0.022
+monash_psilo/psilocybin,50,synergy,0.87,0.389,0.02,0.986,0.17,0.869,0.21,0.832
+monash_psilo/psilocybin,50,redundancy,1.44,0.157,1.32,0.194,0.75,0.456,1.75,0.086
+monash_psilo/psilocybin,50,synergy_total,-0.23,0.817,1.19,0.239,-0.05,0.963,-1.84,0.072
+monash_psilo/psilocybin,50,phi_r,-2.35,0.023,-2.46,0.017,-1.42,0.161,-1.72,0.092

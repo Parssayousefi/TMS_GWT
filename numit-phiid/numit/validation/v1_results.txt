@@ -1,0 +1,69 @@
+production pool: 27495 empirical As (basel_lpm placebo)
+
+==========================================================================
+1a  NOISE-INVARIANCE: same structure, different signal strength
+    (raw atoms should vary; NuMIT quantiles should stay ~flat)
+==========================================================================
+    structure    f  tdmi  raw_sts  q_sts  raw_rtr  q_rtr
+designed asym 0.35 0.087   0.0147  0.102   0.0092  0.475
+designed asym 0.50 0.190   0.0295  0.110   0.0234  0.550
+designed asym 0.65 0.359   0.0490  0.087   0.0545  0.620
+designed asym 0.80 0.655   0.0721  0.068   0.1334  0.735
+designed asym 0.90 1.033   0.0893  0.050   0.2846  0.890
+ empirical #1 0.35 0.126   0.1236  0.993   0.0000  0.015
+ empirical #1 0.50 0.278   0.2711  0.993   0.0001  0.035
+ empirical #1 0.65 0.528   0.5140  0.995   0.0005  0.075
+ empirical #1 0.80 0.975   0.9446  0.993   0.0041  0.160
+ empirical #1 0.90 1.568   1.5131  0.990   0.0252  0.278
+ empirical #2 0.35 0.120   0.0970  0.803   0.0000  0.032
+ empirical #2 0.50 0.262   0.2095  0.777   0.0000  0.000
+ empirical #2 0.65 0.497   0.3870  0.777   0.0003  0.060
+ empirical #2 0.80 0.917   0.6772  0.695   0.0074  0.203
+ empirical #2 0.90 1.478   1.0194  0.668   0.0629  0.407
+
+summary (flat quantiles = SD near 0 while raw spreads x-fold):
+    structure  raw_sts spread (max/min)  q_sts SD  q_rtr SD
+designed asym                       6.1     0.025     0.163
+ empirical #1                      12.2     0.002     0.108
+ empirical #2                      10.5     0.059     0.168
+
+exact V->7.3V invariance: max atom diff = 1.67e-16 (OK)
+
+==========================================================================
+1b-rho  STRUCTURE-TRACKING: noise correlation -> redundancy
+==========================================================================
+ rho  tdmi  raw_rtr  q_rtr(prod)  q_rtr(vanilla)  q_sts(prod)
+0.00 0.293   0.0000        0.000           0.000        0.760
+0.15 0.293   0.0022        0.172           0.500        0.745
+0.30 0.294   0.0090        0.325           0.740        0.692
+0.45 0.296   0.0206        0.403           0.835        0.673
+0.60 0.298   0.0372        0.507           0.897        0.553
+0.75 0.304   0.0593        0.668           0.950        0.400
+  monotonicity rho vs q_rtr(prod): Spearman=+1.00 (OK)
+  monotonicity rho vs q_rtr(vanilla): Spearman=+1.00 (OK)
+
+==========================================================================
+1b-c  STRUCTURE-TRACKING: cross-coupling -> synergy measures
+==========================================================================
+  c  tdmi  raw_sts  q_sts(prod)  q_syntot(prod)  q_syntot(van)  q_rtr(prod)
+0.0 0.231   0.1744        0.745           0.330          0.870        0.000
+0.1 0.247   0.1675        0.637           0.335          0.908        0.317
+0.2 0.296   0.1469        0.488           0.305          0.870        0.445
+0.3 0.388   0.1119        0.153           0.225          0.870        0.725
+0.4 0.544   0.0815        0.090           0.203          0.777        0.892
+0.5 0.835   0.0791        0.047           0.115          0.685        0.970
+  monotonicity c vs q_sts(prod): Spearman=-1.00 (CHECK)
+  monotonicity c vs q_syntot(prod): Spearman=-0.94 (CHECK)
+  monotonicity c vs q_syntot(van): Spearman=-0.82 (CHECK)
+
+NOTE: c=0 row shows the documented MMI quirk (independent symmetricish
+system -> sts absorbs self-storage); interpret sweeps, not the origin.
+ c_rot  tdmi  raw_sts  q_sts  q_syntot  q_rtr
+   0.0 0.174   0.1744  1.000     0.940  0.000
+   0.1 0.186   0.1693  0.923     0.923  0.268
+   0.2 0.223   0.1539  0.647     0.938  0.415
+   0.3 0.288   0.1272  0.382     0.918  0.613
+   0.4 0.386   0.0872  0.135     0.933  0.777
+   0.5 0.528   0.2005  0.285     0.947  0.642
+monotonicity c_rot vs q_sts: Spearman=-0.94 (CHECK)
+monotonicity c_rot vs q_syntot: Spearman=+0.14 (CHECK)

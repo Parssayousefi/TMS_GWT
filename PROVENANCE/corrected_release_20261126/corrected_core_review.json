@@ -1,0 +1,125 @@
+{
+  "completed_utc": "2026-11-26T11:51:56.451628+00:00",
+  "status": "passed_bounded_review_no_material_discrepancies",
+  "reviewer": "independent parallel cloud reviewer",
+  "analysis_directory": "D:\\projects\\TMS_GWT\\output\\corrected_tms_analysis\\20261126T112054_284547Z",
+  "material_findings": [],
+  "resolved_minor_findings": [
+    {
+      "issue": "Future normalization reuse guard initially covered only 80 acute SUDMEX scans despite 129 reused normalized rows.",
+      "resolution": "All 941 historical SUDMEX hashes independently matched; wrapper now enforces that same set. Only guard function and call changed; removing them restores exact original source SHA256. No numerical rerun."
+    },
+    {
+      "issue": "Ancillary rank correlations had machine-precision near-tie ambiguity under algebraically equivalent HRF averaging.",
+      "resolution": "Declared 12-decimal rounding solely before Spearman now reproduces all nine ranks and Holm9 values; nine HC3 models and 135 LOO fits are unchanged."
+    }
+  ],
+  "exact_verified_counts": {
+    "raw_scans": 193,
+    "raw_Aachen_scans": 60,
+    "raw_SUDMEX_scans": 133,
+    "raw_matrices": 965,
+    "normalized_Aachen_scans": 60,
+    "normalized_Aachen_matrices": 300,
+    "normalized_SUDMEX_reused_scans": 129,
+    "Aachen_participants": 15,
+    "Aachen_visit_contrasts": 30,
+    "SUDMEX_active": 22,
+    "SUDMEX_sham": 18,
+    "SUDMEX_acute_models_per_branch": 90,
+    "clinical_models_per_branch": 56,
+    "historical_motion_models": 25,
+    "historical_clinical_models": 35,
+    "exact_sign_vectors": 32768,
+    "Aachen_normalization_baseline_scans": 30,
+    "baseline_VAR_coefficient_matrices": 30720,
+    "HRF_association_models": 9,
+    "HRF_leave_one_out_models": 135,
+    "target_release_files": 21
+  },
+  "phase_receipts": {
+    "matrices": "output\\corrected_tms_analysis_review\\matrices_review.json",
+    "statistics": "output\\corrected_tms_analysis_review\\statistics_review.json",
+    "normalization": "output\\corrected_tms_analysis_review\\normalization_review.json",
+    "sensitivities": "output\\corrected_tms_analysis_review\\sensitivities_review.json",
+    "historical_sudmex": "output\\corrected_tms_analysis_review\\historical_sudmex_review.json",
+    "manuscript": "output\\corrected_tms_analysis_review\\manuscript_review.json",
+    "global_hrf": "output\\corrected_tms_analysis_review\\global_hrf_review.json"
+  },
+  "expectation_inventory_initial_sha256": "4abca233239d0bf5750db891af5920f6306135c25e75e3990b49a0e8765c6c9f",
+  "normalization_guard_amendment": {
+    "entries": 941,
+    "source_matches_guard_receipt": true,
+    "removing_guard_restores_original_generating_source": true,
+    "original_source_sha256": "cfb332c478419f005f604e73f5b9fbd6248c6c9e8557b474edc0d5df607ac184",
+    "current_source_sha256": "f7d31cb01ecb857ede468f908bd9528dea6fd5c254b20dd19a64dbb4fc63ccc2"
+  },
+  "current_manuscript_claim_audit": {
+    "files": {
+      "manuscript\\aachen_brief_report\\corrected_20261126\\manuscript_source.md": "b8d71b230ccd36779550937845f701884033082703b5638ea65e00b5f8350ac9",
+      "manuscript\\aachen_brief_report\\corrected_20261126\\supplement_source.md": "b0ff022e4fc9fe4fcb3bd900dca48a20a30269086aa5674c04cc35925f2683a9"
+    },
+    "findings": [],
+    "expanded_HRF9_and_target_sensitivity_claims_checked": true,
+    "Figure_S1_unchanged": true,
+    "table_references": {
+      "null_calibration": "S9",
+      "expanded_HRF": "S11"
+    },
+    "layout_not_reviewed_here": true
+  },
+  "limits": [
+    "Review specification is not preregistration; historical SUDMEX and superseded Aachen results already existed.",
+    "No HCP or psychedelic computation, production preprocessing, null generation or core treatment-analysis rerun was performed.",
+    "Sign-flip assumptions, HC3 approximation, small samples, post-baseline motion adjustment, shared-signal HRF coupling and residual coverage limitations remain.",
+    "Normalized inference conditions on a fitted baseline reference; reference uncertainty is not propagated.",
+    "Longitudinal 200000-vector output and target findings were checked for claim consistency and provenance; their full analyses were not re-executed in this review.",
+    "Phase receipts retain their full-script hash at phase completion; the script later acquired additional independent review phases."
+  ],
+  "input_and_artifact_sha256": {
+    "output\\corrected_tms_analysis_review\\corrected_core_review.md": "fef49e3a83587c269b3f6149c8b2be68e57572f6cc114ca46592e4920f202448",
+    "output\\corrected_tms_analysis_review\\gwt_expectation_inventory.md": "084310a052fd6e30c8f9ca865dcd869587af1ca4ddf6ac1548a9f3cb395107b5",
+    "output\\corrected_tms_analysis_review\\gwt_expectation_inventory_initial.md": "4abca233239d0bf5750db891af5920f6306135c25e75e3990b49a0e8765c6c9f",
+    "output\\corrected_tms_analysis_review\\expectation_inventory_history.json": "39f9e31bb6aac22ae01ac092d814ee9ce3132ed6dc239abbd0c60d6fb865a569",
+    "output\\corrected_tms_analysis_review\\verify_corrected_core.py": "4e92db921c6dbc4aeff71f712f7a266f5cf1ddaee050fab5d60f3c0740edb497",
+    "output\\corrected_tms_analysis_review\\verify_global_hrf_followup.py": "a77702957490d462760de8a6109a347b867e2c05d00fca2928a73f3c8ee5ecc4",
+    "setup\\test_corrected_gwt_expectations.py": "699ae871c10fe3a33117cab9950ee41b40e491070a1a3ec4288789ade57e398f",
+    "setup\\normalize_corrected_aachen.py": "f7d31cb01ecb857ede468f908bd9528dea6fd5c254b20dd19a64dbb4fc63ccc2",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\normalization\\extended_sudmex_reuse_guard.json": "b9d39f031fb391b31d6af7b8dbba7b6c0ff9eaced0fdb07a1a7e79de0f9f128f",
+    "output\\tms_workspace_scope\\20261125T181725_063043Z\\provenance.json": "68001ac8a09ea961e72d75c82b217f65330db944ffff04ed47f4ffc2b9f38258",
+    "manuscript\\aachen_brief_report\\sources\\yousefi2026.xml": "b3b80fdcc7b17daa13624d2e5a8c599b99246cf85e061f83c29ae524d7867ae1",
+    "docs\\PROPOSAL.md": "a1b2fdccd0d48c6fd581e3abbb3f9885cc04253679adb495c0f840ab447819a8",
+    "manuscript\\aachen_brief_report\\corrected_20261126\\manuscript_source.md": "b8d71b230ccd36779550937845f701884033082703b5638ea65e00b5f8350ac9",
+    "manuscript\\aachen_brief_report\\corrected_20261126\\supplement_source.md": "b0ff022e4fc9fe4fcb3bd900dca48a20a30269086aa5674c04cc35925f2683a9",
+    "manuscript\\aachen_brief_report\\corrected_20261126\\figures\\Figure_S1_control_workspace_comparison.png": "2445849762ff8931802f355e2f0737d2c6212f88396b5ee3a8d47f6f68687245",
+    "output\\corrected_tms_analysis_review\\matrices_review.json": "2bc58012b599a3e82c75ffda64f7dff383a4807a91976b3539638b524fccd501",
+    "output\\corrected_tms_analysis_review\\statistics_review.json": "d61736cc0bc52fcac3f290486e7cfa40d10be1422f8095a2d935b0c5c9b6e0fc",
+    "output\\corrected_tms_analysis_review\\normalization_review.json": "b51b6780fedf974896b05d839e06d5b6bac57231b338640744da8e587c460175",
+    "output\\corrected_tms_analysis_review\\sensitivities_review.json": "59527760c48bae51c11df5a067680c06a877aed4d3f98f3d9b56d78584de569c",
+    "output\\corrected_tms_analysis_review\\historical_sudmex_review.json": "e097b90da79b73fb9b3606d835d9abc5337d1fe28bdbf2bc1915fc258057af67",
+    "output\\corrected_tms_analysis_review\\manuscript_review.json": "df7f69661c317f6996243f3ea0a5ca1e4c750b728e868209e7a2785ce0a71441",
+    "output\\corrected_tms_analysis_review\\global_hrf_review.json": "212510ae0dc6e7afd11471a900251469a1bce70ce1200d3cb9e8f7f4abd2eafc",
+    "output\\corrected_tms_analysis_review\\gwt_expectations_raw_receipt.json": "b7a9c28cd7b9264e65b949ac8909eb1072aab34c426fd66dcda33c67b11883c4",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\gwt_expectations_raw.csv": "a0fb37a6d2f6ebd85766d52fe0edeafe32c7dca10163ac795919a16029d19597",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\raw_scan_metrics.csv": "c658a80f07d4203eea27cae8c0d8e03f028bca61faa904730d040159475e3423",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\raw_paired_changes.csv": "c562e142abe7a5864fd85da63efec284fb31dcf2119873c0b92b6d86eda14983",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\raw_aachen_participant_changes.csv": "af109c53a729899ecb184bd76e0d2ef52503a71e8e717d7371a2d3248739f421",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\raw_aachen_all40.csv": "e1f2cf1cda41a76351a2a94f143dd13eb2367ce9fb8a3ad838886edcb5be36eb",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\raw_aachen_main30.csv": "46a4133e7f24c97579f3a8a9ecd0f00440b707b2595b3b0808a70d959aeaba59",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\raw_aachen_information20.csv": "d0103458deda39ea89f9af2a6cba03ea6dfb3b7d8de91f0290574bf23da2cfa6",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\raw_sudmex_acute.csv": "fa45f727f89fecd7144b4070335855b58a7d183f512d56b93a2fae00bac7d50c",
+    "output\\corrected_tms_analysis_review\\gwt_expectations_normalized_receipt.json": "2c137c03f0749bcc9c0e5155d5bfd1a7417335e5284ef8431898367507590593",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\gwt_expectations_normalized.csv": "76073984a8399e8cdea55ad42d6502d88b64210fecaf6423cc15f39d122754e7",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\normalized_scan_metrics.csv": "52998492053ff51059aea00e1b7e4c794792328e7747a86b18a8970f34bab9c8",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\normalized_paired_changes.csv": "331c0c7b671f11c34590e879f87075d6adcd939c3525f0df7cbd5051b1abb051",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\normalized_aachen_participant_changes.csv": "2b44b40357fffc739c803df6f95fe499f7efdb9a0a5d2167809abb75343d4503",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\normalized_aachen_all40.csv": "47986d0d390e64909b32adfdefba1e6d937967afea921f016890c3f2ce4eb874",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\normalized_aachen_main30.csv": "76b3c733e58dbd9022fb3c9cb042ab34a192ff5c904a0a40959fdf38e7337c40",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\normalized_aachen_information20.csv": "d48019b05faf2d05f6f494d2e6cc67c2e7050c2d8760802be715d46778edfd34",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\normalized_sudmex_acute.csv": "e7955c8045cac17107d67ce7f30a1c87cf472e713028f4d9f35ace23b1a6e3a9",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\clinical_neural_associations.csv": "227f08d9485652903916323e1569c2ef404779f810e35119d23558f7d3a7cd5a",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\raw_input_sha256.json": "3aa07f215a2d0078fb47d59ecc0491bd2fcdd80b37da79b429ca56bbf4412192",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\statistics_source_sha256.json": "d4c5578ec9419aac34512494e3e9cb328ff2e935d8ad3eddb2f57bde4046760c",
+    "output\\corrected_tms_analysis\\20261126T112054_284547Z\\normalization\\verification.json": "e288027e72587939cc29db747ca3192a824d0ef0904e3a6731aee9b5f84a3c06"
+  }
+}

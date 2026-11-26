@@ -1,0 +1,77 @@
+{
+  "created_utc": "2026-11-26T11:51:00.579154+00:00",
+  "stage": "manuscript",
+  "status": "passed",
+  "result": {
+    "status": "no_material_claim_discrepancy_found",
+    "source_files": {
+      "manuscript\\aachen_brief_report\\corrected_20261126\\manuscript_source.md": "b8d71b230ccd36779550937845f701884033082703b5638ea65e00b5f8350ac9",
+      "manuscript\\aachen_brief_report\\corrected_20261126\\supplement_source.md": "b0ff022e4fc9fe4fcb3bd900dca48a20a30269086aa5674c04cc35925f2683a9",
+      "output\\corrected_aachen_target_flow\\20261126T113156_656159Z\\target_flow_release_receipt.json": "758d3f4f3cf699c6d217ccd393b60c9d3dac2ae2899fca32b0b9dbfd51e400d8",
+      "output\\corrected_tms_analysis\\20261126T112054_284547Z\\sudmex_all_post_all40_results.csv": "5c1c970358b6103c6142a7e46ce59f3f8f0d3a343c6b9bea018d9abc8cbfa869"
+    },
+    "target_release_files_checked": 21,
+    "target_primary_min_maxT5": 0.1796875,
+    "target_motion_significant_rows": [
+      {
+        "scope": "left_minus_right",
+        "metric": "net_te",
+        "n": 8,
+        "estimate": 0.0011325525317436,
+        "ci_low": 0.0004992347371576,
+        "ci_high": 0.0017658703263296,
+        "p": 0.0058566116006041,
+        "p_holm10": 0.0476171551045836
+      },
+      {
+        "scope": "left_minus_right",
+        "metric": "net_unique",
+        "n": 8,
+        "estimate": -1.4295745818495691e-05,
+        "ci_low": -2.1906082235651936e-05,
+        "ci_high": -6.685409401339448e-06,
+        "p": 0.0047617155104583,
+        "p_holm10": 0.0476171551045836
+      },
+      {
+        "scope": "left_minus_right",
+        "metric": "net_synergistic",
+        "n": 8,
+        "estimate": 0.0011468818468595,
+        "ci_low": 0.0005221740988068,
+        "ci_high": 0.0017715895949121,
+        "p": 0.0052461199255358,
+        "p_holm10": 0.0476171551045836
+      }
+    ],
+    "target_intensity_significant_rows": [
+      {
+        "scope": "left",
+        "comparison": "post120_minus_pre120",
+        "metric": "persistent_synergy",
+        "n": 8,
+        "estimate": -0.0411985554978197,
+        "ci_low": -0.060877569198871,
+        "ci_high": -0.0215195417967684,
+        "p_nominal": 0.0016554892252004,
+        "p_holm20": 0.0331097845040082
+      }
+    ],
+    "raw_whole_phi_LOO_range": [
+      0.0003985351733156,
+      0.0020289230280093
+    ],
+    "manual_claim_checks": [
+      "Raw/normalized Phi estimates, units, CIs and correction labels match current core tables.",
+      "Redundancy PC nominal increase is separated from persistent redundancy magnitude and from corrected evidence.",
+      "Control-workspace overlap remains descriptive; fixed HCP comparator is not counted as two replications.",
+      "Aachen is uncontrolled; independent participants rather than 30 visits define inference.",
+      "Target primary null, three adjusted-model findings and one intensity finding are all disclosed.",
+      "Method interactions and HRF associations are not interpreted as intervention effects or causal vascular mechanisms.",
+      "Acute SUDMEX is separated from open-label all-post summaries and clinical associations.",
+      "Normalization reference uncertainty, finite-record bias and fresh MATLAB target-check limitation are disclosed."
+    ],
+    "scope_limits": "Bounded MD numerical/claim audit; no document layout review, acquisition-paper re-review, new treatment analysis, or full re-enumeration of the 200,000-vector longitudinal calculation."
+  },
+  "review_script_sha256": "4e92db921c6dbc4aeff71f712f7a266f5cf1ddaee050fab5d60f3c0740edb497"
+}

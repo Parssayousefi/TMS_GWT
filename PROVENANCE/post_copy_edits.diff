@@ -1,0 +1,38 @@
+--- pipeline/configs/dataset_configs.yaml (as copied)
++++ pipeline/configs/dataset_configs.yaml (now)
+@@ -52,6 +52,17 @@
+     name: "Monash PsiConnect Study (ds006110)"
+     config_file: "configs/datasets/monash_psilo.yaml"
+     description: "Psilocybin (19mg) vs baseline resting-state (62 subjects, multi-echo, TR=0.91s)"
++
++  # --- TMS datasets (added 2026-11-05 in TMS_GWT; see PROVENANCE/POST_COPY_EDITS.tsv)
++  sudmex_tms:
++    name: "SUDMEX_TMS rTMS trial (ds003037)"
++    config_file: "configs/datasets/sudmex_tms.yaml"
++    description: "5-Hz left-DLPFC rTMS vs sham in cocaine use disorder (44 subjects: 24 active, 20 sham; TR=2.0s)"
++
++  aachen_itbs:
++    name: "Aachen iTBS study (ds001832)"
++    config_file: "configs/datasets/aachen_itbs.yaml"
++    description: "Single-session left-DLPFC iTBS at 90% and 120% rMT, pre/post rest (16 healthy subjects; TR=2.0s)"
+ 
+ # Default dataset (used if --dataset not specified)
+ default_dataset: "london_lsd"
+--- pipeline/scripts/preprocessing/step02_hrf_deconvolution_matlab.m (as copied)
++++ pipeline/scripts/preprocessing/step02_hrf_deconvolution_matlab.m (now)
+@@ -42,11 +42,13 @@
+ % Full list restored 2026-08-10: a cambridge-only map silently skipped every
+ % other dataset. Already-deconvolved scans are skipped by the exist() guard
+ % below, so listing them here cannot recompute anything.
++% sudmex_tms and aachen_itbs added 2026-11-05 in TMS_GWT (TR 2.0 s from their
++% BIDS sidecars); see PROVENANCE/POST_COPY_EDITS.tsv.
+ dataset_tr = containers.Map( ...
+     {'hcp', 'basel_lam', 'basel_lpm', 'london_lsd', 'berlin_ketamine', ...
+      'cambridge_propofol', 'cambridge_propofol_uniform', 'monash_psilo', ...
+-     'missouri_psilo'}, ...
+-    {0.72, 1.8, 1.8, 2.0, 3.4, 2.0, 2.0, 0.91, 1.761});
++     'missouri_psilo', 'sudmex_tms', 'aachen_itbs'}, ...
++    {0.72, 1.8, 1.8, 2.0, 3.4, 2.0, 2.0, 0.91, 1.761, 2.0, 2.0});
+ 
+ %% Discover files
+ all_files = dir(fullfile(ts_dir, 'dataset-*_timeseries.npy'));

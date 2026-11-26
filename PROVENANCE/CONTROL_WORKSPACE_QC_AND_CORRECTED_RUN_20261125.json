@@ -1,0 +1,200 @@
+{
+  "created_utc": "2026-11-25T20:31:11.539759+00:00",
+  "current_request": "Independently derive TMS control workspaces with GWT methods and compare frozen HCP/GWT reference.",
+  "sudmex_control_run": "output/control_workspace_qc/20261125T201530_636948Z",
+  "aachen_correction": "Complete for all15 included participants/all60 runs; old treatment effects remain held pending statistical recomputation.",
+  "fmriprep_queue": {
+    "script": "setup/run_aachen_corrected_queue.py",
+    "session_id": null,
+    "status": "logs/aachen_corrected_20261125/queue_status.json",
+    "recovery": {
+      "subject": "01",
+      "container": "aachen_skip_01_20261125",
+      "restarted_utc": "2026-11-25T21:01:48.576070492Z",
+      "reason": "PermissionError writing pre90 acc_msk_bin0 output, then Nipype callback failure/stall",
+      "action": "Stopped and resumed same container with unchanged correction command and existing valid work cache; no files or other containers deleted. Queue supervisor restarted and its status writes made atomic.",
+      "prior_log": "logs/aachen_corrected_20261125/sub-01_before_cache_retry.log",
+      "prior_queue": "logs/aachen_corrected_20261125/queue_before_sub01_retry.json"
+    },
+    "completed_session_id": 93747
+  },
+  "downstream": {
+    "script": "setup/run_aachen_corrected_downstream.py",
+    "session_id": null,
+    "status": "logs/aachen_corrected_20261125/downstream/status.json",
+    "batches": "Three five-person batches, each waiting for successful fMRIPrep and independent visual release. Runtime4CONNworkers while imaging jobs remain, otherwise12;24HRF/PhiIDworkers at dataset completion.",
+    "algorithms": "107 staged scripts verified; logged MATLAB copies change only worker count. Source/staged processing files unchanged.",
+    "temporary_cleanup": "Only unchanged production cleanup of validated isolated CONN scratch paths; original derivatives and all frozen references retained.",
+    "supervisor_restart": "Waiting supervisor restarted before any preprocessing after independent guard review; strict finite-edge and exact cohort checks added, with atomic status writes and transient JSON-read retries. fMRIPrep containers/queue were not interrupted.",
+    "review_resume_verification": "logs/aachen_corrected_20261125/downstream/review_resume_verification.json",
+    "verified_stages_so_far": "Complete: 60 parcellated signals, 60 deconvolved signals, 300 PhiID matrices; 102831 valid unique pairs per scan. No skipped or failed HRF/PhiID scans.",
+    "completed_session_id": 39817
+  },
+  "final_workspace_qc": {
+    "script": "setup/qc_aachen_corrected_workspace.py",
+    "release_required": "output/aachen_alignment_review/corrected_cohort/cohort_release_receipt.json",
+    "subjects": 15,
+    "baseline_handling": "Separate pre90 and pre120 maps and per-person mean of their matrices; no post scans.",
+    "influence_qc": "Before corrected PhiID outputs existed, added uniform leave-one-participant-out maps for all 15 subjects and all 3 baseline conditions, prompted by a visual pre90 intensity-gradient flag in sub10. No omission changes the main cohort.",
+    "review": "Static review found no issue with baseline pairing, frozen reference identity, or completion gates. Final numerical review remains pending.",
+    "report_builder": "setup/build_control_workspace_qc_report.py",
+    "notebook_report_builder": "setup/build_target_flow_report.py",
+    "network_coverage_context": "setup/summarize_control_workspace_networks.py --dataset aachen_itbs",
+    "status": "Complete; independent numerical review passed",
+    "aachen_run": "output\\control_workspace_qc\\aachen_corrected_20261125T234156_788094Z",
+    "combined_report_run": "output\\control_workspace_qc\\combined_20261125T234309_541220Z",
+    "independent_review": "output\\control_workspace_qc\\aachen_corrected_20261125T234156_788094Z\\review.json",
+    "independent_review_sha256": "1f51550e49dbebe045023720d6a72572e3a6c5a426e099d605ec53baebc22312",
+    "point_estimates": {
+      "baseline_mean": {
+        "n": 15,
+        "n_workspace": 239,
+        "hcp_n_workspace": 235,
+        "shared_regions": 176,
+        "dice_hcp": 0.7426160337552743,
+        "jaccard_hcp": 0.5906040268456376,
+        "gradient_rho_hcp": 0.595569493921019,
+        "bootstrap_dice_95_percentiles": [
+          0.6695642843814145,
+          0.7662358168147642
+        ],
+        "split_half_dice_median": 0.7627118644067796,
+        "subjects": [
+          "01",
+          "03",
+          "04",
+          "05",
+          "06",
+          "07",
+          "08",
+          "09",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "leave_one_out_dice_hcp_range": [
+          0.7203389830508474,
+          0.7484143763213531
+        ],
+        "leave_one_out_dice_full_cohort_range": [
+          0.959830866807611,
+          0.9808917197452229
+        ]
+      },
+      "pre90": {
+        "n": 15,
+        "n_workspace": 234,
+        "hcp_n_workspace": 235,
+        "shared_regions": 180,
+        "dice_hcp": 0.767590618336887,
+        "jaccard_hcp": 0.6228373702422145,
+        "gradient_rho_hcp": 0.6067906056225423,
+        "bootstrap_dice_95_percentiles": [
+          0.6794546436285097,
+          0.7837259100642399
+        ],
+        "split_half_dice_median": 0.7312775330396476,
+        "subjects": [
+          "01",
+          "03",
+          "04",
+          "05",
+          "06",
+          "07",
+          "08",
+          "09",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "leave_one_out_dice_hcp_range": [
+          0.7397849462365591,
+          0.7789473684210526
+        ],
+        "leave_one_out_dice_full_cohort_range": [
+          0.9409282700421941,
+          0.9700854700854701
+        ]
+      },
+      "pre120": {
+        "n": 15,
+        "n_workspace": 229,
+        "hcp_n_workspace": 235,
+        "shared_regions": 158,
+        "dice_hcp": 0.6810344827586207,
+        "jaccard_hcp": 0.5163398692810458,
+        "gradient_rho_hcp": 0.511886382806017,
+        "bootstrap_dice_95_percentiles": [
+          0.6266599552572707,
+          0.7300215982721382
+        ],
+        "split_half_dice_median": 0.683982683982684,
+        "subjects": [
+          "01",
+          "03",
+          "04",
+          "05",
+          "06",
+          "07",
+          "08",
+          "09",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "leave_one_out_dice_hcp_range": [
+          0.6422413793103449,
+          0.696969696969697
+        ],
+        "leave_one_out_dice_full_cohort_range": [
+          0.933920704845815,
+          0.9715536105032823
+        ]
+      }
+    },
+    "baseline_visit_similarity": {
+      "dice_pre90_pre120": 0.7818574514038877,
+      "gradient_rho_pre90_pre120": 0.7157486043592971
+    }
+  },
+  "scripts_sha256": {
+    "setup/qc_sham_workspace.py": "be0b7f6ceb6f0858177202e37c26ffc3eae87c8f5a9e5eb9b6585ee704bdc17c",
+    "setup/qc_aachen_corrected_workspace.py": "384150e0b2571a6d2f30e61ae7bc0a17abb6244599778bad54fd1c7ad0bc8ca1",
+    "setup/run_aachen_corrected_queue.py": "da83da3b8562b736eb4dba0365dda8672daa6645f77b6e771d5ba04f2d1c41da",
+    "setup/run_aachen_corrected_downstream.py": "5b4c0ae315f7fbcc2f1eae395ee9f50b88cb132aa05002fba4802c731926f07a",
+    "setup/summarize_control_workspace_networks.py": "4cb0ef470721341abbd7b095aa4c679cdabe7322450a047fa732e5c0cd99cd4b",
+    "setup/mark_aachen_anatomical_hold_notebooks.py": "11a561e105a32d18177e5cf51ace8dfc88bda419d927f0c9c905bd3a875ce5ce",
+    "setup/build_control_workspace_qc_report.py": "40075ff415e1d6b73249871051e58e3b049e55d939c374d261d232fcd8291b9d",
+    "setup/build_target_flow_report.py": "e6207a2f9a229ec993a12c416332e440348157f05df45a41040128dfc7967c6c"
+  },
+  "updated_utc": "2026-11-25T23:48:19.996061+00:00",
+  "notebook_hold_receipt": "output/aachen_alignment_review/notebook_hold_archive/receipt.json",
+  "anatomical_cohort_release": {
+    "path": "output/aachen_alignment_review/corrected_cohort/cohort_release_receipt.json",
+    "sha256": "d02401c42be2ea20c9e6de008a30c9665d92e7151467bb0aa4c873a8dfd81895",
+    "integrity_verification": "output/aachen_alignment_review/corrected_cohort/release_integrity_verification.json",
+    "participants": 15,
+    "runs": 60,
+    "files_verified": 762
+  },
+  "status": "Completed control-workspace QC and corrected Aachen preprocessing through PhiID",
+  "final_outputs": {
+    "report": "docs/TMS_CONTROL_WORKSPACE_QC_20261125.md",
+    "notebook": "output/jupyter-notebook/TMS_Targeted_Information_Flow.ipynb",
+    "figure": "output\\control_workspace_qc\\combined_20261125T234309_541220Z\\control_workspace_comparison.png",
+    "quality_receipt": "output\\control_workspace_qc\\combined_20261125T234309_541220Z\\qa.json"
+  },
+  "remaining_scientific_work": "Recompute Aachen participant-level treatment statistics, GWT roles, target-flow analyses and baseline-derived normalization/robustness before updating manuscript claims. Old effect tables are historical."
+}

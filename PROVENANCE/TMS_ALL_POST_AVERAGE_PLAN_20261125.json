@@ -1,0 +1,14 @@
+{
+  "status": "exploratory_user_requested_average_of_all_followups",
+  "request": "Run pre versus post with every post measurement averaged together",
+  "estimand": "For each participant, equal-weight mean of all eligible post-session metric values minus equal-weight mean of their eligible pre-session metric values; one change per person and equal participant weights at group level",
+  "sudmex": "Pre=t0; post=t1,t14,t2,t3,t4. Include all participants with usable t0 and at least one usable post scan. Keep original randomized-arm labels. Overall pre/post is a temporal association, not an active-versus-sham treatment estimate; later original-sham visits can include open-label active treatment.",
+  "aachen": "Pre=pre90,pre120; post=post90,post120; require all four observations. Verify algebraic equivalence to the existing average of two matched visit changes.",
+  "weights": "Average already computed scan metrics, not time series or matrices. No imputation and no scan-count weighting of participants. Save each contributing visit and its within-person weight.",
+  "neural_outcomes": "All 25 original endpoints, raw and the existing NuMIT-inspired sensitivity. Extend normalization only to additional needed SUDMEX scans, reusing the frozen baseline pools, grids and both reference seeds; never refit the null to follow-up outcomes.",
+  "statistics": "Main paired pre/post tests for each dataset; same original outcome families, two-sided max-T sign flips (exact for Aachen, 199999 sampled sign vectors plus identity for SUDMEX), with within-family Holm also retained. Original-arm differences use baseline-adjusted HC3, plus raw change-score and baseline/motion sensitivities; these describe different treatment trajectories, not a sustained sham-controlled comparison. Within-arm means and CIs are descriptive.",
+  "cohort_sensitivity": "Repeat the SUDMEX aggregation for the original 40 acute-pair participants to distinguish adding follow-ups from adding a participant with usable baseline/later visits but no usable t1.",
+  "clinical": "Average each QC-valid clinical measure at the same MRI visits used for that participant; require a valid baseline and all selected follow-up measurements for that outcome, so the neural and clinical windows match. Test all seven scales with within-family Holm. Save missing/flagged reasons. No new brain-clinical correlation search.",
+  "verification": "Check visit membership, unique IDs, equal weights, aggregate values against an independent groupby calculation, unchanged source hashes, original-Aachen parity, independent SciPy/statmodels inference and reproducible sign-flip p values.",
+  "interpretation": "A compact mean of observed follow-ups, not a common scheduled endpoint. People contribute different follow-up horizons and numbers of visits, and retention may be informative. Preserve the acute randomized comparison and all earlier outputs."
+}

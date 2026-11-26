@@ -1,0 +1,98 @@
+# Cambridge Propofol — UNIFORM (no-ART) rerun (OpenNeuro ds003171)
+# Same raw data + fMRIPrep derivatives as cambridge_propofol, but denoised with
+# the STANDARD pipeline (step01b_conn_denoise.m: no ART, no scrubbing) so that
+# preprocessing is identical to all other datasets. Created 2026-08-10 per
+# docs/PLAN_cambridge_uniform_rerun.md. The ART variant remains on disk under
+# dataset id cambridge_propofol (sensitivity analysis).
+
+dataset_id: "cambridge_propofol_uniform"
+name: "Cambridge Propofol (uniform no-ART rerun)"
+
+# Data paths — SHARED with cambridge_propofol (fMRIPrep is reused, not rerun)
+paths:
+  local:
+    bids_root: "D:/projects/TMS_GWT/data/cambridge_propofol"
+    fmriprep_dir: "D:/projects/TMS_GWT/data/cambridge_propofol/derivatives/fmriprep"
+
+# BIDS structure
+bids_structure:
+  has_sessions: false  # sub-XX/func/ (no sessions)
+
+# Subject information
+subjects:
+  auto_discover: true  # Discover from BIDS directory (same 17 subjects)
+
+# Task/condition information (rest-only scope, identical to cambridge_propofol)
+tasks:
+  restawake:
+    bids_task_name: "restawake"
+    description: "Resting-state during wakefulness (baseline/control)"
+    is_control: true
+
+  restlight:
+    bids_task_name: "restlight"
+    description: "Resting-state during light propofol sedation"
+    is_control: false
+
+  restdeep:
+    bids_task_name: "restdeep"
+    description: "Resting-state during deep propofol sedation (loss of consciousness)"
+    is_control: false
+
+  restrecovery:
+    bids_task_name: "restrecovery"
+    description: "Resting-state during post-anaesthetic recovery"
+    is_control: false
+
+# Run selection
+run_selection:
+  strategy: "first"  # Only 1 run per task per subject (run-01)
+
+# File naming patterns (for fMRIPrep outputs - no sessions)
+file_patterns:
+  bold: "sub-{subject}_task-{task}_run-{run}_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz"
+  confounds: "sub-{subject}_task-{task}_run-{run}_desc-confounds_timeseries.tsv"
+  mask: "sub-{subject}_task-{task}_run-{run}_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz"
+
+# Quality control — MOTION SCREEN ONLY (shared with cambridge_propofol so the
+# scan set is identical to the ART run's input set: 60 scans).
+# Deliberately NO art_exclusions_file and NO honor_exclusions_in_analysis:
+# the uniform variant uses motion QC only, like every other dataset (n=60).
+qc:
+  motion_thresholds:
+    max_translation_mm: 3.0
+    max_rotation_deg: 3.15
+  min_salvage_duration_min: 8.0
+  auto_truncate: true
+  max_fd_mean: 0.5
+  max_fd_peak: 3.0
+  min_timepoints: 100
+  # Own motion-screen exclusions, generated 2026-08-10 by
+  #   scripts/qc/fmriprep_motion_qc.py --dataset cambridge_propofol_uniform
+  # Verified identical to cambridge_propofol's (same 8 EXCLUDE decisions, all
+  # shared columns equal) — motion comes from the shared fMRIPrep confounds and
+  # is denoising-independent. Kept as a separate file so this dataset is
+  # self-contained rather than cross-referencing the ART variant.
+  exclusions_file: "results/qc/cambridge_propofol_uniform/exclusions.csv"
+
+# Dataset-specific preprocessing overrides
+preprocessing:
+  tr: 2.0  # Standard 2s TR
+  volumes_to_remove: 0  # 5 dummy volumes already removed at source (dataset README)
+  volumes_to_remove_last: 0
+  art_scrubbing: false  # explicit: standard no-ART denoise -> truthful metadata sidecars
+
+# fMRIPrep filter kept for documentation parity (fMRIPrep is NOT rerun for this id)
+fmriprep_extra_args: "--bids-filter-file /data/bids_filter.json"
+
+# Notes
+notes: |
+  Uniform (no-ART) rerun of the Cambridge propofol dataset (2026-08).
+  - Purpose: publication-primary variant with preprocessing identical to the
+    other 5 datasets (standard step01b_conn_denoise.m; no functional_art, no
+    scrubbing regressors). See docs/PLAN_cambridge_uniform_rerun.md.
+  - The ART-scrubbed variant (2026-04-28/29) stays on disk as dataset id
+    cambridge_propofol and serves as the motion-control sensitivity analysis.
+  - Fidelity oracle: results/qc/cambridge_propofol/motion_synergy_pre_art/
+    per_scan.csv (2026-04-27) holds per-scan PhiID stats from the ORIGINAL
+    uniform run; this rerun must reproduce those values (Gate 6 of the plan).

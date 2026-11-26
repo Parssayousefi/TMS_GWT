@@ -1,0 +1,29 @@
+{
+  "status": "post_hoc_diagnostics_requested_after_primary_results",
+  "source_run": "output/tms_publication/20261125T145928_921789Z",
+  "purpose": "Separate baseline imbalance, motion adjustment, and individual influence on the SUDMEX FPN gateway contrast; assess NuMIT applicability.",
+  "cohort": "The same 40 complete T0/T1 pairs, 22 active and 18 sham; no new exclusions",
+  "fpn_models": [
+    "change ~ arm",
+    "change ~ arm + baseline_FPN",
+    "change ~ arm + change_FD",
+    "change ~ arm + baseline_FPN + change_FD",
+    "change ~ arm + baseline_FPN + baseline_FD + change_FD"
+  ],
+  "uncertainty": "OLS coefficients with HC3 and t intervals consistently across the five models; original Welch result retained as reference",
+  "diagnostics": [
+    "Arm means, SDs, baseline standardized differences, baseline/followup overlap and correlations",
+    "Algebraic decomposition of raw-to-adjusted coefficient change using joint-model covariate coefficients times observed arm imbalances; not a causal mediation decomposition",
+    "Equivalent followup ANCOVA coefficient check",
+    "Leave-one-participant-out fits for all five models, Cook distance and leverage; no participant deletion from the reported full-cohort estimates",
+    "5000 stratified participant bootstrap replicates for the four core model coefficients",
+    "Baseline-adjusted HC3 treatment comparisons for all seven clinical outcomes, one BH family; clinical source flags remain unchanged"
+  ],
+  "normalization_assessment": [
+    "Read supplied NuMIT paper and original implementation; distinguish PID demonstration from the proposed PhiID extension",
+    "Read only pure local mathematical helper functions; do not execute old cohort drivers or reanalyse private data",
+    "Audit Gaussian time-delayed mutual information and autocorrelation at the fixed production lag in TMS acute scans, with solver parity checks against completed matrices",
+    "Bounded method-validation pilot if justified: fixed seed, held-out synthetic null calibration, TMI matching, finite-sample and quantile saturation checks; no full normalized treatment-effect search"
+  ],
+  "interpretation": "Do not rebrand these diagnostics as preregistered, replace the completed primary result, select models for significance, or infer causation from baseline-change correlations. NuMIT cannot correct arm imbalance or head motion."
+}

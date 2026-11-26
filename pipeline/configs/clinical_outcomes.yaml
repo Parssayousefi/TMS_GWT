@@ -1,0 +1,25 @@
+# TMS-specific clinical input; the copied psychedelic/ASC analyses remain frozen.
+effects_csv: data/master_clinical_effects.csv
+sessions_csv: data/master_clinical_sessions.csv
+workbook: outputs/tms_clinical_20261125/TMS_clinical_outcomes.xlsx
+workbook_sheet: Clinical changes
+loader: pipeline/scripts/utils/clinical_data.py
+join_keys: [dataset, subject_id, comparison]
+dataset: sudmex_tms
+comparison: t1_minus_t0
+change_direction: followup_minus_baseline
+negative_change: lower_craving_or_impulsivity
+randomized_arms: [active, sham]
+source: https://zenodo.org/records/10409461
+source_version: '4.2'
+require_mri_pair: true
+include_flagged: false
+# Endpoint priority and multiplicity are analysis-plan decisions, not established here.
+outcomes:
+  - craving_vas
+  - craving_ccq_general
+  - craving_ccq_now
+  - impulsivity_bis_total
+  - impulsivity_bis_cognitive
+  - impulsivity_bis_motor
+  - impulsivity_bis_nonplanning

@@ -1,0 +1,112 @@
+# Cambridge Propofol Dataset (OpenNeuro ds003171)
+# Propofol anaesthesia dataset used in Luppi et al. (2024) eLife
+# 17 healthy adults scanned at 4 sedation levels: Awake, Light, Deep, Recovery
+# Citation: Naci et al. (2018), Kandeepan et al. (2020)
+
+dataset_id: "cambridge_propofol"
+name: "Cambridge Propofol Anaesthesia Study (ds003171)"
+
+# Data paths
+paths:
+  local:
+    bids_root: "D:/projects/TMS_GWT/data/cambridge_propofol"
+    fmriprep_dir: "D:/projects/TMS_GWT/data/cambridge_propofol/derivatives/fmriprep"
+
+# BIDS structure
+bids_structure:
+  has_sessions: false  # sub-XX/func/ (no sessions)
+
+# Subject information
+subjects:
+  auto_discover: true  # Discover from BIDS directory
+  # All 17 subjects
+  # sub-02CB, sub-04HD, sub-04SG, sub-08BC, sub-08VR, sub-10JR, sub-13CA,
+  # sub-16RA, sub-17EK, sub-17NA, sub-19AK, sub-19SA, sub-22CY, sub-22TK,
+  # sub-2525JK, sub-27HF, sub-30AQ
+
+# Task/condition information
+# Rest-only scope to match Luppi 2024 and avoid task-evoked confound on the
+# "collapse" signature. Audio tasks (audioawake/light/deep/recovery) exist in
+# the BIDS tree but are excluded from fMRIPrep and from this pipeline.
+tasks:
+  restawake:
+    bids_task_name: "restawake"
+    description: "Resting-state during wakefulness (baseline/control)"
+    is_control: true
+
+  restlight:
+    bids_task_name: "restlight"
+    description: "Resting-state during light propofol sedation"
+    is_control: false
+
+  restdeep:
+    bids_task_name: "restdeep"
+    description: "Resting-state during deep propofol sedation (loss of consciousness)"
+    is_control: false
+
+  restrecovery:
+    bids_task_name: "restrecovery"
+    description: "Resting-state during post-anaesthetic recovery"
+    is_control: false
+
+# Run selection
+run_selection:
+  strategy: "first"  # Only 1 run per task per subject (run-01)
+
+# File naming patterns (for fMRIPrep outputs - no sessions)
+file_patterns:
+  bold: "sub-{subject}_task-{task}_run-{run}_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz"
+  confounds: "sub-{subject}_task-{task}_run-{run}_desc-confounds_timeseries.tsv"
+  mask: "sub-{subject}_task-{task}_run-{run}_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz"
+
+# Quality control criteria
+qc:
+  motion_thresholds:
+    max_translation_mm: 3.0
+    max_rotation_deg: 3.15
+  min_salvage_duration_min: 8.0
+  auto_truncate: true
+  max_fd_mean: 0.5
+  max_fd_peak: 3.0
+  min_timepoints: 100
+
+  # ART (Artifact Detection Tool) post-denoising scan exclusions, applied on
+  # top of the motion-screen exclusions.csv via worst-case collapse. Built by
+  # scripts/qc/build_art_exclusions.py from the CONN ART step's
+  # art_outlier_summary.csv. Threshold: fraction_outliers >= 0.20
+  # (Power 2014; Parkes 2018; matches Luppi 2024 DOC convention).
+  art_exclusions_file: results/qc/cambridge_propofol/exclusions_art.csv
+
+  # Cambridge-only: tell analysis_loader.discover_processed_scans() to drop
+  # QC-excluded scans before group statistics. Other dataset configs do not
+  # set this field, so their behaviour is unchanged.
+  honor_exclusions_in_analysis: true
+
+# Dataset-specific preprocessing overrides
+preprocessing:
+  tr: 2.0  # Standard 2s TR
+  volumes_to_remove: 0  # README says 5 dummy volumes already removed
+  volumes_to_remove_last: 0
+  # CONN stage 1b for this dataset is the ART variant
+  # (step01b_conn_denoise_cambridge_art.m): per-outlier-volume scrubbing
+  # regressors are part of the denoising confound matrix. Read by 01c to set
+  # the art_spike_regressors sidecar field. Other datasets omit this (false).
+  art_scrubbing: true
+
+# Restrict fMRIPrep to the 4 rest* tasks; filter JSON lives at the BIDS root
+# so the dispatcher's existing /data mount exposes it at /data/bids_filter.json.
+fmriprep_extra_args: "--bids-filter-file /data/bids_filter.json"
+
+# Notes
+notes: |
+  Cambridge Propofol Anaesthesia Study (OpenNeuro ds003171 v2.0.1)
+  - 17 healthy adults, 3T Siemens scanner
+  - 4 sedation levels: Awake, Light, Deep, Recovery
+  - Rest-only scope in this pipeline (4 tasks: restawake/light/deep/recovery);
+    audio tasks are downloaded but excluded from fMRIPrep and PhiID analysis.
+  - TR = 2.0s, 33 slices
+  - 5 dummy volumes already removed from NIfTI files
+  - No DWI downloaded (not needed for fMRI pipeline)
+  - Used in Luppi et al. (2024) eLife to study consciousness
+  - Control: restawake; Key comparison: restawake vs restdeep
+  - Requires fMRIPrep preprocessing before pipeline use

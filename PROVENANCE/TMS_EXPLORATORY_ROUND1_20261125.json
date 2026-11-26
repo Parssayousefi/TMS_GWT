@@ -1,0 +1,29 @@
+{
+  "status": "explicitly_exploratory_after_initial_results",
+  "user_request": "Find a publishable exploratory narrative; continue investigating",
+  "source_run": "output/tms_publication/20261125T145928_921789Z",
+  "questions": [
+    "Does Aachen stimulation intensity modify the information response?",
+    "Are effects clearer in continuous network participation/rank profiles or in anatomically defined subcortical regions?",
+    "Do baseline neural measures moderate clinical response in SUDMEX?",
+    "Is there multivariate network reconfiguration or descriptive convergence across the two different study designs?"
+  ],
+  "metric_inventory": {
+    "existing_GWT": "All 25 existing outcomes",
+    "network_continuous": "Synergy PC, redundancy PC and role-rank score means in each of 8 networks (24)",
+    "subcortical_anatomy": "Gateway counts and mean rank scores in CAU, PUT, NAc, HIP, AMY, GP and pooled dorsal/ventral THA, using only the fixed workspace (14)"
+  },
+  "contrasts": [
+    "SUDMEX followup ~ arm + matching baseline metric, HC3",
+    "Aachen paired change at 90%, at 120%, average across both visits, and 120%-minus-90% change, one-sample t intervals",
+    "Aachen intensity difference adjusted for centered visit order, baseline metric difference and motion-change difference, HC3"
+  ],
+  "clinical_moderation": "Five existing neural predictors (baseline FPN gateways, DAN gateways, mean synergy PC, mean redundancy PC, Phi_R) crossed with craving VAS and BIS total: outcome change ~ arm + baseline clinical + standardized baseline neural + arm-by-neural interaction. Ten tests, one BH family; exploratory association, not validated prediction.",
+  "multivariate": "Three 8-network profiles (synergy PC, redundancy PC, rank score): SUDMEX baseline-profile-adjusted multivariate treatment tests with 9999 Freedman-Lane permutations; Aachen pooled and intensity-difference sign-flip tests across the same 15 subjects. One nine-test family.",
+  "multiplicity": "Retain every tested row. Report BH within dataset/contrast blocks and across the whole new round; label the 25 previously reported Aachen pooled results as references, not new discoveries. Additional follow-ups must be labelled as such.",
+  "safeguards": "No new participant exclusion, threshold or lag selection. No private drug data, no pooling of Aachen pre/post with SUDMEX active-sham as if they estimated the same causal effect. Any apparent lead requires influence, motion/order, and effect-estimate checks before a narrative claim.",
+  "literature_rationale": [
+    "https://doi.org/10.3389/fnhum.2019.00190",
+    "https://doi.org/10.1016/j.bpsc.2021.01.003"
+  ]
+}

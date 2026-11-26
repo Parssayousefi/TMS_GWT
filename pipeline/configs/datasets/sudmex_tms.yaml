@@ -1,0 +1,124 @@
+# SUDMEX_TMS Dataset Configuration (OpenNeuro ds003037, CC0)
+# 5-Hz rTMS to the left DLPFC vs sham, cocaine use disorder; resting-state fMRI
+# Garza-Villarreal et al. 2021, Biol Psychiatry CNNI 6:745-757 (NCT02986438)
+
+dataset_id: "sudmex_tms"
+name: "SUDMEX_TMS rTMS trial (ds003037)"
+
+# Data paths
+paths:
+  local:
+    bids_root: "D:/projects/TMS_GWT/data/sudmex_tms"
+    fmriprep_dir: "D:/projects/TMS_GWT/data/sudmex_tms/derivatives/fmriprep"
+  # Legacy
+  bids_root: "D:/projects/TMS_GWT/data/sudmex_tms"
+  fmriprep_dir: "D:/projects/TMS_GWT/data/sudmex_tms/derivatives/fmriprep"
+
+# BIDS structure
+bids_structure:
+  has_sessions: true  # sub-XXX/ses-{t0|t1|t14|t2|t3|t4}/func/...
+
+# Subject information
+# 53 subject folders; 44 analysed = the trial's acute-phase sample (24 active, 20 sham),
+# matching Garza-Villarreal et al. 2021. Excluded:
+#   005, 009, 028, 029, 035, 040 = exclusion=1 in participants.tsv (baseline scan only)
+#   014, 038, 051 = absent from participants.tsv, so no arm assignment (014 has t0+t1)
+subjects:
+  auto_discover: true
+  include: []
+  exclude: ["005", "009", "014", "028", "029", "035", "038", "040", "051"]
+
+# Task/condition information
+# Condition is determined by session name (Pattern A, like Basel/Monash/Missouri).
+# The arm is between-subject: participants.tsv group 1 = Sham, 2 = Treatment (active).
+tasks:
+  t0:
+    bids_task_name: "rest"
+    description: "Baseline, before rTMS (both arms)"
+    is_control: true
+
+  t1:
+    bids_task_name: "rest"
+    description: "2 weeks: end of the double-blind acute phase (active or sham rTMS, 2 sessions a day)"
+    is_control: false
+
+  t14:
+    bids_task_name: "rest"
+    description: "Sham arm only: 2 weeks after T1, after open-label active rTMS"
+    is_control: false
+
+  t2:
+    bids_task_name: "rest"
+    description: "3 months (open-label maintenance phase)"
+    is_control: false
+
+  t3:
+    bids_task_name: "rest"
+    description: "6 months (open-label maintenance phase)"
+    is_control: false
+
+  t4:
+    bids_task_name: "rest"
+    description: "12 months (subset of participants)"
+    is_control: false
+
+# ses-t5 exists only for sub-001 and sub-008 and is a byte-identical duplicate of
+# their ses-t4 (same SHA-256 and AcquisitionTime). It is excluded through
+# bids_filter.json (fMRIPrep) and qc.include_sessions.
+
+# Run selection
+run_selection:
+  strategy: "first"  # 1 run per session
+
+# File naming patterns (no run entity in this dataset)
+file_patterns:
+  bold: "sub-{subject}_ses-{session}_task-{task}_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz"
+  confounds: "sub-{subject}_ses-{session}_task-{task}_desc-confounds_timeseries.tsv"
+  mask: "sub-{subject}_ses-{session}_task-{task}_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz"
+
+# Quality control criteria (Luppi et al. methodology, uniform with other datasets)
+# Rest scans are 10 min (300 x 2.0 s), so the 8-min salvage window can rescue a TRUNCATE.
+qc:
+  motion_thresholds:
+    max_translation_mm: 3.0
+    max_rotation_deg: 3.15
+  min_salvage_duration_min: 8.0
+  auto_truncate: true
+  max_fd_mean: 0.5
+  max_fd_peak: 3.0
+  min_timepoints: 100
+  exclusions_file: "results/qc/sudmex_tms/exclusions.csv"
+  include_sessions: [t0, t1, t14, t2, t3, t4]
+  exclude_subjects: ["005", "009", "014", "028", "029", "035", "038", "040", "051"]
+
+# Dataset-specific preprocessing overrides
+preprocessing:
+  tr: 2.0  # 2000 ms TR from BIDS JSON sidecars (Philips Ingenia 3T)
+  volumes_to_remove: 5  # uniform first-N removal (Luppi method); 5 x 2.0 s = 10 s
+  volumes_to_remove_last: 0
+  bandpass_low: 0.008
+  bandpass_high: 0.09
+  compcor_wm: 5
+  compcor_csf: 5
+  global_signal_regression: false
+
+# fMRIPrep extra arguments
+# BIDS filter: anatomy from ses-t0 only for every subject (uniform baseline-only anat,
+# as for Monash; without it subjects with 2 to 6 sessions would get differently merged
+# T1w references). BOLD restricted to task-rest in the six analysed sessions (drops the
+# duplicate ses-t5). Fieldmaps and DWI were not downloaded: no SDC, uniform with all
+# GWT datasets.
+fmriprep_extra_args: "--bids-filter-file /data/bids_filter.json"
+
+# Notes
+notes: |
+  SUDMEX_TMS (OpenNeuro ds003037 v2.1.0, CC0), Instituto Nacional de Psiquiatria, Mexico City
+  - Double-blind sham-controlled RCT, parallel arms, 5-Hz rTMS to the left DLPFC,
+    2 sessions a day for 2 weeks (acute phase), then open-label maintenance
+    (2 sessions a week for up to 6 months)
+  - Rest fMRI: 10 min, TR 2.0 s, 300 volumes, 80 x 80 x 39, 3 x 3 x 3.3 mm, Philips Ingenia 3T
+  - Sessions: t0 baseline, t1 2 weeks, t14 sham arm after open-label rTMS, t2 3 months,
+    t3 6 months, t4 12 months; t5 is a duplicate of t4 (excluded)
+  - Clinical data (craving, impulsivity): Zenodo doi:10.5281/zenodo.8176365
+  - Downloaded 2026-11-05: T1w + rest BOLD only (no DWI, no fieldmaps)
+  - Provenance: data/sudmex_tms/PREPROCESSING_NOTES.md

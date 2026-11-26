@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-11-26T11:36:16.412906+00:00",
+  "stage": "sensitivities",
+  "status": "passed",
+  "result": {
+    "hashes": {
+      "followup_inputs": 250,
+      "HRF_inputs": 60,
+      "routing_sources": 5
+    },
+    "signal_scans": 180,
+    "signal_contrasts": 90,
+    "method_interactions": 8,
+    "method_sign_vectors": 32768,
+    "HRF_parameter_scans": 60,
+    "HRF_associations": 6,
+    "within_workspace_phi_method_maxT8": 0.00250244140625,
+    "outside_phi_HRF_width_Holm6": 0.0003178538174389,
+    "interpretation": "Method-by-time interaction and HRF associations are representation/association diagnostics, not independent intervention effects or demonstrations of neural causation."
+  },
+  "review_script_sha256": "2ecd78bea3683dfa7a7598e731a2176a787471dbc051c77e62cc94fef02fc30c"
+}
