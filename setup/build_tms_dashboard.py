@@ -10,6 +10,7 @@ import csv
 import hashlib
 import json
 import math
+import fd_dashboard_sources as fd_sources
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -150,6 +151,7 @@ def main():
         add(PID_NORMALIZED, name, label, 'PID diagnostics', 'Calibration diagnostic', 'Mixed', 'normalized',
             'Numerical and model diagnostics only. Conditional CDFs calibrated separately for the six composites; these diagnostics are not intervention tests.', diagnostic=True)
 
+    fd_sources.attach(specs, add)
     sources, rows, diagnostics, original_hashes = [], [], [], {}
     for index, spec in enumerate(specs):
         p = spec["root"] / spec["name"]
@@ -161,7 +163,7 @@ def main():
         selected = [r for r in original if not spec["sud_only"] or r.get("dataset") == "sudmex_tms"]
         assert selected, p
         # Leave-one-out model summaries may be public; participant identifiers are not.
-        id_fields = [f for f in fields if f in ("omitted", "omitted_subject")]
+        id_fields = [f for f in fields if f in ("omitted", "omitted_subject", "subject_omitted")]
         omitted_values = sorted({r[f] for r in selected for f in id_fields})
         aliases = {v: f"Omission {i+1}" for i, v in enumerate(omitted_values)}
         for row in selected:
@@ -190,9 +192,9 @@ def main():
             branch = raw.get("branch") or spec["branch"]
             if branch == "mixed":
                 branch = "raw"
-            scale = "normalized" if branch == "normalized" else "raw"
+            scale = "normalized" if branch.startswith("normalized") else "raw"
             endpoint = raw.get("metric") or raw.get("neural_metric") or raw.get("outcome") or raw.get('measure') or raw.get('mode') or (f"{raw.get('outcome_scope',raw.get('scope'))}__phi / HRF {raw['parameter']}" if raw.get("parameter") else "Not supplied")
-            detail = " · ".join(str(raw[k]) for k in ("scope", "predictor_scope", "comparison", "contrast", "clinical_metric", "hrf_parameter", "model", "check", "variant", "definition", "reference_seed", "omitted_subject", "omitted", "omission") if raw.get(k) is not None)
+            detail = " · ".join(str(raw[k]) for k in ("scope", "predictor_scope", "comparison", "contrast", "clinical_metric", "hrf_parameter", "model", "check", "variant", "definition", "reference_seed", "omitted_subject", "subject_omitted", "omitted", "omission") if raw.get(k) is not None)
             rows.append(dict(id=f"{ident}_{ix}", source=ident, dataset=dataset, scale=scale,
                              branch=branch, endpoint=endpoint, detail=detail, role=spec["role"],
                              group=spec["group"], original=raw))
@@ -200,7 +202,7 @@ def main():
     # Remove only obsolete numbered exports previously generated in this owned folder.
     expected_exports = {(OUT / s["download"]).resolve() for s in sources}
     table_root = (OUT / "tables").resolve()
-    for old in table_root.glob("s[0-9][0-9]_*.csv"):
+    for old in table_root.glob("s[0-9]*_*.csv"):
         resolved = old.resolve()
         assert resolved.parent == table_root
         if resolved not in expected_exports:
@@ -209,7 +211,7 @@ def main():
     def lookup(name, metric, **where):
         return next(r["original"] for r in rows if sources[int(r["source"][1:])]["name"] == name
                     and r["endpoint"] == metric and all(r["original"].get(k) == v for k,v in where.items()))
-    phi = lookup("raw_aachen_all40.csv", "whole_brain__phi")
+    phi = next(r["original"] for r in rows if sources[int(r["source"][1:])]["path"] == str(CORE / "raw_aachen_all40.csv") and r["endpoint"] == "whole_brain__phi")
     assert abs(phi["estimate"] - 0.0013491622181517832) < 1e-14
     assert all(r["dataset"] == "SUDMEX" for r in rows if sources[int(r["source"][1:])]["sud_only"])
     assert all(sha(Path(p)) == h for p, h in original_hashes.items())
@@ -225,6 +227,9 @@ def main():
     receipt_paths += [CROSS/'analysis_specification.json', CROSS/'verification.json']
     receipt_paths += [root / name for root in [PID_RAW, PID_NORMALIZED, PID_PATTERNS]
                       for name in ['analysis_specification.json', 'verification.json']]
+    receipt_paths += [fd_sources.RUN / unit / 'verification.json' for unit in ['core_qc_only', 'modes_qc_only', 'recalibration']]
+    receipt_paths += [fd_sources.RUN / unit / 'current_model_receipt.json' for unit in ['targets_qc_only', 'sensitivities_qc_only']]
+    receipt_paths += [ROOT / 'output/existing_tms_fd_audit_20261126/audit_receipt.json']
     receipts = [dict(path=str(p), sha256=sha(p)) for p in receipt_paths]
     image_path = QC / "control_workspace_comparison.png"
     image_bytes = image_path.read_bytes()
@@ -232,12 +237,14 @@ def main():
     built = datetime.now(timezone.utc).isoformat()
     provenance = dict(built_utc=built, builder=str(Path(__file__).resolve()), builder_sha256=sha(Path(__file__)),
                       template_sha256=sha(OUT / "template.html"), core_directory=str(CORE),
+                      current_qc_core_directory=str(fd_sources.RUN / "core_qc_only"),
+                      current_qc_modes_directory=str(fd_sources.RUN / "modes_qc_only"),
                       corrected_aachen_target_directory=str(AA), sudmex_target_directory=str(SUD),
                       historical_aachen="Invalidated by anatomical over-extraction; no historical Aachen result rows imported.",
                       patient_records_included=False, analyses_recomputed=False,
                       image=dict(path=str(image_path), sha256=sha(image_path), copied_byte_identical=True),
                       source_tables=sources, verification_receipts=receipts,
-                      limits=["Aachen n15 has no sham; target subset n8 has no sham.",
+                      limits=["Current Aachen n13 (stricter n12) has no sham; current target subsets n6/n5. Larger historical samples are labelled before full FD QC.",
                               "Control overlap is descriptive and does not certify temporal or regional signal quality.",
                               "Method-by-time and HRF associations are not TMS treatment effects.",
                               "Fresh corrected target 24-case MATLAB check unavailable: license-server error 96; existing production-MATLAB summary agreement and independent numerical checks passed.",
@@ -251,7 +258,7 @@ def main():
                                                  source_tables=len(sources), roles=dict(Counter(r["role"] for r in rows))))
     serialized = json.dumps(data, ensure_ascii=False, allow_nan=False, separators=(",", ":")).replace("</", "<\\/")
     template = (OUT / "template.html").read_text(encoding="utf-8")
-    html = template.replace("__DASHBOARD_DATA__", serialized).replace("__CONTROL_IMAGE__", "data:image/png;base64," + base64.b64encode(image_bytes).decode())
+    html = template.replace("__DASHBOARD_DATA__", serialized).replace("__CONTROL_IMAGE__", "data:image/png;base64," + base64.b64encode(image_bytes).decode()).replace("__FD_HEADLINE__", fd_sources.headline())
     assert "__DASHBOARD_DATA__" not in html
     write_utf8(OUT / "index.html", html)
     write_utf8(OUT / "provenance.json", json.dumps(provenance, indent=2, ensure_ascii=False))
@@ -262,10 +269,11 @@ def main():
                          missing_values_serialized_as_null=True,
                          browser_qa="See browser_qa.json; build receipt alone does not claim browser QA.",
                          outputs={str(p.relative_to(OUT)):sha(p) for p in sorted([
-                             OUT / name for name in ("index.html", "data.json", "provenance.json", "template.html", "README.md", "DESIGN.md")
+                             OUT / name for name in ("index.html", "data.json", "provenance.json", "template.html", "README.md", "DESIGN.md", "qc_synergy_comparison.png")
                          ] + [OUT / s["download"] for s in sources])},
                          control_image_sha256=sha(OUT / "control_workspace_comparison.png"))
     write_utf8(OUT / "build_receipt.json", json.dumps(build_receipt, indent=2))
+    fd_sources.publish_receipt()
     print(json.dumps(dict(passed=True, counts=data["counts"], index_sha256=sha(OUT / "index.html"))))
 
 

@@ -6,6 +6,26 @@ paper; its private participant data and effect maps are not included.
 
 ## Current results 26 November 2026
 
+**FD-enforced reanalysis is now the current analysis.** The original motion
+configuration was not fully enforced: displacement QC ran, but its mean/peak FD
+settings were ignored. Exact-window auditing retains 13 Aachen participants and
+33 acute SUDMEX pairs (18 active/15 sham); a stricter sensitivity retains 12/30.
+The strongest raw finding is reduced total synergy outside the workspace in
+Aachen (maxT5 p=.00488; maxT40 p=.02734), retained under every single-participant
+omission within its five-measure family. It is not a replicated two-dataset
+treatment effect. GlobalΦ remains unsupported. Current group models use no
+additional FD covariate; SUDMEX retains baseline-outcome adjustment.
+See the [QC reanalysis report](docs/TMS_FD_REANALYSIS_20261126.md) for the full
+thresholds, sample counts, correction families and normalization release status.
+Fresh QC-clean normalization is complete and does not support the raw Aachen
+decrease (maxT5 p=.524; stricter QC p=.472). The first six-run ds001927 pilot
+finished and passed motion/alignment review; the second pilot is running.
+
+### Earlier results before full FD enforcement
+
+The numerical summaries and manuscript snapshots below predate this latest QC
+rerun and are retained for traceability. They are not a finalized submission.
+
 **Working analysis release, not a finalized submission.** The publication goal
 is a PID treatment-effect story supported across both datasets. Haemodynamic
 associations and fingerprint/repeatability results are not the selected narrative.
@@ -28,8 +48,14 @@ Holm42 values are 1. All results and diagnostic checks are in the dashboard.
 ds001927 as a downloadable 23-person, three-site TMS fMRI cohort. Metadata and
 file headers were verified. The full pinned release is downloaded in
 `data/ds001927/`: 433 verified files, 22.97 GB, including 138 resting runs and
-69 structural images. Preprocessing and PID analysis have not started. See the
-[download receipt](PROVENANCE/additional_datasets_20261126/download_complete.json).
+69 structural images. The input audit is complete and a six-run fMRIPrep pilot
+for sub-s001 is running; downstream denoising and PID remain pending. The T1s
+are defaced but still contain the skull. One damaged T1 (sub-s022/ses-ctr) is
+excluded from anatomical reference construction, while that person's functional
+scans remain eligible for QC. See the
+[preprocessing plan](docs/DS001927_PREPROCESSING_PLAN_20261126.md),
+[download receipt](PROVENANCE/additional_datasets_20261126/download_complete.json),
+and [publication narrative assessment](docs/TMS_NARRATIVE_ASSESSMENT_20261126.md).
 
 The corrected Aachen analysis is complete: 15 participants, 60 scans, all five
 information measures and 20 participation/role outcomes, four spatial scopes,
@@ -132,6 +158,10 @@ and comparisons with the already computed MATLAB matrices passed.
 2. **TMS data go through the exact scripts that produced those results**, in the same order (table below).
 3. **Only per-dataset run settings change**, as they did for every psychedelic cohort: a dataset config in `pipeline/configs/datasets/` registered in `dataset_configs.yaml`, `DATASET` at the top of `step01b_conn_denoise.m`, and a TR entry in the `dataset_tr` map of `step02_hrf_deconvolution_matlab.m`.
 4. **Processing code is not edited.** Anything that must change is recorded in `PROVENANCE/`.
+5. **Current group models use no additional continuous motion covariate.** Enforce
+   motion exclusions and retain production denoising. SUDMEX comparisons adjust
+   the baseline outcome; Aachen uses matched paired changes. Earlier additional-
+   FD models remain historical sensitivity outputs, not the selected workflow.
 
 ## Production chain
 

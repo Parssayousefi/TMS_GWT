@@ -1,5 +1,11 @@
 # Information dynamics following prefrontal theta burst stimulation
 
+> Historical draft before full FD exclusion; not ready for submission. The
+> current cohort counts and statistics are in
+> [the FD-enforced reanalysis report](../../../docs/TMS_FD_REANALYSIS_20261126.md).
+> The selected narrative concerns PID effects; the haemodynamic framing below
+> is not the current publication plan.
+
 Article type: Brief Research Report
 
 Running title: Information dynamics after prefrontal iTBS

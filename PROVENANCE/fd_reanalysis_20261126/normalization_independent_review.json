@@ -1,0 +1,167 @@
+{
+  "created_utc": "2026-11-26T15:30:35.747208+00:00",
+  "status": "independent_review_passed",
+  "passed": true,
+  "review_scope": "Independent read-only review of recalibration implementation, baseline selection, distinct five-composite/six-mode null acceptance, unchanged grids/two seeds, corrected Aachen routing, core metrics and roles, all-post coverage, nats-before-CDF modes, no-FD mode/regional group models, and final input/output hashes. No imaging or calibration was rerun by the reviewer.",
+  "hashes_recomputed": {
+    "source_files": 1165,
+    "output_files": 116,
+    "all_match": true
+  },
+  "baseline_counts": [
+    {
+      "policy": "registered",
+      "dataset": "aachen_itbs",
+      "original_baselines": 30,
+      "retained_baselines": 30,
+      "retained_pool_rows": 30720
+    },
+    {
+      "policy": "registered",
+      "dataset": "sudmex_tms",
+      "original_baselines": 40,
+      "retained_baselines": 37,
+      "retained_pool_rows": 37888
+    },
+    {
+      "policy": "strict",
+      "dataset": "aachen_itbs",
+      "original_baselines": 30,
+      "retained_baselines": 29,
+      "retained_pool_rows": 29696
+    },
+    {
+      "policy": "strict",
+      "dataset": "sudmex_tms",
+      "original_baselines": 40,
+      "retained_baselines": 35,
+      "retained_pool_rows": 35840
+    }
+  ],
+  "old_grid_parity": {
+    "checks": 132,
+    "passed": true,
+    "byte_identical_checks": 130,
+    "max_absolute_difference": 2.273736754432321e-13
+  },
+  "policy_checks": [
+    {
+      "policy": "registered",
+      "passing_scans": 180,
+      "core_seed_rows": 540,
+      "acute_passing_mode_scans": 130,
+      "mode_seed_rows": 390,
+      "later_sudmex_post_scans": 46,
+      "complete_workspace_regions": 235,
+      "pairs_per_scan": 102831,
+      "core40_and_mode42_finite": true,
+      "all_passing_scan_keys_covered_exactly": true,
+      "role_and_network_counts_consistent": true,
+      "fresh_mode_models_exclude_continuous_motion": true,
+      "fresh_reference_quality": [
+        {
+          "dataset": "sudmex_tms",
+          "seed": "2026112511",
+          "grid_points": 414,
+          "max_kept_composite_tdmi_error": 3.150481120428595e-07,
+          "max_kept_mode_tdmi_error": 9.989738464222242e-07
+        },
+        {
+          "dataset": "sudmex_tms",
+          "seed": "2026112512",
+          "grid_points": 414,
+          "max_kept_composite_tdmi_error": 9.081199436877796e-07,
+          "max_kept_mode_tdmi_error": 9.989738464222242e-07
+        }
+      ],
+      "calibration_diagnostics": {
+        "max_interpolation_error": 0.0010884507717231484,
+        "max_independent_lyapunov_error": 0.0,
+        "max_analytic_cofactor_error_in_calibration": 2.5606704863179175e-05,
+        "calibration_covariances_with_cofactor_error_over_1e_6": 6,
+        "max_finite_record_mean_bias": 0.08308482557527763,
+        "max_population_mean_bias": 0.06145944364212741,
+        "uncovered_rows": 0,
+        "interpretation": "Diagnostic calibration under the specified VAR prior only; not validation that real filtered BOLD is a VAR(1) process."
+      }
+    },
+    {
+      "policy": "strict",
+      "passing_scans": 170,
+      "core_seed_rows": 510,
+      "acute_passing_mode_scans": 125,
+      "mode_seed_rows": 375,
+      "later_sudmex_post_scans": 41,
+      "complete_workspace_regions": 235,
+      "pairs_per_scan": 102831,
+      "core40_and_mode42_finite": true,
+      "all_passing_scan_keys_covered_exactly": true,
+      "role_and_network_counts_consistent": true,
+      "fresh_mode_models_exclude_continuous_motion": true,
+      "fresh_reference_quality": [
+        {
+          "dataset": "aachen_itbs",
+          "seed": "2026112511",
+          "grid_points": 369,
+          "max_kept_composite_tdmi_error": 9.964705895981751e-07,
+          "max_kept_mode_tdmi_error": 9.997189044930188e-07
+        },
+        {
+          "dataset": "aachen_itbs",
+          "seed": "2026112512",
+          "grid_points": 369,
+          "max_kept_composite_tdmi_error": 1.1438604730074077e-07,
+          "max_kept_mode_tdmi_error": 9.989738464222242e-07
+        },
+        {
+          "dataset": "sudmex_tms",
+          "seed": "2026112511",
+          "grid_points": 414,
+          "max_kept_composite_tdmi_error": 9.31557224248536e-07,
+          "max_kept_mode_tdmi_error": 9.99569892884411e-07
+        },
+        {
+          "dataset": "sudmex_tms",
+          "seed": "2026112512",
+          "grid_points": 414,
+          "max_kept_composite_tdmi_error": 2.1391174698237594e-07,
+          "max_kept_mode_tdmi_error": 9.989738464222242e-07
+        }
+      ],
+      "calibration_diagnostics": {
+        "max_interpolation_error": 0.0009963400873171935,
+        "max_independent_lyapunov_error": 0.0,
+        "max_analytic_cofactor_error_in_calibration": 2.5075290841169995e-05,
+        "calibration_covariances_with_cofactor_error_over_1e_6": 5,
+        "max_finite_record_mean_bias": 0.07649906944363893,
+        "max_population_mean_bias": 0.07500994319352394,
+        "uncovered_rows": 0,
+        "interpretation": "Diagnostic calibration under the specified VAR prior only; not validation that real filtered BOLD is a VAR(1) process."
+      }
+    }
+  ],
+  "independent_no_fd_regional_checks": {
+    "template_sets_per_policy": 24,
+    "maximum_template_weight_error": 9.999054535747565e-17,
+    "SUDMEX_HC3_fits_per_policy": 12,
+    "maximum_p_error": 5.573319583618286e-14,
+    "donor_and_receiver_models": "Post outcome ~ active + baseline outcome; no continuous FD term"
+  },
+  "known_limits": [
+    "Cofactor discrepancies in rare synthetic calibration covariance draws exceed the 1e-6 diagnostic flag (fresh maxima about 2.5e-5), comparable with the original five-composite diagnostic maximum 2.55256e-5. Stable independent logdet observations are used in calibration; this is not a universal 1e-6 error guarantee.",
+    "Finite-record and population percentile diagnostics show nonzero biases; fresh maximum finite-record mean-percentile bias is .08308482557527763. Conditional percentiles are sensitivity results under the chosen VAR prior, not a gold standard or independent replication.",
+    "Previously published network-Phi sensitivity views retain their original corrected normalization reference and are labeled accordingly; this fresh calibration covers 40 core measures and roles and six-mode outcomes."
+  ],
+  "final_artifact_sha256": {
+    "output/tms_fd_reanalysis_20261126/recalibration/verification.json": "4ec3cd2b87f8245d2225c2b5802ba272d1b33807bb276c4d3dfbb1cbc7c281fa",
+    "output/tms_fd_reanalysis_20261126/recalibration/status.json": "fb27ce047fccacda7adfd7ae907ed6ca2f28b0982b311a0022669ca3ddf4f05f",
+    "output/tms_fd_reanalysis_20261126/recalibration/output_sha256.json": "47953fbca023a74489d6ce743c780c5047dce3dd678a57a08f603c3e87aba27d",
+    "output/tms_fd_reanalysis_20261126/recalibration/source_sha256.json": "65c1a1b72d162156805973aab5ae4a6507f58ae2777064559fc1ed7308b09a7c",
+    "output/tms_fd_reanalysis_20261126/recalibration/baseline_membership.csv": "0c39277beffb86394fffd7fcea17d9e064a1c9958b4db011b2e6c693d67f4a45",
+    "output/tms_fd_reanalysis_20261126/recalibration/old_reference_parity.csv": "925e4f57650b6eb29853a10756bf8aa7dccacc89ca36e0151234bc0fd6631fda",
+    "output/existing_tms_fd_audit_20261126/audit_receipt.json": "8abe796b8d4c4ecf1e2bd940f9f9185be265bfb3f36ad7820bbf84a94559d095",
+    "output/tms_fd_reanalysis_20261126/modes_qc_only/verification.json": "948e21d8e9ab1a7c908080d04cbd7d7aee12b08b971469982e3b625559732ab4",
+    "setup/recalibrate_normalization_after_fd_qc.py": "7730e7b9e4eef48c923e367b0fce31e15043fe1b4e2d8c9f25add92fd99816f5",
+    "setup/rerun_pid_modes_qc_only.py": "1671a497482c5e2823a23d4881d55d64650d0ba1c85e85c0145cabf69a5c7c20"
+  }
+}

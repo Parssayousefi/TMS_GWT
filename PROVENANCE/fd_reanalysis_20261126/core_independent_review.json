@@ -1,0 +1,701 @@
+{
+  "status": "passed",
+  "reviewed_utc": "2026-11-26T15:31:34.094926+00:00",
+  "core_completed_utc": "2026-11-26T15:29:22.914567+00:00",
+  "scope": "Read-only aggregate table review; no imaging arrays, no extra group motion regressions",
+  "group_motion_covariates": false,
+  "checks": [
+    {
+      "check": "registered/raw GWT uses baseline-only SUD coefficients",
+      "rows": 4,
+      "columns": [
+        "estimate",
+        "p"
+      ],
+      "passed": true
+    },
+    {
+      "check": "registered raw Aachen unchanged",
+      "rows": 40,
+      "columns": [
+        "estimate",
+        "ci_low",
+        "ci_high",
+        "p",
+        "p_sign_flip",
+        "p_maxT_family",
+        "p_holm_family",
+        "p_maxT_all"
+      ],
+      "passed": true
+    },
+    {
+      "check": "registered raw unadjusted/baseline SUD unchanged",
+      "rows": 80,
+      "columns": [
+        "estimate",
+        "ci_low",
+        "ci_high",
+        "p",
+        "p_holm_family",
+        "p_holm_all40"
+      ],
+      "passed": true
+    },
+    {
+      "check": "registered/normalized_frozen_reference GWT uses baseline-only SUD coefficients",
+      "rows": 4,
+      "columns": [
+        "estimate",
+        "p"
+      ],
+      "passed": true
+    },
+    {
+      "check": "registered/normalized_recalibrated GWT uses baseline-only SUD coefficients",
+      "rows": 4,
+      "columns": [
+        "estimate",
+        "p"
+      ],
+      "passed": true
+    },
+    {
+      "check": "Registered Aachen fresh equals frozen; baseline pool unchanged",
+      "rows": 40,
+      "columns": [
+        "estimate",
+        "p",
+        "p_maxT_family",
+        "p_maxT_all"
+      ],
+      "passed": true
+    },
+    {
+      "check": "strict/raw GWT uses baseline-only SUD coefficients",
+      "rows": 4,
+      "columns": [
+        "estimate",
+        "p"
+      ],
+      "passed": true
+    },
+    {
+      "check": "strict raw Aachen unchanged",
+      "rows": 40,
+      "columns": [
+        "estimate",
+        "ci_low",
+        "ci_high",
+        "p",
+        "p_sign_flip",
+        "p_maxT_family",
+        "p_holm_family",
+        "p_maxT_all"
+      ],
+      "passed": true
+    },
+    {
+      "check": "strict raw unadjusted/baseline SUD unchanged",
+      "rows": 80,
+      "columns": [
+        "estimate",
+        "ci_low",
+        "ci_high",
+        "p",
+        "p_holm_family",
+        "p_holm_all40"
+      ],
+      "passed": true
+    },
+    {
+      "check": "strict/normalized_frozen_reference GWT uses baseline-only SUD coefficients",
+      "rows": 4,
+      "columns": [
+        "estimate",
+        "p"
+      ],
+      "passed": true
+    },
+    {
+      "check": "strict/normalized_recalibrated GWT uses baseline-only SUD coefficients",
+      "rows": 4,
+      "columns": [
+        "estimate",
+        "p"
+      ],
+      "passed": true
+    }
+  ],
+  "cohort_counts": [
+    {
+      "policy": "registered",
+      "branch": "raw",
+      "aachen_participants": 13,
+      "aachen_visit_pairs": 26,
+      "sudmex_acute_participants": 33,
+      "sudmex_acute_arms": {
+        "active": 18,
+        "sham": 15
+      },
+      "sudmex_all_post_participants": 36,
+      "all_post_n_visits": {
+        "1": 14,
+        "2": 13,
+        "3": 4,
+        "4": 3,
+        "5": 2
+      }
+    },
+    {
+      "policy": "registered",
+      "branch": "normalized_frozen_reference",
+      "aachen_participants": 13,
+      "aachen_visit_pairs": 26,
+      "sudmex_acute_participants": 33,
+      "sudmex_acute_arms": {
+        "active": 18,
+        "sham": 15
+      },
+      "sudmex_all_post_participants": 36,
+      "all_post_n_visits": {
+        "1": 14,
+        "2": 13,
+        "3": 4,
+        "4": 3,
+        "5": 2
+      }
+    },
+    {
+      "policy": "registered",
+      "branch": "normalized_recalibrated",
+      "aachen_participants": 13,
+      "aachen_visit_pairs": 26,
+      "sudmex_acute_participants": 33,
+      "sudmex_acute_arms": {
+        "active": 18,
+        "sham": 15
+      },
+      "sudmex_all_post_participants": 36,
+      "all_post_n_visits": {
+        "1": 14,
+        "2": 13,
+        "3": 4,
+        "4": 3,
+        "5": 2
+      }
+    },
+    {
+      "policy": "strict",
+      "branch": "raw",
+      "aachen_participants": 12,
+      "aachen_visit_pairs": 24,
+      "sudmex_acute_participants": 30,
+      "sudmex_acute_arms": {
+        "active": 17,
+        "sham": 13
+      },
+      "sudmex_all_post_participants": 33,
+      "all_post_n_visits": {
+        "2": 14,
+        "1": 13,
+        "3": 3,
+        "5": 2,
+        "4": 1
+      }
+    },
+    {
+      "policy": "strict",
+      "branch": "normalized_frozen_reference",
+      "aachen_participants": 12,
+      "aachen_visit_pairs": 24,
+      "sudmex_acute_participants": 30,
+      "sudmex_acute_arms": {
+        "active": 17,
+        "sham": 13
+      },
+      "sudmex_all_post_participants": 33,
+      "all_post_n_visits": {
+        "2": 14,
+        "1": 13,
+        "3": 3,
+        "5": 2,
+        "4": 1
+      }
+    },
+    {
+      "policy": "strict",
+      "branch": "normalized_recalibrated",
+      "aachen_participants": 12,
+      "aachen_visit_pairs": 24,
+      "sudmex_acute_participants": 30,
+      "sudmex_acute_arms": {
+        "active": 17,
+        "sham": 13
+      },
+      "sudmex_all_post_participants": 33,
+      "all_post_n_visits": {
+        "2": 14,
+        "1": 13,
+        "3": 3,
+        "5": 2,
+        "4": 1
+      }
+    }
+  ],
+  "treatment_inventory": [
+    {
+      "policy": "registered",
+      "branch": "raw",
+      "aachen_family_maxT_survivors": [
+        {
+          "metric": "whole_brain__synergy_total",
+          "estimate": -0.0062158647427606,
+          "p": 0.009706810254071,
+          "p_maxT_family": 0.016357421875,
+          "p_maxT_all": 0.158447265625
+        },
+        {
+          "metric": "outside_workspace__synergy_total",
+          "estimate": -0.0085436823296096,
+          "p": 0.0019681888412159,
+          "p_maxT_family": 0.0048828125,
+          "p_maxT_all": 0.02734375
+        },
+        {
+          "metric": "between__synergy_total",
+          "estimate": -0.0066631262107783,
+          "p": 0.0094129184686606,
+          "p_maxT_family": 0.014892578125,
+          "p_maxT_all": 0.15185546875
+        },
+        {
+          "metric": "mean_redundancy_pc",
+          "estimate": 0.0055839102322447,
+          "p": 0.0210481528597067,
+          "p_maxT_family": 0.03369140625,
+          "p_maxT_all": 0.291015625
+        }
+      ],
+      "aachen_all40_maxT_survivors": [
+        {
+          "metric": "outside_workspace__synergy_total",
+          "estimate": -0.0085436823296096,
+          "p_maxT_family": 0.0048828125,
+          "p_maxT_all": 0.02734375
+        }
+      ],
+      "sudmex_baseline_family_survivors": [],
+      "sudmex_baseline_min_holm_family": 0.5723044452602335
+    },
+    {
+      "policy": "registered",
+      "branch": "normalized_frozen_reference",
+      "aachen_family_maxT_survivors": [],
+      "aachen_all40_maxT_survivors": [],
+      "sudmex_baseline_family_survivors": [],
+      "sudmex_baseline_min_holm_family": 0.3459809731458074
+    },
+    {
+      "policy": "registered",
+      "branch": "normalized_recalibrated",
+      "aachen_family_maxT_survivors": [],
+      "aachen_all40_maxT_survivors": [],
+      "sudmex_baseline_family_survivors": [],
+      "sudmex_baseline_min_holm_family": 0.4100617349806226
+    },
+    {
+      "policy": "strict",
+      "branch": "raw",
+      "aachen_family_maxT_survivors": [
+        {
+          "metric": "whole_brain__synergy_total",
+          "estimate": -0.0059105067042417,
+          "p": 0.0200447115418738,
+          "p_maxT_family": 0.04443359375,
+          "p_maxT_all": 0.28076171875
+        },
+        {
+          "metric": "outside_workspace__synergy_total",
+          "estimate": -0.0079134806079593,
+          "p": 0.0049101349796789,
+          "p_maxT_family": 0.0146484375,
+          "p_maxT_all": 0.0703125
+        },
+        {
+          "metric": "between__synergy_total",
+          "estimate": -0.0063651925331773,
+          "p": 0.0192671072729049,
+          "p_maxT_family": 0.03955078125,
+          "p_maxT_all": 0.27197265625
+        },
+        {
+          "metric": "mean_redundancy_pc",
+          "estimate": 0.005715522845962,
+          "p": 0.0293410519717191,
+          "p_maxT_family": 0.04248046875,
+          "p_maxT_all": 0.37353515625
+        }
+      ],
+      "aachen_all40_maxT_survivors": [],
+      "sudmex_baseline_family_survivors": [],
+      "sudmex_baseline_min_holm_family": 0.9699977065402576
+    },
+    {
+      "policy": "strict",
+      "branch": "normalized_frozen_reference",
+      "aachen_family_maxT_survivors": [
+        {
+          "metric": "mean_redundancy_pc",
+          "estimate": 0.0016657298127701,
+          "p": 0.0222252715639129,
+          "p_maxT_family": 0.048828125,
+          "p_maxT_all": 0.3330078125
+        }
+      ],
+      "aachen_all40_maxT_survivors": [],
+      "sudmex_baseline_family_survivors": [],
+      "sudmex_baseline_min_holm_family": 0.705221448285456
+    },
+    {
+      "policy": "strict",
+      "branch": "normalized_recalibrated",
+      "aachen_family_maxT_survivors": [
+        {
+          "metric": "mean_redundancy_pc",
+          "estimate": 0.0016704581663664,
+          "p": 0.0220878709565728,
+          "p_maxT_family": 0.04833984375,
+          "p_maxT_all": 0.31640625
+        }
+      ],
+      "aachen_all40_maxT_survivors": [],
+      "sudmex_baseline_family_survivors": [],
+      "sudmex_baseline_min_holm_family": 0.5345504108930863
+    }
+  ],
+  "GWT4": [
+    {
+      "policy": "registered",
+      "branch": "raw",
+      "holm4_survivors": [],
+      "aachen_maxT4_survivors": []
+    },
+    {
+      "policy": "registered",
+      "branch": "normalized_frozen_reference",
+      "holm4_survivors": [],
+      "aachen_maxT4_survivors": []
+    },
+    {
+      "policy": "registered",
+      "branch": "normalized_recalibrated",
+      "holm4_survivors": [],
+      "aachen_maxT4_survivors": []
+    },
+    {
+      "policy": "strict",
+      "branch": "raw",
+      "holm4_survivors": [],
+      "aachen_maxT4_survivors": []
+    },
+    {
+      "policy": "strict",
+      "branch": "normalized_frozen_reference",
+      "holm4_survivors": [],
+      "aachen_maxT4_survivors": []
+    },
+    {
+      "policy": "strict",
+      "branch": "normalized_recalibrated",
+      "holm4_survivors": [],
+      "aachen_maxT4_survivors": []
+    }
+  ],
+  "clinical56": [
+    {
+      "policy": "registered",
+      "branch": "normalized_frozen_reference",
+      "n_min": 31,
+      "n_max": 33,
+      "minimum_holm56": 1.0,
+      "survivors": []
+    },
+    {
+      "policy": "registered",
+      "branch": "normalized_recalibrated",
+      "n_min": 31,
+      "n_max": 33,
+      "minimum_holm56": 1.0,
+      "survivors": []
+    },
+    {
+      "policy": "registered",
+      "branch": "raw",
+      "n_min": 31,
+      "n_max": 33,
+      "minimum_holm56": 1.0,
+      "survivors": []
+    },
+    {
+      "policy": "strict",
+      "branch": "normalized_frozen_reference",
+      "n_min": 28,
+      "n_max": 30,
+      "minimum_holm56": 1.0,
+      "survivors": []
+    },
+    {
+      "policy": "strict",
+      "branch": "normalized_recalibrated",
+      "n_min": 28,
+      "n_max": 30,
+      "minimum_holm56": 1.0,
+      "survivors": []
+    },
+    {
+      "policy": "strict",
+      "branch": "raw",
+      "n_min": 28,
+      "n_max": 30,
+      "minimum_holm56": 1.0,
+      "survivors": []
+    }
+  ],
+  "direct_spatial5": [
+    {
+      "policy": "registered",
+      "dataset": "Aachen",
+      "branch": "normalized_frozen_reference",
+      "corrected_survivors": [],
+      "minimum_adjusted_p": 0.75
+    },
+    {
+      "policy": "registered",
+      "dataset": "Aachen",
+      "branch": "normalized_recalibrated",
+      "corrected_survivors": [],
+      "minimum_adjusted_p": 0.75
+    },
+    {
+      "policy": "registered",
+      "dataset": "Aachen",
+      "branch": "raw",
+      "corrected_survivors": [
+        {
+          "metric": "synergy_total",
+          "estimate": -0.0051859970764724,
+          "p": 0.0090737645783237,
+          "p_maxT_5": 0.032958984375
+        }
+      ],
+      "minimum_adjusted_p": 0.032958984375
+    },
+    {
+      "policy": "registered",
+      "dataset": "SUDMEX",
+      "branch": "normalized_frozen_reference",
+      "corrected_survivors": [],
+      "minimum_adjusted_p": 1.0
+    },
+    {
+      "policy": "registered",
+      "dataset": "SUDMEX",
+      "branch": "normalized_recalibrated",
+      "corrected_survivors": [],
+      "minimum_adjusted_p": 1.0
+    },
+    {
+      "policy": "registered",
+      "dataset": "SUDMEX",
+      "branch": "raw",
+      "corrected_survivors": [],
+      "minimum_adjusted_p": 1.0
+    },
+    {
+      "policy": "strict",
+      "dataset": "Aachen",
+      "branch": "normalized_frozen_reference",
+      "corrected_survivors": [],
+      "minimum_adjusted_p": 0.197265625
+    },
+    {
+      "policy": "strict",
+      "dataset": "Aachen",
+      "branch": "normalized_recalibrated",
+      "corrected_survivors": [],
+      "minimum_adjusted_p": 0.1962890625
+    },
+    {
+      "policy": "strict",
+      "dataset": "Aachen",
+      "branch": "raw",
+      "corrected_survivors": [],
+      "minimum_adjusted_p": 0.06591796875
+    },
+    {
+      "policy": "strict",
+      "dataset": "SUDMEX",
+      "branch": "normalized_frozen_reference",
+      "corrected_survivors": [],
+      "minimum_adjusted_p": 1.0
+    },
+    {
+      "policy": "strict",
+      "dataset": "SUDMEX",
+      "branch": "normalized_recalibrated",
+      "corrected_survivors": [],
+      "minimum_adjusted_p": 1.0
+    },
+    {
+      "policy": "strict",
+      "dataset": "SUDMEX",
+      "branch": "raw",
+      "corrected_survivors": [],
+      "minimum_adjusted_p": 1.0
+    }
+  ],
+  "conjunction40": [
+    {
+      "policy": "registered",
+      "branch": "normalized_frozen_reference",
+      "same_direction_family_survivors": [],
+      "minimum_all40_p": 1.0
+    },
+    {
+      "policy": "registered",
+      "branch": "normalized_recalibrated",
+      "same_direction_family_survivors": [],
+      "minimum_all40_p": 1.0
+    },
+    {
+      "policy": "registered",
+      "branch": "raw",
+      "same_direction_family_survivors": [],
+      "minimum_all40_p": 1.0
+    },
+    {
+      "policy": "strict",
+      "branch": "normalized_frozen_reference",
+      "same_direction_family_survivors": [],
+      "minimum_all40_p": 1.0
+    },
+    {
+      "policy": "strict",
+      "branch": "normalized_recalibrated",
+      "same_direction_family_survivors": [],
+      "minimum_all40_p": 1.0
+    },
+    {
+      "policy": "strict",
+      "branch": "raw",
+      "same_direction_family_survivors": [],
+      "minimum_all40_p": 1.0
+    }
+  ],
+  "outside_synergy_total_LOO": [
+    {
+      "policy": "registered",
+      "branch": "normalized_frozen_reference",
+      "omissions": 13,
+      "estimate_min": 0.0064604562093353,
+      "estimate_max": 0.016846529189004,
+      "maxT_scope5_min": 0.33935546875,
+      "maxT_scope5_max": 0.841796875,
+      "maxT_all20_min": 0.52294921875,
+      "maxT_all20_max": 0.97119140625
+    },
+    {
+      "policy": "registered",
+      "branch": "normalized_recalibrated",
+      "omissions": 13,
+      "estimate_min": 0.0064604562093353,
+      "estimate_max": 0.016846529189004,
+      "maxT_scope5_min": 0.33935546875,
+      "maxT_scope5_max": 0.841796875,
+      "maxT_all20_min": 0.52294921875,
+      "maxT_all20_max": 0.97119140625
+    },
+    {
+      "policy": "registered",
+      "branch": "raw",
+      "omissions": 13,
+      "estimate_min": -0.0094573897049464,
+      "estimate_max": -0.0070810804637976,
+      "maxT_scope5_min": 0.00146484375,
+      "maxT_scope5_max": 0.0146484375,
+      "maxT_all20_min": 0.00146484375,
+      "maxT_all20_max": 0.02294921875
+    },
+    {
+      "policy": "strict",
+      "branch": "normalized_frozen_reference",
+      "omissions": 12,
+      "estimate_min": 0.0070414119695826,
+      "estimate_max": 0.0183716734019485,
+      "maxT_scope5_min": 0.3203125,
+      "maxT_scope5_max": 0.7861328125,
+      "maxT_all20_min": 0.517578125,
+      "maxT_all20_max": 0.9599609375
+    },
+    {
+      "policy": "strict",
+      "branch": "normalized_recalibrated",
+      "omissions": 12,
+      "estimate_min": 0.007099007944155,
+      "estimate_max": 0.0184852972342955,
+      "maxT_scope5_min": 0.3173828125,
+      "maxT_scope5_max": 0.78515625,
+      "maxT_all20_min": 0.5146484375,
+      "maxT_all20_max": 0.9599609375
+    },
+    {
+      "policy": "strict",
+      "branch": "raw",
+      "omissions": 12,
+      "estimate_min": -0.0088529612245403,
+      "estimate_max": -0.0062606238705598,
+      "maxT_scope5_min": 0.0048828125,
+      "maxT_scope5_max": 0.03515625,
+      "maxT_all20_min": 0.0126953125,
+      "maxT_all20_max": 0.0595703125
+    }
+  ],
+  "core_verification_sha256": "4254642644b5acf76da86f18870ad8031a7e9ef79fb0e09ce7f59f9b0e54cbae",
+  "aggregate_source_sha256": {
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\registered\\raw_aachen_all40.csv": "34115cdee6caf171550071be19f11018113eb580da8a670088b063d828749250",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\registered\\raw_sudmex_acute_all40.csv": "f6967ed0232f62fce4c269c17ac8f4e263669b12a521d7385444b1a662883a41",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\registered\\gwt_expectations_raw.csv": "5faaae233ad0f774c4c7dc8c5d210507f278c4e8706d30706933a9dd7ab37f82",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\registered\\normalized_frozen_reference_aachen_all40.csv": "da77fef0aade7a991cb7ab13ca8d66b22e740d6afae8d9ffaca2bfc6ab46f655",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\registered\\normalized_frozen_reference_sudmex_acute_all40.csv": "b005c9fde6aa610a8f8128e5a1e96c43c42a4a664b0c95f94be24e9be5670441",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\registered\\gwt_expectations_normalized_frozen_reference.csv": "ab5c9b8deef9afc96bb4a0bd049a88f54f3eb731280aabd3cba8585f61b6265d",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\registered\\normalized_recalibrated_aachen_all40.csv": "2138d137e78d74d68effcc4370f33d075de1f6a651058168f50943c92a319115",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\registered\\normalized_recalibrated_sudmex_acute_all40.csv": "7ae7e79e8df3cf7fbaad4d9e3dd092af73575fd710d0708873e1bfb1ef197c9e",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\registered\\gwt_expectations_normalized_recalibrated.csv": "b3beb83a05f568f918ec1e02f785152b881e7f904fab288781a6b1e3c6dbe535",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\registered\\clinical_neural_associations.csv": "5f8742bc4d9b8fd15fd52d7a717b6e688c2c302869e5f4e18559ab78939ae7ca",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\registered\\aachen_spatial_interactions.csv": "322e9d690c0a6a64a17353010d7f0d00b3345de1a17d04263c4be45763fcebd7",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\registered\\sudmex_spatial_interactions.csv": "63af5d8f63ccee178472b9450dbdef4e756650bc34b30010039be22059a8dc3d",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\registered\\cross_dataset_conjunction40.csv": "3c6d1a8ba2de947472481e3f1aa87ebd2535db5aa0a3d31114306d4938704e96",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\registered\\aachen_information_leave_one_out.csv": "e74fef38e86f8be3b93842523b1b5b2c4867ef31c682c289ace8620dc88ecd32",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\strict\\raw_aachen_all40.csv": "75c774ef558135ae1e84d94f26efa865a6a31c3fcb8e012c5dff961842150c81",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\strict\\raw_sudmex_acute_all40.csv": "a4f401e5851b05e0165bd5b0de9e34784e2f1761fc352a798505f42c410d8378",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\strict\\gwt_expectations_raw.csv": "f70046e477d833d71aafdb8b882ae2286d5a56e261b0701883177cd89daced42",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\strict\\normalized_frozen_reference_aachen_all40.csv": "612dc39b623c1c21b206bbf339718c69ca3b872408ff95af42194c2b4525b5d5",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\strict\\normalized_frozen_reference_sudmex_acute_all40.csv": "4da498cd6b26e65edf3b1dea065c31fe4ae5164fa9018562e3c9141d4113d851",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\strict\\gwt_expectations_normalized_frozen_reference.csv": "84954753567790304a4e547d8cc30008c0ce86f41b7b0d2519ce9f0183f326ac",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\strict\\normalized_recalibrated_aachen_all40.csv": "a76fcb127685b4f04ba48df3f8ebd3d788ccc0debed8653711087692a7c0a4e0",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\strict\\normalized_recalibrated_sudmex_acute_all40.csv": "deed78770b9f57be44c5e60365be7b28770d4e763c0f471aae4b66e464effcbc",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\strict\\gwt_expectations_normalized_recalibrated.csv": "6ae85e0947a6b9e003cf6a001eb01bfde6d38ccebaa693d04a23338dac49b270",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\strict\\clinical_neural_associations.csv": "d67c8ccbf2e9a5682e542b6f3c7bfc4e9186c2c8e2820c28e9f0258781e364f5",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\strict\\aachen_spatial_interactions.csv": "5646c6984c8ac3740c5ad64373add04df8d05f0e1cc9efd538feca885d38ba9d",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\strict\\sudmex_spatial_interactions.csv": "a14882fa5e1659f9d871c54d2b17d6932a48a9ce5467816306d312588906c69f",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\strict\\cross_dataset_conjunction40.csv": "e8024fd6ea9c28ce835a3220e7a57036b2cc854befd6267c38f8eb18b90c3452",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\strict\\aachen_information_leave_one_out.csv": "88c14c669995a69f8deca0809422a0450b9a1d3ebf28b1d0ebf1306eed9c958c"
+  },
+  "raw_results_unchanged": true,
+  "all3_branches_present": true,
+  "correction_families_independently_reproduced": true,
+  "reviewed_receipt_and_aggregate_sources_unchanged": true,
+  "fresh_scalar_hashes_match_completed_calibration_manifest": true,
+  "calibration_output_manifest_sha256": "47953fbca023a74489d6ce743c780c5047dce3dd678a57a08f603c3e87aba27d"
+}

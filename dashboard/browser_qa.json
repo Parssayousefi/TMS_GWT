@@ -1,7 +1,7 @@
 {
-  "created_utc": "2026-11-26T13:28:43.955335+00:00",
+  "created_utc": "2026-11-26T15:35:51.949937+00:00",
   "passed": true,
-  "browser": "Playwright Chromium localhost",
+  "browser": "Playwright Chromium via localhost",
   "viewports": [
     {
       "width": 1440,
@@ -13,38 +13,43 @@
     }
   ],
   "counts": {
-    "reported_rows": 4620,
+    "reported_rows": 11950,
     "diagnostic_rows": 1625,
-    "source_tables": 63,
+    "source_tables": 151,
     "roles": {
+      "Within-person change": 540,
+      "Randomized acute comparison": 740,
+      "Four-outcome expectation family": 48,
+      "Spatial interaction": 60,
+      "Intensity sensitivity": 240,
+      "Sensitivity": 597,
+      "Influence diagnostic": 5252,
+      "Association": 763,
+      "Descriptive longitudinal": 1010,
+      "Cross-dataset conjunction": 696,
+      "Exploratory treatment comparison": 1092,
+      "Target-flow comparison": 180,
+      "Exact sensitivity": 40,
+      "Method diagnostic": 466,
       "Planned comparison": 196,
-      "Randomized acute comparison": 260,
-      "Sensitivity": 509,
-      "Influence diagnostic": 2144,
-      "Descriptive longitudinal": 290,
-      "Association": 427,
-      "Method diagnostic": 44,
-      "Target comparison": 30,
-      "Exploratory treatment comparison": 540,
-      "Cross-dataset conjunction": 180
+      "Target comparison": 30
     }
   },
   "checks": [
-    "63 source tables and 4620 reported rows present, including all 1050 new PID treatment, conjunction and omission rows",
-    "PID sources reproduce raw and normalized SUDMEX minimum p-values from their source tables",
-    "Aachen processing-mode nominal p labelled exact sign-flip; scope correction maxT6; widest supplied family maxT42 or Holm42",
-    "Normalized SUDMEX mode filter returns all 252 rows (42 endpoints, two models, three numerical references)",
-    "Default adjusted-p threshold is off",
-    "No desktop/mobile document overflow",
-    "Desktop/mobile screenshots visually inspected",
-    "No browser console errors"
+    "Current QC-only overview renders with configured13/33 and strict12/30 cohort counts",
+    "Raw outside-workspace result widest correction matches source maxT40=.02734375",
+    "Fresh normalized filter returns40Aachen outcomes with normalized scale",
+    "All151 source tables and11950 inferential/diagnostic result rows are available",
+    "Default significance filter off;25rowpagination works",
+    "No desktop/mobile document overflow; screenshots visually inspected",
+    "Embedded new comparison figure and historical control image load",
+    "Historical control figure and earlier results labelled before full FDQC",
+    "No browser console errors after final build"
   ],
-  "source_sha256": {
-    "dashboard\\index.html": "3fd20c1db3fb4c6a958b75303ac805b473df407b3b4e87b55eda0f886d3870c3",
-    "dashboard\\template.html": "d0e4cd40ca89207897133e2e733ad8b6ffa2342f9f3097b0ec48d0f1b02ef225",
-    "dashboard\\data.json": "ce69059399c48e1d28ca73d71a6891f92f6f203b88ee5f876ed0106f1373a2cc",
-    "dashboard\\provenance.json": "f50a1b80a32eab56cd606efeaac1a2f492ea76a4cc04fff520cbf0a58debe77d",
-    "dashboard\\build_receipt.json": "bdefcaffb4946c4247b0b98f247cd8f563652412311e733db345be42d0a7d2de",
-    "setup\\build_tms_dashboard.py": "345b52b0dd44f9d47df5859d96fb81d1a8d637a2c47cf4d1c2017a5c9ca5ae7b"
+  "initial_issue_fixed": "Removed obsolete DAN-plot callback after replacing its overview controls",
+  "source_index_sha256": "8525c404b2452837722c7cdc21f54dee874b8b3aabbc31aea284a682c84722ff",
+  "screenshot_sha256": {
+    "qa_fd_desktop.png": "3cceaea5b84f5f41ff2e1669439635117ac954523a083c42eb19e81e3c807382",
+    "qa_fd_mobile.png": "782faacb2e20f65ff989e7c686f148b036279bc2791ccb4afe985c84e654837b"
   }
 }

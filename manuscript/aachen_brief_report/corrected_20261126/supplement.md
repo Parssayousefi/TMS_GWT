@@ -1,5 +1,10 @@
 # Supplementary material
 
+> Historical supplement before full FD exclusion. See
+> [the current QC reanalysis](../../../docs/TMS_FD_REANALYSIS_20261126.md) for
+> updated samples and inference; the descriptive control-workspace illustration
+> below uses the earlier cohort.
+
 Information dynamics following prefrontal theta burst stimulation
 
 ## Additional methods

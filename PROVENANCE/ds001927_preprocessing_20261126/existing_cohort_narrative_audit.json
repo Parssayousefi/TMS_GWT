@@ -1,0 +1,61 @@
+{
+  "purpose": "Read-only narrative audit of existing aggregates; no new hypothesis test or participant exclusion",
+  "date_local": "2026-11-26",
+  "raw_sudmex_primary_min_p": 0.3468146758510282,
+  "normalized_sudmex_combined_primary_min_p": 0.3503726376037696,
+  "raw_sudmex_Holm6_below05": 0,
+  "normalized_sudmex_Holm6_below05": 0,
+  "clinical_associations_per_representation": {
+    "normalized": 56,
+    "raw": 56
+  },
+  "clinical_Holm56_below05": 0,
+  "clinical_min_unadjusted_p": 0.0299385357853336,
+  "regional_full_atlas_correlations": [
+    {
+      "mode": "storage",
+      "pearson_r": -0.0202740225454699
+    },
+    {
+      "mode": "transfer",
+      "pearson_r": -0.0361995205542661
+    },
+    {
+      "mode": "copy",
+      "pearson_r": -0.0339967532760728
+    },
+    {
+      "mode": "erasure",
+      "pearson_r": -0.0335589048509919
+    },
+    {
+      "mode": "joint_to_individual",
+      "pearson_r": -0.0062702480084962
+    },
+    {
+      "mode": "individual_to_joint",
+      "pearson_r": -0.0076034096382657
+    }
+  ],
+  "source_sha256": {
+    "dashboard\\tables\\s00_raw_aachen_all40.csv": "26139287c48f37669f911dc4b704cf9e7a2a1e5426b554b8e146bd85f7317c18",
+    "dashboard\\tables\\s03_raw_sudmex_acute.csv": "e2541b726bcd8562cdfa0f99d17123001f06104b3e289439a3a5507831a0e344",
+    "dashboard\\tables\\s04_gwt_expectations_raw.csv": "00b16e1b1758486b55a8926db8fcfbfd54c33f2a587f7b406eb2943fc6ede69a",
+    "dashboard\\tables\\s08_normalized_sudmex_acute.csv": "ad20a0d86d4639685e274932387605d157b3a1c0fba9f4488454f087c7763823",
+    "dashboard\\tables\\s09_gwt_expectations_normalized.csv": "e77aa7e9785fe7a07060a77297e93c891965c90c740707215a755513f5e565fc",
+    "dashboard\\tables\\s18_sudmex_all_post_workspace_results.csv": "9f9b55d5be858c8669ef481832794a9320d8901b77027b94c838e0c838a30eef",
+    "dashboard\\tables\\s19_clinical_neural_associations.csv": "62beca17a2990f2d9f54bfc9511e31b456dd9739f6f3fa86942f6726ce4e97e4",
+    "dashboard\\tables\\s34_inference.csv": "49a5eeab13c269f72248b07955af5545f9e96b3f8532988fb0859fa4fdc4db83",
+    "dashboard\\tables\\s35_aachen_baseline_motion_sensitivity.csv": "980d8926a6a15e91b4bb568b496e3c2d61fa7ecd739403ba5389ab2e994aba8c",
+    "dashboard\\tables\\s36_aachen_intensity_descriptive.csv": "64aead48e604d1655a51f30d7687ba7f812171fe097f8b2b7286607b5e1e1aa2",
+    "dashboard\\tables\\s38_inference.csv": "dc955883efdcd87256ba90c916ff43e888569b562654711691f18ab1974a0be4",
+    "dashboard\\tables\\s47_spatial_results.csv": "9be9b4b1204ebaa9bfea8fe92339c5557e9e86fefa26a12e4a54bf33d0219b44",
+    "dashboard\\tables\\s52_mode_treatment_results.csv": "9d8f0469a943c8f4872b0391ff62c9f9d6cb44ace420c7c67a1ffe6a08974c31",
+    "dashboard\\tables\\s53_cross_dataset_conjunction.csv": "8a293b631e7ddb7e06be646b5fcf741f901b164444e1b62d084bff1abfe85f95",
+    "dashboard\\tables\\s54_mode_treatment_results_all_seeds.csv": "bbfd4e6c8c06e9dc5494bb54096e7016596d175897e530da0e393035850acf0b",
+    "dashboard\\tables\\s55_cross_dataset_conjunction_all_seeds.csv": "4050d26ab6a5e3ad511ac8ae277eef5b813829cc4e427f4d5967896569b3b9f0",
+    "dashboard\\tables\\s56_external_template_tests.csv": "9ad34bac95d91f505c5d76403e527c5978aeee0806b01fa18da1e53646374695",
+    "dashboard\\tables\\s57_cross_dataset_conjunction.csv": "6619da1ecf2d38ca632a782a7a7613d5df99b9772225833794a3201ed34c79b5",
+    "dashboard\\tables\\s59_pattern_correlations.csv": "1097a33c813fb5da4d4af98cb77ce227e58efcb319ebbf651803217d9fd6a1e8"
+  }
+}

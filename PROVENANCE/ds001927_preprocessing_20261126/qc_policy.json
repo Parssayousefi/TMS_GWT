@@ -1,0 +1,31 @@
+{
+  "dataset": "ds001927",
+  "policy_version": "20261126_v1",
+  "decision_stage": "before pilot confound inspection and before all new PID outcomes",
+  "tr_seconds": 1.25,
+  "expected_volumes": 600,
+  "sessions": ["ctr", "fro", "occ"],
+  "tasks": ["restpre", "restpost"],
+  "initial_volumes_to_remove": 8,
+  "nonsteady_state_rule": "trim at least 8 volumes, extending through a longer leading contiguous flagged prefix; unexpected later/non-prefix flags require review",
+  "minimum_remaining_seconds": 480.0,
+  "max_translation_mm": 3.0,
+  "max_rotation_degrees": 3.15,
+  "displacement_reference": "first retained volume; maximum absolute displacement on any individual axis",
+  "max_mean_fd_mm": 0.3,
+  "high_fd_threshold_mm": 0.5,
+  "max_high_fd_fraction": 0.2,
+  "strict_sensitivity_max_mean_fd_mm": 0.2,
+  "standardized_dvars_flag": 1.5,
+  "dvars_role": "diagnostic, not an automatic primary exclusion",
+  "threshold_boundaries": "equal to limit passes; high FD means strictly greater than 0.5 mm",
+  "auto_salvage": false,
+  "delete_and_rejoin_scattered_frames": false,
+  "scope": "motion and file-completeness gate only; separate visual anatomy and atlas-coverage release required",
+  "rationale": "Preserve uninterrupted time for lagged PhiID and HRF, add explicit low-motion screening to the legacy displacement rule. These are declared study choices, not universal thresholds or a retroactive claim about existing cohorts.",
+  "sources": [
+    "https://fmriprep.org/en/23.2.1/outputs.html",
+    "https://doi.org/10.1016/j.neuroimage.2017.03.020",
+    "https://doi.org/10.1016/j.neuroimage.2017.12.073"
+  ]
+}

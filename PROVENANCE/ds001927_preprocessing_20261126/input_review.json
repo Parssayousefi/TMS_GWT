@@ -1,0 +1,61 @@
+{
+  "created_utc": "2026-11-26T14:20:37.351530+00:00",
+  "subjects": 23,
+  "structural_images": 69,
+  "bold_runs": 138,
+  "unique_structural_sha256": 69,
+  "missing_metadata_counts": {
+    "RepetitionTime": 0,
+    "EchoTime": 0,
+    "SliceTiming": 138,
+    "PhaseEncodingDirection": 138,
+    "TotalReadoutTime": 138,
+    "EffectiveEchoSpacing": 138,
+    "SliceEncodingDirection": 138,
+    "MultibandAccelerationFactor": 0,
+    "NonSteadyStateOutlierIndices": 138
+  },
+  "fieldmap_files": 0,
+  "all_inspected_voxels_finite": true,
+  "orientations": {
+    "LAS": 207
+  },
+  "limitations": [
+    "BOLD intensities sampled only in first 24 frames; whole-file checksums were verified separately.",
+    "No head-motion, registration, atlas coverage or treatment-effect analysis performed.",
+    "Zero fraction and contact sheets are not an automated skull-stripping classifier."
+  ],
+  "skull_strip_decision": "force: retained scalp/skull on all69 central sagittal views; images are defaced",
+  "visual_review": [
+    "t1w_contact_1.png",
+    "t1w_contact_2.png",
+    "t1w_contact_3.png",
+    "bold_contact_1.png",
+    "bold_contact_2.png",
+    "bold_contact_3.png",
+    "t1w_s022_review.png"
+  ],
+  "structural_exclusion": {
+    "subject": "s022",
+    "session": "ctr",
+    "reason": "superior brain tissue truncated; upper52 RAS z planes zero",
+    "action": "omit only this T1 from shared anatomical reference; retain sixBOLD forQC"
+  },
+  "bids_validator_version": "1.14.1",
+  "bids_validator_errors": 0,
+  "bids_validator_warning_keys": [
+    "SLICE_TIMING_NOT_DEFINED"
+  ],
+  "unique_bold_sha256": 138,
+  "matlab_readiness": "After VPN reconnection MATLAB R2025a started (exit0); MATLAB, Signal Processing and Wavelet availability checks returned1.",
+  "production_code_modified": false,
+  "pid_outcomes_inspected": false,
+  "source_sha256": {
+    "output/ds001927_input_audit_20261126/summary.json": "50c097ae1dcaffd0504bd10ed8930da4605087247d4420b6d6c4bdbb5e0ef128",
+    "output/ds001927_input_audit_20261126/bids_validation.json": "2a6fb04ff2e44b78e21c68792c65535665a945b56d03f680493bb4d2274c64da",
+    "setup/audit_ds001927_inputs.py": "f37907473982b552b72a494d572ff089157fb7d0b23aca8d100709a432e86394",
+    "docs/DS001927_PREPROCESSING_PLAN_20261126.md": "756dcf28a92480ce8383f640f0a0c03b916fcd6bf825e06a0f5662b93528ad7b"
+  },
+  "initial_plan_sha256": "20b2fbc253a2e6ff48167fd9bb6040486fd27d659a8efad76c8eedeaab9bf59c",
+  "plan_status_update": "First pilot completed and reviewed; second pilot running; no new-data PID outcomes inspected."
+}

@@ -1,5 +1,14 @@
 # Current analysis status
 
+**Current source:** [FD-enforced reanalysis](TMS_FD_REANALYSIS_20261126.md).
+The larger samples and numerical summaries below predate enforcement of the
+configured FD exclusions. Current paired samples are Aachen 13 and SUDMEX 33;
+the stricter sensitivity uses 12 and 30. Current group models omit additional
+continuous FD covariates while retaining motion QC, denoising and SUDMEX baseline
+outcome adjustment. Fresh clean-reference normalization is complete; the report provides its verified results.
+
+## Historical status before full FD enforcement
+
 The manuscript remains in development. The goal is one information-decomposition
 treatment story supported across Aachen and SUDMEX. Haemodynamic associations
 and repeatability are not the selected narrative. Nonsignificant change does
@@ -120,5 +129,10 @@ OpenNeuro ds001927 as the most practical additional resting-state fMRI cohort.
 Public metadata and sample imaging headers were downloaded and verified. The
 full version 2.1.0 release is downloaded in `data/ds001927/`: 433 files,
 22.97 GB, all content hashes verified, with 138 resting runs and 69 structural
-images. All 207 NIfTI headers were checked. It has not been preprocessed or
-analysed; motion, registration and signal coverage still need QC.
+images. All 207 NIfTI headers were checked. The subsequent input audit confirms
+defaced, skull-on anatomies and identifies one damaged T1 (sub-s022/ses-ctr),
+excluded from anatomical reference construction. A six-run fMRIPrep pilot for
+sub-s001 is underway; no new PID results are available. Motion, registration
+and signal coverage remain release gates. See the
+[preprocessing plan](DS001927_PREPROCESSING_PLAN_20261126.md) and
+[narrative assessment](TMS_NARRATIVE_ASSESSMENT_20261126.md).

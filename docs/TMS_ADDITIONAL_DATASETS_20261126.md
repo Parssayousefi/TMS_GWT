@@ -81,10 +81,14 @@ of the 138 resting runs. The study code was downloaded but not executed.
 The public aggregate receipt is
 `PROVENANCE/additional_datasets_20261126/download_complete.json`.
 
-No new participant data have been processed, no restricted access was obtained,
-and no authors were contacted. Header access alone does not verify full-file
-integrity or usable image quality; the download adds full-file checksum checks
-but not motion, registration or signal-coverage QC.
+Following download, the new input review confirmed retained skull tissue and
+identified a damaged sub-s022 control-session T1. A six-run fMRIPrep pilot for
+sub-s001 finished successfully; all six runs passed motion QC and alignment
+review, with inferior signal coverage retained as a limitation. The second
+pilot, sub-s022, is running; downstream inference remains pending. See the
+[preprocessing plan](DS001927_PREPROCESSING_PLAN_20261126.md). No restricted
+access was obtained and no authors were contacted. Download checksums establish
+file integrity, not acceptable motion, registration or signal coverage.
 
 Reproduce the check with `setup/audit_additional_tms_candidates.py`.
 The local audit is `output/additional_dataset_audit_20261126/`; it includes a

@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "synthetic_tests": 24,
+  "validated_by": "parallel worker; source and returned test results reviewed by parent",
+  "no_real_data_rewritten": true,
+  "header_only_completion_not_full_integrity_check": true,
+  "analysis_release_remains_gated": true,
+  "source_sha256": {
+    "setup/qc_ds001927_derivatives.py": "a1c6b1d5e0a78d1606fffc6abbfa40aa42cb4db10266e19cc601cdd88839b571",
+    "setup/test_qc_ds001927_derivatives.py": "f93897ff80c957c4aa8f9a48a91c168a3b139eb49b0879dd5087a01420cc8c31",
+    "PROVENANCE/ds001927_preprocessing_20261126/qc_policy.json": "2419d916764b9f6581d5719406dc7a5ef0dec07378e406e13dc19905648169a4"
+  }
+}

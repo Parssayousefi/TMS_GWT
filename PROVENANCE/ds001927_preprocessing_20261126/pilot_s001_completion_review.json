@@ -1,0 +1,25 @@
+{
+  "subject": "sub-s001",
+  "reviewed_utc": "2026-11-26T15:14:14.836661+00:00",
+  "fmriprep_exit_code": 0,
+  "fmriprep_finished_utc": "2026-11-26T15:10:10Z",
+  "native_extraction_visual_review": "No gross cortical clipping in the reviewed sagittal, coronal and axial sections; GM follows expected tissue boundaries.",
+  "standard_alignment_visual_review": "Five axial levels show close correspondence with the MNI template and anatomically plausible tissue segmentation.",
+  "functional_alignment_visual_review": "All six references follow the standard-space outline; inferior frontal/temporal susceptibility dropout and incomplete functional masks remain visible.",
+  "six_run_motion_qc": "all six pass prespecified primary and stricter mean-FD sensitivity; 592 retained frames each (740seconds)",
+  "zero_mask_parcel_runs": 2,
+  "parcel_runs_below_half_mask_coverage": 121,
+  "zero_reference_parcel_runs": 0,
+  "preprocessing_pilot_pass": true,
+  "full_cohort_release": false,
+  "analysis_release": false,
+  "next_gate": "Review s022 anatomical-reference exception; assess denoised regional signal variance/coverage before outcome analysis. Inferior coverage requires explicit sensitivity, not automatic assumption of valid454signals.",
+  "reviewed_file_sha256": {
+    "output\\ds001927_pilot_review_20261126\\sub-s001\\native_extraction_and_segmentation.png": "e7fdedbd7181528b3f120743355e924df87de24db05c1d3ffc69e2b821c7f914",
+    "output\\ds001927_pilot_review_20261126\\sub-s001\\standard_alignment.png": "774b29d48380273e6feb6eaf81be1f7203d179ec6cf30eb1616ba80bdf04a11a",
+    "output\\ds001927_pilot_review_20261126\\sub-s001\\six_run_bold_alignment_and_coverage.png": "a4418126d323ed05ec5d6fbc9c7a7117fc26aeeadfe2f6425f0a91fb19803a09",
+    "output\\ds001927_pilot_review_20261126\\sub-s001\\atlas_coverage.csv": "af84ed95e5ecd9bd0ccf7c0ce549b17aa2e1606137a22f02ed1cd899542f269a",
+    "output\\ds001927_pilot_review_20261126\\sub-s001\\review_summary.json": "bcaf30e13914c06a04e284af8871c756cf5aeae0ea66f74064471bb8aae83c3d",
+    "output\\ds001927_pilot_qc_20261126\\derivative_qc.json": "f6358a2e2cde5ef084f6cdb1a5cceaddb85a93fd660283e753e378a0f5cac778"
+  }
+}

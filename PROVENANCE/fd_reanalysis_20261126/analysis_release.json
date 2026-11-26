@@ -1,0 +1,101 @@
+{
+  "scope": "Current QC-enforced TMS statistical reanalysis",
+  "configured_thresholds": {
+    "aachen_itbs": {
+      "mean_fd": 0.5,
+      "peak_fd": 3.0,
+      "min_timepoints": 100,
+      "translation": 3.0,
+      "rotation": 3.15,
+      "first": 5,
+      "last": 0,
+      "tr": 2.0
+    },
+    "sudmex_tms": {
+      "mean_fd": 0.5,
+      "peak_fd": 3.0,
+      "min_timepoints": 100,
+      "translation": 3.0,
+      "rotation": 3.15,
+      "first": 5,
+      "last": 0,
+      "tr": 2.0
+    }
+  },
+  "stricter_sensitivity": {
+    "mean_fd_max": 0.3,
+    "fraction_fd_above_0_5_max": 0.2,
+    "retains_registered_peak_and_displacement_and_length_rules": true
+  },
+  "counts": [
+    {
+      "branch": "registered",
+      "dataset": "aachen_itbs",
+      "scans_audited": 60,
+      "scans_retained": 58,
+      "primary_subjects": 13,
+      "primary_arm_counts": {
+        "iTBS": 13
+      },
+      "baseline_pool_members": 30,
+      "baseline_pool_members_failing_scan_qc": 0,
+      "baseline_pool_members_outside_primary_cohort": 4
+    },
+    {
+      "branch": "registered",
+      "dataset": "sudmex_tms",
+      "scans_audited": 133,
+      "scans_retained": 122,
+      "primary_subjects": 33,
+      "primary_arm_counts": {
+        "active": 18,
+        "sham": 15
+      },
+      "baseline_pool_members": 40,
+      "baseline_pool_members_failing_scan_qc": 3,
+      "baseline_pool_members_outside_primary_cohort": 7
+    },
+    {
+      "branch": "strict",
+      "dataset": "aachen_itbs",
+      "scans_audited": 60,
+      "scans_retained": 57,
+      "primary_subjects": 12,
+      "primary_arm_counts": {
+        "iTBS": 12
+      },
+      "baseline_pool_members": 30,
+      "baseline_pool_members_failing_scan_qc": 1,
+      "baseline_pool_members_outside_primary_cohort": 6
+    },
+    {
+      "branch": "strict",
+      "dataset": "sudmex_tms",
+      "scans_audited": 133,
+      "scans_retained": 113,
+      "primary_subjects": 30,
+      "primary_arm_counts": {
+        "active": 17,
+        "sham": 13
+      },
+      "baseline_pool_members": 40,
+      "baseline_pool_members_failing_scan_qc": 5,
+      "baseline_pool_members_outside_primary_cohort": 10
+    }
+  ],
+  "group_motion_covariates": false,
+  "sudmex_model": "followup ~ active + baseline outcome; HC3/t",
+  "aachen_model": "mean of two matched intensity changes per participant; exact sign flips",
+  "normalization": "QC-clean references for main normalized scores; frozen references explicitly labelled",
+  "not_rerun": "Hemodynamic associations and frozen HCP/psychedelic cohorts",
+  "receipt_sha256": {
+    "output\\existing_tms_fd_audit_20261126\\audit_receipt.json": "8abe796b8d4c4ecf1e2bd940f9f9185be265bfb3f36ad7820bbf84a94559d095",
+    "output\\tms_fd_reanalysis_20261126\\core_qc_only\\verification.json": "4254642644b5acf76da86f18870ad8031a7e9ef79fb0e09ce7f59f9b0e54cbae",
+    "output\\tms_fd_reanalysis_20261126\\modes_qc_only\\verification.json": "948e21d8e9ab1a7c908080d04cbd7d7aee12b08b971469982e3b625559732ab4",
+    "output\\tms_fd_reanalysis_20261126\\targets_qc_only\\current_model_receipt.json": "f86402d57f0be0fb3240fd1c688063f75f138f7561515adf5ea0fddac4992fda",
+    "output\\tms_fd_reanalysis_20261126\\sensitivities_qc_only\\current_model_receipt.json": "fa2f653100230a35287fc60a6c783d4511e09d4e184c0e7230ea7f994e01d475",
+    "output\\tms_fd_reanalysis_20261126\\recalibration\\verification.json": "4ec3cd2b87f8245d2225c2b5802ba272d1b33807bb276c4d3dfbb1cbc7c281fa"
+  },
+  "report": "docs/TMS_FD_REANALYSIS_20261126.md",
+  "dashboard": "dashboard/index.html"
+}
