@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-11-27T13:02:38.467367+00:00",
+  "user_authorized_resume": true,
+  "subject": "s017",
+  "fmriprep_rerun": false,
+  "fmriprep_exit_code": 0,
+  "real_qc_cli_exit_code": 3,
+  "original_motion_decisions_unchanged": true,
+  "failed_scan": "FRO pre: max-axis rotation 3.4996126335593236 degrees > 3.15 degrees",
+  "analysis_release": false,
+  "remaining_subjects": [
+    "s018",
+    "s019",
+    "s020",
+    "s021",
+    "s023"
+  ],
+  "old_runner_sha256": "d4fc6ce31c6a380636ba45929cd82b2d715b4ab651ddb216de2df81ae45ab33b",
+  "new_runner_sha256": "d13e71a49ab84852eb5a6f812d3372e26144e900b7d77a7e2a0f20c98e953515",
+  "qc_policy_sha256": "2419d916764b9f6581d5719406dc7a5ef0dec07378e406e13dc19905648169a4",
+  "original_qc_receipt_sha256": "9d43abbc4908756db1c20260653eb66bf06a8653d443dd5bde1e935724f044e5",
+  "recovery_qc_receipt_sha256": "dbf2e88a4330c3e13770cf41bb14a1a170803e0ff45c52a4adf39049e8fae6ed",
+  "regression_tests": "8/8 passed; exit-code and safe-resume cases"
+}

@@ -47,6 +47,42 @@ def container_state(name):
     return json.loads(docker("inspect", name))[0]
 
 
+def validate_completed_qc(record, returncode, subject):
+    """A motion exclusion is a valid QC result, not a failed image conversion.
+
+    The QC CLI returns 0 for all motion passes, 3 for complete files with a
+    motion exclusion/review, and 2 for invalid/incomplete files. In neither
+    accepted case is anatomy or downstream analysis automatically released.
+    """
+    if record.get("subject") != f"sub-{subject}" or record.get("analysis_release") is not False:
+        raise RuntimeError(f"Wrong or prematurely released QC receipt: {subject}")
+    if record.get("six_run_files_complete") is not True:
+        raise RuntimeError(f"Incomplete subject derivatives: {subject}")
+    passed = record.get("six_run_motion_gate_pass")
+    if not isinstance(passed, bool):
+        raise RuntimeError(f"Missing motion decision: {subject}")
+    expected_code = 0 if passed else 3
+    expected_state = "motion_pass_anatomy_pending" if passed else "motion_exclusion_or_review"
+    if returncode != expected_code or record.get("state") != expected_state:
+        raise RuntimeError(f"QC process/receipt mismatch for {subject}: exit {returncode}, expected {expected_code}")
+
+
+def validate_resume_state(state, subjects):
+    """Resume only a reconciled inactive queue and its exact original selection."""
+    if state.get("status") not in ("paused_by_user", "stopped_for_review"):
+        raise RuntimeError("Queue is not paused/stopped; duplicate dispatch refused")
+    if state.get("active_subject") or state.get("subject_pending_completion_reconciliation"):
+        raise RuntimeError("Reconcile the previous subject before resuming")
+    if state.get("selected_subjects") != subjects or state.get("image_id") != IMAGE_ID:
+        raise RuntimeError("Original subject selection and image must match")
+    if state.get("analysis_release") is not False:
+        raise RuntimeError("This queue grants preprocessing only")
+    completed = state.get("completed_subjects")
+    if not isinstance(completed, list) or completed != subjects[:len(completed)]:
+        raise RuntimeError("Completed subjects must be an ordered, unique prefix")
+    return subjects[len(completed):]
+
+
 def build_command(subject, derivatives, work, settings):
     if subject not in SUBJECTS:
         raise ValueError("This queue processes only the 21 reviewed-design nonpilot participants")
@@ -90,6 +126,7 @@ def validate_receipts():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--prepare-only", action="store_true")
+    ap.add_argument("--resume", action="store_true", help="Resume a reconciled queue after explicit user authorization")
     ap.add_argument("--subjects", nargs="+", choices=SUBJECTS, default=SUBJECTS)
     args = ap.parse_args()
     if len(set(args.subjects)) != len(args.subjects):
@@ -106,9 +143,11 @@ def main():
     if not filter_path.exists():
         write_json(filter_path, filt)
     state_path = PROV / "cohort_queue.json"
-    if state_path.exists():
+    if state_path.exists() and not args.resume:
         raise RuntimeError("Queue already recorded; inspect rather than launch a duplicate")
-    state = dict(created_utc=now(), status="prepared", selected_subjects=args.subjects,
+    if args.resume and not state_path.exists():
+        raise RuntimeError("No queue exists to resume")
+    fresh_state = dict(created_utc=now(), status="prepared", selected_subjects=args.subjects,
                  completed_subjects=[], active_subject=None, image_id=IMAGE_ID,
                  storage_root=str(storage_root), derivatives=str(derivatives),
                  runner_sha256=sha(Path(__file__)), filter_sha256=sha(filter_path),
@@ -116,16 +155,50 @@ def main():
                  pilot_release_sha256=sha(PROV / "pilot_coverage_release.json"),
                  no_downstream_analysis_started=True, analysis_release=False,
                  scratch_cleanup=False, maximum_simultaneous_subjects=1)
+    remaining = list(args.subjects)
+    if args.resume:
+        state = json.loads(state_path.read_text())
+        remaining = validate_resume_state(state, args.subjects)
+        for key in ("filter_sha256", "plan_receipt_sha256", "pilot_release_sha256"):
+            if state.get(key) != fresh_state[key]:
+                raise RuntimeError(f"Queue inputs changed since the original run: {key}")
+        for subject in state["completed_subjects"]:
+            receipt = json.loads((PROV / f"cohort_{subject}.json").read_text())
+            qc_path = ROOT / "output/ds001927_cohort_qc_20261126" / f"sub-{subject}" / "derivative_qc.json"
+            if receipt.get("exit_code") != 0 or receipt.get("status") != "fmriprep_complete_visual_review_pending":
+                raise RuntimeError(f"Completed subject receipt needs reconciliation: {subject}")
+            if receipt.get("qc_receipt_sha256") != sha(qc_path):
+                raise RuntimeError(f"Completed subject QC changed: {subject}")
+        if not remaining:
+            raise RuntimeError("No unstarted participants remain")
+    else:
+        state = fresh_state
     if args.prepare_only:
-        print(json.dumps(state, indent=2))
+        print(json.dumps({**state, "would_start_subjects": remaining}, indent=2))
         return
-    # Exclusive creation avoids duplicate orchestrators.
-    with state_path.open("x", encoding="utf-8") as stream:
-        json.dump(state, stream, indent=2)
+    lock_path = PROV / "cohort_queue.lock"
+    # An existing lock is preserved for explicit process inspection, never removed blindly.
+    with lock_path.open("x", encoding="utf-8") as stream:
+        json.dump({"pid": os.getpid(), "created_utc": now()}, stream)
     logs = ROOT / "logs/ds001927_cohort_20261126"
     logs.mkdir(parents=True, exist_ok=True)
     try:
-        for subject in args.subjects:
+        if args.resume:
+            archive = PROV / ("cohort_queue_before_resume_" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S_%fZ") + ".json")
+            with archive.open("xb") as stream:
+                stream.write(state_path.read_bytes())
+            state.update(status="resuming", resumed_utc=now(), updated_utc=now(),
+                         previous_runner_sha256=state["runner_sha256"], runner_sha256=sha(Path(__file__)),
+                         resume_requires_explicit_user_request=False,
+                         resume_authorization="Explicit user request to resume on 27 November 2026",
+                         remaining_unstarted_subjects=remaining)
+            if "error" in state:
+                state["previous_stop_error"] = state.pop("error")
+            write_json(state_path, state)
+        else:
+            with state_path.open("x", encoding="utf-8") as stream:
+                json.dump(state, stream, indent=2)
+        for subject in remaining:
             validate_receipts()
             if shutil.disk_usage(storage_root).free < 100 * 1024**3:
                 raise RuntimeError("Storage reserve below 100 GiB; queue stopped without deleting files")
@@ -152,7 +225,8 @@ def main():
             container_id = subprocess.check_output(command, text=True).strip()
             receipt.update(container_id=container_id, status="running")
             write_json(receipt_path, receipt)
-            state.update(status="running", active_subject=subject, updated_utc=now())
+            state.update(status="running", active_subject=subject, updated_utc=now(),
+                         remaining_unstarted_subjects=args.subjects[args.subjects.index(subject) + 1:])
             write_json(state_path, state)
             print(f"Started {name}", flush=True)
             while True:
@@ -163,9 +237,9 @@ def main():
             with (logs / f"{subject}_fmriprep.log").open("w", encoding="utf-8") as stream:
                 subprocess.run(["docker", "logs", name], stdout=stream, stderr=subprocess.STDOUT, check=True)
             receipt.update(finished_utc=current["FinishedAt"], exit_code=current["ExitCode"])
+            receipt["status"] = "fmriprep_complete_qc_pending" if current["ExitCode"] == 0 else "fmriprep_failed"
+            write_json(receipt_path, receipt)
             if current["ExitCode"] != 0:
-                receipt["status"] = "fmriprep_failed"
-                write_json(receipt_path, receipt)
                 raise RuntimeError(f"fMRIPrep failed for {subject}; inspect saved logs")
             qc_out = ROOT / "output/ds001927_cohort_qc_20261126" / f"sub-{subject}"
             qc = subprocess.run([sys.executable, "-X", "utf8", str(ROOT / "setup/qc_ds001927_derivatives.py"),
@@ -175,8 +249,7 @@ def main():
             if not (qc_out / "derivative_qc.json").exists():
                 raise RuntimeError(f"QC did not produce a receipt: {subject}")
             qc_record = json.loads((qc_out / "derivative_qc.json").read_text())
-            if qc.returncode not in (0, 1) or not qc_record["six_run_files_complete"]:
-                raise RuntimeError(f"Incomplete subject derivatives: {subject}")
+            validate_completed_qc(qc_record, qc.returncode, subject)
             review = subprocess.run([sys.executable, "-X", "utf8", str(ROOT / "setup/review_ds001927_pilot.py"),
                                      "--subject", subject, "--derivatives", str(derivatives)], capture_output=True, text=True)
             (logs / f"{subject}_review.log").write_text(review.stdout + review.stderr, encoding="utf-8")
@@ -186,7 +259,8 @@ def main():
                            qc_receipt_sha256=sha(qc_out / "derivative_qc.json"), anatomical_release=False)
             write_json(receipt_path, receipt)
             state["completed_subjects"].append(subject)
-            state.update(active_subject=None, updated_utc=now())
+            state.update(active_subject=None, updated_utc=now(),
+                         remaining_unstarted_subjects=args.subjects[len(state["completed_subjects"]):])
             write_json(state_path, state)
             print(f"Completed preprocessing and generated QC for {subject}; visual/analysis release pending", flush=True)
         state.update(status="fmriprep_queue_complete_visual_review_pending", updated_utc=now())
@@ -195,6 +269,8 @@ def main():
         state.update(status="stopped_for_review", error=f"{type(error).__name__}: {error}", updated_utc=now())
         write_json(state_path, state)
         raise
+    finally:
+        lock_path.unlink()
 
 
 if __name__ == "__main__":

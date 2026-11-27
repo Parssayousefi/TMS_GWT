@@ -7,7 +7,7 @@ site, tested within participants in ds001927. Aachen and SUDMEX provide existing
 exploratory context. The earlier psychedelic paper is cited; its private
 participant data and effect maps are not included.
 
-## Current results 26 November 2026
+## Current status 27 November 2026
 
 **FD-enforced reanalysis is now the current analysis.** The original motion
 configuration was not fully enforced: displacement QC ran, but its mean/peak FD
@@ -26,9 +26,15 @@ decrease (maxT5 p=.524; stricter QC p=.472).
 Both six-run ds001927 pilots have finished and received anatomical review.
 The direct raw-to-processed audit finds inferior signal loss already present
 in the acquired BOLD, without evidence of the Aachen extraction error in these
-pilots. Eleven of twelve scans pass the declared motion gate. A sequential
-fMRIPrep queue is processing the remaining 21 participants on E:; s002 started
-on 26 November. There are no new-dataset PID outcomes yet. See the
+pilots. Preprocessing has now completed for 18 of 23 participants, with 106 of
+108 scans passing motion QC and 16 participants meeting the four-scan motion
+requirements for the frontal-versus-control comparison. Anatomical/signal
+release remains pending for newly completed participants. The queue stopped
+when it misinterpreted a valid motion-exclusion exit code; that orchestration
+bug is fixed without changing the exclusions. After the user's requested pause,
+the five remaining participants resumed sequentially on 27 November; s018 is
+running. See the [restart record](docs/DS001927_PROCESSING_STATUS_20261127.md).
+There are no new-dataset PID outcomes yet. See the
 [coverage investigation](docs/DS001927_COVERAGE_REVIEW_20261126.md) and
 [dated frontal-versus-control analysis plan](docs/DS001927_SITE_COMPARISON_PLAN_20261126.md).
 

@@ -42,6 +42,7 @@ license.txt
 .codex/
 .agents/
 .playwright-mcp/
+PROVENANCE/**/cohort_queue.lock
 dashboard/qa_*.png
 dashboard/qa_*.csv
 
